@@ -1,0 +1,5215 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LivelyCart 2\n"
+"POT-Creation-Date: 2017-02-24 18:13+0530\n"
+"PO-Revision-Date: 2017-02-24 18:13+0530\n"
+"Last-Translator: Vinod <vinod@livelyworks.net>\n"
+"Language-Team: \n"
+"Language: mr_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: app\n"
+"X-Poedit-SearchPath-1: resources\n"
+"X-Poedit-SearchPath-2: config\n"
+
+#: app/Yantrana/Components/Brand/BrandEngine.php:170
+#: app/Yantrana/Components/User/Controllers/UserController.php:252
+msgid "Current password is incorrect."
+msgstr "चालू पासवर्ड चुकीचा आहे."
+
+#: app/Yantrana/Components/Brand/BrandEngine.php:182
+#: app/Yantrana/Components/Brand/BrandEngine.php:205
+#: app/Yantrana/Components/Brand/BrandEngine.php:221
+msgid "Brand not deleted."
+msgstr "ब्रँड हटविले नाही."
+
+#: app/Yantrana/Components/Brand/BrandEngine.php:188
+#: app/Yantrana/Components/Brand/BrandEngine.php:227
+msgid "Brand deleted successfully."
+msgstr "ब्रँड यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:74
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:115
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:142
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:311
+msgid "Brand does not exist."
+msgstr "ब्रँड अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:91
+msgid "Brand added successfully."
+msgstr "ब्रँड यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:92
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:140
+msgid "Selected logo file does not exist."
+msgstr "निवडलेले लोगो फाइल अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:93
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:139
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:70
+#: app/Yantrana/Components/Tax/TaxEngine.php:143
+msgid "oh..no. error."
+msgstr "oh..no. त्रुटी."
+
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:138
+msgid "Brand updated successfully."
+msgstr "ब्रँड यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Brand/Controllers/BrandController.php:141
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:139
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:244
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:149
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:208
+#: app/Yantrana/Components/Tax/TaxEngine.php:259
+#: app/Yantrana/Components/User/Controllers/AddressController.php:149
+#: app/Yantrana/Components/User/Controllers/AddressController.php:179
+msgid "Nothing update."
+msgstr "काहीही अद्यावत केले नाही."
+
+#: app/Yantrana/Components/Category/Categories.php:164
+msgid "make a parent"
+msgstr "एक पालक करा"
+
+#: app/Yantrana/Components/Category/Categories.php:170
+msgid "Categories does not exist."
+msgstr "श्रेणी अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:185
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:238
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:263
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:287
+msgid "Category does not exist."
+msgstr "वर्ग अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:214
+msgid "Category added successfully."
+msgstr "वर्ग यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:215
+msgid "Parent category not exist."
+msgstr "पालक श्रेणी अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:216
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:264
+msgid "Category name already exist."
+msgstr "वर्ग नाव आधीपासून अस्तित्वात आहे."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:261
+msgid "Category updated successfully."
+msgstr "वर्ग यशस्वीपणे अद्यतनित केले."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:262
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:222
+#: app/Yantrana/Components/Store/ManageStoreEngine.php:465
+#: app/Yantrana/Components/Store/ManageStoreEngine.php:481
+#: app/Yantrana/Components/User/Controllers/UserController.php:453
+msgid "Nothing updated."
+msgstr "काहीही अद्यतनित झाले नाही."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:285
+msgid "Category deleted successfully."
+msgstr "वर्ग यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Category/Controllers/ManageCategoryController.php:286
+msgid "Invalid password. please enter correct password."
+msgstr "अवैध पासवर्ड. योग्य संकेतशब्द प्रविष्ट करा."
+
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:69
+msgid "Coupon added successfully."
+msgstr "कूपन यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:92
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:114
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:140
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:165
+msgid "Coupon does not exist."
+msgstr "कूपन अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:138
+msgid "Coupon updated successfully."
+msgstr "कूपन यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:163
+msgid "Coupon deleted successfully."
+msgstr "कूपन यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Coupon/Controllers/CouponController.php:164
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:261
+#: app/Yantrana/Components/Tax/Controllers/TaxController.php:161
+#: app/Yantrana/Components/User/Controllers/AddressController.php:95
+msgid "Something went wrong."
+msgstr "काहीतरी चूक झाली."
+
+#: app/Yantrana/Components/Coupon/Requests/CouponAddRequest.php:61
+#: app/Yantrana/Components/Coupon/Requests/CouponAddRequest.php:69
+#: app/Yantrana/Components/Coupon/Requests/CouponAddRequest.php:77
+#: app/Yantrana/Components/Coupon/Requests/CouponEditRequest.php:63
+#: app/Yantrana/Components/Coupon/Requests/CouponEditRequest.php:71
+#: app/Yantrana/Components/Coupon/Requests/CouponEditRequest.php:79
+#: app/Yantrana/Components/Product/Requests/ManageProductAddRequest.php:57
+#: app/Yantrana/Components/Product/Requests/ManageProductAddRequest.php:66
+#: app/Yantrana/Components/Product/Requests/ManageProductEditRequest.php:61
+#: app/Yantrana/Components/Product/Requests/ManageProductEditRequest.php:70
+#: app/Yantrana/Components/Product/Requests/ProductOptionAddRequest.php:66
+#: app/Yantrana/Components/Product/Requests/ProductOptionValuesAddRequest.php:60
+#: app/Yantrana/Components/Product/Requests/ProductOptionValuesEditRequest.php:60
+#: app/Yantrana/Components/Shipping/Requests/ShippingAddRequest.php:59
+#: app/Yantrana/Components/Shipping/Requests/ShippingAddRequest.php:68
+#: app/Yantrana/Components/Shipping/Requests/ShippingAddRequest.php:77
+#: app/Yantrana/Components/Shipping/Requests/ShippingEditRequest.php:61
+#: app/Yantrana/Components/Shipping/Requests/ShippingEditRequest.php:70
+#: app/Yantrana/Components/Shipping/Requests/ShippingEditRequest.php:79
+#: app/Yantrana/Components/Tax/Requests/TaxAddRequest.php:60
+#: app/Yantrana/Components/Tax/Requests/TaxEditRequest.php:60
+#: resources/lang/en/validation.php:122
+msgid "The __attribute__ may not be greater than __max__."
+msgstr "__attribute__ __max__ पेक्षा जास्त असू शकत नाही."
+
+#: app/Yantrana/Components/Coupon/Requests/CouponAddRequest.php:65
+#: app/Yantrana/Components/Coupon/Requests/CouponAddRequest.php:73
+#: app/Yantrana/Components/Coupon/Requests/CouponAddRequest.php:81
+#: app/Yantrana/Components/Coupon/Requests/CouponEditRequest.php:67
+#: app/Yantrana/Components/Coupon/Requests/CouponEditRequest.php:75
+#: app/Yantrana/Components/Coupon/Requests/CouponEditRequest.php:83
+#: app/Yantrana/Components/Product/Requests/ManageProductAddRequest.php:53
+#: app/Yantrana/Components/Product/Requests/ManageProductAddRequest.php:62
+#: app/Yantrana/Components/Product/Requests/ManageProductEditRequest.php:57
+#: app/Yantrana/Components/Product/Requests/ManageProductEditRequest.php:66
+#: app/Yantrana/Components/Product/Requests/ProductOptionAddRequest.php:71
+#: app/Yantrana/Components/Product/Requests/ProductOptionValuesAddRequest.php:65
+#: app/Yantrana/Components/Product/Requests/ProductOptionValuesEditRequest.php:65
+#: app/Yantrana/Components/Shipping/Requests/ShippingAddRequest.php:55
+#: app/Yantrana/Components/Shipping/Requests/ShippingAddRequest.php:64
+#: app/Yantrana/Components/Shipping/Requests/ShippingAddRequest.php:73
+#: app/Yantrana/Components/Shipping/Requests/ShippingEditRequest.php:57
+#: app/Yantrana/Components/Shipping/Requests/ShippingEditRequest.php:66
+#: app/Yantrana/Components/Shipping/Requests/ShippingEditRequest.php:75
+#: app/Yantrana/Components/Tax/Requests/TaxAddRequest.php:56
+#: app/Yantrana/Components/Tax/Requests/TaxEditRequest.php:56
+msgid "Digit after decimal may not be greater than __max__."
+msgstr "दशांश केल्यानंतर अंकी शकते __max__ पेक्षा जास्त असू शकत नाही."
+
+#: app/Yantrana/Components/Home/Controllers/HomeController.php:162
+msgid "Invalid Request"
+msgstr "अवैध विनंती"
+
+#: app/Yantrana/Components/Media/Controllers/MediaController.php:44
+msgid "File not uploaded."
+msgstr "फाइल अपलोड झाला नाही."
+
+#: app/Yantrana/Components/Media/Controllers/MediaController.php:45
+msgid "File has an invalid extension, it should be png, jpeg, jpg."
+msgstr "फाइल अवैध विस्तार आहे, तो PNG, JPEG, jpg असणे आवश्यक आहे."
+
+#: app/Yantrana/Components/Media/Controllers/MediaController.php:75
+#: app/Yantrana/Components/UploadManager/Controllers/UploadManagerController.php:77
+msgid "File deleted."
+msgstr "फाइल हटविली."
+
+#: app/Yantrana/Components/Media/Controllers/MediaController.php:76
+#: app/Yantrana/Components/UploadManager/Controllers/UploadManagerController.php:78
+msgid "File not deleted."
+msgstr "फाइल हटविले नाही."
+
+#: app/Yantrana/Components/Media/Controllers/MediaController.php:77
+#: app/Yantrana/Components/UploadManager/Controllers/UploadManagerController.php:79
+msgid "File does not exist."
+msgstr "फाइल अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Media/Controllers/MediaController.php:96
+msgid "Files deleted."
+msgstr "फाईल्स काढून."
+
+#: app/Yantrana/Components/Media/Controllers/MediaController.php:97
+msgid "Files not deleted."
+msgstr "फायली हटविले नाही."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:189
+msgid "List order updated successfully."
+msgstr "सूची क्रम यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:190
+msgid "Nothing updated"
+msgstr "काहीही अद्यतनित झाले नाही."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:207
+msgid "Page added successfully."
+msgstr "पृष्ठ यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:208
+msgid "Page not added."
+msgstr "पृष्ठ जोडलेले नाही."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:224
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:243
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:262
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:281
+msgid "Page does not exist."
+msgstr "पृष्ठ अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:242
+msgid "Page updated successfully."
+msgstr "पृष्ठ यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:260
+msgid "Page deleted successfully."
+msgstr "पृष्ठ यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Pages/Controllers/ManagePagesController.php:263
+msgid "This menu/page item can not be deleted because it contains childrens items."
+msgstr "तो मुलांचा आयटम कारण यात मेनू / पृष्ठ आयटम हटवला जाऊ शकत नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:67
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:130
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:147
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:164
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:189
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:213
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:330
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:536
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:324
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:342
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:81
+msgid "Product does not exist."
+msgstr "उत्पादन अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:109
+msgid "Product added successfully."
+msgstr "उत्पादन यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:110
+msgid "Product not added."
+msgstr "उत्पादन जोडला नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:111
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:187
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:212
+msgid "Selected image does not exist."
+msgstr "निवडलेली प्रतिमा अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:128
+msgid "Product deleted successfully."
+msgstr "उत्पादन यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:129
+msgid "Product not deleted."
+msgstr "उत्पादन हटविले नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:185
+msgid "Product updated successfully."
+msgstr "उत्पादन यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:186
+msgid "Product not updated."
+msgstr "उत्पादन अद्यतनित नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:188
+msgid "Select valid product categories."
+msgstr "वैध उत्पादन श्रेणी निवडा."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:210
+msgid "Product image added successfully."
+msgstr "उत्पादन प्रतिमा यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:211
+msgid "Product image not added."
+msgstr "उत्पादन प्रतिमा नाही आहे."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:243
+msgid "Product image deleted successfully."
+msgstr "उत्पादन प्रतिमा यशस्वीरित्या हटविला."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:244
+msgid "Product image not deleted."
+msgstr "उत्पादन प्रतिमा हटविले नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:245
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:266
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:294
+msgid "Product image does not exist."
+msgstr "उत्पादन प्रतिमा अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:292
+msgid "Product image updated successfully."
+msgstr "उत्पादन प्रतिमा यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:293
+msgid "Product image not updated."
+msgstr "उत्पादन प्रतिमा अद्यतनित नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:327
+msgid "Product option added successfully."
+msgstr "उत्पादन पर्याय यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:328
+msgid "Product option not added."
+msgstr "उत्पादन पर्याय नाही आहे."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:329
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:399
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:499
+msgid "Option name already taken for this product."
+msgstr "पर्याय नाव या उत्पादनासाठी आधीपासून घेतले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:348
+msgid "Product option deleted successfully."
+msgstr "उत्पादन पर्याय यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:349
+msgid "Product option not deleted."
+msgstr "उत्पादन पर्याय हटविले नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:350
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:371
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:401
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:427
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:448
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:501
+msgid "Product option does not exist."
+msgstr "उत्पादन पर्याय अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:398
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:497
+msgid "Product option updated successfully."
+msgstr "उत्पादन पर्याय यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:400
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:500
+msgid "Product option not updated."
+msgstr "उत्पादन पर्याय अद्यतनित नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:425
+msgid "Product option values added successfully."
+msgstr "उत्पादन पर्याय मूल्ये यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:426
+msgid "Value name already taken for this product option."
+msgstr "मूल्य नाव आधीच हे उत्पादन पर्याय करण्यात आली."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:471
+msgid "Product option value deleted."
+msgstr "उत्पादन पर्याय मूल्य हटविले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:472
+msgid "Product option value not deleted."
+msgstr "उत्पादन पर्याय मूल्य हटविले नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:473
+msgid "Product option value does not exist."
+msgstr "उत्पादन पर्याय मूल्य विद्यमान नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:498
+msgid "Option values not enter."
+msgstr "पर्याय मूल्ये प्रविष्ट नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:534
+msgid "Product Specification added successfully."
+msgstr "उत्पादन तपशील यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:535
+msgid "Product Specification not added."
+msgstr "उत्पादन तपशील नाही आहे."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:556
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:599
+msgid "Product specification does not exist."
+msgstr "उत्पादन तपशील अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:577
+msgid "Product specification updated successfully."
+msgstr "उत्पादन तपशील यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:578
+msgid "Product Specification values not enter."
+msgstr "उत्पादन तपशील मूल्ये प्रविष्ट नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:579
+msgid "Product Specification values not updated."
+msgstr "उत्पादन तपशील मूल्ये अद्यतनित नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:580
+msgid "Product Specification values does not exist."
+msgstr "उत्पादन तपशील मूल्ये अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:597
+msgid "Product specification deleted."
+msgstr "उत्पादन तपशील हटविले."
+
+#: app/Yantrana/Components/Product/Controllers/ManageProductController.php:598
+msgid "Product specification not deleted."
+msgstr "उत्पादन तपशील हटविले नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:66
+msgid "Requested category does not exist."
+msgstr "विनंती केलेली श्रेणी अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:93
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:212
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:275
+#: resources/views/order/manage/list.blade.php:176
+msgid "name"
+msgstr "नाव"
+
+#: app/Yantrana/Components/Product/Controllers/ProductController.php:134
+msgid "Sorry this product is currently not available, Please reload the page."
+msgstr "क्षमस्व हे उत्पादन सध्या उपलब्ध नाही, कृपया पृष्ठ रीलोड करा."
+
+#: app/Yantrana/Components/Product/ProductEngine.php:92
+msgid " to "
+msgstr " ते "
+
+#: app/Yantrana/Components/Product/ProductEngine.php:185
+msgid "Select __option_name__"
+msgstr "__option_name__ निवडा"
+
+#: app/Yantrana/Components/Product/Requests/ProductSpecificationAddRequest.php:59
+msgid "The name field is required."
+msgstr "नाव फील्ड आवश्यक आहे."
+
+#: app/Yantrana/Components/Product/Requests/ProductSpecificationAddRequest.php:60
+msgid "The name field has already been taken."
+msgstr "नाव आधीपासून घेतले गेले आहे."
+
+#: app/Yantrana/Components/Product/Requests/ProductSpecificationAddRequest.php:61
+msgid "The value field is required."
+msgstr "मूल्य फील्ड आवश्यक आहे."
+
+#: app/Yantrana/Components/Report/Controllers/ReportController.php:113
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:196
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:221
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:244
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:264
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:279
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:421
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:437
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:264
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:287
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:311
+msgid "Order does not exist."
+msgstr "ऑर्डर अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Report/ReportEngine.php:412
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:1137
+msgid "Generated on :currentDate"
+msgstr ":currentDate व्युत्पन्न केले "
+
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:87
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:150
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:174
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:191
+#: app/Yantrana/Components/Shipping/ShippingEngine.php:190
+msgid "Shipping rule does not exist."
+msgstr "शिपिंग नियम अस्तित्वात नाहीत."
+
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:148
+msgid "Shipping rule updated successfully."
+msgstr "शिपिंग नियम यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:172
+msgid "Shipping rule deleted successfully."
+msgstr "शिपिंग नियम यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:173
+msgid "Shipping rule not deleted."
+msgstr "शिपिंग नियम हटविले नाही."
+
+#: app/Yantrana/Components/Shipping/Controllers/ShippingController.php:207
+msgid "All Other Country Shipping rule updated successfully."
+msgstr "सर्व इतर देश शिपिंग नियम यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/Shipping/ShippingEngine.php:150
+msgid "Invalid country code."
+msgstr "अवैध देश कोड."
+
+#: app/Yantrana/Components/Shipping/ShippingEngine.php:157
+msgid "Shipping rule added successfully."
+msgstr "शिपिंग नियम यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Shipping/ShippingEngine.php:160
+msgid "Shipping rule not added"
+msgstr "शिपिंग नियम जोडले नाही"
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:219
+msgid "Order status updated successfully."
+msgstr "ऑर्डर स्थिती यशस्वीपणे अद्यतनित केले."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:220
+msgid "Your Order payment not received yet."
+msgstr "आपले ऑर्डर देय अद्याप प्राप्त झाले नाही."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:297
+msgid "Mail send to user successfully."
+msgstr "मेल यशस्वीरित्या वापरकर्त्याला पाठवा."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:298
+msgid "Please check email and orderID."
+msgstr "कृपया ई-मेल आणि orderID तपासा."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ManageOrderController.php:299
+msgid "Order does not exist"
+msgstr "ऑर्डर अस्तित्वात नाही"
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:216
+msgid "Coupon apply successfully."
+msgstr "कूपन यशस्वीरित्या लागू."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:217
+msgid "Please Enter valid coupon code."
+msgstr "वैध कूपन कोड प्रविष्ट करा."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:218
+msgid "Your Coupon not valid for this Order Amount."
+msgstr "आपल्या कूपन या ऑर्डर रक्कम वैध नाही."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:237
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:439
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:265
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:313
+#: app/Yantrana/Support/app-helpers.php:154
+msgid "Invalid request please contact administrator."
+msgstr "अवैध विनंती प्रशासकाशी संपर्क साधा."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:364
+msgid "Requested order details not exist"
+msgstr "विनंती केलेली ऑर्डर तपशील अस्तित्वात नाही"
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:420
+msgid "You are not authenticate to cancel order."
+msgstr "आपण ऑर्डर रद्द प्रमाणित नाही."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:436
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:310
+msgid "Order cancelled successfully."
+msgstr "ऑर्डर यशस्वीरित्या रद्द."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderController.php:438
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:312
+msgid "Invalid request."
+msgstr "अवैध विनंती."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/OrderPaymentsController.php:59
+msgid "Order payment does not exist"
+msgstr "ऑर्डर देय अस्तित्वात नाही"
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:52
+msgid "Product does not exist, Please reload page."
+msgstr "उत्पादन अस्तित्वात नाही, कृपया पृष्ठ रीलोड करा."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:53
+msgid "This product is currently not available, Please reload page."
+msgstr "हे उत्पादन सध्या उपलब्ध नाही, कृपया पृष्ठ रीलोड करा."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:54
+msgid "This product is out of stock, Please reload page."
+msgstr "हे उत्पादन आहे स्टॉक बाहेर, कृपया पृष्ठ रीलोड करा."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:103
+msgid "Item removed successfully."
+msgstr "आयटम यशस्वीरित्या काढले."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:104
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:121
+msgid "Item not found."
+msgstr "आयटम आढळले नाहीत."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:120
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:136
+msgid "All items removed successfully."
+msgstr "सर्व आयटम यशस्वीरित्या काढले."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:137
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:162
+msgid "Items not found."
+msgstr "आयटम आढळला नाही."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:138
+msgid "Oh..no..error!."
+msgstr "Oh..no..error !."
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:163
+msgid "The quantity may not be greater than "
+msgstr "प्रमाणात शकते जास्त असू शकत "
+
+#: app/Yantrana/Components/ShoppingCart/Controllers/ShoppingCartController.php:288
+#: app/Yantrana/Components/User/Controllers/UserController.php:163
+#: app/Yantrana/Components/User/Controllers/UserController.php:217
+msgid "Invalid Request."
+msgstr "अवैध विनंती."
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:284
+msgid "Your order __orderId__ has been __orderStatus__."
+msgstr "आपली ऑर्डर __orderId__ __orderStatus__ आहे."
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:287
+msgid "Your order __orderId__ status has been changed to  <strong> __orderStatus__. </strong>"
+msgstr "आपली ऑर्डर __orderId__ स्थिती <strong> __orderStatus__ बदलण्यात आला आहे. </ Strong>"
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:498
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:522
+msgid "Order not exist."
+msgstr "ऑर्डर अस्तित्वात नाही."
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:503
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:614
+msgid "Please enter correct password."
+msgstr "योग्य संकेतशब्द प्रविष्ट करा."
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:506
+msgid "Order deleted Successfully."
+msgstr "ऑर्डर यशस्वीरित्या हटविले."
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:529
+msgid "This is not a sandbox order."
+msgstr "हे धूळपाटी आदेश नाही."
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:533
+msgid "Sandbox order deleted Successfully."
+msgstr "धूळपाटी ऑर्डर यशस्वीरित्या हटविले."
+
+#: app/Yantrana/Components/ShoppingCart/ManageOrderEngine.php:536
+msgid "Sandbox order not deleted."
+msgstr "धूळपाटी आदेश हटविले नाही."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:321
+msgid "Order at __storeName__"
+msgstr "__storeName__ येथे ऑर्डर"
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:377
+#: resources/views/order/user/summary.blade.php:80
+#: resources/views/shoppingCart/cart-view.blade.php:111
+msgid "Your cart is empty."
+msgstr "आपले कार्ट रिक्त आहे."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:397
+#: resources/views/order/user/summary.blade.php:106
+msgid ""
+"We're sorry. The highlighted item(s) in your Shopping Cart are currently unavailable. "
+"Please remove the item(s) to proceed."
+msgstr ""
+"आम्ही दिलगीर आहोत. आपल्या हे खरेदी सूचीत मध्ये ठळक (हे) आयटम सध्या अनुपलब्ध आहे. पुढे जाण्यासाठी आयटम दूर "
+"करा."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:416
+msgid "Please select your shipping address."
+msgstr "कृपया आपल्या शिपिंग पत्ता निवडा."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:423
+msgid "Please select your billing address"
+msgstr "कृपया आपला बिलिंग पत्ता निवडा"
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:443
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:474
+msgid ""
+"Your coupon may be inactive / expire / invalid, please remove this coupon and try another "
+"code."
+msgstr "आपला कूपन निष्क्रिय असू शकते / कालबाह्य / अवैध कृपया या कूपन काढा आणि दुसरा कोड प्रयत्न करा."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:456
+msgid "The applied discount amount changed."
+msgstr "लागू सवलत रक्कम बदलला."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:485
+msgid "Shipping Rule not available, Please contact administrator."
+msgstr "नियम उपलब्ध नाही शिपिंग, प्रशासकाशी संपर्क साधा."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:492
+msgid "We are sorry currently shipping not available for your country."
+msgstr "आम्ही सध्या दिलगीर आपल्या देशात उपलब्ध नाही शिपिंग आहेत."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:509
+msgid "The applied shipping amount is changed."
+msgstr "लागू शिपिंग रक्कम बदलली आहे."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:529
+msgid "The applied tax amount is changed."
+msgstr "लागू कर रक्कम बदलली आहे."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:546
+msgid "Invalid Checkout Method"
+msgstr "अवैध चेकआऊट पद्धत"
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:556
+msgid "No currency available, Please contact store administrator."
+msgstr "नाही चलन उपलब्ध, स्टोअर प्रशासकाशी संपर्क साधा."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:563
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:582
+msgid "Some information may be updated from server, Please review your order again carefully."
+msgstr "काही माहिती सर्व्हर अद्यतनित केले जाऊ शकते, पुन्हा काळजीपूर्वक आपल्या ऑर्डर पुनरावलोकन करा."
+
+#: app/Yantrana/Components/ShoppingCart/OrderEngine.php:601
+msgid "oh..no. error.."
+msgstr "oh..no. त्रुटी .."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:323
+msgid "Order payment stored successfully."
+msgstr "ऑर्डर देय यशस्वीरित्या संग्रहीत झाले."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:326
+msgid "Order payment not stored."
+msgstr "ऑर्डर देय संचयित केलेला नाही."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:428
+msgid "Payment Refund Process for __orderUID__ order."
+msgstr "__orderUID__ ऑर्डर भरणा परतावा प्रक्रिया."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:434
+msgid "Payment refund has been process for __orderUID__ order"
+msgstr "__orderUID__ ऑर्डर  करीता भरणा परतावा प्रक्रिया करण्यात आली आहे"
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:445
+msgid "Order Refund Successfully."
+msgstr "ऑर्डर यशस्वीरित्या परतावा."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:448
+msgid "Nothing Update"
+msgstr "काहीही अद्यतन"
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:608
+msgid "Order payment not found."
+msgstr "ऑर्डर देय सापडले नाही."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:621
+msgid "Order payment deleted Successfully."
+msgstr "ऑर्डर देय यशस्वीरित्या हटविले."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:644
+msgid "Sandbox payment not found."
+msgstr "धूळपाटी पैसे सापडले नाही."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:652
+msgid "This is not a sandbox payment."
+msgstr "हे धूळपाटी पैसे नाही."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:661
+msgid "Sandbox payment deleted Successfully."
+msgstr "धूळपाटी पैसे यशस्वीरित्या हटविले."
+
+#: app/Yantrana/Components/ShoppingCart/OrderPaymentsEngine.php:665
+msgid "Sandbox payment not deleted."
+msgstr "धूळपाटी पैसे हटविले नाही."
+
+#: app/Yantrana/Components/ShoppingCart/Requests/UpdateItemInCartRequest.php:75
+msgid "The quantity may not be greater than 9999"
+msgstr "प्रमाणात शकते 9999 च्या जास्त असू शकत"
+
+#: app/Yantrana/Components/ShoppingCart/Requests/UpdateItemInCartRequest.php:76
+msgid "The quantity must be at least 1"
+msgstr "प्रमाणात असणे आवश्यक आहे किमान 1"
+
+#: app/Yantrana/Components/ShoppingCart/Requests/UpdateItemInCartRequest.php:77
+msgid "The quantity field is required."
+msgstr "प्रमाणात फील्ड आवश्यक आहे."
+
+#: app/Yantrana/Components/ShoppingCart/Requests/UpdateItemInCartRequest.php:78
+msgid "The quantity must be an integer."
+msgstr "प्रमाणात पूर्णांक असणे आवश्यक आहे."
+
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:281
+msgid "__totalItems__ __itemsInCart__ of __cartTotal__ in your Cart"
+msgstr "आपल्या खरेदी सूचीत __cartTotal__ च्या __totalItems__ __itemsInCart__"
+
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:338
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:345
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:369
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:408
+msgid "item"
+msgstr "वस्तू"
+
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:338
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:345
+#: app/Yantrana/Components/ShoppingCart/ShoppingCartEngine.php:369
+msgid "items"
+msgstr "वस्तु"
+
+#: app/Yantrana/Components/Store/Controllers/ManageStoreController.php:58
+#: app/Yantrana/Components/Store/ManageStoreEngine.php:460
+#: app/Yantrana/Components/Store/ManageStoreEngine.php:476
+msgid "Settings updated successfully."
+msgstr "सेटिंग्ज यशस्वीरित्या अद्यतनित."
+
+#: app/Yantrana/Components/Store/Controllers/ManageStoreController.php:59
+msgid "Please select the logo."
+msgstr "कृपया लोगो निवडा."
+
+#: app/Yantrana/Components/Store/Controllers/ManageStoreController.php:60
+msgid "File has an invalid extension, it should be png."
+msgstr "फाइल अवैध विस्तार आहे, तो png असणे आवश्यक आहे."
+
+#: app/Yantrana/Components/Store/Controllers/ManageStoreController.php:61
+msgid "Settings not updated."
+msgstr "सेटिंग्ज अद्यतनित नाही."
+
+#: app/Yantrana/Components/Store/ManageStoreEngine.php:461
+#: app/Yantrana/Components/Store/ManageStoreEngine.php:477
+msgid "To take a effect updated settings, please reload page."
+msgstr "एक परिणाम सुधारित सेटिंग घेणे, पृष्ठ रीलोड करा."
+
+#: app/Yantrana/Components/Store/Requests/EditStoreSettingsRequest.php:219
+msgid "Invalid currency format."
+msgstr "अवैध चलन स्वरूप."
+
+#: app/Yantrana/Components/Tax/Controllers/TaxController.php:87
+#: app/Yantrana/Components/Tax/Controllers/TaxController.php:129
+#: app/Yantrana/Components/Tax/Controllers/TaxController.php:162
+#: app/Yantrana/Components/Tax/TaxEngine.php:212
+msgid "Tax does not exist."
+msgstr "कर अस्तित्वात नाही."
+
+#: app/Yantrana/Components/Tax/Controllers/TaxController.php:160
+msgid "Tax deleted successfully."
+msgstr "कर यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/Tax/TaxEngine.php:133
+msgid "Invalid Country Selected."
+msgstr "अवैध देश निवड."
+
+#: app/Yantrana/Components/Tax/TaxEngine.php:140
+msgid "Tax added successfully."
+msgstr "कर यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/Tax/TaxEngine.php:220
+msgid "Invalid Country Code."
+msgstr "अवैध देश कोड."
+
+#: app/Yantrana/Components/Tax/TaxEngine.php:256
+msgid "Tax updated successfully."
+msgstr "कर यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/UploadManager/Controllers/UploadManagerController.php:58
+msgid "File uploaded"
+msgstr "फाइल अपलोड"
+
+#: app/Yantrana/Components/UploadManager/Controllers/UploadManagerController.php:59
+msgid "File not uploaded"
+msgstr "फाइल अपलोड केलेले नाहीत"
+
+#: app/Yantrana/Components/UploadManager/Controllers/UploadManagerController.php:60
+msgid "Invalid file"
+msgstr "अवैध फाइल"
+
+#: app/Yantrana/Components/User/AddressEngine.php:136
+#: app/Yantrana/Components/User/AddressEngine.php:348
+msgid "There are no address."
+msgstr "काही पत्ता नाही आहेत."
+
+#: app/Yantrana/Components/User/Controllers/AddressController.php:94
+msgid "Address deleted successfully."
+msgstr "पत्ता यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/User/Controllers/AddressController.php:96
+#: app/Yantrana/Components/User/Controllers/AddressController.php:150
+#: app/Yantrana/Components/User/Controllers/AddressController.php:180
+msgid "Address does not exist."
+msgstr "पत्ता अस्तित्वात नाही."
+
+#: app/Yantrana/Components/User/Controllers/AddressController.php:112
+msgid "Address stored successfully."
+msgstr "पत्ता यशस्वीरित्या संग्रहीत."
+
+#: app/Yantrana/Components/User/Controllers/AddressController.php:113
+msgid "failed to store address."
+msgstr "स्टोअर पत्ता करण्यात अयशस्वी."
+
+#: app/Yantrana/Components/User/Controllers/AddressController.php:148
+#: app/Yantrana/Components/User/Controllers/AddressController.php:178
+msgid "Address updated successfully."
+msgstr "पत्ता यशस्वीरित्या अद्यतनित."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:118
+msgid "Welcome, you are logged in successfully."
+msgstr "आपले स्वागत आहे, आपण यशस्वीरित्या लॉग इन आहेत."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:119
+msgid ""
+"Authentication failed. Please check your \n"
+"                email/password & try again."
+msgstr ""
+"प्रमाणीकरण अयशस्वी. कृपया आपला \n"
+" ईमेल/संकेतशब्द तपासा आणि पुन्हा प्रयत्न करा."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:162
+msgid "We have e-mailed your password reset link."
+msgstr "आम्ही आपल्याला आपला संकेतशब्द रीसेट दुवा ई-मेल केल्ल्यो नोंदी आहेत."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:215
+msgid "Password reset successfully."
+msgstr "यशस्वीरित्या रीसेट."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:216
+#: app/Yantrana/Components/User/Controllers/UserController.php:253
+#: app/Yantrana/Components/User/Controllers/UserController.php:589
+msgid "Password not updated."
+msgstr "पासवर्ड अपडेट नाही."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:251
+#: app/Yantrana/Components/User/Controllers/UserController.php:588
+msgid "Password updated successfully."
+msgstr "पासवर्ड यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:302
+msgid ""
+"New email activation link has been sent \n"
+"                        to your new email address, please check your email."
+msgstr ""
+"नवीन ई-मेल सक्रिय दुवा आपल्या नवीन ईमेल पत्त्यावर पाठविण्यात आले आहे \n"
+"आपले ईमेल तपासा."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:304
+#: app/Yantrana/Components/User/UserEngine.php:351
+#: app/Yantrana/Components/User/UserEngine.php:370
+msgid "Email not send."
+msgstr "ई-मेल पाठवा नाही."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:305
+#: app/Yantrana/Components/User/UserEngine.php:333
+msgid "Please check your password."
+msgstr "कृपया आपला संकेतशब्द तपासा."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:329
+msgid "Your new email activated successfully."
+msgstr "आपले नवीन ईमेल यशस्वीरित्या सक्रिय झाले."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:390
+msgid "Your account has been activated successfully. Login with your email ID and password."
+msgstr "आपले खाते यशस्वीपणे सक्रिय केले. आपला ई-मेल आयडी आणि पासवर्ड लॉग इन."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:398
+msgid "Account Activation link invalid."
+msgstr "खाते सक्रियन अवैध निर्देशित पानाशी जोडले आहेत."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:452
+msgid "Profile updated successfully."
+msgstr "प्रोफाइल यशस्वीपणे अद्यतनित केले."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:470
+msgid "User not deleted."
+msgstr "वापरकर्ता हटविला नाही."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:487
+msgid "User not restore."
+msgstr "वापरकर्ता पुनर्संचयित नाही."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:513
+msgid "Mail has been sent successfully, we contact soon"
+msgstr "मेल यशस्वीरित्या पाठवले गेले आहे, आम्ही लवकरच संपर्क"
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:514
+#: app/Yantrana/Components/User/Controllers/UserController.php:622
+msgid "Failed to send mail."
+msgstr "मेल पाठवू करण्यात अयशस्वी."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:540
+#: resources/views/user/resend-activation-email-success.blade.php:12
+msgid "Activation mail has been sent successfully, Please check your email..!!"
+msgstr "सक्रियन मेल यशस्वीरित्या पाठविली गेली आहे, कृपया आपला ईमेल तपासा .. !!"
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:541
+msgid "Request failed."
+msgstr "विनंती अयशस्वी झाली."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:542
+msgid "Your account already activated."
+msgstr "आपले खाते आधीपासूनच सक्रिय केले."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:590
+msgid "User not exist."
+msgstr "वापरकर्ता अस्तित्वात नाही."
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:605
+msgid "User not exist"
+msgstr "वापरकर्ता अस्तित्वात नाही"
+
+#: app/Yantrana/Components/User/Controllers/UserController.php:621
+msgid "Mail has been sent successfully"
+msgstr "मेल यशस्वीरित्या पाठवले गेले आहे"
+
+#: app/Yantrana/Components/User/UserEngine.php:367
+msgid ""
+"New email activation link has been sent to your new email address, please check your email."
+msgstr "नवीन ई-मेल सक्रिय दुवा आपल्या नवीन ई-मेल पत्त्यावर गेले आहे, आपल्या ईमेल तपासा."
+
+#: app/Yantrana/Components/User/UserEngine.php:376
+msgid "Your email address updated successfully."
+msgstr "आपला ई-मेल पत्ता यशस्वीरित्या अद्यतनित केले."
+
+#: app/Yantrana/Components/User/UserEngine.php:379
+msgid "Your email address not updated."
+msgstr "आपला ईमेल पत्ता अद्यतनित नाही."
+
+#: app/Yantrana/Components/User/UserEngine.php:438
+msgid "Your account has been already exist, please contact system administrator."
+msgstr "आपले खाते आधीपासूनच आहे अस्तित्वात, सिस्टम प्रशासकाशी संपर्क साधा."
+
+#: app/Yantrana/Components/User/UserEngine.php:445
+msgid "Registration process failed."
+msgstr "नोंदणी प्रक्रिया अयशस्वी."
+
+#: app/Yantrana/Components/User/UserEngine.php:464
+msgid "User register successfully."
+msgstr "वापरकर्ता यशस्वीरित्या नोंदणी."
+
+#: app/Yantrana/Components/User/UserEngine.php:468
+#: resources/views/user/register-success.blade.php:21
+msgid "Your registration process completed successfully. Please logged in for uses."
+msgstr "आपल्या नोंदणी प्रक्रिया यशस्वीरित्या पूर्ण झाले. कृपया उपयोग लॉग-इन झाला."
+
+#: app/Yantrana/Components/User/UserEngine.php:579
+msgid "__fullName__ user deleted successfully."
+msgstr "__fullName__ वापरकर्ता यशस्वीपणे हटविले."
+
+#: app/Yantrana/Components/User/UserEngine.php:608
+msgid "__name__ user restore successfully."
+msgstr "__name__ वापरकर्ता यशस्वीरित्या पुनर्संचयित."
+
+#: app/Yantrana/Components/User/UserEngine.php:712
+msgid "You entered email address not availabe in system."
+msgstr "आपण ईमेल पत्ता प्रविष्ट प्रणाली मध्ये availabe नाही."
+
+#: app/Yantrana/Components/User/UserEngine.php:810
+msgid "User does not exist."
+msgstr "वापरकर्ता अस्तित्वात नाही."
+
+#: app/Yantrana/Components/User/UserEngine.php:860
+msgid "New user added successfully."
+msgstr "नवीन वापरकर्ता यशस्वीपणे जोडले."
+
+#: app/Yantrana/Components/User/UserEngine.php:863
+msgid "User not added."
+msgstr "वापरकर्ता जोडला नाही."
+
+#: app/Yantrana/Components/__Igniter.php:94 app/Yantrana/Middleware/AdminMiddleware.php:49
+#: app/Yantrana/Middleware/AdminMiddleware.php:57
+#: app/Yantrana/Middleware/AuthenticateMiddleware.php:45
+#: app/Yantrana/Middleware/AuthenticateMiddleware.php:55
+msgid "Please login to complete request."
+msgstr "विनंती पूर्ण करण्यासाठी लॉग इन करा."
+
+#: app/Yantrana/Components/__Igniter.php:104 app/Yantrana/Middleware/AdminMiddleware.php:65
+#: app/Yantrana/Middleware/AdminMiddleware.php:73
+#: app/Yantrana/Middleware/AuthenticateMiddleware.php:65
+#: app/Yantrana/Middleware/AuthenticateMiddleware.php:73
+msgid "Unauthorized."
+msgstr "अनधिकृत."
+
+#: app/Yantrana/Core/BaseRequest.php:27
+msgid "Ooops..., looks like something went wrong!"
+msgstr "अरेरे ... काहीतरी चूक झाली दिसते!"
+
+#: app/Yantrana/Core/BaseRequest.php:54
+msgid "Saving functionality is disabled in this demo"
+msgstr "जतन करीत आहे कार्यक्षमता या डेमो मध्ये अक्षम केले आहे"
+
+#: app/Yantrana/Middleware/VerifyCsrfToken.php:42
+msgid "Invalid Request Token... please reload and try again!!"
+msgstr "टोकन अवैध विनंती ... रीलोड करा आणि पुन्हा प्रयत्न करा !!"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:102
+#: resources/views/includes/breadcrumb.blade.php:10 resources/views/manage-master.blade.php:38
+msgid "Home"
+msgstr "घर"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:121
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:181 resources/lang/en/js-string.php:53
+#: resources/views/category/list.blade.php:74 resources/views/category/list.blade.php:75
+#: resources/views/category/list.blade.php:101 resources/views/category/list.blade.php:164
+#: resources/views/product/list.blade.php:58 resources/views/product/list.blade.php:60
+#: resources/views/product/list.blade.php:94 resources/views/product/manage/list.blade.php:72
+#: resources/views/product/manage/list.blade.php:73
+#: resources/views/store/edit_settings.blade.php:82
+#: resources/views/store/edit_settings.blade.php:84
+msgid "Products"
+msgstr "उत्पादने"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:142
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:244
+#: resources/views/includes/sidebar.blade.php:72 resources/views/product/list.blade.php:24
+#: resources/views/product/list.blade.php:27
+msgid "Featured Products"
+msgstr "वैशिष्ट्यीकृत उत्पादने"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:165
+msgid "All Product"
+msgstr "सर्व उत्पादन"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:170
+msgid "Search Result"
+msgstr "शोध निकाल"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:191
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:217
+#: resources/views/dashboard/details.blade.php:37
+#: resources/views/dashboard/details.blade.php:39
+#: resources/views/includes/manage-sidebar.blade.php:46
+#: resources/views/includes/manage-sidebar.blade.php:47
+msgid "Brands"
+msgstr "ब्रांड"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:611
+#: resources/views/address/list-dialog.blade.php:9
+#: resources/views/address/list-dialog.blade.php:25 resources/views/address/list.blade.php:8
+#: resources/views/address/list.blade.php:22 resources/views/includes/top-menu.blade.php:32
+msgid "Addresses"
+msgstr "पत्ते"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:631
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:683
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:710
+#: resources/views/shoppingCart/cart-view.blade.php:5
+msgid "Shopping Cart"
+msgstr "खरेदी सूची"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:637
+#: resources/views/includes/sidebar.blade.php:45
+#: resources/views/includes/top-menu.blade.php:35 resources/views/manage-master.blade.php:69
+#: resources/views/order/user/details.blade.php:18
+#: resources/views/order/user/details.blade.php:33
+msgid "My Orders"
+msgstr "माझ्या मागण्या"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:657
+msgid "My Order"
+msgstr "माझे ऑर्डर"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:663
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:790
+#: resources/views/order/manage/details-view.blade.php:24
+#: resources/views/order/manage/details.blade.php:20
+#: resources/views/order/user/details.blade.php:52 resources/views/product/list.blade.php:252
+#: resources/views/product/list.blade.php:367
+#: resources/views/product/manage/edit-details.blade.php:5
+#: resources/views/product/manage/edit.blade.php:76
+#: resources/views/report/manage/details-dialog.blade.php:34
+msgid "Details"
+msgstr "तपशील"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:689
+msgid "Order Summary"
+msgstr "मागणी सारांश"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:733
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:739
+#: resources/views/includes/sidebar.blade.php:33
+#: resources/views/includes/top-menu.blade.php:23 resources/views/manage-master.blade.php:50
+#: resources/views/manage-master.blade.php:51 resources/views/user/manage-profile.blade.php:5
+#: resources/views/user/profile.blade.php:4
+msgid "Profile"
+msgstr "प्रोफाइल"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:737
+#: resources/views/address/list-dialog.blade.php:76 resources/views/address/list.blade.php:48
+#: resources/views/brand/manage/list.blade.php:73
+#: resources/views/brand/manage/list.blade.php:74 resources/views/category/list.blade.php:46
+#: resources/views/category/list.blade.php:154
+#: resources/views/coupon/manage/list.blade.php:140
+#: resources/views/coupon/manage/list.blade.php:141
+#: resources/views/pages/display-details.blade.php:12
+#: resources/views/pages/manage/list.blade.php:6
+#: resources/views/pages/manage/list.blade.php:117 resources/views/product/details.blade.php:9
+#: resources/views/product/details.blade.php:12 resources/views/product/details.blade.php:46
+#: resources/views/product/manage/Images/list.blade.php:40
+#: resources/views/product/manage/Images/list.blade.php:41
+#: resources/views/product/manage/list.blade.php:44
+#: resources/views/product/manage/list.blade.php:145
+#: resources/views/product/manage/list.blade.php:146
+#: resources/views/product/manage/options/list.blade.php:41
+#: resources/views/product/manage/options/list.blade.php:48
+#: resources/views/product/manage/options/list.blade.php:49
+#: resources/views/product/manage/specification/list.blade.php:35
+#: resources/views/product/manage/specification/list.blade.php:36
+#: resources/views/shipping/manage/list.blade.php:183
+#: resources/views/shipping/manage/list.blade.php:184
+#: resources/views/tax/manage/list.blade.php:88 resources/views/tax/manage/list.blade.php:89
+#: resources/views/user/manage-profile.blade.php:26 resources/views/user/profile.blade.php:24
+msgid "Edit"
+msgstr "संपादित करा"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:746
+#: resources/views/includes/sidebar.blade.php:36
+#: resources/views/includes/top-menu.blade.php:26 resources/views/manage-master.blade.php:55
+#: resources/views/manage-master.blade.php:56 resources/views/user/change-password.blade.php:5
+#: resources/views/user/manage/list.blade.php:109
+msgid "Change Password"
+msgstr "पासवर्ड बदला"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:750
+#: resources/views/includes/sidebar.blade.php:39
+#: resources/views/includes/top-menu.blade.php:29 resources/views/manage-master.blade.php:60
+#: resources/views/manage-master.blade.php:61 resources/views/user/change-email.blade.php:7
+msgid "Change Email"
+msgstr "ई - मेल बदला"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:754 resources/lang/en/js-string.php:44
+#: resources/views/user/login.blade.php:12 resources/views/user/login.blade.php:90
+msgid "Login"
+msgstr "लॉग-इन"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:758 resources/lang/en/js-string.php:47
+#: resources/views/user/register.blade.php:5 resources/views/user/register.blade.php:122
+#: resources/views/user/register.blade.php:128
+msgid "Register"
+msgstr "नोंदणी"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:762
+#: resources/views/user/forgot-password.blade.php:5
+msgid "Forgot Password"
+msgstr "पासवर्ड विसरला"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:766
+#: resources/views/order/manage/contact-user.blade.php:5
+#: resources/views/order/user/contact-store.blade.php:5
+#: resources/views/store/edit_settings.blade.php:128
+#: resources/views/store/edit_settings.blade.php:130 resources/views/user/contact.blade.php:5
+#: resources/views/user/manage/contact.blade.php:5
+#: resources/views/user/manage/list.blade.php:116
+msgid "Contact"
+msgstr "संपर्क"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:770
+#: resources/views/includes/foot-content.blade.php:26
+#: resources/views/includes/foot-content.blade.php:27
+#: resources/views/privacy-policy.blade.php:6 resources/views/privacy-policy.blade.php:8
+#: resources/views/store/edit_settings.blade.php:174
+#: resources/views/store/edit_settings.blade.php:176
+msgid "Privacy Policy"
+msgstr "गोपनीयता धोरण"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:774
+msgid "Terms & Condition"
+msgstr "अटी आणि अट"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:778
+#: resources/views/user/resend-activation-email.blade.php:6
+msgid "Resend Activation Email"
+msgstr "सक्रियन ईमेल पुन्हा पाठवा"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:782
+#: resources/views/user/reset-password.blade.php:5
+#: resources/views/user/reset-password.blade.php:50
+msgid "Reset Password"
+msgstr "पासवर्ड रीसेट करा"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:786
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:792
+#: resources/views/dashboard/details.blade.php:52
+#: resources/views/dashboard/details.blade.php:55
+#: resources/views/includes/manage-sidebar.blade.php:65
+#: resources/views/includes/manage-sidebar.blade.php:66
+#: resources/views/order/user/list.blade.php:5
+#: resources/views/report/manage/list.blade.php:142
+msgid "Orders"
+msgstr "ऑर्डेर"
+
+#: app/Yantrana/Support/Breadcrumb/Breadcrumb.php:799
+msgid "Shopping-Cart"
+msgstr "खरेदी सूची"
+
+#: app/Yantrana/Support/ShoppingCart/ShoppingCart.php:437
+#: app/Yantrana/Support/ShoppingCart/ShoppingCart.php:438
+msgid "Nil"
+msgstr "शून्य"
+
+#: app/Yantrana/Support/app-helpers.php:875 resources/lang/en/js-string.php:20
+#: resources/views/product/manage/list.blade.php:198
+msgid "Yes"
+msgstr "होय"
+
+#: app/Yantrana/Support/app-helpers.php:876 resources/lang/en/js-string.php:56
+#: resources/views/product/manage/list.blade.php:200
+msgid "No"
+msgstr "नाही"
+
+#: app/Yantrana/Support/app-helpers.php:1569
+#: resources/views/product/add-to-cart-form.blade.php:132
+#: resources/views/product/details-dialog.blade.php:177
+#: resources/views/product/details.blade.php:53 resources/views/product/details.blade.php:258
+#: resources/views/product/manage/detail-dialog.blade.php:98
+#: resources/views/product/manage/list.blade.php:189
+msgid "Out of Stock"
+msgstr "स्टॉक संपला"
+
+#: app/Yantrana/Support/app-helpers.php:1571
+msgid "Product currently not available"
+msgstr "उत्पादन उपलब्ध नाही सध्या"
+
+#: app/Yantrana/Support/app-helpers.php:1577
+msgid "Highlighted item in the cart seems currently not available/changed, please remove it."
+msgstr "खरेदी सूची प्रकाशित बाबीची सध्या बदलले उपलब्ध नाही / दिसते, ती काढून टाका."
+
+#: app/Yantrana/Support/app-helpers.php:1615
+msgid "Cart is empty"
+msgstr "कार्ट रिक्त आहे"
+
+#: app/Yantrana/Support/php-gettext-1.0.12/examples/pigs_dropin.php:77
+msgid ""
+"This is how the story goes.\n"
+"\n"
+msgstr ""
+"ही कथा कसे जाते. \n"
+"\n"
+
+#: app/Yantrana/__Laraware/Core/CoreRequest.php:136
+msgid "Invalid Request Inputs ... !!"
+msgstr "अवैध विनंती साधने ... !!"
+
+#: resources/lang/en/js-string.php:15
+msgid "Are you sure?"
+msgstr "तुला खात्री आहे?"
+
+#: resources/lang/en/js-string.php:16
+msgid "Deleted!"
+msgstr "हटविले!"
+
+#: resources/lang/en/js-string.php:17 resources/views/address/add.blade.php:100
+#: resources/views/address/edit.blade.php:100
+#: resources/views/brand/manage/add-dialog.blade.php:71
+#: resources/views/brand/manage/delete-dialog.blade.php:47
+#: resources/views/brand/manage/edit-dialog.blade.php:76
+#: resources/views/category/add-dialog.blade.php:63
+#: resources/views/category/delete-dialog.blade.php:35
+#: resources/views/category/edit-dialog.blade.php:63
+#: resources/views/coupon/manage/add-dialog.blade.php:189
+#: resources/views/coupon/manage/edit-dialog.blade.php:185
+#: resources/views/order/manage/order-delete-dialog.blade.php:37
+#: resources/views/order/manage/payment-delete-dialog.blade.php:37
+#: resources/views/order/manage/refund-dialog.blade.php:101
+#: resources/views/order/manage/update-payment-dialog.blade.php:106
+#: resources/views/order/manage/update.blade.php:63
+#: resources/views/pages/manage/add.blade.php:121
+#: resources/views/pages/manage/edit.blade.php:127
+#: resources/views/product/manage/Images/add-dialog.blade.php:44
+#: resources/views/product/manage/Images/edit-dialog.blade.php:26
+#: resources/views/product/manage/add.blade.php:242
+#: resources/views/product/manage/edit-details.blade.php:191
+#: resources/views/product/manage/options/add-dialog.blade.php:65
+#: resources/views/product/manage/options/edit-dialog.blade.php:27
+#: resources/views/product/manage/options/values/list-dialog.blade.php:61
+#: resources/views/product/manage/specification/add-dialog.blade.php:58
+#: resources/views/product/manage/specification/edit-dialog.blade.php:53
+#: resources/views/shipping/manage/add-dialog.blade.php:94
+#: resources/views/shipping/manage/edit-dialog.blade.php:98
+#: resources/views/tax/manage/add-dialog.blade.php:76
+#: resources/views/tax/manage/edit-dialog.blade.php:77
+#: resources/views/user/manage/add.blade.php:81
+#: resources/views/user/manage/change-password.blade.php:47
+msgid "Cancel"
+msgstr "रद्द करा"
+
+#: resources/lang/en/js-string.php:18 resources/views/store/currency.blade.php:93
+msgid "Yes, delete it"
+msgstr "होय, ते हटवा"
+
+#: resources/lang/en/js-string.php:19
+msgid "Reload"
+msgstr "रीलोड करा"
+
+#: resources/lang/en/js-string.php:21
+msgid "Yes, restore it"
+msgstr "होय, ते पुनर्संचयित"
+
+#: resources/lang/en/js-string.php:22
+msgid "you want to delete __name__ user."
+msgstr "आपण __name__ वापरकर्ता हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:23
+msgid "you want to restore __name__ user."
+msgstr "आपण __name__ वापरकर्ता पुनर्संचयित करू इच्छिता."
+
+#: resources/lang/en/js-string.php:24
+msgid "you want to delete __name__ product."
+msgstr "आपण __name__ उत्पादन हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:25
+msgid "you want to delete __title__ product image."
+msgstr "आपण __title__ उत्पादन प्रतिमा हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:26
+msgid "you want to delete __name__ product option."
+msgstr "आपण उत्पादन पर्याय __name__ हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:27
+msgid "you want to delete __name__ product specification."
+msgstr "आपण उत्पादन तपशील __name__ हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:28
+msgid "you want to delete option value."
+msgstr "आपण पर्याय मूल्य हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:29
+msgid "It will be values for __option_name__ option dropdown."
+msgstr "हे __option_name__ पर्याय ड्रॉप डाउन मूल्य असेल."
+
+#: resources/lang/en/js-string.php:30
+msgid "Add Product for __name__ category"
+msgstr "__name__ वर्गात उत्पादन जोडा"
+
+#: resources/lang/en/js-string.php:31
+msgid "Edit Product : __name__"
+msgstr "__name__ उत्पादन संपादित करा: "
+
+#: resources/lang/en/js-string.php:34
+msgid ""
+"you want to delete <strong> __name__ </strong> category, all the products belongs to this "
+"category will be deleted"
+msgstr ""
+"आपण हटवू इच्छित <strong> __name__ </strong> वर्गात सर्व उत्पादने या वर्गात मालकीचे हटवली जातील"
+
+#: resources/lang/en/js-string.php:35
+msgid "by entering confirmation number"
+msgstr "प्रविष्ट पुष्टी क्रमांक करून"
+
+#: resources/lang/en/js-string.php:36
+msgid "Please confirm"
+msgstr "कृपया याची पुष्टी करा"
+
+#: resources/lang/en/js-string.php:37
+msgid "Please confirm your decision by entering correct number."
+msgstr "योग्य संख्या प्रविष्ट करुन आपला निर्णय निश्चित करा."
+
+#: resources/lang/en/js-string.php:38
+msgid "You have entered wrong confirmation number."
+msgstr "आपण चुकीच्या पुष्टी क्रमांक केला आहे."
+
+#: resources/lang/en/js-string.php:39
+msgid "Add Category in __name__"
+msgstr "__name__ मध्ये वर्ग जोडा"
+
+#: resources/lang/en/js-string.php:41
+msgid "you want to delete __name__ page."
+msgstr "आपण __name__ पृष्ठ हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:43
+msgid "Change password"
+msgstr "पासवर्ड बदला"
+
+#: resources/lang/en/js-string.php:45
+msgid "Forgot password"
+msgstr "पासवर्ड विसरलात"
+
+#: resources/lang/en/js-string.php:46
+msgid "Edit profile"
+msgstr "प्रोफाईल संपादित करा"
+
+#: resources/lang/en/js-string.php:48
+msgid "Change email"
+msgstr "ई - मेल बदला"
+
+#: resources/lang/en/js-string.php:49
+msgid "User account activation"
+msgstr "वापरकर्ता खाते सक्रिय"
+
+#: resources/lang/en/js-string.php:50
+msgid "User new email activation"
+msgstr "नवीन सदस्य ईमेल सक्रिय"
+
+#: resources/lang/en/js-string.php:51
+msgid "Reset password"
+msgstr "पासवर्ड रीसेट करा"
+
+#: resources/lang/en/js-string.php:52
+msgid "Featured products"
+msgstr "वैशिष्ट्यीकृत उत्पादने"
+
+#: resources/lang/en/js-string.php:54
+msgid "you want to cancel this order"
+msgstr "आपण या ऑर्डर रद्द करू इच्छिता"
+
+#: resources/lang/en/js-string.php:55
+msgid "Yes, cancel it"
+msgstr "होय, ते रद्द"
+
+#: resources/lang/en/js-string.php:57
+msgid "Success"
+msgstr "यश"
+
+#: resources/lang/en/js-string.php:58
+msgid "Your order has been placed successfully."
+msgstr "आपल्या ऑर्डर यशस्वीरित्या दिली गेली आहे."
+
+#: resources/lang/en/js-string.php:59
+msgid "Your order __orderID__"
+msgstr "आपली ऑर्डर __orderID__"
+
+#: resources/lang/en/js-string.php:60
+msgid "Continues Shopping"
+msgstr "खरेदी सुरू ठेवा"
+
+#: resources/lang/en/js-string.php:61
+msgid "you want to delete <strong> __name__ </strong> brand."
+msgstr "आपण <strong> __name__ </strong> ब्रँड हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:62
+msgid "you want to delete __name__ coupon."
+msgstr "आपण __name__ कूपन हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:63
+msgid "you want to delete this shipping rule."
+msgstr "आपण या शिपिंग नियम हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:64
+msgid "you want to delete this tax."
+msgstr "आपण या कर हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:65
+msgid "you want to delete this address."
+msgstr "आपण या पत्त्यावर हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:66
+msgid "Uploading.."
+msgstr "अपलोड .."
+
+#: resources/lang/en/js-string.php:67
+msgid "file uploaded"
+msgstr "फाईल अपलोड"
+
+#: resources/lang/en/js-string.php:68
+msgid "Change Password of __name__"
+msgstr "__name__ पासवर्ड बदला"
+
+#: resources/lang/en/js-string.php:69
+msgid "Update Order of __name__ ( __orderUID__ ) "
+msgstr "__name__  यांचा ऑर्डर अद्यावत (__orderUID__) "
+
+#: resources/lang/en/js-string.php:70
+msgid "Re-initiate Order of __name__ ( __orderUID__ ) "
+msgstr "__name__ ऑर्डर पुन्हा आरंभ (__orderUID__) "
+
+#: resources/lang/en/js-string.php:71 resources/views/product/list.blade.php:402
+msgid "Addon option may affect price."
+msgstr "Addon पर्याय किंमत प्रभाव पडू शकतो."
+
+#: resources/lang/en/js-string.php:72
+msgid "Order Payment Update successfully."
+msgstr "यशस्वीरित्या भरणा अद्यतन मागणी केली."
+
+#: resources/lang/en/js-string.php:73
+msgid "Do you want to change order status also."
+msgstr "आपण देखील ऑर्डेर स्थिती बदलू इच्छित नका."
+
+#: resources/lang/en/js-string.php:74
+msgid "Order Status Changed to cancel."
+msgstr "मागणी स्थिती रद्द करण्यासाठी बदलले."
+
+#: resources/lang/en/js-string.php:75
+msgid "Do you want to process to change payment refund also."
+msgstr "आपण देखील पैसे परतावा बदलण्यासाठी प्रक्रिया करू इच्छित नाही."
+
+#: resources/lang/en/js-string.php:76
+msgid "Manage Orders of __name__"
+msgstr "__name__ यांचे ऑर्डेर व्यवस्थापित करा"
+
+#: resources/lang/en/js-string.php:77
+msgid "All"
+msgstr "सर्व"
+
+#: resources/lang/en/js-string.php:78
+msgid "Minimum __amount__ order amount is required for the requested coupon."
+msgstr "किमान __amount__ ऑर्डेर रक्कम विनंती कूपन आवश्यक आहे."
+
+#: resources/lang/en/js-string.php:79
+msgid "Only PNG images are expected."
+msgstr "फक्त पीएनजी प्रतिमा अशी अपेक्षा आहे."
+
+#: resources/lang/en/js-string.php:80
+msgid ""
+"You want to delete this sandbox order, all the payment transaction related to this order "
+"will deleted as well."
+msgstr "आपण या मागणीतील तसेच हटविली संबंधित सर्व पैसे व्यवहार धूळपाटी हटविण्याऐवजी करू इच्छित."
+
+#: resources/lang/en/js-string.php:81
+msgid "You want to delete this all sandbox orders."
+msgstr "आपण या सर्व धूळपाटी आदेश हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:82
+msgid ""
+"You want to delete this sandbox payment, all the order related to this payment will deleted "
+"as well."
+msgstr "आपण या धूळपाटी पैसे हटवू इच्छिता, हे देयक संबंधित सर्व ऑर्डर तसेच हटविले जाईल."
+
+#: resources/lang/en/js-string.php:83
+msgid "You want to delete this all sandbox payments."
+msgstr "आपण या सर्व धूळपाटी देयके हटवू इच्छिता."
+
+#: resources/lang/en/js-string.php:84 resources/views/store/order.blade.php:276
+msgid "Other"
+msgstr "इतर"
+
+#: resources/lang/en/validation.php:16
+msgid "The __attribute__ must be accepted."
+msgstr "__attribute__ मान्य केले पाहिजे."
+
+#: resources/lang/en/validation.php:19
+msgid "The __attribute__ is not a valid URL."
+msgstr "__attribute__ एक वैध URL नाही आहे."
+
+#: resources/lang/en/validation.php:22
+msgid "The __attribute__ must be a date after __date__."
+msgstr "__attribute__ __date__ नंतरची तारीख असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:26
+msgid "The __attribute__ may only contain letters."
+msgstr "__attribute__ केवळ अक्षरे असू शकते."
+
+#: resources/lang/en/validation.php:29
+msgid "The __attribute__ may only contain letters, numbers, and dashes."
+msgstr "__attribute__ केवळ अक्षरे, संख्या, आणि डॅश असू शकते."
+
+#: resources/lang/en/validation.php:32
+msgid "The __attribute__ may only contain letters and numbers."
+msgstr "__attribute__ केवळ अक्षरे आणि संख्या असू शकतात."
+
+#: resources/lang/en/validation.php:35
+msgid "The __attribute__ must be an array."
+msgstr "__attribute__ अॅरे असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:38
+msgid "The __attribute__ must be a date before __date__."
+msgstr "__attribute__ __date__ आधी तारीख असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:43
+msgid "The __attribute__ must be between __min__ and __max__."
+msgstr "__attribute__ __min__ आणि __max__ दरम्यान असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:48
+msgid "The __attribute__ must be between __min__ and __max__ kilobytes."
+msgstr "__attribute__ __min__ आणि __max__ kilobytes दरम्यान असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:53
+msgid "The __attribute__ must be between __min__ and __max__ characters."
+msgstr "__attribute__ __min__ आणि __max__ वर्ण दरम्यान असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:58
+msgid "The __attribute__ must have between __min__ and __max__ items."
+msgstr "__attribute__ __min__ आणि __max__ आयटम दरम्यान असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:64
+msgid "The __attribute__ field must be true or false."
+msgstr "__attribute__ सत्य किंवा असत्य असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:67
+msgid "The __attribute__ confirmation does not match."
+msgstr "__attribute__ पुष्टी जुळत नाही."
+
+#: resources/lang/en/validation.php:70
+msgid "The __attribute__ is not a valid date."
+msgstr "__attribute__ तारीख वैध नाही आहे."
+
+#: resources/lang/en/validation.php:73
+msgid "The __attribute__ does not match the format __format__."
+msgstr "__attribute__ स्वरूप __format__ जुळत नाही."
+
+#: resources/lang/en/validation.php:77
+msgid "The __attribute__ and __other__ must be different."
+msgstr "__attribute__ आणि __other__ विविध असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:81
+msgid "The __attribute__ must be __digits__ digits."
+msgstr "__attribute__ __digits__ अंक असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:85
+msgid "The __attribute__ must be between __min__ and __max__ digits."
+msgstr "__attribute__ __min__ आणि __max__ अंक दरम्यान असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:90
+msgid "The __attribute__ field has a duplicate value."
+msgstr "__attribute__ डुप्लिकेट मूल्य आहे."
+
+#: resources/lang/en/validation.php:93
+msgid "The __attribute__ must be a valid email address."
+msgstr "__attribute__ एक वैध ईमेल पत्ता असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:96 resources/lang/en/validation.php:105
+#: resources/lang/en/validation.php:162
+msgid "The selected __attribute__ is invalid."
+msgstr "निवडलेले __attribute__ अवैध आहे."
+
+#: resources/lang/en/validation.php:99 resources/lang/en/validation.php:174
+msgid "The __attribute__ field is required."
+msgstr "__attribute__ फील्ड आवश्यक आहे."
+
+#: resources/lang/en/validation.php:102
+msgid "The __attribute__ must be an image."
+msgstr "__attribute__ एक प्रतिमा असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:108
+msgid "The __attribute__ field does not exist in __other__."
+msgstr "__attribute__ __other__ मध्ये अस्तित्वात नाही."
+
+#: resources/lang/en/validation.php:112
+msgid "The __attribute__ must be an integer."
+msgstr "__attribute__ एक पूर्णांक असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:115
+msgid "The __attribute__ must be a valid IP address."
+msgstr "__attribute__ एक वैध IP पत्ता असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:118
+msgid "The __attribute__ must be a valid JSON string."
+msgstr "__attribute__ एक वैध JSON स्ट्रिंग असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:126
+msgid "The __attribute__ may not be greater than __max__ kilobytes."
+msgstr "__attribute__ __max__ kilobytes पेक्षा जास्त असू शकत नाही."
+
+#: resources/lang/en/validation.php:130
+msgid "The __attribute__ may not be greater than __max__ characters."
+msgstr "__attribute__ __max__ वर्ण पेक्षा जास्त असू शकत नाही."
+
+#: resources/lang/en/validation.php:135
+msgid "The __attribute__ may not have more than __max__ items."
+msgstr "__attribute__ __max__ आयटम पेक्षा जास्त असू शकत नाहीत."
+
+#: resources/lang/en/validation.php:140
+msgid "The __attribute__ must be a file of type: __values__."
+msgstr "__values__: __attribute__ प्रकारच्या फाइल असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:145
+msgid "The __attribute__ must be at least __min__."
+msgstr "__attribute__ किमान __min__ असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:149
+msgid "The __attribute__ must be at least __min__ kilobytes."
+msgstr "__attribute__ किमान __min__ kilobytes असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:153
+msgid "The __attribute__ must be at least __min__ characters."
+msgstr "__attribute__ किमान __min__ वर्ण असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:157
+msgid "The __attribute__ must have at least __min__ items."
+msgstr "__attribute__ किमान __min__ आयटम असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:165
+msgid "The __attribute__ must be a number."
+msgstr "__attribute__ संख्या असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:168
+msgid "The __attribute__ field must be present."
+msgstr "__attribute__ असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:171 resources/lang/en/validation.php:233
+#: resources/lang/en/validation.php:265
+msgid "The __attribute__ format is invalid."
+msgstr "__attribute__ स्वरूप अवैध आहे."
+
+#: resources/lang/en/validation.php:177
+msgid "The __attribute__ field is required when :other is __value__."
+msgstr "इतर __value__ आहे: __attribute__ तेव्हा आवश्यक आहे."
+
+#: resources/lang/en/validation.php:181
+msgid "The __attribute__ field is required unless __other__ is in __values__."
+msgstr "__other__ __values__ नसेल तर __attribute__ फील्ड आवश्यक आहे."
+
+#: resources/lang/en/validation.php:186 resources/lang/en/validation.php:190
+msgid "The __attribute__ field is required when __values__ is present."
+msgstr "__values__ असताना __attribute__ फील्ड आवश्यक आहे."
+
+#: resources/lang/en/validation.php:194
+msgid "The __attribute__ field is required when __values__ is not present."
+msgstr "__values__ नसल्यावर __attribute__ फील्ड आवश्यक आहे."
+
+#: resources/lang/en/validation.php:198
+msgid "The __attribute__ field is required when none of __values__ are present."
+msgstr "__values__ नाही उपस्थित __attribute__ फील्ड आवश्यक आहे."
+
+#: resources/lang/en/validation.php:202
+msgid "The __attribute__ and __other__ must match."
+msgstr "__attribute__ आणि __other__ जुळणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:207
+msgid "The __attribute__ must be __size__."
+msgstr "__attribute__ __size__ करणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:211
+msgid "The __attribute__ must be __size__ kilobytes."
+msgstr "__attribute__ __size__ kilobytes असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:215
+msgid "The __attribute__ must be __size__ characters."
+msgstr "__attribute__ __size__ वर्ण असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:219
+msgid "The __attribute__ must contain __size__ items."
+msgstr "__attribute__ __size__ आयटम असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:224
+msgid "The __attribute__ must be a string."
+msgstr "__attribute__ स्ट्रिंग असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:227
+msgid "The __attribute__ must be a valid zone."
+msgstr "__attribute__ एक वैध झोन असणे आवश्यक आहे."
+
+#: resources/lang/en/validation.php:230 resources/lang/en/validation.php:252
+#: resources/lang/en/validation.php:255 resources/lang/en/validation.php:260
+msgid "The __attribute__ has already been taken."
+msgstr "__attribute__ आधीपासून घेतले गेले आहे."
+
+#: resources/lang/en/validation.php:249
+msgid "The confirmation code is invalid."
+msgstr "पुष्टीकरण कोड अवैध आहे."
+
+#: resources/lang/en/validation.php:273
+msgid "Ooops... No changes made!!"
+msgstr "अरेरे ... कोणतेही बदल केले !!"
+
+#: resources/lang/en/validation.php:274
+msgid "Ooops... Nothing to process!!"
+msgstr "अरेरे ... प्रक्रिया काहीही !!"
+
+#: resources/lang/en/validation.php:275
+msgid "It seems you didn't modified anything!!"
+msgstr "हे आपण काहीही बदल नाही दिसते !!"
+
+#: resources/lang/en/validation.php:278
+msgid "Please wait files uploading in progress ..."
+msgstr "प्रगतीपथावर अपलोड फाइल कृपया प्रतीक्षा करा ..."
+
+#: resources/lang/en/validation.php:279
+msgid "Please wait a while its in progress ..."
+msgstr "त्याच्या प्रगती करताना कृपया प्रतीक्षा करा ..."
+
+#: resources/lang/en/validation.php:281
+msgid "Files uploaded successfully"
+msgstr "फाइल यशस्वीरित्या अपलोड"
+
+#: resources/lang/en/validation.php:283
+msgid "Oh..no...Something left invalid!!"
+msgstr "Oh..no ... काहीतरी अवैध बाकी !!"
+
+#: resources/lang/en/validation.php:284
+msgid "Ooops... Validation Errrrors...!!"
+msgstr "अरेरे ... प्रमाणीकरण Errrrors ... !!"
+
+#: resources/lang/en/validation.php:285
+msgid "Oh... it looks invalid...!!"
+msgstr "ओह ... अवैध दिसते ... !!"
+
+#: resources/lang/en/validation.php:286
+msgid "Something went wrong with validation!!"
+msgstr "काहीतरी वैधता चूक !!"
+
+#: resources/lang/en/validation.php:288
+msgid "Request processed successfully"
+msgstr "विनंतीवर यशस्वीरित्या प्रक्रिया"
+
+#: resources/lang/en/validation.php:289
+msgid "Invalid request access"
+msgstr "अवैध विनंती प्रवेश"
+
+#: resources/lang/en/validation.php:290
+msgid "Oooops ... something went wrong on server. Try after some time!!"
+msgstr "Oooops ... काहीतरी सर्व्हर चूक झाली. काही वेळानंतर प्रयत्न !!"
+
+#: resources/lang/en/validation.php:292
+msgid "Invalid request token. Please reload page and try again!!"
+msgstr "अवैध विनंती टोकन. पृष्ठ रीलोड करा आणि पुन्हा प्रयत्न करा !!"
+
+#: resources/lang/en/validation.php:293
+msgid "Request token Expired. Please reload page and try again!!"
+msgstr "टोकन कालबाह्य झालेली विनंती करा. पृष्ठ रीलोड करा आणि पुन्हा प्रयत्न करा !!"
+
+#: resources/views/address/add.blade.php:5 resources/views/address/list-dialog.blade.php:15
+#: resources/views/address/list.blade.php:14
+msgid "Add New Address"
+msgstr "नवीन पत्ता जोडा"
+
+#: resources/views/address/add.blade.php:15 resources/views/address/edit.blade.php:17
+#: resources/views/order/manage/details-view.blade.php:74
+#: resources/views/order/manage/details.blade.php:70
+#: resources/views/order/user/details.blade.php:102
+#: resources/views/pages/manage/add.blade.php:27
+#: resources/views/pages/manage/edit.blade.php:38
+#: resources/views/pages/manage/list.blade.php:22
+#: resources/views/report/manage/details-dialog.blade.php:84
+#: resources/views/shipping/manage/list.blade.php:40
+#: resources/views/tax/manage/add-dialog.blade.php:32
+#: resources/views/tax/manage/edit-dialog.blade.php:33
+#: resources/views/tax/manage/list.blade.php:27
+msgid "Type"
+msgstr "प्रकार"
+
+#: resources/views/address/add.blade.php:25 resources/views/address/edit.blade.php:26
+msgid "Address 1"
+msgstr "पत्ता 1"
+
+#: resources/views/address/add.blade.php:35 resources/views/address/edit.blade.php:36
+msgid "Address 2"
+msgstr "पत्ता 2"
+
+#: resources/views/address/add.blade.php:45 resources/views/address/edit.blade.php:46
+msgid "City"
+msgstr "सिटी"
+
+#: resources/views/address/add.blade.php:55 resources/views/address/edit.blade.php:56
+msgid "State"
+msgstr "राज्य"
+
+#: resources/views/address/add.blade.php:65 resources/views/address/edit.blade.php:66
+#: resources/views/shipping/manage/add-dialog.blade.php:15
+#: resources/views/shipping/manage/detail-dialog.blade.php:17
+#: resources/views/shipping/manage/edit-dialog.blade.php:15
+#: resources/views/shipping/manage/list.blade.php:39
+#: resources/views/tax/manage/add-dialog.blade.php:15
+#: resources/views/tax/manage/detail-dialog.blade.php:16
+#: resources/views/tax/manage/edit-dialog.blade.php:15
+#: resources/views/tax/manage/list.blade.php:26
+msgid "Country"
+msgstr "देश"
+
+#: resources/views/address/add.blade.php:66 resources/views/address/edit.blade.php:67
+#: resources/views/shipping/manage/add-dialog.blade.php:16
+#: resources/views/tax/manage/add-dialog.blade.php:16
+#: resources/views/tax/manage/edit-dialog.blade.php:16
+msgid "Select Country"
+msgstr "देश निवडा"
+
+#: resources/views/address/add.blade.php:71 resources/views/address/edit.blade.php:72
+#: resources/views/address/list.blade.php:43
+#: resources/views/order/manage/details-view.blade.php:243
+#: resources/views/order/manage/details-view.blade.php:267
+#: resources/views/order/manage/details-view.blade.php:292
+#: resources/views/order/manage/details.blade.php:264
+#: resources/views/order/manage/details.blade.php:288
+#: resources/views/order/manage/details.blade.php:313
+#: resources/views/order/user/details.blade.php:306
+#: resources/views/order/user/details.blade.php:330
+#: resources/views/order/user/details.blade.php:355
+#: resources/views/report/manage/details-dialog.blade.php:262
+#: resources/views/report/manage/details-dialog.blade.php:286
+#: resources/views/report/manage/details-dialog.blade.php:311
+msgid "Pin Code"
+msgstr "पिन कोड"
+
+#: resources/views/address/add.blade.php:82 resources/views/address/edit.blade.php:82
+#: resources/views/address/list-dialog.blade.php:69
+msgid "Make Primary"
+msgstr "प्राथमिक बनवा"
+
+#: resources/views/address/add.blade.php:96 resources/views/category/add-dialog.blade.php:62
+#: resources/views/order/manage/contact-user.blade.php:70
+#: resources/views/order/user/contact-store.blade.php:72
+#: resources/views/user/contact.blade.php:60 resources/views/user/manage/contact.blade.php:59
+msgid "Submit"
+msgstr "सादर"
+
+#: resources/views/address/edit.blade.php:5
+msgid "Edit Address"
+msgstr "पत्ता संपादित करा"
+
+#: resources/views/address/edit.blade.php:96
+#: resources/views/brand/manage/edit-dialog.blade.php:74
+#: resources/views/brand/manage/edit-dialog.blade.php:75
+#: resources/views/category/edit-dialog.blade.php:62
+#: resources/views/coupon/manage/edit-dialog.blade.php:184
+#: resources/views/order/manage/list.blade.php:149
+#: resources/views/order/manage/refund-dialog.blade.php:97
+#: resources/views/order/manage/update-payment-dialog.blade.php:101
+#: resources/views/order/manage/update-payment-dialog.blade.php:102
+#: resources/views/order/manage/update.blade.php:61
+#: resources/views/pages/manage/edit.blade.php:126
+#: resources/views/product/manage/Images/edit-dialog.blade.php:25
+#: resources/views/product/manage/edit-details.blade.php:189
+#: resources/views/product/manage/options/edit-dialog.blade.php:26
+#: resources/views/product/manage/options/values/list-dialog.blade.php:60
+#: resources/views/product/manage/specification/edit-dialog.blade.php:52
+#: resources/views/shipping/manage/edit-dialog.blade.php:97
+#: resources/views/shipping/manage/list.blade.php:135
+#: resources/views/store/contact.blade.php:34 resources/views/store/contact.blade.php:35
+#: resources/views/store/css-style.blade.php:19 resources/views/store/css-style.blade.php:20
+#: resources/views/store/currency.blade.php:123 resources/views/store/currency.blade.php:124
+#: resources/views/store/general.blade.php:92 resources/views/store/general.blade.php:93
+#: resources/views/store/order.blade.php:139 resources/views/store/order.blade.php:176
+#: resources/views/store/order.blade.php:298 resources/views/store/order.blade.php:299
+#: resources/views/store/placement.blade.php:111 resources/views/store/placement.blade.php:112
+#: resources/views/store/privacy-policy.blade.php:22
+#: resources/views/store/privacy-policy.blade.php:23
+#: resources/views/store/product.blade.php:82 resources/views/store/product.blade.php:83
+#: resources/views/store/social.blade.php:37 resources/views/store/social.blade.php:38
+#: resources/views/store/term-condition.blade.php:67
+#: resources/views/store/term-condition.blade.php:68
+#: resources/views/tax/manage/edit-dialog.blade.php:76
+#: resources/views/user/profile-edit.blade.php:36
+msgid "Update"
+msgstr "अद्यावत करा"
+
+#: resources/views/address/list-dialog.blade.php:34 resources/views/address/list.blade.php:29
+msgid "Primary"
+msgstr "प्राथमिक"
+
+#: resources/views/address/list-dialog.blade.php:60
+#: resources/views/order/user/summary.blade.php:223
+#: resources/views/order/user/summary.blade.php:296
+msgid "Pincode"
+msgstr "पिन कोड"
+
+#: resources/views/address/list-dialog.blade.php:80 resources/views/address/list.blade.php:52
+#: resources/views/brand/manage/delete-dialog.blade.php:43
+#: resources/views/brand/manage/list.blade.php:76
+#: resources/views/brand/manage/list.blade.php:77
+#: resources/views/category/delete-dialog.blade.php:34
+#: resources/views/category/list.blade.php:154
+#: resources/views/coupon/manage/list.blade.php:143
+#: resources/views/coupon/manage/list.blade.php:144
+#: resources/views/order/manage/list.blade.php:210
+#: resources/views/order/manage/list.blade.php:216
+#: resources/views/order/manage/order-delete-dialog.blade.php:36
+#: resources/views/order/manage/payment-delete-dialog.blade.php:36
+#: resources/views/order/manage/payment-list.blade.php:147
+#: resources/views/order/manage/payment-list.blade.php:151
+#: resources/views/pages/manage/list.blade.php:122
+#: resources/views/product/manage/Images/list.blade.php:42
+#: resources/views/product/manage/Images/list.blade.php:43
+#: resources/views/product/manage/list.blade.php:147
+#: resources/views/product/manage/list.blade.php:148
+#: resources/views/product/manage/options/list.blade.php:50
+#: resources/views/product/manage/options/list.blade.php:51
+#: resources/views/product/manage/specification/list.blade.php:37
+#: resources/views/product/manage/specification/list.blade.php:38
+#: resources/views/product/manage/uploaded-media.blade.php:34
+#: resources/views/product/manage/uploaded-media.blade.php:39
+#: resources/views/shipping/manage/list.blade.php:186
+#: resources/views/shipping/manage/list.blade.php:187
+#: resources/views/tax/manage/list.blade.php:91 resources/views/tax/manage/list.blade.php:92
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:25
+#: resources/views/user/manage/list.blade.php:106
+msgid "Delete"
+msgstr "हटवा"
+
+#: resources/views/address/list-dialog.blade.php:88
+msgid "There are no address found"
+msgstr "काही पत्ता नाही आहेत."
+
+#: resources/views/address/list-dialog.blade.php:98
+#: resources/views/brand/manage/detail-dialog.blade.php:50
+#: resources/views/coupon/manage/detail-dialog.blade.php:88
+#: resources/views/order/manage/contact-user.blade.php:74
+#: resources/views/order/manage/details.blade.php:405
+#: resources/views/order/manage/log.blade.php:23
+#: resources/views/order/manage/payment-details-dialog.blade.php:43
+#: resources/views/order/manage/raw-data-dialog.blade.php:45
+#: resources/views/order/user/contact-store.blade.php:76
+#: resources/views/order/user/contact-store.blade.php:86
+#: resources/views/product/filter-dialog.blade.php:135
+#: resources/views/product/filter-dialog.blade.php:136
+#: resources/views/product/manage/detail-dialog.blade.php:214
+#: resources/views/product/manage/uploaded-media.blade.php:51
+#: resources/views/report/manage/details-dialog.blade.php:395
+#: resources/views/shipping/manage/detail-dialog.blade.php:72
+#: resources/views/tax/manage/detail-dialog.blade.php:71
+#: resources/views/user/manage/contact.blade.php:63
+#: resources/views/user/manage/user-details.blade.php:126
+msgid "Close"
+msgstr "बंद"
+
+#: resources/views/address/list.blade.php:59
+msgid "There are no addresses found."
+msgstr "पत्ते आढळले नाहीत."
+
+#: resources/views/brand/list.blade.php:6 resources/views/brand/list.blade.php:8
+#: resources/views/includes/sidebar.blade.php:82
+msgid "Shop by Brands"
+msgstr "ब्रांड विशेष वस्तूची खरेदी"
+
+#: resources/views/brand/list.blade.php:31
+msgid "No brands available here."
+msgstr "येथे ब्रँड उपलब्ध नाही."
+
+#: resources/views/brand/manage/add-dialog.blade.php:5
+msgid "Add Brand"
+msgstr "ब्रँड जोडा"
+
+#: resources/views/brand/manage/add-dialog.blade.php:16
+#: resources/views/brand/manage/detail-dialog.blade.php:16
+#: resources/views/brand/manage/edit-dialog.blade.php:16
+#: resources/views/brand/manage/list.blade.php:24
+#: resources/views/brand/manage/list.blade.php:52
+#: resources/views/category/add-dialog.blade.php:20
+#: resources/views/category/edit-dialog.blade.php:20
+#: resources/views/category/list.blade.php:98 resources/views/category/list.blade.php:126
+#: resources/views/order/manage/list.blade.php:40
+#: resources/views/order/manage/list.blade.php:61
+#: resources/views/order/manage/list.blade.php:83 resources/views/product/list.blade.php:176
+#: resources/views/product/manage/add.blade.php:66
+#: resources/views/product/manage/detail-dialog.blade.php:34
+#: resources/views/product/manage/edit-details.blade.php:20
+#: resources/views/product/manage/list.blade.php:98
+#: resources/views/product/manage/options/add-dialog.blade.php:15
+#: resources/views/product/manage/options/edit-dialog.blade.php:14
+#: resources/views/product/manage/options/list.blade.php:21
+#: resources/views/product/manage/specification/add-dialog.blade.php:17
+#: resources/views/product/manage/specification/edit-dialog.blade.php:15
+#: resources/views/product/manage/specification/list.blade.php:18
+#: resources/views/report/manage/list.blade.php:155
+#: resources/views/user/manage/list.blade.php:37 resources/views/user/manage/list.blade.php:57
+#: resources/views/user/manage/list.blade.php:76
+msgid "Name"
+msgstr "नाव"
+
+#: resources/views/brand/manage/add-dialog.blade.php:29
+#: resources/views/brand/manage/edit-dialog.blade.php:37
+#: resources/views/brand/manage/list.blade.php:23
+msgid "Logo"
+msgstr "लोगो"
+
+#: resources/views/brand/manage/add-dialog.blade.php:30
+#: resources/views/brand/manage/edit-dialog.blade.php:38
+msgid "Select Logo"
+msgstr "लोगो निवडा"
+
+#: resources/views/brand/manage/add-dialog.blade.php:35
+#: resources/views/product/manage/Images/add-dialog.blade.php:31
+#: resources/views/product/manage/add.blade.php:155
+#: resources/views/product/manage/edit-details.blade.php:118
+#: resources/views/store/general.blade.php:39
+msgid "Upload New Images"
+msgstr "नवीन प्रतिमा अपलोड करा"
+
+#: resources/views/brand/manage/add-dialog.blade.php:38
+#: resources/views/brand/manage/add-dialog.blade.php:39
+#: resources/views/product/manage/Images/add-dialog.blade.php:34
+#: resources/views/product/manage/Images/add-dialog.blade.php:35
+#: resources/views/product/manage/add.blade.php:158
+#: resources/views/product/manage/add.blade.php:160
+#: resources/views/product/manage/edit-details.blade.php:121
+#: resources/views/product/manage/edit-details.blade.php:122
+#: resources/views/store/general.blade.php:42 resources/views/store/general.blade.php:44
+msgid "Uploaded Images"
+msgstr "अपलोड प्रतिमा"
+
+#: resources/views/brand/manage/add-dialog.blade.php:46
+#: resources/views/brand/manage/edit-dialog.blade.php:54
+#: resources/views/coupon/manage/add-dialog.blade.php:168
+#: resources/views/coupon/manage/edit-dialog.blade.php:164
+#: resources/views/pages/manage/add.blade.php:37
+#: resources/views/pages/manage/edit.blade.php:29
+#: resources/views/product/manage/Images/list.blade.php:20
+#: resources/views/product/manage/add.blade.php:210
+#: resources/views/product/manage/detail-dialog.blade.php:75
+#: resources/views/product/manage/edit-details.blade.php:173
+msgid "Description"
+msgstr "वर्णन"
+
+#: resources/views/brand/manage/add-dialog.blade.php:53
+#: resources/views/brand/manage/detail-dialog.blade.php:23
+#: resources/views/brand/manage/edit-dialog.blade.php:61
+#: resources/views/brand/manage/list.blade.php:26
+#: resources/views/category/add-dialog.blade.php:49
+#: resources/views/category/edit-dialog.blade.php:49
+#: resources/views/coupon/manage/add-dialog.blade.php:175
+#: resources/views/coupon/manage/edit-dialog.blade.php:171
+#: resources/views/order/manage/details-view.blade.php:70
+#: resources/views/order/manage/details-view.blade.php:124
+#: resources/views/order/manage/details.blade.php:66
+#: resources/views/order/manage/details.blade.php:120
+#: resources/views/order/manage/update.blade.php:29
+#: resources/views/order/user/details.blade.php:98
+#: resources/views/order/user/details.blade.php:151
+#: resources/views/order/user/list.blade.php:37 resources/views/order/user/list.blade.php:54
+#: resources/views/order/user/list.blade.php:72 resources/views/pages/manage/list.blade.php:26
+#: resources/views/product/manage/detail-dialog.blade.php:109
+#: resources/views/report/manage/details-dialog.blade.php:80
+#: resources/views/report/manage/details-dialog.blade.php:134
+#: resources/views/report/manage/list.blade.php:74
+#: resources/views/report/manage/list.blade.php:156
+#: resources/views/shipping/manage/add-dialog.blade.php:82
+#: resources/views/shipping/manage/edit-dialog.blade.php:86
+#: resources/views/tax/manage/add-dialog.blade.php:64
+#: resources/views/tax/manage/detail-dialog.blade.php:46
+#: resources/views/tax/manage/edit-dialog.blade.php:65
+msgid "Status"
+msgstr "स्थिती"
+
+#: resources/views/brand/manage/add-dialog.blade.php:67
+#: resources/views/category/add-dialog.blade.php:62
+#: resources/views/coupon/manage/add-dialog.blade.php:188
+#: resources/views/pages/manage/add.blade.php:120
+#: resources/views/product/manage/Images/add-dialog.blade.php:43
+#: resources/views/product/manage/options/add-dialog.blade.php:64
+#: resources/views/product/manage/specification/add-dialog.blade.php:57
+#: resources/views/shipping/manage/add-dialog.blade.php:93
+#: resources/views/tax/manage/add-dialog.blade.php:75
+#: resources/views/user/manage/add.blade.php:77
+msgid "Add"
+msgstr "जोडा"
+
+#: resources/views/brand/manage/delete-dialog.blade.php:5
+#: resources/views/category/delete-dialog.blade.php:5
+#: resources/views/order/manage/order-delete-dialog.blade.php:5
+#: resources/views/order/manage/payment-delete-dialog.blade.php:5
+msgid "Are You Sure ?"
+msgstr "तुला खात्री आहे ?"
+
+#: resources/views/brand/manage/delete-dialog.blade.php:19
+msgid "Delete Related Products"
+msgstr "संबंधित उत्पादने हटवा"
+
+#: resources/views/brand/manage/delete-dialog.blade.php:28
+msgid "Confirm product delete by entering password"
+msgstr "संकेतशब्द प्रविष्ट करून उत्पादन  हटविण्याची पुष्टी करा"
+
+#: resources/views/brand/manage/delete-dialog.blade.php:28
+#: resources/views/category/delete-dialog.blade.php:16
+#: resources/views/category/delete-dialog.blade.php:19
+#: resources/views/order/manage/order-delete-dialog.blade.php:18
+#: resources/views/order/manage/order-delete-dialog.blade.php:21
+#: resources/views/order/manage/payment-delete-dialog.blade.php:18
+#: resources/views/order/manage/payment-delete-dialog.blade.php:21
+#: resources/views/user/login.blade.php:39 resources/views/user/manage/add.blade.php:49
+#: resources/views/user/register.blade.php:57 resources/views/user/reset-password.blade.php:25
+msgid "Password"
+msgstr "पासवर्ड"
+
+#: resources/views/brand/manage/delete-dialog.blade.php:43
+#: resources/views/category/delete-dialog.blade.php:34
+#: resources/views/order/manage/order-delete-dialog.blade.php:36
+#: resources/views/order/manage/payment-delete-dialog.blade.php:36
+msgid "Yes, Delete it"
+msgstr "होय, ते काढून टाका"
+
+#: resources/views/brand/manage/detail-dialog.blade.php:5
+msgid "Brand Details"
+msgstr "ब्रँड तपशील"
+
+#: resources/views/brand/manage/detail-dialog.blade.php:26
+#: resources/views/brand/manage/list.blade.php:64 resources/views/category/list.blade.php:99
+#: resources/views/category/list.blade.php:129 resources/views/category/list.blade.php:190
+#: resources/views/coupon/manage/list.blade.php:131
+#: resources/views/order/manage/list.blade.php:21 resources/views/order/user/list.blade.php:18
+#: resources/views/pages/manage/add.blade.php:86
+#: resources/views/pages/manage/edit.blade.php:78
+#: resources/views/product/manage/detail-dialog.blade.php:112
+#: resources/views/product/manage/list.blade.php:101
+#: resources/views/product/manage/list.blade.php:209
+#: resources/views/shipping/manage/list.blade.php:174
+#: resources/views/tax/manage/detail-dialog.blade.php:49
+#: resources/views/tax/manage/list.blade.php:79 resources/views/user/manage/list.blade.php:15
+msgid "Active"
+msgstr "सक्रिय"
+
+#: resources/views/brand/manage/detail-dialog.blade.php:29
+#: resources/views/product/manage/detail-dialog.blade.php:115
+msgid "Deactive"
+msgstr "Deactive"
+
+#: resources/views/brand/manage/edit-dialog.blade.php:5
+#: resources/views/product/details.blade.php:43
+msgid "Edit Brand"
+msgstr "ब्रँड संपादित करा"
+
+#: resources/views/brand/manage/edit-dialog.blade.php:43
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:39
+msgid "Browse"
+msgstr "ब्राउझ करा"
+
+#: resources/views/brand/manage/edit-dialog.blade.php:46
+#: resources/views/brand/manage/edit-dialog.blade.php:47
+msgid "Uploaded files"
+msgstr "अपलोड केलेल्या फाइल्स"
+
+#: resources/views/brand/manage/list.blade.php:7
+msgid "Manage Brands"
+msgstr "ब्रांड व्यवस्थापित करा"
+
+#: resources/views/brand/manage/list.blade.php:14
+msgid "Add New Brand"
+msgstr "नवीन जोडा"
+
+#: resources/views/brand/manage/list.blade.php:25 resources/views/category/list.blade.php:130
+#: resources/views/product/manage/list.blade.php:102
+msgid "Created at"
+msgstr "येथे तयार"
+
+#: resources/views/brand/manage/list.blade.php:27 resources/views/category/list.blade.php:102
+#: resources/views/category/list.blade.php:134 resources/views/coupon/manage/list.blade.php:46
+#: resources/views/coupon/manage/list.blade.php:69
+#: resources/views/coupon/manage/list.blade.php:92
+#: resources/views/order/manage/payment-list.blade.php:99
+#: resources/views/order/user/list.blade.php:39 resources/views/order/user/list.blade.php:56
+#: resources/views/order/user/list.blade.php:74 resources/views/pages/manage/list.blade.php:27
+#: resources/views/product/manage/Images/list.blade.php:21
+#: resources/views/product/manage/list.blade.php:106
+#: resources/views/product/manage/options/list.blade.php:23
+#: resources/views/product/manage/specification/list.blade.php:20
+#: resources/views/product/manage/uploaded-media.blade.php:18
+#: resources/views/report/manage/list.blade.php:159
+#: resources/views/shipping/manage/list.blade.php:44
+#: resources/views/tax/manage/list.blade.php:31
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:14
+#: resources/views/user/manage/list.blade.php:41 resources/views/user/manage/list.blade.php:61
+#: resources/views/user/manage/list.blade.php:80
+msgid "Action"
+msgstr "कृती"
+
+#: resources/views/brand/manage/list.blade.php:56
+msgid "products under this brand"
+msgstr "या ब्रँड अंतर्गत उत्पादने"
+
+#: resources/views/brand/manage/list.blade.php:66 resources/views/category/list.blade.php:192
+#: resources/views/coupon/manage/list.blade.php:133
+#: resources/views/product/manage/list.blade.php:211
+#: resources/views/shipping/manage/list.blade.php:176
+#: resources/views/tax/manage/detail-dialog.blade.php:52
+#: resources/views/tax/manage/list.blade.php:81
+msgid "Inactive"
+msgstr "निष्क्रिय"
+
+#: resources/views/category/add-dialog.blade.php:5
+msgid "Add Category"
+msgstr "वर्ग जोडा"
+
+#: resources/views/category/add-dialog.blade.php:33
+#: resources/views/category/edit-dialog.blade.php:33
+msgid "Parent Category"
+msgstr "पालक वर्ग"
+
+#: resources/views/category/delete-dialog.blade.php:6
+msgid "You want to Delete "
+msgstr "आपण हटवू इच्छित "
+
+#: resources/views/category/delete-dialog.blade.php:6
+msgid ""
+" Category, all the products belongs to this single category will be deleted as well, Please "
+"enter password to confirm..!!"
+msgstr " वर्ग, सर्व उत्पादने मालकीचे हे एकच वर्गात तसेच हटवले जातील, पासवर्ड पुष्टी प्रविष्ट करा .. !!"
+
+#: resources/views/category/edit-dialog.blade.php:5
+msgid "Edit Category"
+msgstr "वर्ग संपादित करा"
+
+#: resources/views/category/edit-dialog.blade.php:9
+msgid "Edit Category in "
+msgstr "मध्ये वर्ग संपादित करा "
+
+#: resources/views/category/list.blade.php:8 resources/views/category/list.blade.php:17
+#: resources/views/product/manage/add.blade.php:10
+#: resources/views/product/manage/add.blade.php:21
+#: resources/views/product/manage/edit.blade.php:10
+#: resources/views/product/manage/edit.blade.php:29
+#: resources/views/product/manage/list.blade.php:7
+#: resources/views/product/manage/list.blade.php:16
+msgid "Manage Categories & Products"
+msgstr "श्रेणी & उत्पादने व्यवस्थापित करा"
+
+#: resources/views/category/list.blade.php:38 resources/views/product/manage/list.blade.php:35
+msgid "Back To Parent Category"
+msgstr "परत पालक वर्ग"
+
+#: resources/views/category/list.blade.php:53 resources/views/product/manage/list.blade.php:52
+msgid "Add New Category"
+msgstr "नवीन श्रेणी जोडा"
+
+#: resources/views/category/list.blade.php:57 resources/views/product/manage/list.blade.php:56
+msgid "Add New Product"
+msgstr "नवीन उत्पादन जोडा"
+
+#: resources/views/category/list.blade.php:66 resources/views/category/list.blade.php:67
+#: resources/views/category/list.blade.php:132
+#: resources/views/product/manage/add.blade.php:109
+#: resources/views/product/manage/detail-dialog.blade.php:127
+#: resources/views/product/manage/edit-details.blade.php:64
+#: resources/views/product/manage/list.blade.php:64
+#: resources/views/product/manage/list.blade.php:65
+#: resources/views/product/manage/list.blade.php:104
+msgid "Categories"
+msgstr "श्रेणी"
+
+#: resources/views/category/list.blade.php:93
+msgid "One of it's parent may be Inactive"
+msgstr "तो एक आहे पालक निष्क्रीय असू शकते"
+
+#: resources/views/category/list.blade.php:100 resources/views/category/list.blade.php:177
+msgid "Subcategories"
+msgstr "पाने या वर्गात"
+
+#: resources/views/category/list.blade.php:125
+#: resources/views/order/manage/details-view.blade.php:151
+#: resources/views/order/manage/details.blade.php:147
+#: resources/views/order/user/details.blade.php:192
+#: resources/views/order/user/summary.blade.php:35
+#: resources/views/product/manage/Images/list.blade.php:18
+#: resources/views/product/manage/detail-dialog.blade.php:22
+#: resources/views/product/manage/list.blade.php:97
+#: resources/views/report/manage/details-dialog.blade.php:168
+#: resources/views/shoppingCart/cart-view.blade.php:23
+msgid "Thumbnail"
+msgstr "लघुप्रतिमा"
+
+#: resources/views/category/list.blade.php:127
+#: resources/views/product/manage/detail-dialog.blade.php:87
+#: resources/views/product/manage/list.blade.php:99
+msgid "Featured"
+msgstr "वैशिष्ट्यपूर्ण"
+
+#: resources/views/category/list.blade.php:128
+#: resources/views/product/manage/list.blade.php:100
+msgid "Stock"
+msgstr "शेअर"
+
+#: resources/views/category/list.blade.php:131
+#: resources/views/product/manage/list.blade.php:103
+msgid "Updated at"
+msgstr "अद्ययावत"
+
+#: resources/views/category/list.blade.php:133
+#: resources/views/product/filter-dialog.blade.php:18
+#: resources/views/product/manage/add.blade.php:136
+#: resources/views/product/manage/detail-dialog.blade.php:145
+#: resources/views/product/manage/edit-details.blade.php:91
+#: resources/views/product/manage/list.blade.php:105
+msgid "Brand"
+msgstr "ब्रँड"
+
+#: resources/views/category/list.blade.php:160 resources/views/product/manage/add.blade.php:52
+msgid "Add Product"
+msgstr "उत्पादन जोडा"
+
+#: resources/views/category/list.blade.php:162
+msgid ""
+"This category contain __totalCategoryProductCount__ out of __currentCategoryProductsCount__"
+msgstr "या वर्गात __currentCategoryProductsCount__ बाहेर __totalCategoryProductCount__ असू"
+
+#: resources/views/category/list.blade.php:171
+msgid "Add Subcategory "
+msgstr "उपश्रेणी जोडा "
+
+#: resources/views/category/list.blade.php:171
+msgid "Add category"
+msgstr "श्रेणी जोडण्यासाठी"
+
+#: resources/views/category/list.blade.php:174
+msgid ""
+"This category contain __activeChildCount__ active and __activeChildInactive__ inactive "
+"subcategories"
+msgstr ""
+"या वर्गात __activeChildCount__ सक्रिय असतात आणि __activeChildInactive__ निष्क्रिय पाने या वर्गात"
+
+#: resources/views/category/list.blade.php:183
+msgid "View"
+msgstr "पहा"
+
+#: resources/views/coupon/apply.blade.php:8
+msgid "Coupon Code "
+msgstr "कूपन कोड "
+
+#: resources/views/coupon/apply.blade.php:12
+msgid " applied"
+msgstr " लागू"
+
+#: resources/views/coupon/apply.blade.php:18 resources/views/order/user/summary.blade.php:107
+#: resources/views/product/manage/options/add-dialog.blade.php:50
+#: resources/views/product/manage/options/values/list-dialog.blade.php:44
+#: resources/views/product/manage/options/values/list-dialog.blade.php:47
+#: resources/views/product/manage/specification/add-dialog.blade.php:47
+#: resources/views/shoppingCart/cart-view.blade.php:28
+#: resources/views/shoppingCart/cart-view.blade.php:88
+msgid "Remove"
+msgstr "काढा"
+
+#: resources/views/coupon/apply.blade.php:32
+msgid "Title: "
+msgstr "शीर्षक: "
+
+#: resources/views/coupon/apply.blade.php:38
+msgid "Description: "
+msgstr "वर्णन: "
+
+#: resources/views/coupon/apply.blade.php:44
+msgid "Discount Allowed: "
+msgstr "सवलत परवानगी दिली: "
+
+#: resources/views/coupon/apply.blade.php:55
+msgid "Please check your coupon code and enter again."
+msgstr "कृपया आपला कूपन कोड तपासा आणि पुन्हा प्रविष्ट करा."
+
+#: resources/views/coupon/apply.blade.php:76
+#: resources/views/coupon/manage/add-dialog.blade.php:28
+#: resources/views/coupon/manage/detail-dialog.blade.php:22
+#: resources/views/coupon/manage/edit-dialog.blade.php:28
+#: resources/views/coupon/manage/list.blade.php:42
+#: resources/views/coupon/manage/list.blade.php:65
+#: resources/views/coupon/manage/list.blade.php:88
+msgid "Code"
+msgstr "कोड"
+
+#: resources/views/coupon/apply.blade.php:83
+msgid "Code here."
+msgstr "येथे कोड."
+
+#: resources/views/coupon/apply.blade.php:93
+#: resources/views/product/filter-dialog.blade.php:115
+#: resources/views/product/filter-dialog.blade.php:116
+#: resources/views/product/filter-dialog.blade.php:119
+#: resources/views/product/filter-dialog.blade.php:120
+msgid "Apply"
+msgstr "लागू करा"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:5
+msgid "Add Coupon"
+msgstr "कुपन जोडा"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:16
+#: resources/views/coupon/manage/detail-dialog.blade.php:16
+#: resources/views/coupon/manage/edit-dialog.blade.php:16
+#: resources/views/coupon/manage/list.blade.php:41
+#: resources/views/coupon/manage/list.blade.php:64
+#: resources/views/coupon/manage/list.blade.php:87
+#: resources/views/pages/manage/add.blade.php:15
+#: resources/views/pages/manage/edit.blade.php:15
+#: resources/views/pages/manage/list.blade.php:21
+#: resources/views/product/manage/Images/add-dialog.blade.php:14
+#: resources/views/product/manage/Images/edit-dialog.blade.php:14
+#: resources/views/product/manage/Images/list.blade.php:19
+msgid "Title"
+msgstr "शीर्षक"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:41
+#: resources/views/coupon/manage/edit-dialog.blade.php:41
+#: resources/views/coupon/manage/list.blade.php:43
+#: resources/views/coupon/manage/list.blade.php:66
+#: resources/views/coupon/manage/list.blade.php:89
+#: resources/views/order/manage/payment-list.blade.php:39
+#: resources/views/report/manage/list.blade.php:37
+msgid "Start Date"
+msgstr "प्रारंभ तारीख"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:57
+#: resources/views/coupon/manage/edit-dialog.blade.php:56
+#: resources/views/coupon/manage/list.blade.php:44
+#: resources/views/coupon/manage/list.blade.php:67
+#: resources/views/coupon/manage/list.blade.php:90
+#: resources/views/order/manage/payment-list.blade.php:57
+#: resources/views/report/manage/list.blade.php:55
+msgid "End Date"
+msgstr "शेवटची तारीख"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:73
+#: resources/views/coupon/manage/edit-dialog.blade.php:71
+msgid "Discount Type"
+msgstr "सवलत प्रकार"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:82
+#: resources/views/coupon/manage/add-dialog.blade.php:99
+#: resources/views/coupon/manage/detail-dialog.blade.php:28
+#: resources/views/coupon/manage/edit-dialog.blade.php:79
+#: resources/views/coupon/manage/edit-dialog.blade.php:96
+msgid "Discount"
+msgstr "सवलत"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:119
+#: resources/views/coupon/manage/add-dialog.blade.php:134
+#: resources/views/coupon/manage/detail-dialog.blade.php:48
+#: resources/views/coupon/manage/edit-dialog.blade.php:115
+#: resources/views/coupon/manage/edit-dialog.blade.php:130
+msgid "Max Discount"
+msgstr "कमाल सवलत"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:135
+msgid "Max Discount in % Of Order Price"
+msgstr "ऑर्डर किंमत% कमाल सवलत"
+
+#: resources/views/coupon/manage/add-dialog.blade.php:153
+#: resources/views/coupon/manage/detail-dialog.blade.php:67
+#: resources/views/coupon/manage/edit-dialog.blade.php:149
+msgid "Minimum Order Amount"
+msgstr "किमान ऑर्डर रक्कम"
+
+#: resources/views/coupon/manage/detail-dialog.blade.php:5
+msgid "Coupon Details"
+msgstr "कूपन तपशील"
+
+#: resources/views/coupon/manage/detail-dialog.blade.php:45
+#, fuzzy, php-format
+msgid "Max Discount in % of product price"
+msgstr "उत्पादन किंमत % कमाल सवलत"
+
+#: resources/views/coupon/manage/edit-dialog.blade.php:5
+msgid "Edit Coupon"
+msgstr "कुपन संपादित करा"
+
+#: resources/views/coupon/manage/edit-dialog.blade.php:131
+#, fuzzy, php-format
+msgid "Max Discount in % of order price"
+msgstr "ऑर्डर किंमत % कमाल सवलत"
+
+#: resources/views/coupon/manage/list.blade.php:6
+msgid "Manage Coupons"
+msgstr "कूपन व्यवस्थापित करा"
+
+#: resources/views/coupon/manage/list.blade.php:13
+msgid "Add New Coupon"
+msgstr "नवी कूपन जोडा"
+
+#: resources/views/coupon/manage/list.blade.php:22
+msgid "Current"
+msgstr "चालू"
+
+#: resources/views/coupon/manage/list.blade.php:25
+msgid "Expired"
+msgstr "कालबाह्य"
+
+#: resources/views/coupon/manage/list.blade.php:28
+msgid "Up-coming"
+msgstr "अप-येत"
+
+#: resources/views/coupon/manage/list.blade.php:45
+#: resources/views/coupon/manage/list.blade.php:68
+#: resources/views/coupon/manage/list.blade.php:91
+#: resources/views/shipping/manage/list.blade.php:43
+#: resources/views/tax/manage/list.blade.php:30
+msgid "status"
+msgstr "स्थिती"
+
+#: resources/views/dashboard/details.blade.php:6
+#: resources/views/includes/manage-sidebar.blade.php:7
+#: resources/views/manage-master.blade.php:41
+msgid "Dashboard"
+msgstr "डॅशबोर्ड"
+
+#: resources/views/dashboard/details.blade.php:11
+#: resources/views/includes/manage-sidebar.blade.php:12
+msgid "Manage Shop"
+msgstr "दुकान व्यवस्थापित करा"
+
+#: resources/views/dashboard/details.blade.php:16
+#: resources/views/includes/manage-sidebar.blade.php:18
+#: resources/views/includes/manage-sidebar.blade.php:19
+#: resources/views/store/edit_settings.blade.php:4
+msgid "Basic Configuration"
+msgstr "मूळ संरचना"
+
+#: resources/views/dashboard/details.blade.php:18
+#: resources/views/dashboard/details.blade.php:20
+#: resources/views/includes/manage-sidebar.blade.php:23
+#: resources/views/includes/manage-sidebar.blade.php:24
+msgid "Shipping Rules"
+msgstr "शिपिंग नियम"
+
+#: resources/views/dashboard/details.blade.php:22
+#: resources/views/dashboard/details.blade.php:24
+#: resources/views/includes/manage-sidebar.blade.php:28
+#: resources/views/includes/manage-sidebar.blade.php:29
+msgid "Tax Rules"
+msgstr "कर नियम"
+
+#: resources/views/dashboard/details.blade.php:26
+#: resources/views/dashboard/details.blade.php:28
+#: resources/views/includes/manage-sidebar.blade.php:33
+#: resources/views/includes/manage-sidebar.blade.php:34
+msgid "Coupons"
+msgstr "कूपन"
+
+#: resources/views/dashboard/details.blade.php:34
+msgid "Manage Products"
+msgstr "उत्पादने व्यवस्थापित करा"
+
+#: resources/views/dashboard/details.blade.php:41
+#: resources/views/dashboard/details.blade.php:43
+#: resources/views/includes/manage-sidebar.blade.php:51
+#: resources/views/includes/manage-sidebar.blade.php:52
+msgid "Categories & Products"
+msgstr "श्रेणी & उत्पादने"
+
+#: resources/views/dashboard/details.blade.php:49
+msgid "Reports &amp; Orders"
+msgstr "अहवाल आणी ऑर्डेर"
+
+#: resources/views/dashboard/details.blade.php:57
+#: resources/views/dashboard/details.blade.php:59
+#: resources/views/includes/manage-sidebar.blade.php:72
+#: resources/views/includes/manage-sidebar.blade.php:73
+#: resources/views/report/manage/list.blade.php:13
+msgid "Reports"
+msgstr "अहवाल"
+
+#: resources/views/dashboard/details.blade.php:61
+#: resources/views/dashboard/details.blade.php:63
+#: resources/views/includes/manage-sidebar.blade.php:77
+#: resources/views/includes/manage-sidebar.blade.php:78
+msgid "Order Payments"
+msgstr "ऑर्डर देयके"
+
+#: resources/views/dashboard/details.blade.php:69
+#: resources/views/includes/manage-sidebar.blade.php:84
+msgid "Other "
+msgstr "इतर "
+
+#: resources/views/dashboard/details.blade.php:72
+#: resources/views/dashboard/details.blade.php:74
+#: resources/views/includes/manage-sidebar.blade.php:90
+#: resources/views/includes/manage-sidebar.blade.php:91
+msgid "Pages"
+msgstr "पृष्ठे"
+
+#: resources/views/dashboard/details.blade.php:76
+#: resources/views/dashboard/details.blade.php:78
+#: resources/views/includes/manage-sidebar.blade.php:95
+#: resources/views/includes/manage-sidebar.blade.php:96
+#: resources/views/store/edit_settings.blade.php:151
+#: resources/views/store/edit_settings.blade.php:153
+msgid "Users"
+msgstr "वापरकर्ते"
+
+#: resources/views/emails/index.blade.php:123 resources/views/manage-master.blade.php:91
+#: resources/views/product/manage/add.blade.php:176
+#: resources/views/product/manage/edit-details.blade.php:139
+#: resources/views/public-master.blade.php:67
+msgid "Please Note: "
+msgstr "कृपया लक्षात ठेवा: "
+
+#: resources/views/emails/index.blade.php:123
+msgid "Sample Email Demonstration purposes only."
+msgstr "फक्त नमुना ईमेल प्रात्यक्षिक हेतूने."
+
+#: resources/views/errors/503.blade.php:37
+msgid "Be right back."
+msgstr "योग्य परत येईल."
+
+#: resources/views/errors/invalid-request.blade.php:5
+msgid "Invalid Request...."
+msgstr "अवैध विनंती...."
+
+#: resources/views/errors/manage-not-exist.blade.php:7
+#: resources/views/errors/public-not-found.blade.php:7
+msgid "Ooops...! Not Found"
+msgstr "अरेरे ...! सापडले नाही"
+
+#: resources/views/errors/manage-not-exist.blade.php:9
+#: resources/views/errors/public-not-found.blade.php:9
+msgid "404 Not Found"
+msgstr "404 सापडले नाही"
+
+#: resources/views/errors/manage-not-exist.blade.php:12
+#: resources/views/errors/public-not-found.blade.php:12
+msgid "404"
+msgstr "404"
+
+#: resources/views/errors/manage-not-exist.blade.php:14
+#: resources/views/errors/public-not-found.blade.php:14
+msgid " Sorry, but the item you are looking for does not exist..!"
+msgstr " क्षमस्व, पण आपण शोधत आहात आयटम अस्तित्वात नाही ..!"
+
+#: resources/views/errors/manage-not-exist.blade.php:17
+#: resources/views/errors/manage-not-exist.blade.php:18
+msgid "Go to dashboard"
+msgstr "डॅशबोर्डवर जा"
+
+#: resources/views/errors/public-not-found.blade.php:17
+#: resources/views/errors/public-not-found.blade.php:18
+#: resources/views/order/user/summary.blade.php:80
+#: resources/views/shoppingCart/cart-view.blade.php:120
+#: resources/views/shoppingCart/cart-view.blade.php:122
+msgid "Continue Shopping"
+msgstr "खरेदी चालू ठेवा"
+
+#: resources/views/errors/suspended.blade.php:1
+msgid "Please contact site administrator."
+msgstr "साइट प्रशासकाशी संपर्क साधा."
+
+#: resources/views/errors/unauthorized.blade.php:1
+msgid "Unauthorized User"
+msgstr "अनधिकृत वापरकर्ता"
+
+#: resources/views/includes/image-slider.blade.php:18
+#: resources/views/order/manage/list.blade.php:190
+#: resources/views/order/user/list.blade.php:108 resources/views/product/details.blade.php:338
+#: resources/views/product/list.blade.php:252 resources/views/product/list.blade.php:367
+#: resources/views/report/manage/list.blade.php:206
+msgid "View Details"
+msgstr "तपशील पहा"
+
+#: resources/views/includes/image-slider.blade.php:19
+msgid "More Details"
+msgstr "अधिक माहितीसाठी"
+
+#: resources/views/includes/manage-sidebar.blade.php:40
+msgid "Manage Products "
+msgstr "उत्पादने व्यवस्थापित करा "
+
+#: resources/views/includes/manage-sidebar.blade.php:58
+msgid "Reports &amp; Orders "
+msgstr "अहवाल आणी ऑर्डेर"
+
+#: resources/views/includes/search-panel.blade.php:3
+msgid "Search"
+msgstr "शोध"
+
+#: resources/views/includes/search-panel.blade.php:6
+#: resources/views/manage-master.blade.php:84
+msgid "Menu"
+msgstr "मेनू"
+
+#: resources/views/includes/search-panel.blade.php:14
+#: resources/views/includes/search-panel.blade.php:27
+msgid "Search Products"
+msgstr "उत्पादने शोध"
+
+#: resources/views/includes/search-panel.blade.php:16
+#: resources/views/includes/search-panel.blade.php:17
+#: resources/views/includes/search-panel.blade.php:29
+#: resources/views/includes/search-panel.blade.php:30
+msgid "Go"
+msgstr "शोधा"
+
+#: resources/views/includes/sidebar.blade.php:19 resources/views/includes/sidebar.blade.php:20
+#: resources/views/includes/top-menu.blade.php:9
+#: resources/views/includes/top-menu.blade.php:10 resources/views/manage-master.blade.php:5
+#: resources/views/vendor/laravel-filemanager/index.blade.php:5
+msgid "Manage Store"
+msgstr "स्टोअर व्यवस्थापित करा"
+
+#: resources/views/includes/sidebar.blade.php:42 resources/views/manage-master.blade.php:65
+#: resources/views/order/manage/details-view.blade.php:236
+#: resources/views/order/manage/details-view.blade.php:285
+#: resources/views/order/manage/details.blade.php:257
+#: resources/views/order/manage/details.blade.php:306
+#: resources/views/order/user/details.blade.php:299
+#: resources/views/order/user/details.blade.php:348
+#: resources/views/report/manage/details-dialog.blade.php:255
+#: resources/views/report/manage/details-dialog.blade.php:304
+msgid "Address"
+msgstr "पत्ता"
+
+#: resources/views/includes/sidebar.blade.php:48
+#: resources/views/includes/top-menu.blade.php:38 resources/views/manage-master.blade.php:73
+#: resources/views/manage-master.blade.php:74
+msgid "Logout"
+msgstr "बाहेर पडणे"
+
+#: resources/views/includes/sidebar.blade.php:68
+msgid "Product Categories"
+msgstr "उत्पादन श्रेणी"
+
+#: resources/views/includes/sidebar.blade.php:73
+msgid "All Products"
+msgstr "सर्व उत्पादने"
+
+#: resources/views/manage-master.blade.php:16 resources/views/manage-master.blade.php:115
+#: resources/views/product/details-dialog.blade.php:10
+#: resources/views/product/manage/edit-details.blade.php:10
+#: resources/views/public-master.blade.php:16 resources/views/public-master.blade.php:147
+#: resources/views/shoppingCart/cart-view.blade.php:10
+#: resources/views/store/contact.blade.php:10 resources/views/store/currency.blade.php:12
+#: resources/views/store/general.blade.php:9 resources/views/store/order.blade.php:11
+#: resources/views/store/placement.blade.php:10
+#: resources/views/store/privacy-policy.blade.php:10
+#: resources/views/store/product.blade.php:10 resources/views/store/social.blade.php:10
+msgid "Loading..."
+msgstr "लोड करीत आहे ..."
+
+#: resources/views/manage-master.blade.php:17 resources/views/public-master.blade.php:17
+msgid "Please wait while we are processing your request..."
+msgstr "आम्ही आपल्या विनंतीवर प्रक्रिया करताना कृपया प्रतीक्षा करा ..."
+
+#: resources/views/manage-master.blade.php:25 resources/views/public-master.blade.php:30
+msgid "Oh dear... we are sorry"
+msgstr "ओहो ... आम्ही दिलगीर आहोत"
+
+#: resources/views/manage-master.blade.php:26 resources/views/public-master.blade.php:31
+msgid "Javascript"
+msgstr "Javascript"
+
+#: resources/views/manage-master.blade.php:26 resources/views/public-master.blade.php:31
+msgid ""
+"is disabled in your browser, To use this application please enable javascript &amp; reload "
+"page again."
+msgstr ""
+", आपल्या ब्राउझरमध्ये कुकीज अक्षम या अनुप्रयोग वापरण्यासाठी JavaScript & amp; सक्षम करा; पुन्हा पृष्ठ "
+"रीलोड करा."
+
+#: resources/views/manage-master.blade.php:91
+msgid ""
+"Demonstration purposes only. No Order will be executed and Saving functionality is disabled"
+msgstr "फक्त प्रात्यक्षिक हेतूने. ऑर्डर कार्यवाही केली जाणार  नाही आणि जतन करणे कार्यक्षमता अक्षम आहे"
+
+#: resources/views/order/manage/contact-user.blade.php:16
+#: resources/views/order/manage/list.blade.php:39
+#: resources/views/order/manage/list.blade.php:60
+#: resources/views/order/manage/list.blade.php:82
+#: resources/views/order/manage/payment-list.blade.php:93
+#: resources/views/order/manage/refund-dialog.blade.php:24
+#: resources/views/order/user/contact-store.blade.php:20
+#: resources/views/order/user/list.blade.php:36 resources/views/order/user/list.blade.php:53
+#: resources/views/order/user/list.blade.php:71
+#: resources/views/report/manage/list.blade.php:154
+msgid "Order ID"
+msgstr "क्रम आयडी"
+
+#: resources/views/order/manage/contact-user.blade.php:27
+#: resources/views/order/user/contact-store.blade.php:31
+#: resources/views/order/user/summary.blade.php:167 resources/views/user/contact.blade.php:20
+#: resources/views/user/manage/contact.blade.php:16
+msgid "Full Name"
+msgstr "पूर्ण नाव"
+
+#: resources/views/order/manage/contact-user.blade.php:38
+#: resources/views/order/user/contact-store.blade.php:41
+#: resources/views/user/contact.blade.php:30 resources/views/user/login.blade.php:29
+#: resources/views/user/manage/add.blade.php:39
+#: resources/views/user/manage/contact.blade.php:27
+#: resources/views/user/manage/list.blade.php:38 resources/views/user/manage/list.blade.php:58
+#: resources/views/user/manage/list.blade.php:77
+#: resources/views/user/manage/user-details.blade.php:18
+#: resources/views/user/register.blade.php:47 resources/views/user/reset-password.blade.php:15
+msgid "Email"
+msgstr "ई-मेल"
+
+#: resources/views/order/manage/contact-user.blade.php:49
+#: resources/views/order/user/contact-store.blade.php:51
+#: resources/views/user/contact.blade.php:40 resources/views/user/manage/contact.blade.php:38
+msgid "Subject"
+msgstr "विषय"
+
+#: resources/views/order/manage/contact-user.blade.php:60
+#: resources/views/order/user/contact-store.blade.php:62
+#: resources/views/user/contact.blade.php:51 resources/views/user/manage/contact.blade.php:49
+msgid "Message"
+msgstr "संदेश"
+
+#: resources/views/order/manage/details-view.blade.php:5
+#: resources/views/order/manage/details.blade.php:4
+#: resources/views/order/user/details.blade.php:14
+#: resources/views/order/user/details.blade.php:29
+#: resources/views/report/manage/details-dialog.blade.php:13
+msgid "Order Details"
+msgstr "ऑर्डर तपशील"
+
+#: resources/views/order/manage/details-view.blade.php:6
+#: resources/views/order/manage/list.blade.php:198
+msgid "Contact User"
+msgstr "संपर्क वापरकर्ता"
+
+#: resources/views/order/manage/details-view.blade.php:7
+msgid "Go to Manage Orders"
+msgstr "ऑर्डर व्यवस्थापित जा"
+
+#: resources/views/order/manage/details-view.blade.php:7
+#: resources/views/order/manage/list.blade.php:6
+#: resources/views/order/user/details.blade.php:22
+msgid "Manage Orders"
+msgstr "ऑर्डर व्यवस्थापित करा"
+
+#: resources/views/order/manage/details-view.blade.php:30
+#: resources/views/order/manage/details.blade.php:26
+#: resources/views/order/user/details.blade.php:58
+#: resources/views/product/details-dialog.blade.php:27
+#: resources/views/product/details.blade.php:80
+#: resources/views/report/manage/details-dialog.blade.php:40
+msgid "ID"
+msgstr "आयडी"
+
+#: resources/views/order/manage/details-view.blade.php:34
+#: resources/views/order/manage/details.blade.php:30
+#: resources/views/order/manage/list.blade.php:44
+#: resources/views/order/user/details.blade.php:62
+#: resources/views/order/user/list.blade.php:38
+#: resources/views/report/manage/details-dialog.blade.php:44
+#: resources/views/report/manage/list.blade.php:157
+msgid "Placed On"
+msgstr "स्थीत"
+
+#: resources/views/order/manage/details-view.blade.php:88
+#: resources/views/order/manage/details.blade.php:84
+#: resources/views/order/manage/payment-details-dialog.blade.php:5
+#: resources/views/order/user/details.blade.php:115
+#: resources/views/report/manage/details-dialog.blade.php:98
+msgid "Payment Details"
+msgstr "देय तपशील"
+
+#: resources/views/order/manage/details-view.blade.php:95
+#: resources/views/order/manage/details.blade.php:91
+#: resources/views/order/manage/payment-details-dialog.blade.php:30
+#: resources/views/order/user/details.blade.php:122
+#: resources/views/report/manage/details-dialog.blade.php:105
+msgid "Method"
+msgstr "पद्धत"
+
+#: resources/views/order/manage/details-view.blade.php:144
+#: resources/views/order/manage/details.blade.php:140
+#: resources/views/order/user/details.blade.php:185
+#: resources/views/report/manage/details-dialog.blade.php:161
+msgid "Cart summary"
+msgstr "टाका सारांश"
+
+#: resources/views/order/manage/details-view.blade.php:152
+#: resources/views/order/manage/details.blade.php:148
+#: resources/views/order/user/details.blade.php:193
+#: resources/views/order/user/summary.blade.php:36
+#: resources/views/report/manage/details-dialog.blade.php:169
+#: resources/views/shoppingCart/cart-view.blade.php:24
+msgid "Item Description"
+msgstr "आयटम वर्णन"
+
+#: resources/views/order/manage/details-view.blade.php:153
+#: resources/views/order/manage/details.blade.php:149
+#: resources/views/order/user/details.blade.php:194
+#: resources/views/order/user/summary.blade.php:38
+#: resources/views/report/manage/details-dialog.blade.php:170
+#: resources/views/shoppingCart/cart-view.blade.php:26
+msgid "Qty"
+msgstr "प्रमाण"
+
+#: resources/views/order/manage/details-view.blade.php:154
+#: resources/views/order/manage/details.blade.php:150
+#: resources/views/order/user/details.blade.php:195
+#: resources/views/order/user/summary.blade.php:37
+#: resources/views/product/filter-dialog.blade.php:29
+#: resources/views/product/list.blade.php:177 resources/views/product/manage/add.blade.php:195
+#: resources/views/product/manage/detail-dialog.blade.php:49
+#: resources/views/product/manage/edit-details.blade.php:158
+#: resources/views/report/manage/details-dialog.blade.php:171
+#: resources/views/shoppingCart/cart-view.blade.php:25
+msgid "Price"
+msgstr "किंमत"
+
+#: resources/views/order/manage/details-view.blade.php:155
+#: resources/views/order/manage/details-view.blade.php:183
+#: resources/views/order/manage/details.blade.php:151
+#: resources/views/order/manage/details.blade.php:181
+#: resources/views/order/user/details.blade.php:196
+#: resources/views/order/user/summary.blade.php:39
+#: resources/views/report/manage/details-dialog.blade.php:172
+#: resources/views/report/manage/details-dialog.blade.php:202
+#: resources/views/shoppingCart/cart-view.blade.php:27
+msgid "Subtotal"
+msgstr "एकूण"
+
+#: resources/views/order/manage/details-view.blade.php:207
+#: resources/views/order/manage/details.blade.php:205
+#: resources/views/order/user/details.blade.php:248
+#: resources/views/report/manage/details-dialog.blade.php:226
+msgid "Applied Coupon Code"
+msgstr "लागू कूपन कोड"
+
+#: resources/views/order/manage/details-view.blade.php:231
+#: resources/views/order/manage/details.blade.php:252
+#: resources/views/order/user/details.blade.php:294
+#: resources/views/order/user/summary.blade.php:186
+#: resources/views/report/manage/details-dialog.blade.php:250
+#: resources/views/store/order.blade.php:58
+msgid "Shipping Address"
+msgstr "पाठविण्याचा पत्ता"
+
+#: resources/views/order/manage/details-view.blade.php:255
+#: resources/views/order/manage/details.blade.php:276
+#: resources/views/order/user/details.blade.php:318
+#: resources/views/order/user/summary.blade.php:266
+#: resources/views/report/manage/details-dialog.blade.php:274
+#: resources/views/store/order.blade.php:62
+msgid "Billing Address"
+msgstr "बिलाचा पत्ता"
+
+#: resources/views/order/manage/details-view.blade.php:280
+#: resources/views/order/manage/details.blade.php:301
+#: resources/views/order/user/details.blade.php:343
+#: resources/views/order/user/summary.blade.php:162
+#: resources/views/report/manage/details-dialog.blade.php:299
+msgid "Shipping / Billing Address"
+msgstr "शिपिंग / बिलिंग पत्ता"
+
+#: resources/views/order/manage/details-view.blade.php:314
+#: resources/views/order/manage/details-view.blade.php:352
+#: resources/views/order/manage/details.blade.php:335
+#: resources/views/order/user/details.blade.php:377
+#: resources/views/order/user/summary.blade.php:405
+#: resources/views/order/user/summary.blade.php:424
+#: resources/views/report/manage/details-dialog.blade.php:334
+msgid "Free"
+msgstr "मोफत"
+
+#: resources/views/order/manage/details-view.blade.php:316
+#: resources/views/order/manage/details.blade.php:337
+#: resources/views/order/user/details.blade.php:379
+#: resources/views/report/manage/details-dialog.blade.php:329
+msgid "Shipping Charges"
+msgstr "शिपिंग शुल्क"
+
+#: resources/views/order/manage/details-view.blade.php:343
+#: resources/views/order/manage/details.blade.php:363
+#: resources/views/order/user/details.blade.php:405
+#: resources/views/order/user/summary.blade.php:335
+#: resources/views/report/manage/details-dialog.blade.php:358
+#: resources/views/store/order.blade.php:35
+msgid "Tax"
+msgstr "कर"
+
+#: resources/views/order/manage/details-view.blade.php:371
+#: resources/views/order/manage/details.blade.php:390
+#: resources/views/order/manage/payment-list.blade.php:98
+#: resources/views/order/manage/refund-dialog.blade.php:42
+#: resources/views/order/user/details.blade.php:428
+#: resources/views/report/manage/details-dialog.blade.php:382
+msgid "Total Amount"
+msgstr "एकूण रक्कम"
+
+#: resources/views/order/manage/details.blade.php:230
+#: resources/views/order/user/details.blade.php:272
+#: resources/views/order/user/summary.blade.php:142
+msgid "Sub Total"
+msgstr "उप एकूण"
+
+#: resources/views/order/manage/list.blade.php:24 resources/views/order/user/list.blade.php:21
+msgid "Cancelled"
+msgstr "रद्द"
+
+#: resources/views/order/manage/list.blade.php:27 resources/views/order/user/list.blade.php:24
+msgid "Completed"
+msgstr "पूर्ण"
+
+#: resources/views/order/manage/list.blade.php:41
+#: resources/views/order/manage/list.blade.php:62
+#: resources/views/order/manage/list.blade.php:84
+msgid "Order Status"
+msgstr "ऑर्डेर स्थिती"
+
+#: resources/views/order/manage/list.blade.php:42
+#: resources/views/order/manage/list.blade.php:63
+#: resources/views/order/manage/list.blade.php:85
+msgid "Payment Status"
+msgstr "भरणा स्थिती"
+
+#: resources/views/order/manage/list.blade.php:43
+#: resources/views/order/manage/list.blade.php:64
+#: resources/views/order/manage/list.blade.php:86
+#: resources/views/order/manage/payment-list.blade.php:97
+#: resources/views/order/manage/refund-dialog.blade.php:65
+#: resources/views/order/manage/update-payment-dialog.blade.php:60
+msgid "Payment Method"
+msgstr "पेमेंट पद्धत"
+
+#: resources/views/order/manage/list.blade.php:45
+#: resources/views/order/manage/list.blade.php:66
+#: resources/views/order/manage/list.blade.php:88
+msgid "Amount"
+msgstr "रक्कम"
+
+#: resources/views/order/manage/list.blade.php:46
+#: resources/views/order/manage/list.blade.php:67
+#: resources/views/order/manage/list.blade.php:89
+msgid "Order Action"
+msgstr "ऑर्डर कृती"
+
+#: resources/views/order/manage/list.blade.php:65 resources/views/order/user/list.blade.php:55
+msgid "Canceled On"
+msgstr "रद्द"
+
+#: resources/views/order/manage/list.blade.php:87
+#: resources/views/order/user/details.blade.php:156
+#: resources/views/order/user/list.blade.php:73
+#: resources/views/report/manage/details-dialog.blade.php:139
+msgid "Completed On"
+msgstr "या वेळेस पूर्ण"
+
+#: resources/views/order/manage/list.blade.php:120
+msgid "Show Payment Details"
+msgstr "देय तपशील दर्शवा"
+
+#: resources/views/order/manage/list.blade.php:131
+#: resources/views/order/manage/list.blade.php:134
+msgid "Update Payment"
+msgstr "भरणा अद्यावत करा"
+
+#: resources/views/order/manage/list.blade.php:165
+msgid "Refund"
+msgstr "परतावा"
+
+#: resources/views/order/manage/list.blade.php:194
+msgid "Order Log"
+msgstr "ऑर्डर लॉग"
+
+#: resources/views/order/manage/list.blade.php:203
+#: resources/views/order/user/list.blade.php:112
+#: resources/views/report/manage/list.blade.php:210
+msgid "Download Invoice"
+msgstr "चलन डाउनलोड"
+
+#: resources/views/order/manage/list.blade.php:210
+#: resources/views/order/manage/list.blade.php:216
+#: resources/views/order/manage/payment-list.blade.php:147
+#: resources/views/order/manage/payment-list.blade.php:151
+msgid "Delete Sandbox Order"
+msgstr "Sandbox ऑर्डर हटवा"
+
+#: resources/views/order/manage/log.blade.php:5
+msgid "Order Log For"
+msgstr "ऑर्डर लॉग इन"
+
+#: resources/views/order/manage/order-delete-dialog.blade.php:6
+msgid ""
+"You want to Delete __orderUid__ order, all the payment transaction related to this order "
+"will deleted as well."
+msgstr "आपण __orderUid__ ऑर्डर हटवा इच्छित, या आदेशाला संबंधित सर्व पैसे व्यवहार तसेच हटविले जाईल."
+
+#: resources/views/order/manage/payment-delete-dialog.blade.php:6
+msgid ""
+"You want to Delete __orderUid__ order payment, all the order related to this payment will "
+"deleted as well."
+msgstr "आपण __orderUid__ पैसे ऑर्डर हटवा इच्छित, या पेमेंट संबंधित सर्व ऑर्डर तसेच हटविले जाईल."
+
+#: resources/views/order/manage/payment-details-dialog.blade.php:15
+#: resources/views/order/manage/payment-list.blade.php:94
+#: resources/views/order/manage/refund-dialog.blade.php:30
+#: resources/views/order/manage/update-payment-dialog.blade.php:70
+msgid "Transaction ID"
+msgstr "Transaction ID"
+
+#: resources/views/order/manage/payment-details-dialog.blade.php:22
+#: resources/views/order/manage/payment-list.blade.php:95
+#: resources/views/order/manage/refund-dialog.blade.php:36
+#: resources/views/order/manage/update-payment-dialog.blade.php:80
+msgid "Fee"
+msgstr "शुल्क"
+
+#: resources/views/order/manage/payment-details-dialog.blade.php:26
+msgid "Gross Amount"
+msgstr "एकूण रक्कम"
+
+#: resources/views/order/manage/payment-details-dialog.blade.php:34
+#: resources/views/order/manage/refund-dialog.blade.php:48
+msgid "Payment On"
+msgstr "पैसे"
+
+#: resources/views/order/manage/payment-list.blade.php:14
+msgid "Manage Payments"
+msgstr "देयके व्यवस्थापित करा"
+
+#: resources/views/order/manage/payment-list.blade.php:29
+#: resources/views/report/manage/list.blade.php:27
+msgid "Duration"
+msgstr "कालावधी"
+
+#: resources/views/order/manage/payment-list.blade.php:75
+#: resources/views/report/manage/list.blade.php:94
+msgid "Show"
+msgstr "शो"
+
+#: resources/views/order/manage/payment-list.blade.php:80
+#: resources/views/report/manage/list.blade.php:96
+msgid "Generate Excel file"
+msgstr "एक्सेल फाइल निर्माण"
+
+#: resources/views/order/manage/payment-list.blade.php:80
+#: resources/views/report/manage/list.blade.php:96
+msgid " Generate Excel file"
+msgstr " एक्सेल फाइल निर्माण"
+
+#: resources/views/order/manage/payment-list.blade.php:96
+#: resources/views/product/manage/detail-dialog.blade.php:58
+#: resources/views/user/manage/user-details.blade.php:69
+msgid "Created On"
+msgstr "रोजी तयार"
+
+#: resources/views/order/manage/payment-list.blade.php:136
+msgid "Refunded"
+msgstr "परतावा दिला"
+
+#: resources/views/order/manage/raw-data-dialog.blade.php:5
+msgid "Raw Data"
+msgstr "कच्ची माहिती"
+
+#: resources/views/order/manage/raw-data-dialog.blade.php:40
+msgid "There are no data found"
+msgstr "डेटा आढळला  नाही "
+
+#: resources/views/order/manage/refund-dialog.blade.php:5
+msgid "Refund Order Payment"
+msgstr "परतावा ऑर्डर भरणा"
+
+#: resources/views/order/manage/refund-dialog.blade.php:16
+msgid "Order Payment Details"
+msgstr "ऑर्डर देय तपशील"
+
+#: resources/views/order/manage/refund-dialog.blade.php:60
+msgid "Refund Payment Options"
+msgstr "भरणा पर्याय परत"
+
+#: resources/views/order/manage/refund-dialog.blade.php:68
+#: resources/views/order/manage/update-payment-dialog.blade.php:63
+msgid "-- Select Payment Method --"
+msgstr "- पेमेंट पद्धत निवडा -"
+
+#: resources/views/order/manage/refund-dialog.blade.php:80
+#: resources/views/order/manage/update.blade.php:52
+msgid "Notify Customer"
+msgstr "ग्राहकला सूचित करा"
+
+#: resources/views/order/manage/refund-dialog.blade.php:87
+#: resources/views/order/manage/update.blade.php:39
+msgid "Additional Notes"
+msgstr "अतिरिक्त टिप"
+
+#: resources/views/order/manage/update-payment-dialog.blade.php:5
+msgid "Update Order Payment"
+msgstr "ऑर्डर भरणा अद्यावत करा"
+
+#: resources/views/order/manage/update-payment-dialog.blade.php:14
+msgid "Awaiting Payment Confirmation"
+msgstr "Payment Confirmation आणि प्रतीक्षा करत आहे"
+
+#: resources/views/order/manage/update-payment-dialog.blade.php:22
+msgid "Order Payment Completed"
+msgstr "ऑर्डर भरणा पूर्ण"
+
+#: resources/views/order/manage/update-payment-dialog.blade.php:30
+msgid "Order Payment failed"
+msgstr "ऑर्डर देयक अयशस्वी झाले"
+
+#: resources/views/order/manage/update-payment-dialog.blade.php:38
+msgid "Order Payment N/A"
+msgstr "ऑर्डर भरणा N/A"
+
+#: resources/views/order/manage/update-payment-dialog.blade.php:53
+msgid "Current Order Status"
+msgstr "चालू मागणी स्थिती"
+
+#: resources/views/order/manage/update-payment-dialog.blade.php:90
+msgid "Comment"
+msgstr "टिप्पणी"
+
+#: resources/views/order/manage/update.blade.php:16
+msgid "Current Status"
+msgstr "वर्तमान स्थिती"
+
+#: resources/views/order/manage/update.blade.php:23
+msgid "Current Payment Status"
+msgstr "चालू भरणा स्थिती"
+
+#: resources/views/order/manage/update.blade.php:32
+msgid "-- Select Status --"
+msgstr "- स्थिती निवडा -"
+
+#: resources/views/order/user/alert-dialog.blade.php:5
+msgid "Are you sure"
+msgstr "तुला खात्री आहे"
+
+#: resources/views/order/user/alert-dialog.blade.php:18
+msgid "Yes update the changes in order."
+msgstr "होय क्रमाने बदल अद्यतनित."
+
+#: resources/views/order/user/alert-dialog.blade.php:18
+msgid "Yes Update It"
+msgstr "होय अद्यतनित करा"
+
+#: resources/views/order/user/alert-dialog.blade.php:25
+msgid "Go Back"
+msgstr "परत जा"
+
+#: resources/views/order/user/contact-store.blade.php:10
+msgid "Your message has been submitted successfully. We will back to you soon."
+msgstr "आपला संदेश यशस्वीरित्या सादर करण्यात आली आहे. आपल्याला लवकरच कसे बॅकअप नाही."
+
+#: resources/views/order/user/details.blade.php:6
+msgid "Thank you for order..!!"
+msgstr "ऑर्डरसाठी धन्यवाद .. !!"
+
+#: resources/views/order/user/details.blade.php:18
+#: resources/views/order/user/details.blade.php:33
+msgid "Go To My Orders"
+msgstr "माझ्या मागण्या जा"
+
+#: resources/views/order/user/details.blade.php:20
+#: resources/views/order/user/details.blade.php:32
+msgid "Contact Store"
+msgstr "संपर्क स्टोअर"
+
+#: resources/views/order/user/details.blade.php:22
+msgid "Go To Manage Orders"
+msgstr "ऑर्डर व्यवस्थापित जा"
+
+#: resources/views/order/user/details.blade.php:163
+msgid "Update your order payment using PayPal"
+msgstr "पोपल वापरून आपल्या ऑर्डर देय अद्यतनित करा"
+
+#: resources/views/order/user/details.blade.php:224
+msgid "Cart total"
+msgstr "कार्ट एकूण"
+
+#: resources/views/order/user/payment-cancel.blade.php:4
+msgid "Failed order Submission"
+msgstr "अयशस्वी ऑर्डर सादर"
+
+#: resources/views/order/user/payment-cancel.blade.php:9
+msgid "order details page"
+msgstr "ऑर्डर तपशील पृष्ठ"
+
+#: resources/views/order/user/payment-cancel.blade.php:8
+msgid "Order has been cancelled due to Payment Failed"
+msgstr "ऑर्डर रद्द केली गेली भरणा करणे अयशस्वी"
+
+#: resources/views/order/user/payment-cancel.blade.php:17
+msgid "Invalid Request!! "
+msgstr "अवैध विनंती!! "
+
+#: resources/views/order/user/success-page.blade.php:3
+msgid "Success!"
+msgstr "यशस्वी!"
+
+#: resources/views/order/user/success-page.blade.php:8
+msgid "Hi __fullName__"
+msgstr "नमस्कार__fullName__"
+
+#: resources/views/order/user/success-page.blade.php:13
+msgid "Your order has been placed successfully!!"
+msgstr "आपली ऑर्डर यशस्वीरित्या दिली गेली आहे !!"
+
+#: resources/views/order/user/success-page.blade.php:16
+msgid "Order ID: __orderID__"
+msgstr "क्रम आयडी: __orderID__"
+
+#: resources/views/order/user/success-page.blade.php:17
+msgid "Click here to see order details"
+msgstr "ऑर्डर तपशील पाहण्यासाठी येथे क्लिक करा"
+
+#: resources/views/order/user/summary.blade.php:12
+msgid "Order Summary -"
+msgstr "ऑर्डर सारांश -"
+
+#: resources/views/order/user/summary.blade.php:12
+msgid " Complete your order"
+msgstr " आपली मागणी पूर्ण"
+
+#: resources/views/order/user/summary.blade.php:27
+msgid "Products in Cart"
+msgstr "टाका उत्पादने"
+
+#: resources/views/order/user/summary.blade.php:80
+msgid "Do some more Shopping!!"
+msgstr "काही अधिक खरेदी करू !!"
+
+#: resources/views/order/user/summary.blade.php:87
+msgid "Cart Total"
+msgstr "टाका एकूण"
+
+#: resources/views/order/user/summary.blade.php:99
+msgid "There are no items in the cart."
+msgstr "खरेदी सूची कोणतेही आयटम नाहीत."
+
+#: resources/views/order/user/summary.blade.php:107
+msgid "Remove all this invalid products."
+msgstr "हे सर्व अवैध उत्पादने काढा."
+
+#: resources/views/order/user/summary.blade.php:123
+msgid "Coupon"
+msgstr "कूपन"
+
+#: resources/views/order/user/summary.blade.php:190
+msgid "Use this address as billing address"
+msgstr "या पत्त्यावर बिलिंग पत्ता म्हणून वापरा"
+
+#: resources/views/order/user/summary.blade.php:231
+#: resources/views/order/user/summary.blade.php:302
+msgid "Address is required"
+msgstr "पत्ता आवश्यक आहे"
+
+#: resources/views/order/user/summary.blade.php:239
+#: resources/views/order/user/summary.blade.php:240
+#: resources/views/order/user/summary.blade.php:310
+#: resources/views/order/user/summary.blade.php:311
+msgid "Change Address"
+msgstr "पत्ता बदल"
+
+#: resources/views/order/user/summary.blade.php:249
+#: resources/views/order/user/summary.blade.php:250
+#: resources/views/order/user/summary.blade.php:320
+msgid "Select Address"
+msgstr "पत्ता निवडा"
+
+#: resources/views/order/user/summary.blade.php:366
+#: resources/views/report/manage/list.blade.php:158
+msgid "Total"
+msgstr "एकूण"
+
+#: resources/views/order/user/summary.blade.php:386
+msgid "Shipping"
+msgstr "शिपिंग"
+
+#: resources/views/order/user/summary.blade.php:430
+msgid "Sorry shipping not available in your country."
+msgstr "क्षमस्व शिपिंग आपल्या देशात उपलब्ध नाही."
+
+#: resources/views/order/user/summary.blade.php:457
+msgid "Total Payable Amount"
+msgstr "एकूण देय रक्कम"
+
+#: resources/views/order/user/summary.blade.php:475
+msgid "Checkout"
+msgstr "चेकआऊट"
+
+#: resources/views/order/user/summary.blade.php:475
+msgid " Please choose your payment method"
+msgstr " कृपया आपली देय पद्धत"
+
+#: resources/views/order/user/summary.blade.php:478
+msgid "Checkout Method"
+msgstr "चेकआऊट पद्धत"
+
+#: resources/views/order/user/summary.blade.php:488
+msgid "Checkout with PayPal"
+msgstr "PayPal सह चेकआऊट"
+
+#: resources/views/order/user/summary.blade.php:495
+msgid "Pay with Card"
+msgstr "कार्ड अदा"
+
+#: resources/views/order/user/summary.blade.php:501
+msgid "Bank Check"
+msgstr "बँक चेक"
+
+#: resources/views/order/user/summary.blade.php:507
+msgid "Bank Transfer"
+msgstr "बँक हस्तांतरण"
+
+#: resources/views/order/user/summary.blade.php:514
+msgid "COD - Cash on Delivery"
+msgstr "शेंग - वितरण वर रोख"
+
+#: resources/views/order/user/summary.blade.php:520
+msgid ""
+"Other Payment Method - You can submit this order without payment for Now, Admin will "
+"contact you for payment."
+msgstr "इतर पेमेंट पद्धत - आपण, आता न देता हा ऑर्डेर सबमिट करू शकता पैसे प्रशासन संपर्क साधू."
+
+#: resources/views/order/user/summary.blade.php:520
+msgid "Other Payment Method"
+msgstr "इतर पेमेंट पद्धत"
+
+#: resources/views/order/user/summary.blade.php:529
+msgid "No payment methods available, Please contact store administrator."
+msgstr "उपलब्ध कोणत्याही देय पद्धती, स्टोअर प्रशासकाशी संपर्क साधा."
+
+#: resources/views/order/user/summary.blade.php:540
+msgid "Check Payment Description"
+msgstr "भरणा वर्णन तपासा"
+
+#: resources/views/order/user/summary.blade.php:551
+msgid "Bank Payment Description"
+msgstr "बँक भरणा वर्णन"
+
+#: resources/views/order/user/summary.blade.php:562
+msgid "COD Payment Description"
+msgstr "शेंग भरणा वर्णन"
+
+#: resources/views/order/user/summary.blade.php:573
+msgid "Other Payment Description"
+msgstr "इतर भरणा वर्णन"
+
+#: resources/views/order/user/summary.blade.php:588
+msgid "Back To Shopping Cart"
+msgstr "खरेदी सूचीत कडे परत जा"
+
+#: resources/views/order/user/summary.blade.php:592
+msgid "Submit Order"
+msgstr "मागणी नोंदवा"
+
+#: resources/views/order/user/thank-you.blade.php:3
+msgid "Thanks for your order"
+msgstr "आपल्या ऑर्डर धन्यवाद"
+
+#: resources/views/order/user/thank-you.blade.php:8
+msgid "We will notify you when your order get processed"
+msgstr "आपल्या ऑर्डर प्रक्रिया तेव्हा आम्ही आपल्याला सूचित करेल"
+
+#: resources/views/order/user/thank-you.blade.php:13
+msgid ""
+"We have received your order but unfortunately Payment is not showing as completed, further "
+"investigation may required. <br> We will get back to you soon, if needed please feel free "
+"to contact us."
+msgstr ""
+"आम्ही आपल्या ऑर्डर प्राप्त झाला आहे, पण दुर्दैवाने भरणा पूर्ण दाखवत नसते, पुढील तपास आवश्यक शकते. प्रवास "
+"आपल्याकडे परत गरज असल्यास आमच्याशी संपर्क मोकळ्या मनाने लवकरच मिळेल."
+
+#: resources/views/order/user/thank-you.blade.php:18
+msgid "For the further referance please quote Order ID __orderUID__"
+msgstr "पुढील संदर्भ ऑर्डर आयडी __orderUID__ कोट करा"
+
+#: resources/views/pages/display-details.blade.php:6
+msgid ""
+"The <strong>:__pageName__</strong> page is inactive & will not display in public until you "
+"change status to active"
+msgstr ""
+"<Strong>: __ pageName __ </ strong> पृष्ठ निष्क्रिय आहे आणि आपण सक्रिय स्थिती बदलत नाही तो पर्यंत "
+"सार्वजनिक प्रदर्शित करणार नाही"
+
+#: resources/views/pages/display-details.blade.php:9
+#: resources/views/pages/manage/edit.blade.php:5
+msgid "Edit Page"
+msgstr "पृष्ठ संपादित करा"
+
+#: resources/views/pages/manage/add.blade.php:5
+msgid "Add Page"
+msgstr "पृष्ठ जोडा"
+
+#: resources/views/pages/manage/add.blade.php:46
+#: resources/views/pages/manage/edit.blade.php:48
+msgid "Link"
+msgstr "दुवा"
+
+#: resources/views/pages/manage/add.blade.php:58
+#: resources/views/pages/manage/edit.blade.php:60
+msgid "Parent Page"
+msgstr "पालक पृष्ठ"
+
+#: resources/views/pages/manage/add.blade.php:76
+msgid "Open As"
+msgstr "खुल्या"
+
+#: resources/views/pages/manage/add.blade.php:96
+#: resources/views/pages/manage/edit.blade.php:88
+#: resources/views/pages/manage/edit.blade.php:112
+msgid "Add to menu"
+msgstr "मेनू जोडा"
+
+#: resources/views/pages/manage/add.blade.php:106
+#: resources/views/pages/manage/edit.blade.php:98
+msgid "Hide Sidebar"
+msgstr "साइडबार लपवा"
+
+#: resources/views/pages/manage/details.blade.php:10
+msgid "Back"
+msgstr "परत"
+
+#: resources/views/pages/manage/list.blade.php:5 resources/views/pages/manage/list.blade.php:6
+msgid "Manage Pages"
+msgstr "पृष्ठे व्यवस्थापित करा"
+
+#: resources/views/pages/manage/list.blade.php:10
+msgid "Add New Page"
+msgstr "नवीन पृष्ठ जोडा"
+
+#: resources/views/pages/manage/list.blade.php:20
+msgid "List Order"
+msgstr "यादी ऑर्डर"
+
+#: resources/views/pages/manage/list.blade.php:23
+msgid "Created"
+msgstr "तयार"
+
+#: resources/views/pages/manage/list.blade.php:24
+msgid "Updated"
+msgstr "अद्यतनित"
+
+#: resources/views/pages/manage/list.blade.php:25
+msgid "Show in menu"
+msgstr "मेनूमध्ये दर्शवा"
+
+#: resources/views/pages/manage/list.blade.php:97
+msgid "Sub-pages"
+msgstr "उप-पृष्ठे"
+
+#: resources/views/pages/manage/list.blade.php:101
+msgid "External-page"
+msgstr "बाह्य-पान"
+
+#: resources/views/pages/manage/list.blade.php:105
+msgid "External-link"
+msgstr "बाह्य-दुवा"
+
+#: resources/views/product/add-to-cart-form.blade.php:33
+#: resources/views/product/details-dialog.blade.php:77
+#: resources/views/product/details.blade.php:153
+msgid "Base Price"
+msgstr "बेस किंमत"
+
+#: resources/views/product/add-to-cart-form.blade.php:55
+#: resources/views/product/details-dialog.blade.php:102
+#: resources/views/product/details.blade.php:180
+msgid "Price based on options selections"
+msgstr "पर्याय निवडींवर आधारित किंमत"
+
+#: resources/views/product/add-to-cart-form.blade.php:55
+#: resources/views/product/details-dialog.blade.php:102
+#: resources/views/product/details.blade.php:180
+msgid "Price :"
+msgstr "किंमत:"
+
+#: resources/views/product/add-to-cart-form.blade.php:75
+#: resources/views/product/details-dialog.blade.php:120
+#: resources/views/product/details.blade.php:200
+msgid "Quantity"
+msgstr "प्रमाण"
+
+#: resources/views/product/add-to-cart-form.blade.php:80
+#: resources/views/product/details-dialog.blade.php:125
+#: resources/views/product/details.blade.php:205
+#: resources/views/shoppingCart/cart-view.blade.php:61
+msgid "Decrement"
+msgstr "कमी होणे"
+
+#: resources/views/product/add-to-cart-form.blade.php:98
+#: resources/views/product/details-dialog.blade.php:143
+#: resources/views/product/details.blade.php:223
+#: resources/views/shoppingCart/cart-view.blade.php:76
+msgid "Increment"
+msgstr "वाढ"
+
+#: resources/views/product/add-to-cart-form.blade.php:106
+#: resources/views/product/add-to-cart-form.blade.php:108
+#: resources/views/product/details-dialog.blade.php:151
+#: resources/views/product/details-dialog.blade.php:153
+#: resources/views/product/details.blade.php:231 resources/views/product/details.blade.php:233
+msgid "Add to Cart"
+msgstr "सूचीत टाका"
+
+#: resources/views/product/add-to-cart-form.blade.php:114
+#: resources/views/product/add-to-cart-form.blade.php:118
+#: resources/views/product/details-dialog.blade.php:159
+#: resources/views/product/details-dialog.blade.php:163
+#: resources/views/product/details.blade.php:239 resources/views/product/details.blade.php:243
+msgid "Update Cart"
+msgstr "खरेदी पिशवी अद्यावत करा"
+
+#: resources/views/product/details-dialog.blade.php:20
+#: resources/views/product/details-dialog.blade.php:202
+#: resources/views/product/details-dialog.blade.php:204
+#: resources/views/product/manage/list.blade.php:137
+msgid "Product Details"
+msgstr "उत्पादन तपशील"
+
+#: resources/views/product/details-dialog.blade.php:32
+#: resources/views/product/details.blade.php:85
+msgid "Available in these categories"
+msgstr "या श्रेण्या उपलब्ध"
+
+#: resources/views/product/details-dialog.blade.php:212
+#: resources/views/product/details-dialog.blade.php:217
+msgid "Go to Shopping Cart"
+msgstr "खरेदी सूची पहा"
+
+#: resources/views/product/details.blade.php:29
+msgid ""
+"As this product's of <strong>category</strong> is inactive this product is not publicly "
+"viewable"
+msgstr ""
+"हे उत्पादन च्या <strong> वर्गात </ strong> निष्क्रिय आहे म्हणून हे उत्पादन सार्वजनिकरित्या दृश्यमान नाही"
+
+#: resources/views/product/details.blade.php:35
+msgid ""
+"This product is inactive & will not display in public until you change status to active"
+msgstr "हे उत्पादन निष्क्रिय आहे आणि आपण सक्रिय स्थिती बदलत नाही तो पर्यंत सार्वजनिक प्रदर्शित करणार नाही"
+
+#: resources/views/product/details.blade.php:43
+msgid ""
+"As this product's __brandName__ brand is inactive .This product is not publicly viewable."
+msgstr "या उत्पादनाची __brandName__ ब्रँड निष्क्रिय .हे उत्पादन आहे म्हणून सार्वजनिकपणे दृश्यमान नाही."
+
+#: resources/views/product/details.blade.php:108
+msgid "View __brandName__ Brand Products"
+msgstr "__brandName__ ब्रँड उत्पादने पहा"
+
+#: resources/views/product/details.blade.php:278
+msgid "Product Description"
+msgstr "उत्पादन वर्णन"
+
+#: resources/views/product/details.blade.php:294
+#: resources/views/product/manage/detail-dialog.blade.php:185
+msgid "Product Specifications"
+msgstr "उत्पादन वैशिष्ट्य"
+
+#: resources/views/product/details.blade.php:312
+msgid "Related Video"
+msgstr "संबंधित व्हिडिओ"
+
+#: resources/views/product/details.blade.php:327
+#: resources/views/product/manage/add.blade.php:218
+#: resources/views/product/manage/detail-dialog.blade.php:199
+#: resources/views/product/manage/edit-details.blade.php:181
+msgid "Related Products"
+msgstr "संबंधित उत्पादने"
+
+#: resources/views/product/filter-dialog.blade.php:6
+#: resources/views/product/list.blade.php:160 resources/views/product/list.blade.php:161
+msgid "Filter"
+msgstr "फिल्टर"
+
+#: resources/views/product/filter-dialog.blade.php:50
+msgid " Select All"
+msgstr " सर्व निवडा"
+
+#: resources/views/product/filter-dialog.blade.php:98
+msgid "No price Filter."
+msgstr "नाही किंमत फिल्टर."
+
+#: resources/views/product/filter-dialog.blade.php:126
+#: resources/views/product/filter-dialog.blade.php:127
+#: resources/views/product/filter-dialog.blade.php:130
+msgid "Clear Filter"
+msgstr "फिल्टर साफ करा"
+
+#: resources/views/product/list.blade.php:32
+msgid "__productCount__ Products found for : __searchTerm__  term"
+msgstr "__productCount__ उत्पादने आढळली: __searchTerm__ मुदत"
+
+#: resources/views/product/list.blade.php:38
+msgid "Products Search"
+msgstr "उत्पादने शोध"
+
+#: resources/views/product/list.blade.php:42
+msgid "found __productCount__ results for"
+msgstr "__productCount__ परिणाम आढळले "
+
+#: resources/views/product/list.blade.php:51
+msgid "Remove __searchTerm__"
+msgstr "__searchTerm__ काढा"
+
+#: resources/views/product/list.blade.php:106
+msgid "Showing Products for "
+msgstr "उत्पादनांचा दर्शवित "
+
+#: resources/views/product/list.blade.php:118 resources/views/product/list.blade.php:137
+msgid "Remove "
+msgstr "काढा "
+
+#: resources/views/product/list.blade.php:128
+msgid " In price between "
+msgstr " दरम्यान किंमत "
+
+#: resources/views/product/list.blade.php:131
+msgid "Min and Max Price"
+msgstr "मि आणि कमाल किंमत"
+
+#: resources/views/product/list.blade.php:147 resources/views/product/list.blade.php:149
+msgid "Clear all Filters"
+msgstr "सर्व फिल्टर साफ करा"
+
+#: resources/views/product/list.blade.php:167 resources/views/product/list.blade.php:171
+msgid "Order by"
+msgstr "च्या आदेशाने"
+
+#: resources/views/product/list.blade.php:198 resources/views/product/list.blade.php:323
+msgid "Featured Product"
+msgstr "वैशिष्ट्यीकृत उत्पादन"
+
+#: resources/views/product/list.blade.php:208 resources/views/product/list.blade.php:333
+msgid "Out of stock"
+msgstr "स्टॉक बाहेर"
+
+#: resources/views/product/list.blade.php:246 resources/views/product/list.blade.php:363
+msgid "Quick View"
+msgstr "जलद पहा"
+
+#: resources/views/product/list.blade.php:278
+msgid "Looks like you've reached the end."
+msgstr "आपण शेवटपर्यंत पोहोचला आहे असे दिसते."
+
+#: resources/views/product/list.blade.php:290
+msgid "Load __item__ more items out of __remainingCount__."
+msgstr "__remainingCount__ अधिक आयटम __item__ लोड."
+
+#: resources/views/product/list.blade.php:292
+msgid "Load __remainingCount__ more items."
+msgstr "अधिक आयटम __remainingCount__ लोड."
+
+#: resources/views/product/list.blade.php:304
+msgid "No products available here."
+msgstr "कोणतीही उत्पादने येथे उपलब्ध."
+
+#: resources/views/product/manage/Images/add-dialog.blade.php:4
+msgid "Add Image"
+msgstr "प्रतिमा जोडा"
+
+#: resources/views/product/manage/Images/add-dialog.blade.php:25
+#: resources/views/product/manage/add.blade.php:149
+#: resources/views/product/manage/edit-details.blade.php:112
+msgid "Image"
+msgstr "प्रतिमा"
+
+#: resources/views/product/manage/Images/add-dialog.blade.php:26
+#: resources/views/product/manage/add.blade.php:150
+#: resources/views/product/manage/edit-details.blade.php:113
+msgid "Select Image"
+msgstr "प्रतिमा निवडा"
+
+#: resources/views/product/manage/Images/edit-dialog.blade.php:4
+msgid "Edit Image"
+msgstr "प्रतिमा संपादित"
+
+#: resources/views/product/manage/Images/list.blade.php:5
+msgid "Manage Images"
+msgstr "प्रतिमा व्यवस्थापित करा"
+
+#: resources/views/product/manage/Images/list.blade.php:8
+msgid "Add New Image"
+msgstr "नवी प्रतिमा जोडा"
+
+#: resources/views/product/manage/add.blade.php:43
+msgid "Add Product for __category__"
+msgstr "__category__ उत्पादन जोडा"
+
+#: resources/views/product/manage/add.blade.php:77
+#: resources/views/product/manage/detail-dialog.blade.php:28
+#: resources/views/product/manage/edit-details.blade.php:31
+msgid "Product ID"
+msgstr "उत्पादन ID"
+
+#: resources/views/product/manage/add.blade.php:88
+#: resources/views/product/manage/edit-details.blade.php:43
+msgid "Mark as Featured"
+msgstr "वैशिष्ट्यीकृत म्हणून चिन्हांकित करा"
+
+#: resources/views/product/manage/add.blade.php:98
+#: resources/views/product/manage/edit-details.blade.php:53
+msgid "Mark Out of Stock"
+msgstr "स्टॉक संपला चिन्ह"
+
+#: resources/views/product/manage/add.blade.php:138
+#: resources/views/product/manage/edit-details.blade.php:93
+#: resources/views/store/placement.blade.php:26
+msgid "Select Brand"
+msgstr "ब्रँड निवडा"
+
+#: resources/views/product/manage/add.blade.php:140
+#: resources/views/product/manage/edit-details.blade.php:95
+msgid "Add New brand"
+msgstr "नवीन जोडा"
+
+#: resources/views/product/manage/add.blade.php:166
+msgid "Youtube Video"
+msgstr "YouTube व्हिडिओ"
+
+#: resources/views/product/manage/add.blade.php:176
+#: resources/views/product/manage/edit-details.blade.php:139
+msgid "Use only youtube video code, as in following eg. __sampleYoutubeLink__"
+msgstr "फक्त व्हिडिओ कोड वापरा उदा खालील म्हणून. __sampleYoutubeLink__"
+
+#: resources/views/product/manage/add.blade.php:181
+#: resources/views/product/manage/detail-dialog.blade.php:40
+#: resources/views/product/manage/edit-details.blade.php:144
+msgid "Old Price"
+msgstr "जुन्या किंमत"
+
+#: resources/views/product/manage/add.blade.php:219
+#: resources/views/product/manage/edit-details.blade.php:182
+msgid "Select Related Products"
+msgstr "संबंधित उत्पादने निवडा"
+
+#: resources/views/product/manage/add.blade.php:230
+msgid ""
+"Save for now &amp; continue to add options (Publically not available until mark as active.)"
+msgstr ""
+"आता देणे आणि जतन; पर्याय जोडणे सुरू ठेवा (सक्रिय म्हणून चिन्हांकित करा होईपर्यंत सार्वजनिकपणे उपलब्ध नाही.)"
+
+#: resources/views/product/manage/add.blade.php:231
+msgid "Save &amp; Continue"
+msgstr "जतन करा आणी अधिक तपशील टाकत रहा"
+
+#: resources/views/product/manage/add.blade.php:236
+msgid "Save this item &amp; mark as active."
+msgstr "सक्रिय चिन्हांकित व जतन करा करा."
+
+#: resources/views/product/manage/add.blade.php:237
+msgid "Save &amp; Publish"
+msgstr "जतन व प्रकाशित करा"
+
+#: resources/views/product/manage/detail-dialog.blade.php:5
+msgid "Product Information"
+msgstr "उत्पादनाची माहिती"
+
+#: resources/views/product/manage/detail-dialog.blade.php:12
+msgid ""
+"This product or its category is deactive & will not display in public until you change "
+"status Deactive to Active"
+msgstr ""
+"हे उत्पादन किंवा त्याच्या वर्गा deactive आहे & आपण सक्रिय स्थिती Deactive बदलत नाही तो पर्यंत सार्वजनिक "
+"प्रदर्शित करणार नाही"
+
+#: resources/views/product/manage/detail-dialog.blade.php:64
+msgid "Updated On"
+msgstr "रोजी अद्यतनित"
+
+#: resources/views/product/manage/detail-dialog.blade.php:132
+msgid "Go to Category Products"
+msgstr "वर्ग उत्पादने जा"
+
+#: resources/views/product/manage/detail-dialog.blade.php:146
+msgid "Go to Brand Products"
+msgstr "ब्रँड उत्पादने जा"
+
+#: resources/views/product/manage/detail-dialog.blade.php:154
+msgid "Product Options"
+msgstr "उत्पादन पर्याय"
+
+#: resources/views/product/manage/detail-dialog.blade.php:163
+msgid "Addon Value"
+msgstr "addon मूल्य"
+
+#: resources/views/product/manage/detail-dialog.blade.php:164
+msgid "Addon Price "
+msgstr "addon किंमत "
+
+#: resources/views/product/manage/detail-dialog.blade.php:164
+msgid "(if any)"
+msgstr "(जर काही)"
+
+#: resources/views/product/manage/detail-dialog.blade.php:204
+msgid "Go to View Details Page"
+msgstr "जा तपशील पृष्ठ पहा"
+
+#: resources/views/product/manage/edit-details.blade.php:129
+msgid "Youtube Video Code"
+msgstr "YouTube व्हिडिओ कोड"
+
+#: resources/views/product/manage/edit-details.blade.php:193
+msgid "To show the details of this product"
+msgstr "हे उत्पादन तपशील दर्शविण्यासाठी"
+
+#: resources/views/product/manage/edit-details.blade.php:195
+#: resources/views/product/manage/edit.blade.php:47
+msgid "View Page"
+msgstr "पृष्ठ पहा"
+
+#: resources/views/product/manage/edit.blade.php:15
+msgid "Multiple Category"
+msgstr "अनेक वर्ग"
+
+#: resources/views/product/manage/edit.blade.php:59
+msgid "Publically Available"
+msgstr "सार्वजनिकपणे उपलब्ध"
+
+#: resources/views/product/manage/edit.blade.php:63
+msgid "Update Status"
+msgstr "स्थिती अद्यतनित करा"
+
+#: resources/views/product/manage/edit.blade.php:77
+msgid "Options"
+msgstr "पर्याय"
+
+#: resources/views/product/manage/edit.blade.php:78
+msgid "Images"
+msgstr "प्रतिमा"
+
+#: resources/views/product/manage/edit.blade.php:79
+msgid "Specification"
+msgstr "तपशील"
+
+#: resources/views/product/manage/list.blade.php:187
+msgid "In Stock"
+msgstr "स्टॉक मध्ये"
+
+#: resources/views/product/manage/options/add-dialog.blade.php:4
+msgid "Add Option"
+msgstr "पर्याय जोडा"
+
+#: resources/views/product/manage/options/add-dialog.blade.php:12
+#: resources/views/product/manage/options/values/list-dialog.blade.php:13
+msgid "Note : "
+msgstr "टीप: "
+
+#: resources/views/product/manage/options/add-dialog.blade.php:12
+msgid "Adding an option will create dropdown menu on product page."
+msgstr "एक पर्याय समाविष्ट उत्पादन पृष्ठावर ड्रॉप डाउन मेनू तयार करेल."
+
+#: resources/views/product/manage/options/add-dialog.blade.php:28
+#: resources/views/product/manage/options/values/list-dialog.blade.php:19
+msgid "Value Name"
+msgstr "मूल्य नाव"
+
+#: resources/views/product/manage/options/add-dialog.blade.php:39
+#: resources/views/product/manage/options/values/list-dialog.blade.php:30
+msgid "Addon Price"
+msgstr "addon किंमत"
+
+#: resources/views/product/manage/options/add-dialog.blade.php:60
+#: resources/views/product/manage/options/values/list-dialog.blade.php:56
+#: resources/views/product/manage/specification/add-dialog.blade.php:53
+msgid "Add More"
+msgstr "जोडा अधिक"
+
+#: resources/views/product/manage/options/edit-dialog.blade.php:4
+msgid "Edit Option"
+msgstr "पर्याय संपादित करा"
+
+#: resources/views/product/manage/options/list.blade.php:5
+msgid "Manage Options"
+msgstr "पर्याय व्यवस्थापित करा"
+
+#: resources/views/product/manage/options/list.blade.php:10
+msgid "Add New Option"
+msgstr "नवी पर्याय जोडा"
+
+#: resources/views/product/manage/options/list.blade.php:22
+#: resources/views/product/manage/specification/list.blade.php:19
+msgid "Values"
+msgstr "मूल्ये"
+
+#: resources/views/product/manage/options/list.blade.php:36
+msgid "Add / Edit values for"
+msgstr "मूल्ये जोडा / संपादित करा साठी"
+
+#: resources/views/product/manage/options/list.blade.php:40
+msgid "Add / "
+msgstr "जोडा / "
+
+#: resources/views/product/manage/options/values/list-dialog.blade.php:4
+msgid "Add / Edit Values"
+msgstr "मूल्ये जोडा / संपादित करा"
+
+#: resources/views/product/manage/specification/add-dialog.blade.php:4
+msgid "Add Specification"
+msgstr "तपशील जोडा"
+
+#: resources/views/product/manage/specification/add-dialog.blade.php:26
+msgid "Select / Add New Name"
+msgstr "निवडक / नवीन नाव जोडा"
+
+#: resources/views/product/manage/specification/add-dialog.blade.php:34
+#: resources/views/product/manage/specification/edit-dialog.blade.php:34
+msgid "Value"
+msgstr "मूल्य"
+
+#: resources/views/product/manage/specification/add-dialog.blade.php:42
+#: resources/views/product/manage/specification/edit-dialog.blade.php:42
+msgid "Select Value"
+msgstr "मूल्य निवडा"
+
+#: resources/views/product/manage/specification/edit-dialog.blade.php:4
+msgid "Edit Specification"
+msgstr "तपशील संपादित करा"
+
+#: resources/views/product/manage/specification/edit-dialog.blade.php:24
+msgid "Select Name"
+msgstr "नाव निवडा"
+
+#: resources/views/product/manage/specification/list.blade.php:5
+msgid "Manage Specification"
+msgstr "तपशील व्यवस्थापित करा"
+
+#: resources/views/product/manage/specification/list.blade.php:8
+msgid "Add New Specification"
+msgstr "नवी तपशील जोडा"
+
+#: resources/views/product/manage/uploaded-media.blade.php:4
+msgid "Uploaded Files"
+msgstr "अपलोड केलेल्या फाइल्स"
+
+#: resources/views/product/manage/uploaded-media.blade.php:16
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:12
+msgid "Preview"
+msgstr "पूर्वावलोकन"
+
+#: resources/views/product/manage/uploaded-media.blade.php:17
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:13
+msgid "File Name"
+msgstr "फाईलचे नाव"
+
+#: resources/views/product/manage/uploaded-media.blade.php:39
+msgid "Delete Multiple Files"
+msgstr "अनेक फायली हटवा"
+
+#: resources/views/product/manage/uploaded-media.blade.php:47
+msgid "There are no files to display."
+msgstr "प्रदर्शित करण्यासाठी कोणत्याही फायली आहेत."
+
+#: resources/views/public-master.blade.php:48
+msgid "Loading .."
+msgstr "लोड करीत आहे .."
+
+#: resources/views/public-master.blade.php:67
+msgid "Demonstration purposes only. No Order will be executed."
+msgstr "फक्त प्रात्यक्षिक हेतूने. ऑर्डर कार्यवाही केली जाणार  नाही"
+
+#: resources/views/public-master.blade.php:140 resources/views/public-master.blade.php:141
+msgid "Go to top"
+msgstr "वर जा"
+
+#: resources/views/report/manage/details-dialog.blade.php:20
+msgid "Customer Name"
+msgstr "ग्राहकाचे नाव"
+
+#: resources/views/report/manage/list.blade.php:84 resources/views/store/order.blade.php:19
+msgid "Order"
+msgstr "ऑर्डर"
+
+#: resources/views/report/manage/list.blade.php:108
+msgid "Total order Payments "
+msgstr "एकूण ऑर्डर देयके "
+
+#: resources/views/report/manage/list.blade.php:116
+#: resources/views/store/currency.blade.php:20
+#: resources/views/store/edit_settings.blade.php:36
+#: resources/views/store/edit_settings.blade.php:38
+msgid "Currency"
+msgstr "चलन"
+
+#: resources/views/report/manage/list.blade.php:117
+msgid "Credit Amount"
+msgstr "क्रेडिट रक्कम"
+
+#: resources/views/report/manage/list.blade.php:118
+msgid "Debit Amount"
+msgstr "डेबिट रक्कम"
+
+#: resources/views/report/manage/list.blade.php:119
+msgid "Difference Amount"
+msgstr "फरक रक्कम"
+
+#: resources/views/shipping/manage/add-dialog.blade.php:4
+#: resources/views/shipping/manage/list.blade.php:34
+msgid "Add New Shipping Rule"
+msgstr "नवीन नौवहन नियम जोडा"
+
+#: resources/views/shipping/manage/add-dialog.blade.php:21
+#: resources/views/shipping/manage/edit-dialog.blade.php:26
+#: resources/views/shipping/manage/list.blade.php:73
+msgid "Type / Availability"
+msgstr "प्रकार / उपलब्धता"
+
+#: resources/views/shipping/manage/add-dialog.blade.php:29
+#: resources/views/shipping/manage/detail-dialog.blade.php:29
+#: resources/views/shipping/manage/edit-dialog.blade.php:34
+#: resources/views/shipping/manage/list.blade.php:41
+#: resources/views/shipping/manage/list.blade.php:81
+msgid "Charges"
+msgstr "शुल्क"
+
+#: resources/views/shipping/manage/add-dialog.blade.php:46
+msgid "Free Shipping If Order Amount More Than"
+msgstr "ऑर्डरच्या रक्कम या पेक्षा अधिक असल्यास मोफत शिपिंग"
+
+#: resources/views/shipping/manage/add-dialog.blade.php:46
+#: resources/views/shipping/manage/edit-dialog.blade.php:50
+msgid "Shipping Free After Amount"
+msgstr "रक्कम नंतर मोफत शिपिंग"
+
+#: resources/views/shipping/manage/add-dialog.blade.php:60
+#: resources/views/shipping/manage/detail-dialog.blade.php:50
+#: resources/views/shipping/manage/edit-dialog.blade.php:64
+#: resources/views/shipping/manage/list.blade.php:113
+msgid "Maximum Shipping Amount"
+msgstr "कमाल शिपिंग रक्कम"
+
+#: resources/views/shipping/manage/add-dialog.blade.php:75
+#: resources/views/shipping/manage/detail-dialog.blade.php:65
+#: resources/views/shipping/manage/edit-dialog.blade.php:79
+#: resources/views/shipping/manage/list.blade.php:127
+#: resources/views/tax/manage/add-dialog.blade.php:57
+#: resources/views/tax/manage/detail-dialog.blade.php:64
+#: resources/views/tax/manage/edit-dialog.blade.php:58
+msgid "Notes"
+msgstr "टिप"
+
+#: resources/views/shipping/manage/detail-dialog.blade.php:5
+msgid "Shipping Rule Details"
+msgstr "शिपिंग नियम तपशील"
+
+#: resources/views/shipping/manage/detail-dialog.blade.php:23
+msgid "Shipping Type"
+msgstr "शिपिंग प्रकार"
+
+#: resources/views/shipping/manage/detail-dialog.blade.php:41
+msgid "Free Shipping if Order Amount more than"
+msgstr "ऑर्डरच्या रक्कम या पेक्षा अधिक असल्यास मोफत शिपिंग"
+
+#: resources/views/shipping/manage/edit-dialog.blade.php:4
+msgid "Edit Shipping Rule"
+msgstr "शिपिंग संपादित करा नियम"
+
+#: resources/views/shipping/manage/edit-dialog.blade.php:50
+#: resources/views/shipping/manage/list.blade.php:98
+msgid "Free Shipping if Order Amount More than"
+msgstr "ऑर्डरच्या रक्कम या पेक्षा अधिक असल्यास मोफत शिपिंग"
+
+#: resources/views/shipping/manage/list.blade.php:7
+msgid "Manage Shipping Rules"
+msgstr "शिपिंग नियम व्यवस्थापित करा"
+
+#: resources/views/shipping/manage/list.blade.php:15
+#: resources/views/shipping/manage/list.blade.php:16
+#: resources/views/shipping/manage/list.blade.php:66
+msgid "Specific Countries"
+msgstr "विशिष्ट देश"
+
+#: resources/views/shipping/manage/list.blade.php:21
+#: resources/views/shipping/manage/list.blade.php:22
+msgid "All Other Countries"
+msgstr "सर्व इतर देश"
+
+#: resources/views/shipping/manage/list.blade.php:42
+#: resources/views/tax/manage/list.blade.php:29
+msgid "Date"
+msgstr "तारीख"
+
+#: resources/views/shipping/manage/list.blade.php:64
+msgid "Please Note : "
+msgstr "कृपया लक्षात ठेवा: "
+
+#: resources/views/shipping/manage/list.blade.php:65
+msgid ""
+"This Shipping Rule will be applicable to all other countries which are not listed in "
+"__specificCountry__ tab."
+msgstr "या शिपिंग नियम आहेत __specificCountry__ टॅबमध्ये सूचीत नाही इतर सर्व देशांमध्ये लागू होईल."
+
+#: resources/views/shoppingCart/cart-view.blade.php:73
+msgid "Loading.."
+msgstr "लोड करीत आहे .."
+
+#: resources/views/shoppingCart/cart-view.blade.php:95
+msgid "Your Cart Total"
+msgstr "आपले टाका एकूण"
+
+#: resources/views/shoppingCart/cart-view.blade.php:100
+msgid "Please continue to proceed order"
+msgstr "ऑर्डर पुढे जाण्यासाठी सुरू ठेवा"
+
+#: resources/views/shoppingCart/cart-view.blade.php:122
+msgid "Close for Now & do some more Shopping!!"
+msgstr "आता बंद करा काही अधिक खरेदी करू ठेवा !!"
+
+#: resources/views/shoppingCart/cart-view.blade.php:130
+#: resources/views/shoppingCart/cart-view.blade.php:131
+#: resources/views/shoppingCart/cart-view.blade.php:139
+#: resources/views/shoppingCart/cart-view.blade.php:140
+msgid "Complete your Order"
+msgstr "आपल्या ऑर्डर पूर्ण"
+
+#: resources/views/shoppingCart/cart-view.blade.php:147
+msgid "Empty Cart"
+msgstr "रिक्त टाका"
+
+#: resources/views/store/contact.blade.php:15
+msgid "Email Address For Contact Form"
+msgstr "संपर्क फॉर्म ई-मेल पत्ता"
+
+#: resources/views/store/contact.blade.php:27
+msgid "Address, Telephone For Contact Page"
+msgstr "पत्ता, संपर्क पृष्ठ दूरध्वनी"
+
+#: resources/views/store/css-style.blade.php:10
+msgid ""
+"<strong>Note : </strong> Please be carefully While adding your own CSS it will affect on "
+"site."
+msgstr ""
+"<Strong> टीप: </ strong> आपल्या स्वत: च्या सीएसएस साइट वर परिणाम होईल जोडताना काळजीपूर्वक असू द्या."
+
+#: resources/views/store/css-style.blade.php:12
+msgid "Write your own CSS Styles"
+msgstr "आपल्या स्वत: च्या CSS शैली लिहा"
+
+#: resources/views/store/currency.blade.php:27
+msgid "Select Currency"
+msgstr "चलन निवडा"
+
+#: resources/views/store/currency.blade.php:35
+msgid "Currency may not supported by PayPal"
+msgstr "चलन पोपल द्वारे समर्थीत नाही"
+
+#: resources/views/store/currency.blade.php:38
+msgid "Please check supported currencies for your payment method."
+msgstr "कृपया आपली देय पद्धत समर्थीत चलने तपासा."
+
+#: resources/views/store/currency.blade.php:41
+msgid "You can see PayPal Supported Currencies more information in detail."
+msgstr "आपण पोपल समर्थित चलने पाहू शकता अधिक तपशील माहिती."
+
+#: resources/views/store/currency.blade.php:41
+msgid "PayPal Supported Currencies"
+msgstr "पोपल समर्थित चलने"
+
+#: resources/views/store/currency.blade.php:43
+msgid "You can see Stripe Supported Currencies more information in detail."
+msgstr "आपण पट्टी समर्थित चलने पाहू शकता अधिक तपशील माहिती."
+
+#: resources/views/store/currency.blade.php:43
+msgid "Stripe Supported Currencies"
+msgstr "प्रकार समर्थित चलने"
+
+#: resources/views/store/currency.blade.php:46
+msgid "Currency Code"
+msgstr "चलन कोड"
+
+#: resources/views/store/currency.blade.php:58
+msgid "Round Zero Decimal Currency"
+msgstr "गोल शून्य दशांश चलन"
+
+#: resources/views/store/currency.blade.php:68
+msgid ""
+"All the price and amount will be rounded. Eg : 10.25 It will become 10 , 10.57 It will "
+"become 11."
+msgstr "सर्व किंमत आणि रक्कम गणले जाईल. उदा: 10.25 तो 11 होईल 10, 10,57 होईल."
+
+#: resources/views/store/currency.blade.php:72
+msgid "This currency doesn't support Decimal values it may create error at payment."
+msgstr "या चलन तो पैसे चुकीचे तयार करू शकता दशमान मूल्ये समर्थन देत नाही."
+
+#: resources/views/store/currency.blade.php:78
+msgid "Currency Symbol"
+msgstr "चलन प्रतीक"
+
+#: resources/views/store/currency.blade.php:91
+msgid "Refer for"
+msgstr "संदर्भ घ्या"
+
+#: resources/views/store/currency.blade.php:91
+msgid "ASCII Codes"
+msgstr "आस्की कोड"
+
+#: resources/views/store/currency.blade.php:93
+msgid "Order Payment Update successfully"
+msgstr "यशस्वीरित्या ऑर्डर भरणा अद्यतन"
+
+#: resources/views/store/currency.blade.php:93
+msgid "Do you want to change order status also"
+msgstr "आपण देखील ऑर्डर स्थिती बदलू इच्छित आहे का"
+
+#: resources/views/store/currency.blade.php:96
+msgid "Do not change contains in the curly braces."
+msgstr "बदलू ​​नका कुरळे चौकटी कंस मध्ये समाविष्टीत आहे."
+
+#: resources/views/store/currency.blade.php:100
+msgid "Currency Format"
+msgstr "चलन स्वरूप"
+
+#: resources/views/store/currency.blade.php:111
+msgid "This is currency format preview, Which is display in publically."
+msgstr "या चलन स्वरूपात पूर्वावलोकन, कोणत्या सार्वजनिकपणे प्रदर्शित आहे."
+
+#: resources/views/store/currency.blade.php:115
+msgid "Reset this format and use default format"
+msgstr "या स्वरूपात रीसेट करा आणि मुलभूत स्वरूप वापरा"
+
+#: resources/views/store/currency.blade.php:115
+msgid "Use Default"
+msgstr "डीफॉल्ट वापरा"
+
+#: resources/views/store/edit_settings.blade.php:13
+#: resources/views/store/edit_settings.blade.php:15
+msgid "General"
+msgstr "सामान्य"
+
+#: resources/views/store/edit_settings.blade.php:59
+#: resources/views/store/edit_settings.blade.php:61
+msgid "Order & Payments"
+msgstr "ऑर्डर आणि देयके"
+
+#: resources/views/store/edit_settings.blade.php:105
+msgid "Placements & Other Elements"
+msgstr "नियोजन व इतर घटक"
+
+#: resources/views/store/edit_settings.blade.php:107
+msgid "Placement & Other Elements"
+msgstr "स्थान आणि इतर घटक"
+
+#: resources/views/store/edit_settings.blade.php:197
+#: resources/views/store/edit_settings.blade.php:199
+msgid "Social"
+msgstr "सामाजिक"
+
+#: resources/views/store/edit_settings.blade.php:220
+#: resources/views/store/edit_settings.blade.php:222
+msgid "CSS Style"
+msgstr "CSS शैली"
+
+#: resources/views/store/general.blade.php:14
+msgid "Store Name"
+msgstr "स्टोअर नाव"
+
+#: resources/views/store/general.blade.php:25
+msgid "Current Logo"
+msgstr "चालू लोगो"
+
+#: resources/views/store/general.blade.php:33
+msgid "New Logo"
+msgstr "नवीन लोगो"
+
+#: resources/views/store/general.blade.php:34
+msgid "Only PNG images are expected"
+msgstr "फक्त पीएनजी प्रतिमा, अशी अपेक्षा आहे"
+
+#: resources/views/store/general.blade.php:50
+msgid "Header Background Color"
+msgstr "शीर्षलेख पार्श्वभूमी रंग"
+
+#: resources/views/store/general.blade.php:67
+msgid "Business Email"
+msgstr "व्यवसाय ईमेल"
+
+#: resources/views/store/general.blade.php:77
+msgid "Default Home Page Content"
+msgstr "डीफॉल्ट मुख्यपृष्ठ सामग्री"
+
+#: resources/views/store/general.blade.php:79
+msgid "Home Page"
+msgstr "मुख्यपृष्ठ"
+
+#: resources/views/store/general.blade.php:84 resources/views/store/general.blade.php:85
+msgid "TimeZone"
+msgstr "वेळ क्षेत्र"
+
+#: resources/views/store/order.blade.php:25
+msgid "Hide Sidebar On Order Submit Page."
+msgstr "ऑर्डर पृष्ठ सबमिट वर साइडबार लपवा."
+
+#: resources/views/store/order.blade.php:39 resources/views/store/order.blade.php:40
+#: resources/views/store/order.blade.php:54
+msgid "Apply Tax"
+msgstr "कर लागू करा"
+
+#: resources/views/store/order.blade.php:43
+msgid "Before Discount"
+msgstr "सवलत आधी"
+
+#: resources/views/store/order.blade.php:47
+msgid "After Discount"
+msgstr "सवलत नंतर"
+
+#: resources/views/store/order.blade.php:55
+msgid "Calculate Tax as per"
+msgstr "कराचे गणना"
+
+#: resources/views/store/order.blade.php:73
+msgid "Payments"
+msgstr "देयके"
+
+#: resources/views/store/order.blade.php:79
+msgid "PayPal"
+msgstr "पोपल"
+
+#: resources/views/store/order.blade.php:91
+msgid "PayPal Email"
+msgstr "पोपल ईमेल"
+
+#: resources/views/store/order.blade.php:102
+msgid "PayPal Sandbox Email (Testing) "
+msgstr "पोपल सँडबॉक्स ईमेल (चाचणी) "
+
+#: resources/views/store/order.blade.php:119
+msgid "Use Stripe"
+msgstr "पट्टी वापर"
+
+#: resources/views/store/order.blade.php:133
+msgid "Live"
+msgstr "राहतात"
+
+#: resources/views/store/order.blade.php:138 resources/views/store/order.blade.php:175
+msgid "Live Stripe keys are installed."
+msgstr "थेट पट्टी की स्थापन केले जातात."
+
+#: resources/views/store/order.blade.php:144 resources/views/store/order.blade.php:181
+msgid "Secret Key"
+msgstr "गुप्त की"
+
+#: resources/views/store/order.blade.php:155 resources/views/store/order.blade.php:192
+msgid "Publishable Key"
+msgstr "Publishable की"
+
+#: resources/views/store/order.blade.php:170
+msgid "Testing"
+msgstr "चाचणी"
+
+#: resources/views/store/order.blade.php:210
+msgid "Check Payment"
+msgstr "भरणा तपासा"
+
+#: resources/views/store/order.blade.php:221
+msgid "Check Payment Information"
+msgstr "देयक माहिती तपासा"
+
+#: resources/views/store/order.blade.php:232
+msgid "Bank Payment"
+msgstr "बँक भरणा"
+
+#: resources/views/store/order.blade.php:243
+msgid "Bank Payment Information"
+msgstr "बँक देयक माहिती"
+
+#: resources/views/store/order.blade.php:254
+msgid "COD Payment"
+msgstr "शेंग भरणा"
+
+#: resources/views/store/order.blade.php:265
+msgid "COD Payment Information"
+msgstr "शेंग देयक माहिती"
+
+#: resources/views/store/order.blade.php:287
+msgid "Other Order Payment Information"
+msgstr "इतर ऑर्डर देयक माहिती"
+
+#: resources/views/store/placement.blade.php:17
+msgid "Categories Menu"
+msgstr "श्रेणी मेनू"
+
+#: resources/views/store/placement.blade.php:18
+msgid "Select Categories"
+msgstr "श्रेणी निवडा"
+
+#: resources/views/store/placement.blade.php:25
+msgid "Brand Menu"
+msgstr "ब्रँड मेनू"
+
+#: resources/views/store/placement.blade.php:32
+msgid "Enable Credit Info"
+msgstr "क्रेडिट माहिती सक्षम"
+
+#: resources/views/store/placement.blade.php:42
+msgid "Show Language Menu"
+msgstr "भाषा मेनू दर्शवा"
+
+#: resources/views/store/placement.blade.php:53
+msgid "Page End Additionals"
+msgstr "पृष्ठ समाप्त खेरीज अधिक माहिती"
+
+#: resources/views/store/placement.blade.php:53
+msgid "Page End Additionals, May Use For Scripts Like Google Analytics etc."
+msgstr "पृष्ठ समाप्ती Additionals, Google Analytics इत्यादी स्क्रिप्ट चा वापर करू शकता"
+
+#: resources/views/store/placement.blade.php:61
+msgid "Addition Footer Text After Name & Copy Right"
+msgstr "या व्यतिरिक्त तळटीप मजकूर नांव व कॉपी करा Right केल्यानंतर"
+
+#: resources/views/store/placement.blade.php:73
+msgid "Website Notification"
+msgstr "वेबसाईट सूचना"
+
+#: resources/views/store/placement.blade.php:75
+msgid "The message you add here will be displayed on all the public pages below header."
+msgstr "आपण येथे जोडलेल्या संदेश हेडरमध्ये खालील सर्व सार्वजनिक पृष्ठे प्रदर्शित केले जाईल."
+
+#: resources/views/store/placement.blade.php:92
+msgid "Append Email Message"
+msgstr "ईमेल संदेश समािव"
+
+#: resources/views/store/placement.blade.php:94
+msgid ""
+"This Message will be inserted at end of email body content before the footer for every "
+"email send by the system. eg : Order Email , Activation email."
+msgstr ""
+"हा संदेश प्रणाली द्वारे पाठवू प्रत्येक ई-मेल तळटीप जाण्यापूर्वी ईमेल शरीर सामग्री शेवटी समाविष्ट केला जाईल. "
+"उदा: ऑर्डर ईमेल, सक्रियन ईमेल."
+
+#: resources/views/store/privacy-policy.blade.php:15
+msgid "Privacy"
+msgstr "गोपनीयता"
+
+#: resources/views/store/product.blade.php:15
+msgid "Show Out Of Stock Products"
+msgstr "आउट शेअर उत्पादने दर्शवा"
+
+#: resources/views/store/product.blade.php:25
+msgid ""
+"<strong>Note </strong>Minimum 20 products per page in the list is required to use scroll."
+msgstr "<Strong> टीप </ strong> किमान 20 मध्ये प्रति पृष्ठ उत्पादने पट वापरण्यासाठी आवश्यक आहे."
+
+#: resources/views/store/product.blade.php:29
+msgid ""
+"<strong>Note </strong>Minimum 5 products per page in the list is required to use button."
+msgstr "<Strong> टीप </ strong> कमीतकमी 5 यादीत प्रति पृष्ठ उत्पादने बटण वापरू करणे आवश्यक आहे."
+
+#: resources/views/store/product.blade.php:33 resources/views/store/product.blade.php:47
+msgid "Products Per Page On List"
+msgstr "प्रति पृष्ठ उत्पादने यादी रोजी"
+
+#: resources/views/store/product.blade.php:63 resources/views/store/product.blade.php:67
+msgid "Load Type"
+msgstr "लोड प्रकार"
+
+#: resources/views/store/product.blade.php:70
+msgid "Use Scroll"
+msgstr "स्क्रोल करा वापरा"
+
+#: resources/views/store/product.blade.php:73
+msgid "Use Button"
+msgstr "बटण वापरा"
+
+#: resources/views/store/social.blade.php:15
+msgid "Facebook Username"
+msgstr "फेसबुक वापरकर्तानाव"
+
+#: resources/views/store/social.blade.php:26
+msgid "Twitter Handle"
+msgstr "ट्विटर हँडल"
+
+#: resources/views/store/term-condition.blade.php:9
+msgid "Activation Required For New User"
+msgstr "नवीन वापरकर्ता सक्रिय आवश्यक"
+
+#: resources/views/store/term-condition.blade.php:19
+msgid "Activation Required For Change Email"
+msgstr "ई-मेल बदला सक्रिय आवश्यक"
+
+#: resources/views/store/term-condition.blade.php:29
+msgid "Login settings"
+msgstr "लॉग-इन सेटिंग्ज"
+
+#: resources/views/store/term-condition.blade.php:31
+msgid "show captcha after"
+msgstr "नंतर शो captcha"
+
+#: resources/views/store/term-condition.blade.php:34
+msgid "Show Captcha"
+msgstr "कॅप्चा शो"
+
+#: resources/views/store/term-condition.blade.php:45
+msgid " login attempts"
+msgstr " लॉग इन प्रयत्नांच्या"
+
+#: resources/views/store/term-condition.blade.php:51
+msgid "Terms & Conditions For User Registration"
+msgstr "अटी आणि नियम वापरकर्ता नोंदणी साठी"
+
+#: resources/views/tax/manage/add-dialog.blade.php:4
+msgid "Add Tax"
+msgstr "कर जोडा"
+
+#: resources/views/tax/manage/add-dialog.blade.php:21
+#: resources/views/tax/manage/detail-dialog.blade.php:28
+#: resources/views/tax/manage/edit-dialog.blade.php:21
+#: resources/views/tax/manage/list.blade.php:25
+msgid "Label"
+msgstr "लेबल"
+
+#: resources/views/tax/manage/add-dialog.blade.php:40
+#: resources/views/tax/manage/detail-dialog.blade.php:34
+#: resources/views/tax/manage/edit-dialog.blade.php:41
+#: resources/views/tax/manage/list.blade.php:28
+msgid "Applicable Tax"
+msgstr "लागू कर"
+
+#: resources/views/tax/manage/detail-dialog.blade.php:5
+msgid "Tax Details"
+msgstr "कर तपशील"
+
+#: resources/views/tax/manage/detail-dialog.blade.php:22
+msgid "Tax Type"
+msgstr "कर प्रकार"
+
+#: resources/views/tax/manage/edit-dialog.blade.php:4
+msgid "Edit Tax"
+msgstr "कर संपादित करा"
+
+#: resources/views/tax/manage/list.blade.php:7
+msgid "Manage Taxes"
+msgstr "कर व्यवस्थापित करा"
+
+#: resources/views/tax/manage/list.blade.php:14
+msgid "Add New Tax"
+msgstr "नवीन कर जोडा"
+
+#: resources/views/terms-and-conditions.blade.php:5
+#: resources/views/terms-and-conditions.blade.php:6
+#: resources/views/user/terms-and-conditions.blade.php:5
+#: resources/views/user/terms-and-conditions.blade.php:7
+msgid "Terms & Conditions"
+msgstr "अटी व शर्ती"
+
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:4
+msgid "Upload Manager"
+msgstr "अपलोड करा व्यवस्थापक"
+
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:7
+msgid " Note :"
+msgstr " टीप:"
+
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:7
+msgid "Please double click on image/document for selection."
+msgstr "निवड प्रतिमा / दस्तऐवज वर डबल क्लिक करा."
+
+#: resources/views/upload-manager/upload-manager-dialog.blade.php:35
+msgid "Uploads"
+msgstr "अपलोड"
+
+#: resources/views/user/change-email-success.blade.php:8
+#: resources/views/user/register-success.blade.php:10
+msgid "Activate your account"
+msgstr "आपले खाते सक्रिय"
+
+#: resources/views/user/change-email-success.blade.php:11
+msgid ""
+"Almost finished... We need to confirm your email address. To complete the activation "
+"process, please click the link in the email we just sent you.."
+msgstr ""
+"जवळजवळ समाप्त ... आम्ही आपल्या ईमेल पत्त्याची पुष्टी करणे आवश्यक आहे. सक्रियन प्रक्रिया पूर्ण करण्यासाठी, "
+"आम्ही फक्त आपण पाठविले ई-मेल मध्ये दुवा क्लिक करा .."
+
+#: resources/views/user/change-email.blade.php:15
+msgid "Activate your new email address"
+msgstr "तुमचा नवीन ईमेल पत्ता सक्रिय"
+
+#: resources/views/user/change-email.blade.php:17
+#: resources/views/user/register-success.blade.php:13
+msgid ""
+"Almost finished... You need to confirm your email address. To complete the activation "
+"process, please click the link in the email we just sent you."
+msgstr ""
+"जवळजवळ समाप्त ... आपण आपला ईमेल पत्ता पुष्टी करणे आवश्यक आहे. सक्रियन प्रक्रिया पूर्ण करण्यासाठी, आम्ही "
+"फक्त आपण पाठविले ई-मेल मध्ये दुवा क्लिक करा."
+
+#: resources/views/user/change-email.blade.php:22
+msgid ""
+"You requested for change email __email__ on __humanRedableDate__ is pending. You can still "
+"requested for new one."
+msgstr ""
+"आपण __humanRedableDate__ वर ईमेल बदला __email__ प्रलंबित आहे विनंती केली. आपण अद्याप नवीन विनंती करू "
+"शकता."
+
+#: resources/views/user/change-email.blade.php:29
+msgid "Well done!"
+msgstr "शाब्बास!"
+
+#: resources/views/user/change-email.blade.php:41
+msgid "Current Email"
+msgstr "वर्तमान ईमेल"
+
+#: resources/views/user/change-email.blade.php:52
+#: resources/views/user/change-password.blade.php:16
+msgid "Current Password"
+msgstr "वर्तमान संकेतशब्द"
+
+#: resources/views/user/change-email.blade.php:65
+msgid "New Email"
+msgstr "नवीन ई-मेल"
+
+#: resources/views/user/change-email.blade.php:76
+msgid "Update Request"
+msgstr "विनंती अद्यावत करा"
+
+#: resources/views/user/change-password.blade.php:29
+#: resources/views/user/manage/change-password.blade.php:17
+msgid "New Password"
+msgstr "नवीन पासवर्ड"
+
+#: resources/views/user/change-password.blade.php:41
+#: resources/views/user/manage/change-password.blade.php:29
+msgid "New Password Confirmation"
+msgstr "नवीन परवलीचा शब्द पुष्टीकरण"
+
+#: resources/views/user/change-password.blade.php:54
+#: resources/views/user/manage/change-password.blade.php:43
+msgid "Update Password"
+msgstr "पासवर्ड अद्यावत करा"
+
+#: resources/views/user/contact.blade.php:10
+msgid "Your contact request has been submitted successfully we will set back to you shortly"
+msgstr "आपल्या संपर्क विनंती आम्ही लवकरच तुमच्याकडे परत सेट होईल यशस्वीरित्या सादर केले गेले"
+
+#: resources/views/user/forgot-password-success.blade.php:8
+msgid " Forgot Password "
+msgstr " पासवर्ड विसरला "
+
+#: resources/views/user/forgot-password-success.blade.php:11
+msgid "We have sent password reset link to your email address.."
+msgstr "आम्ही आपला ईमेल पत्ता पासवर्ड रीसेट दुवा पाठवला आहे .."
+
+#: resources/views/user/forgot-password.blade.php:16
+#: resources/views/user/resend-activation-email.blade.php:17
+msgid "Enter your email address"
+msgstr "तुमचा इमेल पत्ता लिहा"
+
+#: resources/views/user/forgot-password.blade.php:16
+#: resources/views/user/resend-activation-email.blade.php:17
+msgid "email"
+msgstr "ई-मेल"
+
+#: resources/views/user/forgot-password.blade.php:27
+#: resources/views/user/resend-activation-email.blade.php:28
+msgid "Submit Request"
+msgstr "विनंती सबमिट करा"
+
+#: resources/views/user/login.blade.php:17 resources/views/user/register.blade.php:10
+msgid "Account with this email id seems to be non-active please __link__"
+msgstr "हे खाते ई-मेल आयडी असहकार सक्रिय असल्याचे दिसते करा __link__"
+
+#: resources/views/user/login.blade.php:50
+msgid "Forgot Password?"
+msgstr "पासवर्ड विसरला?"
+
+#: resources/views/user/login.blade.php:59
+msgid "I know you are a human"
+msgstr "मी तुम्हाला एक मानवी आहेत हे मला माहीत आहे"
+
+#: resources/views/user/login.blade.php:68 resources/views/user/register.blade.php:90
+msgid "Refresh Captcha"
+msgstr "रिफ्रेश कॅप्चा"
+
+#: resources/views/user/login.blade.php:76
+msgid "Remember me"
+msgstr "माझी आठवण ठेवा"
+
+#: resources/views/user/login.blade.php:83
+msgid "Didn't received activation key yet? Request again"
+msgstr "अजून सक्रियन कळ प्राप्त झाला नाही? पुन्हा विनंती करा"
+
+#: resources/views/user/login.blade.php:96
+msgid "Not Registered Yet?"
+msgstr "अद्याप नोंदणी नाही?"
+
+#: resources/views/user/login.blade.php:97
+msgid "Register Now"
+msgstr "नोंदणी करा"
+
+#: resources/views/user/manage-profile.blade.php:12
+#: resources/views/user/manage/add.blade.php:15 resources/views/user/profile-edit.blade.php:15
+#: resources/views/user/profile.blade.php:10 resources/views/user/register.blade.php:23
+msgid "First Name"
+msgstr "पहिले नाव"
+
+#: resources/views/user/manage-profile.blade.php:19
+#: resources/views/user/manage/add.blade.php:27 resources/views/user/profile-edit.blade.php:25
+#: resources/views/user/profile.blade.php:17 resources/views/user/register.blade.php:35
+msgid "Last Name"
+msgstr "आडनाव"
+
+#: resources/views/user/manage/add.blade.php:5 resources/views/user/manage/list.blade.php:10
+msgid "Add New User"
+msgstr "नवीन वापरकर्ता जोडा"
+
+#: resources/views/user/manage/add.blade.php:61 resources/views/user/register.blade.php:69
+#: resources/views/user/reset-password.blade.php:37
+msgid "Password Confirmation"
+msgstr "पासवर्ड पुष्टीकरण"
+
+#: resources/views/user/manage/list.blade.php:6
+msgid "Manage Users"
+msgstr "वापरकर्ते व्यवस्थापित करा"
+
+#: resources/views/user/manage/list.blade.php:18
+msgid "Deleted"
+msgstr "हटविले"
+
+#: resources/views/user/manage/list.blade.php:21
+msgid "Never Activated"
+msgstr "सक्रिय नाही"
+
+#: resources/views/user/manage/list.blade.php:39 resources/views/user/manage/list.blade.php:78
+msgid "Since"
+msgstr "पासून"
+
+#: resources/views/user/manage/list.blade.php:40 resources/views/user/manage/list.blade.php:60
+#: resources/views/user/manage/list.blade.php:79
+msgid "Last Login"
+msgstr "अखेरचे लॉगिन"
+
+#: resources/views/user/manage/list.blade.php:59
+msgid "Deleted on"
+msgstr "हटविला"
+
+#: resources/views/user/manage/list.blade.php:104
+msgid "Restore"
+msgstr "पुनर्संचयित करा"
+
+#: resources/views/user/manage/list.blade.php:111
+msgid "User Orders"
+msgstr "वापरकर्ता ऑर्डेर"
+
+#: resources/views/user/manage/list.blade.php:114
+#: resources/views/user/manage/user-details.blade.php:5
+msgid "User Details"
+msgstr "वापरकर्ता तपशील"
+
+#: resources/views/user/manage/user-details.blade.php:26
+#: resources/views/user/manage/user-details.blade.php:43
+#: resources/views/user/manage/user-details.blade.php:60
+#: resources/views/user/manage/user-details.blade.php:77
+#: resources/views/user/manage/user-details.blade.php:94
+#: resources/views/user/manage/user-details.blade.php:104
+msgid "NA"
+msgstr "लागू"
+
+#: resources/views/user/manage/user-details.blade.php:35
+msgid "Last login"
+msgstr "शेवटचे लॉगइन"
+
+#: resources/views/user/manage/user-details.blade.php:52
+msgid "Last logged in IP"
+msgstr "आयपी गेल्या लॉग इन"
+
+#: resources/views/user/manage/user-details.blade.php:86
+msgid "Last Order Placed On"
+msgstr "गेल्या ऑर्डर स्थीत"
+
+#: resources/views/user/manage/user-details.blade.php:100
+msgid "Last Order ID"
+msgstr "गेल्या ऑर्डर ID"
+
+#: resources/views/user/manage/user-details.blade.php:114
+msgid "Total Orders"
+msgstr "एकूण ऑर्डर"
+
+#: resources/views/user/profile-edit.blade.php:5
+msgid "Profile Update"
+msgstr "प्रोफाइल अद्यतनित करा"
+
+#: resources/views/user/register-success.blade.php:18
+msgid "Registration Done"
+msgstr "नोंदणी पूर्ण झाले"
+
+#: resources/views/user/register.blade.php:81
+msgid "Prove you are not robot"
+msgstr "आपण रोबोट नाही हे सिद्ध करा"
+
+#: resources/views/user/register.blade.php:81
+msgid "Confirmation Code"
+msgstr "पुष्टीकरण कोड"
+
+#: resources/views/user/register.blade.php:100
+msgid "I have read and accept"
+msgstr "मी वाचले आणि सहमत आहे"
+
+#: resources/views/user/register.blade.php:110 resources/views/user/register.blade.php:113
+msgid "Terms &amp; Conditions"
+msgstr "अटी आणि परिस्थिती"
+
+#: resources/views/user/resend-activation-email-success.blade.php:9
+msgid "Please activate your account"
+msgstr "आपले खाते कार्यान्वित करा"
+
+#: resources/views/vendor/laravel-filemanager/index.blade.php:5
+#: resources/views/vendor/laravel-filemanager/index.blade.php:22
+msgid "File Manager"
+msgstr "फाइल व्यवस्थापक"
+
+#~ msgid "Invalid shipping rule."
+#~ msgstr "अवैध शिपिंग नियम."
+
+#~ msgid ""
+#~ "Authentication failed. Please check your \n"
+#~ "                        password."
+#~ msgstr "प्रमाणीकरण अयशस्वी. कृपया आपला \\ n संकेतशब्द तपासा."
+
+#~ msgid "User register failed."
+#~ msgstr "वापरकर्ता नोंदणी अयशस्वी."
+
+#~ msgid "your account has been already exist, please contact system administrator."
+#~ msgstr "आपले खाते आधीपासूनच आहे अस्तित्वात, सिस्टम प्रशासकाशी संपर्क साधा."
+
+#~ msgid "User with entered email not register."
+#~ msgstr "प्रविष्ट केलेले ईमेल वापरकर्ता नोंदणी नाही."
+
+#~ msgid "Reinitiate Order of __name__ ( __orderUID__ ) "
+#~ msgstr "__name__ ऑर्डर Reinitiate (__orderUID__) "
+
+#~ msgid "Check Payment Discription"
+#~ msgstr "भरणा वर्णन तपासा"
+
+#~ msgid "Bank Payment Discription"
+#~ msgstr "बँक भरणा वर्णन"
+
+#~ msgid "COD Payment Discription"
+#~ msgstr "शेंग भरणा वर्णन"
+
+#~ msgid "Other Payment Discription"
+#~ msgstr "इतर भरणा वर्णन"
+
+#~ msgid "Releated Video"
+#~ msgstr "Releated व्हिडिओ"
+
+#~ msgid "User Terms & Conditions"
+#~ msgstr "वापरकर्ता अटी व शर्ती"
+
+#~ msgid "Report-"
+#~ msgstr "अहवाल"
+
+#~ msgid "From"
+#~ msgstr "तर्फे"
+
+#~ msgid " Placed on"
+#~ msgstr " स्थीत"
+
+#~ msgid " Updated on"
+#~ msgstr " अद्यतनित"
+
+#~ msgid "Orders as on "
+#~ msgstr "ऑर्डेर रोजी "
+
+#~ msgid "Payments-"
+#~ msgstr "देयेके -"
+
+#~ msgid "Total "
+#~ msgstr "एकूण "
+
+#~ msgid "Anauthorized User"
+#~ msgstr "Anauthorized वापरकर्ता"
+
+#~ msgid "Report Details"
+#~ msgstr "माहिती अहवाल"
+
+#~ msgid "INVOICE"
+#~ msgstr "अशी यादी तयार करणे"
+
+#~ msgid "Order ID :"
+#~ msgstr "क्रम आयडी:"
+
+#~ msgid "Order placed on : "
+#~ msgstr "ऑर्डर स्थीत: "
+
+#~ msgid "Customer Information :"
+#~ msgstr "ग्राहकाची माहिती :"
+
+#~ msgid "Name: "
+#~ msgstr "नाव: "
+
+#~ msgid "Email : "
+#~ msgstr "ई-मेल: "
+
+#~ msgid "City : "
+#~ msgstr "शहर: "
+
+#~ msgid "State : "
+#~ msgstr "राज्य: "
+
+#~ msgid "Country : "
+#~ msgstr "देश: "
+
+#~ msgid "Pin Code : "
+#~ msgstr "पिन कोड : "
+
+#~ msgid "Same as Shipping Address"
+#~ msgstr "शिपिंग पत्ता समान"
+
+#~ msgid "Order Status : "
+#~ msgstr "ऑर्डेर स्थिती : "
+
+#~ msgid "Payment Method : "
+#~ msgstr "पेमेंट पद्धत: "
+
+#~ msgid "Payment Status : "
+#~ msgstr "भरणा स्थिती: "
+
+#~ msgid "Completed On : "
+#~ msgstr "या वेळेस पूर्ण"
+
+#~ msgid "Cart Total :"
+#~ msgstr "टाका एकूण:"
+
+#~ msgid "Discount : "
+#~ msgstr "सवलत: "
+
+#~ msgid "Coupon code : "
+#~ msgstr "कूपन कोड: "
+
+#~ msgid "Coupon title : "
+#~ msgstr "कूपन शीर्षक: "
+
+#~ msgid "Coupon description : "
+#~ msgstr "कूपन वर्णन: "
+
+#~ msgid "Shipping : "
+#~ msgstr "शिपिंग: "
+
+#~ msgid "Total tax Amount : "
+#~ msgstr "एकूण कर रक्कम: "
+
+#~ msgid "Label: "
+#~ msgstr "लेबल: "
+
+#~ msgid "Notes: "
+#~ msgstr "टिप: "
+
+#~ msgid "Tax amount: "
+#~ msgstr "कर रक्कम: "
+
+#~ msgid "Total payable amount :"
+#~ msgstr "एकूण देय रक्कम:"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid ":name user restore successfully."
+#~ msgstr "नाव वापरकर्ता यशस्वीरित्या पुनर्संचयित."
+
+#, fuzzy
+#~ msgid "%d items went to the %user% \n"
+#~ msgstr "%d डुकरे %user% ला गेले.,\n"

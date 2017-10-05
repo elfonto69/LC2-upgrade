@@ -1,0 +1,42 @@
+{
+  "name": "yesteamtech/laravel-file-manager",
+  "description": "A file upload/editor intended for use with Laravel 5 and CKEditor",
+  "license": "MIT",
+  "keywords": [
+    "filemanager",
+    "laravel",
+    "ckeditor",
+    "upload",
+    "file",
+    "manager",
+    "image"
+  ],
+  "authors": [
+    {
+      "name": "Trevor Sawler",
+      "email": "trevor.sawler@gmail.com"
+    },
+    {
+      "name": "UniSharp Ltd.",
+      "email": "unisharp-service@unisharp.com"
+    },
+    {
+      "name": "Vinod Raut - Yesteamtech",
+      "email": "vinodraut@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": ">=4.2.0",
+    "intervention/image": "2.*"
+  },
+  "suggest": {
+    "ext-gd": "to use GD library based image processing.",
+    "ext-imagick": "to use Imagick based image processing."
+  },
+  "autoload": {
+    "psr-4": {
+      "Yesteamtech\\Laravelfilemanager\\": "src/"
+    }
+  }
+}

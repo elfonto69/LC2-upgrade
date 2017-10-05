@@ -1,0 +1,502 @@
+{
+    "name"  : "Laraware",
+    "version"   : "0.1.x",
+    "releases" : {
+        "0.1.244" : {
+            "title"   : "Core Helper - 0.15.1",
+            "date"    : "22 APR 2017",
+            "message" : "Improved __dd, __clog and __pr, now shows backtraces",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.239" : {
+            "title"   : "Core Request - 0.2.21",
+            "date"    : "13 JAN 2017",
+            "message" : "Allowed tags updated",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ravindra Lande"
+        },
+        "0.1.238" : {
+            "title"   : "Core Model - 0.7.0",
+            "date"    : "27 JAN 2017",
+            "message" : "Added json item process functionality",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.233" : {
+            "title"   : "Core Helper - 0.14.2 ",
+            "date"    : "16 JAN 2017",
+            "message" : "Engine data issue handled in __processResponse",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Nikhil Bangre"
+        },
+        "0.1.231" : {
+            "title"   : "Core Request - 0.2.20",
+            "date"    : "13 JAN 2017",
+            "message" : "Long strings decryption has been handled as per __DataStore request",
+            "author"  : "Vinod Raut",
+            "supported_by" : "Ravindra Lande"
+        },
+        "0.1.229" : {
+            "title"   : "Core Mailer - 0.1.1",
+            "date"    : "10 JAN 2017",
+            "message" : "Mail from issue fixed",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ajay Pimpalkar"
+        },
+        "0.1.227" : {
+            "title"   : "Core Mailer - 0.1.0",
+            "date"    : "06 JAN 2017",
+            "message" : "Added CoreMailer",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.217" : {
+            "title"   : "Core Request - 0.2.16",
+            "date"    : "06 JAN 2017",
+            "message" : "Now the keys also get encrypted for secured requests.",
+            "author"  : "Vinod Raut",
+            "supported_by" : "Ajay Pimpalkar"
+        },
+        "0.1.215" : {
+            "title"   : "Core Model - 0.6.10",
+            "date"    : "05 JAN 2017",
+            "message" : "deleteIt method issue fixed.",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Vaishali Misal",
+            "identified_by" : "Nikhil Bangre, Ajay Pimpalkar, Ravindra Lande"
+        },
+        "0.1.210" : {
+            "title"   : "Core Helper - 0.14.0 ",
+            "date"    : "30 DEC 2016",
+            "message" : "added incident send facility and engineReaction now merge additional data ",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.215" : {
+            "title"   : "Core Model - 0.6.5",
+            "date"    : "28 NOV 2016",
+            "message" : "Added support for JSON column data to delete using --delete: and --deleteWrapper:",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.210" : {
+            "title"   : "Core Model - 0.6.0",
+            "date"    : "28 NOV 2016",
+            "message" : "Added support for JSON column data to add and update as per structure given",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.204" : {
+            "title"   : "Core Helper - 0.12.14 ",
+            "date"    : "05 NOV 2016",
+            "message" : "__yesset updated now appends modified date to file name.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.202" : {
+            "title"   : "Core Helper - 0.12.11",
+            "date"    : "05 NOV 2016",
+            "message" : "DB update log in console now depends on APP_DB_LOG entry in .env",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.201" : {
+            "title"   : "Core Helper - 0.12.10",
+            "date"    : "24 JUN 2016",
+            "message" : "__nestedKeyValues now can set specific key for particular item by perpending value key@",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.200" : {
+            "title"   : "All Files update",
+            "date"    : "26 JUL 2016",
+            "message" : "CS - Code formatted",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.192" : {
+            "title"   : "Core Model - 0.5.0",
+            "date"    : "28 JUN 2016",
+            "message" : "deleteIt scope method added for delete",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.188" : {
+            "title"   : "Core Model - 0.4.4",
+            "date"    : "28 JUN 2016",
+            "message" : "clearCache shifted to end of batchUpdate process",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.187" : {
+            "title"   : "Core Model - 0.4.3",
+            "date"    : "27 JUN 2016",
+            "message" : "clearCache issue fixed for batchUpdate",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ravindra Lande"
+        },
+        "0.1.186" : {
+            "title"   : "Core Engine - 0.1.0",
+            "date"    : "24 JUN 2016",
+            "message" : "Added CoreEngine",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.176" : {
+            "title"   : "Core Helper - 0.12.9",
+            "date"    : "24 JUN 2016",
+            "message" : "__engineReaction is now deprecated & __ifEngineReaction removed",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.174" : {
+            "title"   : "Core Helper - 0.12.7",
+            "date"    : "24 JUN 2016",
+            "message" : "__dbBatchUpdate is deprecated as well as issue is fixed with parameters check.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.172" : {
+            "title"   : "Core Model - 0.4.2",
+            "date"    : "24 JUN 2016",
+            "message" : "Added batchUpdate function",
+            "author"  : "Vinod Raut"
+        },
+         "0.1.168" : {
+            "title"   : "Core Model - 0.3.2",
+            "date"    : "24 JUN 2016",
+            "message" : "Added clearCacheItems method and related variable to hold cacheIds for clearing it. Now if cache ids are give model system automatically clear cached items.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.162" : {
+            "title"   : "Core Repository - 0.4.1",
+            "date"    : "23 JUN 2016",
+            "message" : "removed prepend from viaCache & clearCache",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.161" : {
+            "title"   : "Core Repository - 0.4.0",
+            "date"    : "23 JUN 2016",
+            "message" : "Added functions viaCache & clearCache for query caching & removing",
+            "author"  : "Vinod Raut"
+        },
+         "0.1.153" : {
+            "title"   : "Core Model - 0.2.3",
+            "date"    : "23 JUN 2016",
+            "message" : "Improved prepareAndInsert so now it can return column or id of inserted rows using 2nd parameter if uid is available",
+            "author"  : "Vinod Raut",
+            "suggested_by" : "Ajay Pimpalkar"
+        },
+        "0.1.151" : {
+            "title"   : "Core Helper - 0.12.5",
+            "date"    : "22 JUN 2016",
+            "message" : "Fix issue as __ifEngineReaction using success message for false result",
+            "author"  : "Vinod Raut"
+        },
+         "0.1.150" : {
+            "title"   : "Core Helper - 0.12.4",
+            "date"    : "22 JUN 2016",
+            "message" : "Improvements to __ifEngineReaction function for messages, it now accepts array for message using reaction codes as index",
+            "author"  : "Vinod Raut",
+            "suggested_by" : "Nikhil Bangre"
+        },
+        "0.1.148" : {
+            "title"   : "Core Request - 0.2.14",
+            "date"    : "20 JUN 2016",
+            "message" : "Added unsecuredFields functionality to exempt particular fields from encryption.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.146" : {
+            "title"   : "Core Helper - 0.12.2",
+            "date"    : "18 JUN 2016",
+            "message" : "Added render method to view",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.145" : {
+            "title"   : "Core Helper - 0.12",
+            "date"    : "18 JUN 2016",
+            "message" : "1) __ifEngineReaction - function added for conditional engine reaction",
+            "author"  : "Vinod Raut",            
+            "suggested_by" : "Ravindra Lande & Nikhil Bangre" 
+        },
+        "0.1.140" : {
+            "title"   : "Core Helper - 0.11.5",
+            "date"    : "16 JUN 2016",
+            "message" : "1) __clog - function added which sends data to browser console. 2) DB Events are receiving & sending to browser 3) minor improvements to __dd & __pr functions.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.128" : {
+            "title"   : "Core Helper - 0.9.0",
+            "date"    : "16 JUN 2016",
+            "message" : "__ifIsset - function added which Check isset & __isEmpty & return the result based on values sent",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.123" : {
+            "title"   : "Core Helper - 0.8.3",
+            "date"    : "16 JUN 2016",
+            "message" : "__nestedKeyValues - repeating unnecessary key prepend issue fixed",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.121" : {
+            "title"   : "Core Helper - 0.8.2",
+            "date"    : "15 JUN 2016",
+            "message" : "1) Improved __pr printing for non Ajax. 2) added new Utility function to create array of nested array items strings (Concating parent key in to child key) & assign values to it.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.115" : {
+            "title"   : "Core Helper - 0.7.10",
+            "date"    : "13 JUN 2016",
+            "message" : "Improved __dd & __pr functions, now also made provision to open email debug view automatically.",
+            "author"  : "Vinod Raut"
+        },
+         "0.1.113" : {
+            "title"   : "Core Helper - 0.7.3",
+            "date"    : "12 JUN 2016",
+            "message" : "Small issue for __pr() fixed",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.112" : {
+            "title"   : "Core Helper - 0.7.2",
+            "date"    : "12 JUN 2016",
+            "message" : "Added __pr function for debugging javascript side, it will work as alias for print_r but shows in browser console.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.108" : {
+            "title"   : "Core Helper - 0.6.2",
+            "date"    : "10 JUN 2016",
+            "message" : "__dd now can be used as laravel dd function",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.106" : {
+            "title"   : "Core Helper - 0.6.0",
+            "date"    : "10 JUN 2016",
+            "message" : "Added __dd function for debugging javascript side",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.104" : {
+            "title"   : "Core Helper - 0.5.24",
+            "date"    : "04 JUN 2016",
+            "message" : "removed __dbTransactionResponse",
+            "author"  : "Vinod Raut",
+            "supported_by" : "Ajay Pimpalkar" 
+        },
+        "0.1.103" : {
+            "title"   : "Core Repository - 0.2.0",
+            "date"    : "04 JUN 2016",
+            "message" : "transactionResponse function added",
+            "author"  : "Vinod Raut",
+            "supported_by" : "Ajay Pimpalkar" 
+        },
+        "0.1.100" : {
+            "title"   : "Core Helper - 0.5.23",
+            "date"    : "04 JUN 2016",
+            "message" : "Added __dbTransactionResponse & updated __engineReaction to handle it.",
+            "author"  : "Vinod Raut",
+            "supported_by" : "Ajay Pimpalkar" 
+        },
+        "0.1.97" : {
+            "title"   : "Core Repository - 0.1.3",
+            "date"    : "04 JUN 2016",
+            "message" : "Handled processTransaction returned array",
+            "author"  : "Vinod Raut",
+            "supported_by" : "Ajay Pimpalkar" 
+        },
+        "0.1.98" : {
+            "title"   : "Core Helper - 0.4.20",
+            "date"    : "26 MAY 2016",
+            "message" : "gettext replacement values issue fixed",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.97" : {
+            "title"   : "Core Helper - 0.4.20",
+            "date"    : "23 MAY 2016",
+            "message" : "Now __ can prevent from declaration",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.96" : {
+            "title"   : "Core Helper - 0.4.18",
+            "date"    : "16 APR 2016",
+            "message" : "Option added for __apiResponse to use native json_encode function using __useNativeJsonEncode in $data",
+            "author"  : "Vinod Raut",
+            "supported_by" : "Ajay P" 
+        },
+        "0.1.95" : {
+            "title"   : "Core Request - 0.2.12",
+            "date"    : "18 JAN 2016",
+            "message" : "False value casting issue fixed for encrypted form",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ajay P" 
+        },
+        "0.1.94" : {
+            "title"   : "Core Helper - 0.4.17",
+            "date"    : "11 JAN 2016",
+            "message" : "improved __isEmpty for other pagination & other collection object",
+            "author"  : "Vinod Raut, Ajay P",
+            "reported_by" : "Ajay P" 
+        },
+        "0.1.93" : {
+            "title"   : "Core Request - 0.2.11",
+            "date"    : "11 JAN 2016",
+            "message" : "Boolean value for encrypted form has been fixed",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ajay P" 
+        },
+        "0.1.92" : {
+            "title"   : "Core Model - 0.2.1",
+            "date"    : "24 DEC 2015",
+            "message" : "Used Request instead of Input facade as per Laravel 5.2",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.91" : {
+            "title"   : "Core Helper - 0.4.16",
+            "date"    : "24 DEC 2015",
+            "message" : "Used Request instead of Input facade as per Laravel 5.2",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.90" : {
+            "title"   : "Core Helper - 0.4.15",
+            "date"    : "07 DEC 2015",
+            "message" : "Removed comment removed condition from view minification",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.89" : {
+            "title"   : "Core Model - 0.2.0",
+            "date"    : "30 NOV 2015",
+            "message" : "Added shodh scope method for search",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.88" : {
+            "title"   : "Core Request - 0.2.10",
+            "date"    : "10 NOV 2015",
+            "message" : "Improvements to loose sanitization",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ajay P & Ravindra L" 
+        },
+        "0.1.87" : {
+            "title"   : "Core Model - 0.1.10",
+            "date"    : "04 NOV 2015",
+            "message" : "added method for insert & improved small code",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ravindra L" 
+        },
+        "0.1.85" : {
+            "title"   : "Core Helper - 0.4.14",
+            "date"    : "03 NOV 2015",
+            "message" : "Bug fixes in __dbBatchUpdate",
+            "author"  : "Vinod Raut",
+            "reported_by" : "Ajay P & Ravindra L" 
+        },
+        "0.1.84" : {
+            "title"   : "Core Model - 0.1.8",
+            "version" : "0.4.13",
+            "date"    : "30 OCT 2015",
+            "message" : "Added assignInputsAndSave method",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.82" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.13",
+            "date"    : "13 OCT 2015",
+            "message" : "Improved yesset url generation method",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.81" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.12",
+            "date"    : "13 OCT 2015",
+            "message" : "__ helper function for gettext now check for locale",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.80" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.11",
+            "date"    : "24 SEP 2015",
+            "message" : "Repo reaction removed, corrected & improved helper function for gettext string, corrected Engine reaction",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.77" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.8",
+            "date"    : "17 SEP 2015",
+            "message" : "Improvements to __engineReaction & __processResponse",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.75" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.6",
+            "date"    : "03 SEP 2015",
+            "message" : "Message updated",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.74" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.5",
+            "date"    : "03 SEP 2015",
+            "message" : "Improved __isEmpty & __processResponse",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.72" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.3",
+            "date"    : "28 AUG 2015",
+            "message" : "Improved reactions",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.71" : {
+            "title"   : "Tech Config",
+            "version" : "0.1.3",
+            "date"    : "28 AUG 2015",
+            "message" : "Descriptions updated for Reaction Codes",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.70" : {
+            "title"   : "Core Helper",
+            "version" : "0.4.2",
+            "date"    : "28 AUG 2015",
+            "message" : "Improved Engine, Repo reactions, added methods to helpers __isEmpty & __isValidReactionCode",
+            "author"  : "Vinod Raut"
+        },
+            "0.1.57" : {
+            "title"   : "Core Helper",
+            "version" : "0.3.0",
+            "date"    : "26 AUG 2015",
+            "message" : "Added methods for Engine Reaction, Repository Reaction & Process Response",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.42" : {
+            "title"   : "Core Model",
+            "date"    : "24 AUG 2015",
+            "message" : "Sorting order variable issue fixed",
+            "author"  : "Vinod Raut",
+            "reported_by" : "AjayP"
+        },
+        "0.1.41" : {
+            "title"   : "Core Request",
+            "date"    : "19 AUG 2015",
+            "message" : "variable name changed",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.40" : {
+            "title"   : "Security - Form Encryption",
+            "date"    : "13 AUG 2015",
+            "message" : "Form encryption improved using AES 256 encryption & passphrse",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.37" : {
+            "title"   : "Security - Form Encryption",
+            "version" : "0.2.0",
+            "date"    : "12 AUG 2015",
+            "message" : "Form encryption improved using RSA Public private keys.",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.34" : {
+            "title"   : "Core Request",
+            "version" : "0.2.7",
+            "date"    : "09 AUG 2015",
+            "message" : "encryption salt added from encrypted XSRF token",
+            "author"  : "Vinod Raut"
+        },
+        "0.1.33" : {
+            "title"   : "Core Helper",
+            "version" : "0.1.5",
+            "date"    : "08 AUG 2015",
+            "message" : "Issue Fixed: additional_data in session",
+            "author"  : "Vinod Raut",
+            "reported_by" : "AjayP" 
+        },
+        "0.1.32" : {
+            "title"   : "Core Helper",
+            "version" : "0.1.4",
+            "date"    : "08 AUG 2015",
+            "message" : "additional data location in response issue fixed",
+            "author"  : "Vinod Raut",
+            "reported_by" : "AjayP" 
+        }
+    }
+}

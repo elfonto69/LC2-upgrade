@@ -1,0 +1,412 @@
+/*!
+ LivelyCart-2
+ version: 2.2.0
+ --------------------------------------------------------------------- 
+ Build Timestamp: 1502367837
+ Build Date: Thu Aug 10 2017 17:53:57 GMT+0530 (IST)
+--------------------------------------------------------------------- */
+.dtp { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); z-index: 2000; font-size: 15px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.dtp > .dtp-content { background: #fff; max-width: 300px; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); max-height: 520px; position: relative; left: 50%; }
+.dtp > .dtp-content > .dtp-date-view > header.dtp-header { background: #689F38; color: #fff; text-align: center; padding: 0.3em; }
+
+.dtp div.dtp-date, .dtp div.dtp-time { background: #8BC34A; text-align: center; color: #fff; padding: 10px; }
+.dtp div.dtp-date > div { padding: 0; margin: 0; }
+.dtp div.dtp-actual-month { font-size: 1.5em; }
+.dtp div.dtp-actual-num { font-size: 3em; line-height: 0.9; }
+.dtp div.dtp-actual-maxtime { font-size: 3em; line-height: 0.9; }
+.dtp div.dtp-actual-year { font-size: 1.5em; color: #DCEDC8; }
+.dtp div.dtp-picker { padding: 1em; text-align: center; }
+
+.dtp div.dtp-picker-month, .dtp div.dtp-actual-time { font-weight: 500; text-align: center; }
+.dtp div.dtp-picker-month { padding-bottom:20px!important; text-transform: uppercase!important; }
+
+.dtp .dtp-close { position: absolute; top: 0.5em; right: 1em; }
+.dtp .dtp-close > a { color: #fff; }
+.dtp .dtp-close > a > i { font-size: 1em; }
+
+.dtp table.dtp-picker-days { margin: 0; min-height: 251px;}
+.dtp table.dtp-picker-days, .dtp table.dtp-picker-days tr, .dtp table.dtp-picker-days tr > td { border: none; }
+.dtp table.dtp-picker-days tr > td {  font-weight: 700; font-size: 0.8em; text-align: center; padding: 0.5em 0.3em; }
+.dtp table.dtp-picker-days tr > td > span.dtp-select-day { color: #BDBDBD!important; }
+.dtp table.dtp-picker-days tr > td > a, .dtp .dtp-picker-time > a { color: #212121; text-decoration: none; padding: 0.4em 0.5em 0.5em 0.6em; border-radius: 50%!important; }
+.dtp table.dtp-picker-days tr > td > a.selected{ background: #8BC34A; color: #fff; }
+.dtp table.dtp-picker-days tr > th { color: #757575; text-align: center; font-weight: 700; padding: 0.4em 0.3em; }
+
+.dtp .p10 > a { color: #689F38; text-decoration: none; }
+.dtp .p10 { width: 10%; display: inline-block; }
+.dtp .p20 { width: 20%; display: inline-block; }
+.dtp .p60 { width: 60%; display: inline-block; }
+.dtp .p80 { width: 80%; display: inline-block; }
+
+.dtp a.dtp-meridien-am, .dtp a.dtp-meridien-pm { position: relative; top: 10px; color: #212121; font-weight: 500; padding: 0.7em 0.5em; border-radius: 50%!important;text-decoration: none; background: #eee; font-size:1em; }
+.dtp .dtp-actual-meridien a.selected { background: #689F38; color: #fff; }
+
+.dtp .dtp-picker-time > .dtp-select-hour { cursor: pointer; }
+.dtp .dtp-picker-time > .dtp-select-minute { cursor: pointer; }
+
+.dtp .dtp-buttons { padding: 0 1em 1em 1em; text-align: right; }
+
+.dtp.hidden, .dtp .hidden { display: none; }
+.dtp .invisible { visibility: hidden; }
+
+.dtp .left { float: left; }
+.dtp .right { float: right; }
+.dtp .clearfix { clear: both; }
+
+.dtp .center { text-align: center; }
+;
+/*!
+ * Fancytree "bootstrap" skin.
+ *
+ * DON'T EDIT THE CSS FILE DIRECTLY, since it is automatically generated from
+ * the LESS templates.
+ */.ui-helper-hidden{display:none}ul.fancytree-container{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;white-space:nowrap;padding:3px;margin:0;background-color:#fff;border:1px dotted gray;min-height:0;position:relative}ul.fancytree-container ul>li:before{content:none}ul.fancytree-container li{-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;background-attachment:scroll;background-color:transparent;background-position:0 0;background-repeat:repeat-y;background-image:none;margin:0;list-style:none}img.fancytree-icon,span.fancytree-checkbox,span.fancytree-icon{margin-left:.5em}ul.fancytree-container li.fancytree-lastsib{background-image:none}.ui-fancytree-disabled ul.fancytree-container{opacity:.5;background-color:silver}ul.fancytree-connectors.fancytree-container li{background-image:url(data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKbK8P///6Wlpf/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAEAAP4ALAAAAAAQABAAAAgpAP0JFHhvoMGDCBMiLKiwocOBDB9KXDixosGIFidizPhwI8eGHj8KDAgAOw==);background-position:0 0}.fancytree-loading span.fancytree-expander,.fancytree-loading span.fancytree-expander:hover,.fancytree-statusnode-loading span.fancytree-icon,.fancytree-statusnode-loading span.fancytree-icon:hover,ul.fancytree-container li.fancytree-lastsib,ul.fancytree-no-connector>li{background-image:none}li.fancytree-animating{position:relative}#fancytree-drop-marker,span.fancytree-checkbox,span.fancytree-drag-helper-img,span.fancytree-empty,span.fancytree-expander,span.fancytree-icon,span.fancytree-vline{width:1em;height:1em;display:inline-block;vertical-align:top;background-repeat:no-repeat;background-position:0 0}span.fancytree-checkbox,span.fancytree-custom-icon,span.fancytree-expander,span.fancytree-icon{margin-top:2px}span.fancytree-custom-icon{width:1em;height:1em;display:inline-block;margin-left:.5em;background-position:0 0}img.fancytree-icon{width:1em;height:1em;margin-top:2px;vertical-align:top;border-style:none}span.fancytree-expander{cursor:pointer}.fancytree-exp-n span.fancytree-expander,.fancytree-exp-nl span.fancytree-expander{background-image:none;cursor:default}.fancytree-connectors .fancytree-exp-n span.fancytree-expander,.fancytree-connectors .fancytree-exp-nl span.fancytree-expander{margin-top:0}.fancytree-fade-expander span.fancytree-expander{transition:opacity 1.5s;opacity:0}.fancytree-fade-expander .fancytree-treefocus span.fancytree-expander,.fancytree-fade-expander [class*=fancytree-statusnode-] span.fancytree-expander,.fancytree-fade-expander.fancytree-treefocus span.fancytree-expander,.fancytree-fade-expander:hover span.fancytree-expander{transition:opacity .6s;opacity:1}.fancytree-unselectable span.fancytree-checkbox{opacity:.4;filter:alpha(opacity=40)}span.fancytree-node{display:inherit;width:100%;margin-top:0;min-height:1em}span.fancytree-title{color:#333;cursor:pointer;display:inline-block;vertical-align:top;min-height:1em;padding:0 3px;margin:0 0 0 .5em;border:1px solid transparent;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px}span.fancytree-node.fancytree-error span.fancytree-title{color:#d9534f}div.fancytree-drag-helper span.fancytree-childcounter,div.fancytree-drag-helper span.fancytree-dnd-modifier{display:inline-block;color:#fff;background:#337ab7;border:1px solid gray;min-width:10px;height:10px;line-height:1;vertical-align:baseline;border-radius:10px;padding:2px;text-align:center;font-size:9px}div.fancytree-drag-helper span.fancytree-childcounter{position:absolute;top:-6px;right:-6px}div.fancytree-drag-helper span.fancytree-dnd-modifier{background:#5cb85c;border:none;font-weight:bolder}#fancytree-drop-marker{width:2em;position:absolute;margin:0}#fancytree-drop-marker.fancytree-drop-after,#fancytree-drop-marker.fancytree-drop-before{width:4em}span.fancytree-drag-source.fancytree-drag-remove{opacity:.15}.fancytree-container.fancytree-rtl #fancytree-drop-marker,.fancytree-container.fancytree-rtl span.fancytree-connector,.fancytree-container.fancytree-rtl span.fancytree-drag-helper-img,.fancytree-container.fancytree-rtl span.fancytree-expander,.fancytree-container.fancytree-rtl span.fancytree-icon{background-image:url(icons-rtl.gif)}.fancytree-container.fancytree-rtl .fancytree-exp-n span.fancytree-expander,.fancytree-container.fancytree-rtl .fancytree-exp-nl span.fancytree-expander{background-image:none}.fancytree-container.fancytree-rtl.fancytree-connectors .fancytree-exp-n span.fancytree-expander,.fancytree-container.fancytree-rtl.fancytree-connectors .fancytree-exp-nl span.fancytree-expander{background-image:url(icons-rtl.gif)}ul.fancytree-container.fancytree-rtl ul{padding:0 16px 0 0}ul.fancytree-container.fancytree-rtl.fancytree-connectors li{background-position:right 0;background-image:url(vline-rtl.gif)}ul.fancytree-container.fancytree-rtl li.fancytree-lastsib,ul.fancytree-container.fancytree-rtl.fancytree-no-connector>li{background-image:none}table.fancytree-ext-table{border-collapse:collapse}table.fancytree-ext-table span.fancytree-node{display:inline-block;box-sizing:border-box}table.fancytree-ext-columnview tbody tr td{position:relative;border:1px solid gray;vertical-align:top;overflow:auto}table.fancytree-ext-columnview tbody tr td>ul{padding:0}table.fancytree-ext-columnview tbody tr td>ul li{-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;background-attachment:scroll;background-color:transparent;background-position:0 0;background-repeat:repeat-y;background-image:none;margin:0;list-style:none}table.fancytree-ext-columnview span.fancytree-node{position:relative;display:inline-block}.fancytree-ext-filter-hide span.fancytree-node.fancytree-hide,.fancytree-ext-filter-hide tr.fancytree-hide,.fancytree-ext-fixed-wrapper .fancytree-fixed-hidden{display:none}table.fancytree-ext-columnview span.fancytree-node.fancytree-expanded{background-color:#CBE8F6}table.fancytree-ext-columnview .fancytree-has-children span.fancytree-cv-right{position:absolute;right:3px}.fancytree-ext-filter-dimm span.fancytree-node span.fancytree-title{color:#333;font-weight:lighter}.fancytree-ext-filter-dimm span.fancytree-node.fancytree-submatch span.fancytree-title,.fancytree-ext-filter-dimm tr.fancytree-submatch span.fancytree-title{color:#000;font-weight:400}.fancytree-ext-filter-dimm span.fancytree-node.fancytree-match span.fancytree-title,.fancytree-ext-filter-dimm tr.fancytree-match span.fancytree-title{color:#000;font-weight:700}.fancytree-ext-filter-hide span.fancytree-node.fancytree-submatch span.fancytree-title,.fancytree-ext-filter-hide tr.fancytree-submatch span.fancytree-title{color:#333;font-weight:lighter}.fancytree-ext-filter-hide span.fancytree-node.fancytree-match span.fancytree-title,.fancytree-ext-filter-hide tr.fancytree-match span.fancytree-title{color:#000;font-weight:400}.fancytree-ext-filter-hide-expanders span.fancytree-node.fancytree-match span.fancytree-expander,.fancytree-ext-filter-hide-expanders tr.fancytree-match span.fancytree-expander{visibility:hidden}.fancytree-ext-filter-hide-expanders span.fancytree-node.fancytree-submatch span.fancytree-expander,.fancytree-ext-filter-hide-expanders tr.fancytree-submatch span.fancytree-expander{visibility:visible}.fancytree-ext-childcounter span.fancytree-icon,.fancytree-ext-filter span.fancytree-icon{position:relative}.fancytree-ext-childcounter span.fancytree-childcounter,.fancytree-ext-filter span.fancytree-childcounter{color:#fff;background:#777;border:1px solid gray;position:absolute;top:-6px;right:-6px;min-width:10px;height:10px;line-height:1;vertical-align:baseline;border-radius:10px;padding:2px;text-align:center;font-size:9px}ul.fancytree-ext-wide,ul.fancytree-ext-wide span.fancytree-node>span{position:relative;z-index:2}ul.fancytree-ext-wide{min-width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}ul.fancytree-ext-wide span.fancytree-node span.fancytree-title{position:absolute;z-index:1;left:0;min-width:100%;margin-left:0;margin-right:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.fancytree-ext-fixed-wrapper div.scrollBorderBottom{border-bottom:3px solid rgba(0,0,0,.75)}.fancytree-ext-fixed-wrapper div.scrollBorderRight{border-right:3px solid rgba(0,0,0,.75)}.fancytree-ext-fixed-wrapper div.fancytree-fixed-wrapper-tl{position:absolute;overflow:hidden;z-index:3;top:0;left:0}.fancytree-ext-fixed-wrapper div.fancytree-fixed-wrapper-tr{position:absolute;overflow:hidden;z-index:2;top:0}.fancytree-ext-fixed-wrapper div.fancytree-fixed-wrapper-bl{position:absolute;overflow:hidden;z-index:2;left:0}.fancytree-ext-fixed-wrapper div.fancytree-fixed-wrapper-br{position:absolute;overflow:scroll;z-index:1}ul.fancytree-container ul{padding:0 0 0 1.5em;margin:0}.fancytree-container:focus{outline:0}.fancytree-container .fancytree-active span.fancytree-title input,.fancytree-container.fancytree-colorize-selected .fancytree-selected span.fancytree-title input{color:#000}.fancytree-container span.fancytree-statusnode-error span.fancytree-expander,div.fancytree-drag-helper.fancytree-drop-reject,div.fancytree-drag-helper.fancytree-drop-reject span.fancytree-title{color:#d9534f}.glyphicon-spin{-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}span.fancytree-node.fancytree-drag-source{background-color:#5bc0de!important}span.fancytree-node.fancytree-drop-target.fancytree-drop-reject span.fancytree.title{background-color:#d9534f!important}span.fancytree-expander{color:#999}.fancytree-expanded span.fancytree-expander{color:#333}span.fancytree-node span.fancytree-expander:hover{color:#0ff}.fancytree-plain.fancytree-colorize-selected span.fancytree-node.fancytree-selected,.fancytree-plain.fancytree-colorize-selected span.fancytree-node.fancytree-selected span.fancytree-title{background-color:#80c780;border-color:#80c780;color:#fff}.fancytree-plain.fancytree-colorize-selected span.fancytree-node.fancytree-selected:hover span.fancytree-title{background-color:#6ec06e}.fancytree-plain.fancytree-colorize-selected span.fancytree-node.fancytree-active.fancytree-selected span.fancytree-title{color:#80c780}.fancytree-plain.fancytree-colorize-selected.fancytree-treefocus span.fancytree-title:hover{background-color:#f5f5f5}.fancytree-plain.fancytree-colorize-selected.fancytree-treefocus span.fancytree-node.fancytree-selected span.fancytree-title{background-color:#5cb85c}.fancytree-plain.fancytree-colorize-selected.fancytree-treefocus span.fancytree-node.fancytree-selected:hover span.fancytree-title{background-color:#4cae4c}.fancytree-plain.fancytree-colorize-selected.fancytree-treefocus span.fancytree-node.fancytree-active.fancytree-selected span.fancytree-title{color:#5cb85c}.fancytree-plain.fancytree-container.fancytree-ext-wide span.fancytree-node.fancytree-active,table.fancytree-ext-table.fancytree-colorize-selected>tbody>tr.fancytree-selected>td,table.fancytree-ext-table.fancytree-colorize-selected>tbody>tr.fancytree-selected>td span.fancytree-title,table.fancytree-ext-table.fancytree-container>tbody>tr.fancytree-active>td,table.fancytree-ext-table.fancytree-container>tbody>tr.fancytree-active>td span.fancytree-title{color:#fff}.fancytree-plain.fancytree-container span.fancytree-node{margin-top:2px;margin-bottom:2px}.fancytree-plain.fancytree-container span.fancytree-title{border:1px solid transparent;border-radius:3px;outline-radius:3px}.fancytree-plain.fancytree-container span.fancytree-title:hover{background-color:#f5f5f5}.fancytree-plain.fancytree-container span.fancytree-node.fancytree-active span.fancytree-title{background-color:#5094ce;color:#fff}.fancytree-plain.fancytree-container span.fancytree-node.fancytree-active:hover span.fancytree-title{background-color:#3c87c8}.fancytree-plain.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-focused span.fancytree-title{border-color:#337ab7}.fancytree-plain.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active span.fancytree-title{background-color:#337ab7;border-color:#337ab7}.fancytree-plain.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active:hover span.fancytree-title{background-color:#2e6da4}table.fancytree-ext-table>tbody>tr>td span.fancytree-title{border:none}table.fancytree-ext-table.fancytree-colorize-selected>tbody>tr.fancytree-selected>td{background-color:#80c780}table.fancytree-ext-table.fancytree-colorize-selected.fancytree-treefocus>tbody>tr.fancytree-selected>td{background-color:#5cb85c}table.fancytree-ext-table.fancytree-colorize-selected.table-hover>tbody>tr.fancytree-selected:hover>td{background-color:#6ec06e}table.fancytree-ext-table.fancytree-colorize-selected.fancytree-treefocus.table-hover>tbody>tr.fancytree-selected:hover>td{background-color:#4cae4c}table.fancytree-ext-table.fancytree-colorize-selected.fancytree-treefocus.table-hover>tbody>tr.fancytree-selected.fancytree-active:hover>td,table.fancytree-ext-table.fancytree-colorize-selected.table-hover>tbody>tr.fancytree-selected.fancytree-active:hover>td{background-color:#2e6da4}table.fancytree-ext-table.fancytree-colorize-selected>tbody>tr.fancytree-active.fancytree-selected{outline-offset:-2px;outline:#80c780 solid 2px}table.fancytree-ext-table.fancytree-container>tbody>tr.fancytree-active>td{background-color:#5094ce}table.fancytree-ext-table.fancytree-treefocus.fancytree-container>tbody>tr.fancytree-focused span.fancytree-title{outline:#000 dotted 1px}table.fancytree-ext-table.fancytree-treefocus.fancytree-container>tbody>tr.fancytree-active>td{background-color:#337ab7}table.fancytree-ext-table.fancytree-treefocus.fancytree-container.table-hover>tbody>tr.fancytree-active:hover>td{background-color:#2e6da4};
+/*!
+ * Cropper v2.3.2
+ * https://github.com/fengyuanchen/cropper
+ *
+ * Copyright (c) 2014-2016 Fengyuan Chen and contributors
+ * Released under the MIT license
+ *
+ * Date: 2016-06-08T12:14:46.286Z
+ */.cropper-container{font-size:0;line-height:0;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;direction:ltr!important;-ms-touch-action:none;touch-action:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.cropper-container img{display:block;width:100%;min-width:0!important;max-width:none!important;height:100%;min-height:0!important;max-height:none!important;image-orientation:0deg!important}.cropper-canvas,.cropper-crop-box,.cropper-drag-box,.cropper-modal,.cropper-wrap-box{position:absolute;top:0;right:0;bottom:0;left:0}.cropper-wrap-box{overflow:hidden}.cropper-drag-box{opacity:0;background-color:#fff;filter:alpha(opacity=0)}.cropper-dashed,.cropper-modal{opacity:.5;filter:alpha(opacity=50)}.cropper-modal{background-color:#000}.cropper-view-box{display:block;overflow:hidden;width:100%;height:100%;outline:#39f solid 1px;outline-color:rgba(51,153,255,.75)}.cropper-dashed{position:absolute;display:block;border:0 dashed #eee}.cropper-dashed.dashed-h{top:33.33333%;left:0;width:100%;height:33.33333%;border-top-width:1px;border-bottom-width:1px}.cropper-dashed.dashed-v{top:0;left:33.33333%;width:33.33333%;height:100%;border-right-width:1px;border-left-width:1px}.cropper-center{position:absolute;top:50%;left:50%;display:block;width:0;height:0;opacity:.75;filter:alpha(opacity=75)}.cropper-center:after,.cropper-center:before{position:absolute;display:block;content:' ';background-color:#eee}.cropper-center:before{top:0;left:-3px;width:7px;height:1px}.cropper-center:after{top:-3px;left:0;width:1px;height:7px}.cropper-face,.cropper-line,.cropper-point{position:absolute;display:block;width:100%;height:100%;opacity:.1;filter:alpha(opacity=10)}.cropper-face{top:0;left:0;background-color:#fff}.cropper-line,.cropper-point{background-color:#39f}.cropper-line.line-e{top:0;right:-3px;width:5px;cursor:e-resize}.cropper-line.line-n{top:-3px;left:0;height:5px;cursor:n-resize}.cropper-line.line-w{top:0;left:-3px;width:5px;cursor:w-resize}.cropper-line.line-s{bottom:-3px;left:0;height:5px;cursor:s-resize}.cropper-point{width:5px;height:5px;opacity:.75;filter:alpha(opacity=75)}.cropper-point.point-e{top:50%;right:-3px;margin-top:-3px;cursor:e-resize}.cropper-point.point-n{top:-3px;left:50%;margin-left:-3px;cursor:n-resize}.cropper-point.point-w{top:50%;left:-3px;margin-top:-3px;cursor:w-resize}.cropper-point.point-s{bottom:-3px;left:50%;margin-left:-3px;cursor:s-resize}.cropper-point.point-ne{top:-3px;right:-3px;cursor:ne-resize}.cropper-point.point-nw{top:-3px;left:-3px;cursor:nw-resize}.cropper-point.point-sw{bottom:-3px;left:-3px;cursor:sw-resize}.cropper-point.point-se{right:-3px;bottom:-3px;width:20px;height:20px;cursor:se-resize;opacity:1;filter:alpha(opacity=100)}.cropper-point.point-se:before{position:absolute;right:-50%;bottom:-50%;display:block;width:200%;height:200%;content:' ';opacity:0;background-color:#39f;filter:alpha(opacity=0)}@media (min-width:768px){.cropper-point.point-se{width:15px;height:15px}}@media (min-width:992px){.cropper-point.point-se{width:10px;height:10px}}@media (min-width:1200px){.cropper-point.point-se{width:5px;height:5px;opacity:.75;filter:alpha(opacity=75)}}.cropper-invisible{opacity:0;filter:alpha(opacity=0)}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-hide{position:absolute;display:block;width:0;height:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-drag-box,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed};
+/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+  color: black;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  white-space: nowrap;
+}
+
+.CodeMirror-guttermarker { color: black; }
+.CodeMirror-guttermarker-subtle { color: #999; }
+
+/* CURSOR */
+
+.CodeMirror-cursor {
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.cm-fat-cursor .CodeMirror-cursor {
+  width: auto;
+  border: 0 !important;
+  background: #7e7;
+}
+.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+
+.cm-animate-fat-cursor {
+  width: auto;
+  border: 0;
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+  background-color: #7e7;
+}
+@-moz-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@-webkit-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror-overwrite .CodeMirror-cursor {}
+
+.cm-tab { display: inline-block; text-decoration: inherit; }
+
+.CodeMirror-rulers {
+  position: absolute;
+  left: 0; right: 0; top: -50px; bottom: -20px;
+  overflow: hidden;
+}
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  top: 0; bottom: 0;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+.cm-strikethrough {text-decoration: line-through;}
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3, .cm-s-default .cm-type {color: #085;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-s-default .cm-error {color: #f00;}
+.cm-invalidchar {color: #f00;}
+
+.CodeMirror-composing { border-bottom: 2px solid; }
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0f0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+.CodeMirror-activeline-background {background: #e8f2ff;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important; /* Things will break if this is overridden */
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px; margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 30px solid transparent;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actual scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0; bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  min-height: 100%;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: -30px;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-gutter-background {
+  position: absolute;
+  top: 0; bottom: 0;
+  z-index: 4;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-gutter-wrapper ::selection { background-color: transparent }
+.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }
+
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px; /* prevents collapsing before first draw */
+}
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-variant-ligatures: contextual;
+  font-variant-ligatures: contextual;
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+}
+
+.CodeMirror-widget {}
+
+.CodeMirror-rtl pre { direction: rtl; }
+
+.CodeMirror-code {
+  outline: none;
+}
+
+/* Force content-box sizing for the elements where we expect it */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.CodeMirror-cursor {
+  position: absolute;
+  pointer-events: none;
+}
+.CodeMirror-measure pre { position: static; }
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+div.CodeMirror-dragcursors {
+  visibility: visible;
+}
+
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-crosshair { cursor: crosshair; }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }
+
+.cm-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, .4);
+}
+
+/* Used to force a border model for a node */
+.cm-force-border { padding-right: .1px; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after { content: ''; }
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext { background: none; }
