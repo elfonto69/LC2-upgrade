@@ -354,12 +354,12 @@ if (!function_exists('__dataTable')) {
             $enhancedData[] = $newDataFormat;
         }
 
-        $dataTablesData = array(
+        $dataTablesData = [
                 'recordsTotal' => $sourceData['total'],
                 'data' => $enhancedData,
                 'recordsFiltered' => $sourceData['total'],
                 'draw' => (int) Request::get('draw'),
-            );
+            ];
 
         $data['response_token'] = (int) Request::get('fresh');
 
@@ -422,11 +422,11 @@ if (!function_exists('__loadView')) {
         $output = View::make($viewName, $data)->render();
 
         if (!env('APP_DEBUG', false)) {
-            $filters = array(
+            $filters = [
                 '/(?<!\S)\/\/\s*[^\r\n]*/' => '',  // Remove comments in the form /* */
                 '/\s{2,}/' => ' ', // Shorten multiple white spaces
                 '/(\r?\n)/' => '',  // Collapse new lines
-            );
+            ];
 
             return preg_replace(
                 array_keys($filters),
@@ -821,7 +821,7 @@ if ((env('APP_DEBUG', false) == true)
         }
 
         // Insert bindings into query
-        $query = str_replace(array('%', '?'), array('%%', '%s'), $event->sql);
+        $query = str_replace(['%', '?'], ['%%', '%s'], $event->sql);
         $query = vsprintf($query, $bindings);
 
         $clogItems = ['SQL__Query' => $query];

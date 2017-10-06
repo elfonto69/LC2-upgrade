@@ -1495,8 +1495,8 @@ $middlewares = \Config::get('lfm.middlewares');
 array_push($middlewares, '\Yesteamtech\Laravelfilemanager\middleware\MultiUser');
 
 // make sure authenticated
-Route::group(array('middleware' => $middlewares,
-                   'prefix'     => 'upload-filemanager',), function () {
+Route::group(['middleware' => $middlewares,
+                   'prefix'     => 'upload-filemanager',], function () {
 
     // Show LFM
                     Route::get('/', [

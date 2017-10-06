@@ -180,7 +180,7 @@ abstract class CoreModel extends Eloquent
      *
      * @return eloquent object
      *------------------------------------------------------------------------ */
-    public function scopeDataTables($query, array $dataTablesConfig = array())
+    public function scopeDataTables($query, array $dataTablesConfig = [])
     {
         $inputData = Request::all();
 

@@ -153,7 +153,7 @@ class Security
         $key = substr($salted, 0, 32);
         $iv = substr($salted, 32, 16);
         $encrypted_data = openssl_encrypt(json_encode($plainString), $this->aesEncryptionType, $key, true, $iv);
-        $data = array('ct' => base64_encode($encrypted_data), 'iv' => bin2hex($iv), 's' => bin2hex($salt));
+        $data = ['ct' => base64_encode($encrypted_data), 'iv' => bin2hex($iv), 's' => bin2hex($salt)];
 
         return base64_encode(json_encode($data));
     }
@@ -177,7 +177,7 @@ class Security
         $ct = base64_decode($jsondata['ct']);
         $iv = hex2bin($jsondata['iv']);
         $concatedPassphrase = $passphrase.$salt;
-        $md5 = array();
+        $md5 = [];
         $md5[0] = md5($concatedPassphrase, true);
         $result = $md5[0];
 

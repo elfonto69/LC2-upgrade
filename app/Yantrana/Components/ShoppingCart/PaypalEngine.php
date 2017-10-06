@@ -136,7 +136,7 @@ class PaypalEngine implements PaypalEngineBlueprint
         // issues with array data in POST. Reading raw POST data from input stream instead.
         $rawPostData = file_get_contents('php://input');
         $rawPostArray = explode('&', $rawPostData);
-        $myPost = array();
+        $myPost = [];
         foreach ($rawPostArray as $keyval) {
             $keyval = explode('=', $keyval);
             if (count($keyval) == 2) {
@@ -184,7 +184,7 @@ class PaypalEngine implements PaypalEngineBlueprint
         //curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
         // Set TCP timeout to 30 seconds
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Connection: Close']);
         // CONFIG: Please download 'cacert.pem' from "http://curl.haxx.se/docs/caextract.html" and set the directory path
         // of the certificate as shown below. Ensure the file is readable by the webserver.
         // This is mandatory for some environments.

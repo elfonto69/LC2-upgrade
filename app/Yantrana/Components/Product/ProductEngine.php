@@ -183,9 +183,9 @@ class ProductEngine implements ProductEngineBlueprint
             foreach ($product->option as $optionKey => $option) {
                 $optionValue = $option->optionValues->toArray();
 
-                $productNameArray = array(
+                $productNameArray = [
                     '__option_name__' => $option->name,
-                );
+                ];
                 $nameMarkUp = __('Select __option_name__');
                 $option['optionName'] = strtr($nameMarkUp, $productNameArray);
 

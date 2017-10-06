@@ -30,7 +30,7 @@ define('DEFAULT_LOCALE', 'en_US');
 
 require_once '../gettext.inc';
 
-$supported_locales = array('en_US', 'sr_CS', 'de_CH');
+$supported_locales = ['en_US', 'sr_CS', 'de_CH'];
 $encoding = 'UTF-8';
 
 $locale = (isset($_GET['lang'])) ? $_GET['lang'] : DEFAULT_LOCALE;

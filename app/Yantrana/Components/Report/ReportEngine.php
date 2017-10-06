@@ -557,7 +557,7 @@ class ReportEngine implements ReportEngineBlueprint
                 $sheet->row(3, [$startAndEndDate]);
 
                 // Heading column for excel sheet
-                $sheet->row(4, array(
+                $sheet->row(4, [
                     'OrderUID',
                     'Full Name',
                     'Order Placed on',
@@ -569,7 +569,7 @@ class ReportEngine implements ReportEngineBlueprint
                     'Discount Amount',
                     'Shipping Amount',
                     'Total Tax',
-                ));
+                ]);
 
                 $sheet->fromArray($orderData, null, 'A5', true, false);
 

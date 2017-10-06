@@ -47,17 +47,17 @@ class StripePaymentEngine extends BaseEngine implements StripePaymentEngineBluep
     {
         try {
             // create customer
-            $customer = StripeCustomer::create(array(
+            $customer = StripeCustomer::create([
               'email' => array_get($ordderData, 'jsonData.user.email'),
               'card'  => $stripeToken
-            ));
+            ]);
 
             // charge the card
-            $charge = StripeCharge::create(array(
+            $charge = StripeCharge::create([
               'customer' => $customer->id,
               'amount'   => $this->getAmount($ordderData['totalOrderAmount']),
               'currency' => $ordderData['currencyCode']
-            ));
+            ]);
 
             return $this->engineReaction(1, [
                 'chargeDetails' => $charge,
