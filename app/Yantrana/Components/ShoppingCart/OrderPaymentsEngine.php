@@ -433,7 +433,7 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
                                           $additionalNotes = '';
                                           if (!empty($inputs['description'])) {
                                               $additionalNotes = $inputs['description'];
-                                          }
+                                            }
 
                                             $order = $this->orderPaymentsRepository
                                                          ->fetchUserID($orderID);
@@ -459,10 +459,10 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
 
                                           // Notify customer about refund by email
                                             $this->mailService->notifyCustomer($subject, 'order.order-refund', $messageData, $order['users_id']);
-                                        }
+                                      }
 
                                                             return $this->orderPaymentsRepository->transactionResponse(1, null, __('Order Refund Successfully.'));
-                                  }
+                                    }
 
                                     return $this->orderPaymentsRepository->transactionResponse(14, null, __('Nothing Update'));
                               });

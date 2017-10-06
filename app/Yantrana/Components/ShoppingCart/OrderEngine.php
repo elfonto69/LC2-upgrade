@@ -539,7 +539,7 @@ class OrderEngine implements OrderEngineBlueprint
                                       return $this->orderRepository->transactionResponse(3, [
                                                   'orderSummaryData' => $this->updateOrderSummaryData($inputs),
                                               ], __('Invalid Checkout Method'));
-                                  }
+                                    }
 
                                     $currency = getCurrency();
 
