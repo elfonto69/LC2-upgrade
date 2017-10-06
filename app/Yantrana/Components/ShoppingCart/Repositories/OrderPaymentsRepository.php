@@ -32,9 +32,11 @@ class OrderPaymentsRepository extends BaseRepository implements OrderPaymentsRep
      *
      * @param OrderPaymentsModel $orderPaymentsModel - OrderPayments Model
      *-----------------------------------------------------------------------*/
-    public function __construct(OrderPaymentsModel $orderPaymentsModel,
-                        OrderModel $orderModel)
-    {
+    public function __construct(
+        OrderPaymentsModel $orderPaymentsModel,
+        OrderModel $orderModel
+    ) {
+    
         $this->orderPaymentsModel = $orderPaymentsModel;
         $this->orderModel = $orderModel;
     }
@@ -169,14 +171,14 @@ class OrderPaymentsRepository extends BaseRepository implements OrderPaymentsRep
         return $this->orderModel
                       ->where('_id', $orderID)
                       ->select(
-                           '_id',
-                           'type',
-                           'payment_method',
-                           'total_amount',
-                           'currency_code',
-                           'status',
-                           'payment_status'
-                       )
+                          '_id',
+                          'type',
+                          'payment_method',
+                          'total_amount',
+                          'currency_code',
+                          'status',
+                          'payment_status'
+                      )
                       ->first();
     }
 
@@ -204,7 +206,6 @@ class OrderPaymentsRepository extends BaseRepository implements OrderPaymentsRep
 
         // Check if data store or not
         if ($orderPayment->assignInputsAndSave($inputs, $dataToStore)) {
-
             // Maintain activity log
             orderLog($orderPayment->orders__id, 'ID of '.$orderPayment->_id.' order refund payment updated.');
 

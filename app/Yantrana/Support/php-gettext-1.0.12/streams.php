@@ -25,28 +25,28 @@
 class StreamReader
 {
     // should return a string [FIXME: perhaps return array of bytes?]
-  public function read($bytes)
-  {
-      return false;
-  }
+    public function read($bytes)
+    {
+        return false;
+    }
 
   // should return new position
-  public function seekto($position)
-  {
-      return false;
-  }
+    public function seekto($position)
+    {
+        return false;
+    }
 
   // returns current position
-  public function currentpos()
-  {
-      return false;
-  }
+    public function currentpos()
+    {
+        return false;
+    }
 
   // returns length of entire stream (limit for seekto()s)
-  public function length()
-  {
-      return false;
-  }
+    public function length()
+    {
+        return false;
+    }
 };
 
 class StringReader
@@ -106,11 +106,11 @@ class FileReader
             $this->_fd = fopen($filename, 'rb');
             if (!$this->_fd) {
                 $this->error = 3; // Cannot read file, probably permissions
-        return false;
+                return false;
             }
         } else {
             $this->error = 2; // File doesn't exist
-      return false;
+            return false;
         }
     }
 
@@ -121,7 +121,7 @@ class FileReader
 
       // PHP 5.1.1 does not read more than 8192 bytes in one fread()
       // the discussions at PHP Bugs suggest it's the intended behaviour
-      $data = '';
+            $data = '';
             while ($bytes > 0) {
                 $chunk = fread($this->_fd, $bytes);
                 $data  .= $chunk;
@@ -171,13 +171,13 @@ class CachedFileReader extends StringReader
 
             if (!$fd) {
                 $this->error = 3; // Cannot read file, probably permissions
-        return false;
+                return false;
             }
             $this->_str = fread($fd, $length);
             fclose($fd);
         } else {
             $this->error = 2; // File doesn't exist
-      return false;
+            return false;
         }
     }
 };

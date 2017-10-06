@@ -52,10 +52,10 @@ class ProductOptionLabel extends BaseModel
       *
       * @return array
       *---------------------------------------------------------------- */
-     public function scopeProductID($query, $productID)
-     {
-         return $query->where('products_id', $productID);
-     }
+    public function scopeProductID($query, $productID)
+    {
+        return $query->where('products_id', $productID);
+    }
 
     /**
      * Fetch option set exist for this product.

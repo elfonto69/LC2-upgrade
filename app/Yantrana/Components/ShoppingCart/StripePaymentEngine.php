@@ -46,7 +46,6 @@ class StripePaymentEngine extends BaseEngine implements StripePaymentEngineBluep
     public function processStripeCharge($ordderData, $stripeToken)
     {
         try {
-
             // create customer
             $customer = StripeCustomer::create(array(
               'email' => array_get($ordderData, 'jsonData.user.email'),

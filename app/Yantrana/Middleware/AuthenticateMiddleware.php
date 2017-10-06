@@ -51,7 +51,7 @@ class AuthenticateMiddleware
                              ->with([
                                 'error' => true,
                                 'message' => __('Please login to complete request.'),
-                            ]);
+                             ]);
         }
 
         // if user not active
@@ -67,7 +67,7 @@ class AuthenticateMiddleware
                          ->with([
                             'error' => true,
                             'message' => __('Unauthorized.'),
-                        ]);
+                         ]);
         }
 
         return $next($request);

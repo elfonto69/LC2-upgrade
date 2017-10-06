@@ -59,14 +59,14 @@ class DashboardEngine implements DashboardEngineBlueprint
      * @param DashboardRepository $dashboardRepository - Dashboard Repository
      *-----------------------------------------------------------------------*/
     public function __construct(
-                    DashboardRepository $dashboardRepository,
-                    ManageOrderRepository $manageOrderRepository,
-                    ManageProductRepository $manageProductRepository,
-                    UserRepository $userRepository,
-                    CouponRepository $couponRepository,
-                    BrandRepository $brandRepository,
-                    ShippingRepository $shippingRepository
-                ) {
+        DashboardRepository $dashboardRepository,
+        ManageOrderRepository $manageOrderRepository,
+        ManageProductRepository $manageProductRepository,
+        UserRepository $userRepository,
+        CouponRepository $couponRepository,
+        BrandRepository $brandRepository,
+        ShippingRepository $shippingRepository
+    ) {
         $this->dashboardRepository = $dashboardRepository;
         $this->manageOrderRepository = $manageOrderRepository;
         $this->manageProductRepository = $manageProductRepository;
@@ -92,7 +92,6 @@ class DashboardEngine implements DashboardEngineBlueprint
         $countCancelStatus = [];
 
         foreach ($orders as $order) {
-
             // New orders recived
             if ($order->status == 1) {
                 $countNewStatus[] = $order;

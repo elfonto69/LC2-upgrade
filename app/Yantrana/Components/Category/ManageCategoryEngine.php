@@ -37,9 +37,9 @@ class ManageCategoryEngine
     {
         return $this->manageCategoryRepository
                         ->fetchCategories(
-                                $categoryID,
-                                $searchText
-                            );
+                            $categoryID,
+                            $searchText
+                        );
     }
 
     /**

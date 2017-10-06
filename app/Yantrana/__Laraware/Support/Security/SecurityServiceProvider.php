@@ -32,8 +32,10 @@ class SecurityServiceProvider extends ServiceProvider
         // Register Alias
         $this->app->booting(function () {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('YesSecurity',
-                \App\Yantrana\__Laraware\Support\Security\SecurityFacade::class);
+            $loader->alias(
+                'YesSecurity',
+                \App\Yantrana\__Laraware\Support\Security\SecurityFacade::class
+            );
         });
     }
 }

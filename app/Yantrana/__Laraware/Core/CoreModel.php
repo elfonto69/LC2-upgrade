@@ -31,12 +31,11 @@ abstract class CoreModel extends Eloquent
         static::creating(function ($model) {
 
             // Generate UID if required
-           if ($model->isGenerateUID) {
-               $model->{ $model->UIDKey } = __generateUID();
-           }
+            if ($model->isGenerateUID) {
+                $model->{ $model->UIDKey } = __generateUID();
+            }
 
             foreach ($model->toArray() as $key => $value) {
-
                 // process JSON data if exists
                 if (array_key_exists($key, $model->toArray())
                     and array_key_exists($key, $model->jsonColumns)) {
@@ -149,14 +148,13 @@ abstract class CoreModel extends Eloquent
             * model field and also check values.
             *------------------------------------------------------------------------ */
 
-           if (array_key_exists($key, $this->toArray())
+            if (array_key_exists($key, $this->toArray())
                                 and $this->{ $key } != $value) {
-
                 // assign value
                 $this->{$key} = $value;
 
-               $updatedColumns[$key] = $value;
-           }
+                $updatedColumns[$key] = $value;
+            }
         }
 
         if (!empty($updatedColumns)) {
@@ -273,7 +271,10 @@ abstract class CoreModel extends Eloquent
             $query->where(function ($whereQuery) use ($searchableColumns, $searchTerm) {
                 foreach ($searchableColumns as $serachableFieldName) {
                     $whereQuery->orWhere(
-                        $serachableFieldName, 'like', '%'.$searchTerm.'%');
+                        $serachableFieldName,
+                        'like',
+                        '%'.$searchTerm.'%'
+                    );
                 }
             });
         }
@@ -293,7 +294,6 @@ abstract class CoreModel extends Eloquent
     {
         foreach ($keyValues as $key => $value) {
             if (is_string($key)) {
-
                 // process JSON data if exists
                 if (array_key_exists($key, $this->jsonColumns)) {
                     // get verified data
@@ -370,7 +370,6 @@ abstract class CoreModel extends Eloquent
 
         //check if return item required ids or selected column
         if (($returnColumn) and ($this->isGenerateUID) and ($insertResult === true)) {
-
             // item to get return
             $itemToPluck = ($returnColumn === true) ? $this->primaryKey : $returnColumn;
 
@@ -471,9 +470,12 @@ abstract class CoreModel extends Eloquent
                                 $existingItemData = $existingItemData->toArray();
 
                                 $val[$field] = json_encode(
-                                $this->verifyAndUpdateJsonColumnData(
-                                    $field, $val[$field], $existingItemData[$field]
-                                    ));
+                                    $this->verifyAndUpdateJsonColumnData(
+                                        $field,
+                                        $val[$field],
+                                        $existingItemData[$field]
+                                    )
+                                );
                             }
                         }
 
@@ -625,7 +627,6 @@ abstract class CoreModel extends Eloquent
         $itemsToRemoveWrapperByKeys = [];
 
         foreach ($tempUpdates as $tempItemKey => $tempItemValue) {
-
             /*if(is_numeric($tempItemValue) or is_string($tempItemValue)) {
 
                 // collect the items for the delete
@@ -663,8 +664,7 @@ abstract class CoreModel extends Eloquent
                 array_set($validData, $tempItemKey, $tempItemValue);
 
                 continue;
-            }
-            // check if it's not string and it's datatype matches with defined item datatype
+            } // check if it's not string and it's datatype matches with defined item datatype
             elseif ((is_string($definedItem) !== true) and gettype($definedItem)  === $updateItemType) {
                 // set the values
                 array_set($validData, $tempItemKey, $tempItemValue);
@@ -680,14 +680,12 @@ abstract class CoreModel extends Eloquent
                     if (($startWith === true)
                         and (__isEmpty($searchedItemValue) === false)) {
                         switch ($jsonValue) {
-
                             case 'array': // will replace it with new items
                                 // set the values
                                 array_set($validData, $searchedItemKey, array_get($value, $searchedItemKey));
                                 break;
 
-                            case 'array:extend': // will merge the items with existing
-
+                            case 'array:extend':
                                 if (in_array($searchedItemKey, $itemKeyProcessed['array:extend'])) {
                                     break;
                                 }
@@ -704,7 +702,6 @@ abstract class CoreModel extends Eloquent
                                 $itemKeyProcessed['array:extend'][] = $searchedItemKey;
 
                                 break;
-                            
                         }
                     }
                 }

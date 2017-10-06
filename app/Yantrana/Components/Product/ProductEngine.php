@@ -39,9 +39,11 @@ class ProductEngine implements ProductEngineBlueprint
      *
      * @param ProductRepository $productRepository - Product Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(ProductRepository $productRepository,
-                        BrandRepository $brandRepository)
-    {
+    public function __construct(
+        ProductRepository $productRepository,
+        BrandRepository $brandRepository
+    ) {
+    
         $this->productRepository = $productRepository;
         $this->brandRepository = $brandRepository;
     }
@@ -63,9 +65,9 @@ class ProductEngine implements ProductEngineBlueprint
                 $categories[] = [
                     'name' => $category->name,
                     'categoryUrl' => categoriesProductRoute(
-                                        $category->id,
-                                        slugIt($category->name)
-                                    ),
+                        $category->id,
+                        slugIt($category->name)
+                    ),
                 ];
             }
         }
@@ -149,9 +151,11 @@ class ProductEngine implements ProductEngineBlueprint
                             'out_of_stock' => $relatedProduct->out_of_stock,
                             'slugName' => slugIt($relatedProduct->name),
                             'related_product_price' => priceFormat($relatedProduct->price, false, true),
-                            'name' => str_limit($relatedProduct->name,
-                                                $limit = $charactorLimit,
-                                                $end = '...'),
+                            'name' => str_limit(
+                                $relatedProduct->name,
+                                $limit = $charactorLimit,
+                                $end = '...'
+                            ),
                         ];
                     }
                 }
@@ -189,7 +193,7 @@ class ProductEngine implements ProductEngineBlueprint
                     // fetch option value and price and calculate total
                     $product->option[$optionKey]['optionValueExist'] = true;
 
-                    foreach ($option->optionValues as  $vlaueKey => $optionValue) {
+                    foreach ($option->optionValues as $vlaueKey => $optionValue) {
                         $optionValue['addon_price_format'] = priceFormat($optionValue->addon_price, false, true);
                         $optionValue['addon_price'] = $optionValue->addon_price;
                         $optionValue['subtotal'] = $optionValue->addon_price + $product->price;
@@ -335,7 +339,6 @@ class ProductEngine implements ProductEngineBlueprint
 
         // If brand exits then check if is active or not
         if (!__isEmpty($brand)) {
-
             // if logged in user is not admin then show error notification
             if (!isAdmin() and $brand->status !== 1) {
                 return __engineReaction(18);
@@ -433,12 +436,14 @@ class ProductEngine implements ProductEngineBlueprint
             $pageType = 'categories';
         }
 
-        $breadCrumb = Breadcrumb::generate('productDetails', $productId,
-                                             [
+        $breadCrumb = Breadcrumb::generate(
+            'productDetails',
+            $productId,
+            [
                                                 'pageType'   => $pageType,
                                                 'categoryID' => $categoryID,
                                              ]
-                                            );
+        );
 
         return __engineReaction(1, [
                 'serverPutProductData' => $serverPutProductData,
@@ -482,9 +487,9 @@ class ProductEngine implements ProductEngineBlueprint
             }
 
             $activeCatIds = findActiveParentsNChilds(
-                                    $categoryCollection,
-                                    $category->id
-                                );
+                $categoryCollection,
+                $category->id
+            );
 
             // check if the parent cat deactive so do not display child product
             if ($activeCatIds['parents'] === false) {
@@ -498,27 +503,29 @@ class ProductEngine implements ProductEngineBlueprint
             $productCollection = $this->productRepository
                                       ->fetchCategorieProducts(
                                           $activeCatIds['childrens'],
-                                          $input, $inactiveBrandIds
-                                    );
+                                          $input,
+                                          $inactiveBrandIds
+                                      );
 
             // fetch product without pagination
             $resultedProudctOfBrandIds = $this->productRepository
                                                ->fetchCategorieWithoutPaginate(
-                                                  $activeCatIds['childrens'],
-                                                  $route, $inactiveBrandIds
-                                              );
+                                                   $activeCatIds['childrens'],
+                                                   $route,
+                                                   $inactiveBrandIds
+                                               );
 
             // fetch min & max price of product
             $productPrices = $this->productRepository
                                    ->fetchMaxAndMinPrice(
-                                        $activeCatIds['childrens'],
-                                        $route, $inactiveBrandIds
-                                    );
+                                       $activeCatIds['childrens'],
+                                       $route,
+                                       $inactiveBrandIds
+                                   );
 
             // filter array of max & min price
             $priceFilteredArray = $this->priceFilter($productPrices, $input);
         } else {
-
             // find all active categories
             $allActiveCategories = findActiveChilds($categoryCollection, $categoryID);
 
@@ -528,7 +535,10 @@ class ProductEngine implements ProductEngineBlueprint
             // fetch product without pagination
             $resultedProudctOfBrandIds = $this->productRepository
                                               ->fetchAllWithoutPaginate(
-                                                  $allActiveCategories, $input, $route, $inactiveBrandIds
+                                                  $allActiveCategories,
+                                                  $input,
+                                                  $route,
+                                                  $inactiveBrandIds
                                               );
 
             $pageType = 'products';
@@ -577,9 +587,11 @@ class ProductEngine implements ProductEngineBlueprint
 
                 $products[] = [
                     'id' => $productID,
-                    'name' => str_limit($productName,
-                                            $limit = $charactorLimit,
-                                            $end = '...'),
+                    'name' => str_limit(
+                        $productName,
+                        $limit = $charactorLimit,
+                        $end = '...'
+                    ),
                     'slugName' => $productSlugName,
                     'thumbnailURL' => getProductImageURL($productID, $product->thumbnail),
                     'out_of_stock' => $product->out_of_stock,
@@ -645,9 +657,9 @@ class ProductEngine implements ProductEngineBlueprint
         if (!empty($productsCategories)) {
             foreach ($productsCategories as $key => $productCategory) {
                 $response = findActiveParentsNChilds(
-                                        $categoryCollection,
-                                        $productCategory['categories_id']
-                                    );
+                    $categoryCollection,
+                    $productCategory['categories_id']
+                );
 
                 if (!__isEmpty($response['parents'])) {
                     $productCat = true;
@@ -690,9 +702,9 @@ class ProductEngine implements ProductEngineBlueprint
     protected function isValidProducts($productIds, $categoryId = null)
     {
         $activeCategoryIds = findActiveChilds(
-                                $this->productRepository->fetchCategories(),
-                                $categoryId
-                            );
+            $this->productRepository->fetchCategories(),
+            $categoryId
+        );
 
         // check if the any category is active or not
         if (__isEmpty($activeCategoryIds)) {
@@ -710,7 +722,6 @@ class ProductEngine implements ProductEngineBlueprint
         $validProductIds = [];
 
         foreach ($productCategories as $key => $productCategory) {
-
             // in array check the category id is available in  $activeCategoryIds array
             // it means the product of category is valid
             if (in_array($productCategory->categories_id, $activeCategoryIds)) {
@@ -961,9 +972,11 @@ class ProductEngine implements ProductEngineBlueprint
 
                 $products[] = [
                     'id' => $productID,
-                    'name' => str_limit($productName,
-                                            $limit = $charactorLimit,
-                                            $end = '...'),
+                    'name' => str_limit(
+                        $productName,
+                        $limit = $charactorLimit,
+                        $end = '...'
+                    ),
                     'slugName' => $slugName,
                     'formate_price' => priceFormat($product->price, false, true),
                     'out_of_stock' => $product->out_of_stock,

@@ -149,13 +149,13 @@ class ManagePagesEngine implements ManagePagesEngineBlueprint
             // Get page type and page link open as config array
             $configItems = [
                 'pageType' => getSelectizeOptions(
-                                '__tech.pages_types',
-                                '__tech.pages_type_codes'
-                            ),
+                    '__tech.pages_types',
+                    '__tech.pages_type_codes'
+                ),
                 'pageLinks' => getSelectizeOptions(
-                                '__tech.link_target',
-                                '__tech.link_target_array'
-                            ),
+                    '__tech.link_target',
+                    '__tech.link_target_array'
+                ),
             ];
 
             return __engineReaction(1, [
@@ -201,7 +201,6 @@ class ManagePagesEngine implements ManagePagesEngineBlueprint
                 'add_to_menu' => ($addToMenu == false) ? 2 : 1,
             ];
         } else {
-
             // Check if parent page not exist
             if (empty($parent_page) or $parent_page === 0) {
                 $parent_page = null;

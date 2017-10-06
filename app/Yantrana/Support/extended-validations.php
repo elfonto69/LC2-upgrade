@@ -117,7 +117,6 @@
 
                 // Check if after decimal amount is greater than 4
                 if ($afterDecimalAmountLength > 4) {
-                    
                     // Get configuration setting decimal round number
                     $configAfterDecimalAmountLength = getStoreSettings('currency_decimal_round');
 

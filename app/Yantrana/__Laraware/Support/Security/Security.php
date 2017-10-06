@@ -62,8 +62,10 @@ class Security
      *------------------------------------------------------------------------ */
     protected function getRsaPassphrse()
     {
-        return config('__tech.form_encryption.default_rsa_passphrase',
-            config('tech-config.form_encryption.default_rsa_passphrase'));
+        return config(
+            '__tech.form_encryption.default_rsa_passphrase',
+            config('tech-config.form_encryption.default_rsa_passphrase')
+        );
     }
 
     /**
@@ -73,8 +75,10 @@ class Security
      *------------------------------------------------------------------------ */
     public function getPublicRsaKey()
     {
-        return config('__tech.form_encryption.default_rsa_public_key',
-            config('tech-config.form_encryption.default_rsa_public_key'));
+        return config(
+            '__tech.form_encryption.default_rsa_public_key',
+            config('tech-config.form_encryption.default_rsa_public_key')
+        );
     }
 
     /**
@@ -84,8 +88,10 @@ class Security
      *------------------------------------------------------------------------ */
     protected function getPrivateRsaKey()
     {
-        return config('__tech.form_encryption.default_rsa_private_key',
-            config('tech-config.form_encryption.default_rsa_private_key'));
+        return config(
+            '__tech.form_encryption.default_rsa_private_key',
+            config('tech-config.form_encryption.default_rsa_private_key')
+        );
     }
 
     /**
@@ -98,9 +104,13 @@ class Security
     public function decryptRSA($encryptedString)
     {
         if (openssl_private_decrypt(
-            base64_decode($encryptedString), $decryptedData,
-            openssl_pkey_get_private($this->getPrivateRsaKey(),
-                $this->getRsaPassphrse()))) {
+            base64_decode($encryptedString),
+            $decryptedData,
+            openssl_pkey_get_private(
+                $this->getPrivateRsaKey(),
+                $this->getRsaPassphrse()
+            )
+        )) {
             return $decryptedData;
         }
 

@@ -32,8 +32,10 @@ class BreadcrumbServiceProvider extends ServiceProvider
         // Register Alias
         $this->app->booting(function () {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('Breadcrumb',
-                \App\Yantrana\Support\Breadcrumb\BreadcrumbFacade::class);
+            $loader->alias(
+                'Breadcrumb',
+                \App\Yantrana\Support\Breadcrumb\BreadcrumbFacade::class
+            );
         });
     }
 }

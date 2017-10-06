@@ -42,11 +42,12 @@ class ReportRepository extends BaseRepository implements ReportRepositoryBluepri
      *
      * @param ReportModel $reportModel - Report Model
      *-----------------------------------------------------------------------*/
-    public function __construct(ReportModel $reportModel,
-                         OrderModel $order,
-                         OrderTaxModel $orderTax,
-                         OrderPaymentsModel $orderPaymentsModel
-                        ) {
+    public function __construct(
+        ReportModel $reportModel,
+        OrderModel $order,
+        OrderTaxModel $orderTax,
+        OrderPaymentsModel $orderPaymentsModel
+    ) {
         $this->reportModel = $reportModel;
         $this->order = $order;
         $this->orderTax = $orderTax;
@@ -106,23 +107,23 @@ class ReportRepository extends BaseRepository implements ReportRepositoryBluepri
 
         return $query->join('users', 'orders.users_id', '=', 'users.id')
                      ->select(
-                        'orders._id',
-                        'orders.created_at',
-                        'orders.updated_at',
-                        'orders.status as status',
-                        'orders.type',
-                        'orders.payment_method',
-                        'orders.addresses_id',
-                        'orders.addresses_id1',
-                        'orders.currency_code',
-                        'orders.users_id as users_id',
-                        'orders.order_uid',
-                        'orders.total_amount',
-                        'orders.payment_status',
-                        'users.id as user_id',
-                        'users.fname as fname',
-                        'users.lname as lname'
-                    )->dataTables($dataTableConfig)->toArray();
+                         'orders._id',
+                         'orders.created_at',
+                         'orders.updated_at',
+                         'orders.status as status',
+                         'orders.type',
+                         'orders.payment_method',
+                         'orders.addresses_id',
+                         'orders.addresses_id1',
+                         'orders.currency_code',
+                         'orders.users_id as users_id',
+                         'orders.order_uid',
+                         'orders.total_amount',
+                         'orders.payment_status',
+                         'users.id as user_id',
+                         'users.fname as fname',
+                         'users.lname as lname'
+                     )->dataTables($dataTableConfig)->toArray();
     }
 
     /**
@@ -207,21 +208,21 @@ class ReportRepository extends BaseRepository implements ReportRepositoryBluepri
 
         return $query->join('users', 'orders.users_id', '=', 'users.id')
                      ->select(
-                        'orders._id',
-                        'orders.created_at',
-                        'orders.status as status',
-                        'orders.type',
-                        'orders.payment_method',
-                        'orders.currency_code',
-                        'orders.users_id as users_id',
-                        'orders.order_uid',
-                        'orders.discount_amount',
-                        'orders.shipping_amount',
-                        'orders.total_amount',
-                        'users.id as user_id',
-                        'users.fname as fname',
-                        'users.lname as lname',
-                        'orders.currency_code'
-                    )->get()->toArray();
+                         'orders._id',
+                         'orders.created_at',
+                         'orders.status as status',
+                         'orders.type',
+                         'orders.payment_method',
+                         'orders.currency_code',
+                         'orders.users_id as users_id',
+                         'orders.order_uid',
+                         'orders.discount_amount',
+                         'orders.shipping_amount',
+                         'orders.total_amount',
+                         'users.id as user_id',
+                         'users.fname as fname',
+                         'users.lname as lname',
+                         'orders.currency_code'
+                     )->get()->toArray();
     }
 }

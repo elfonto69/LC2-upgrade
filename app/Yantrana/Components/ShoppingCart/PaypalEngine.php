@@ -68,11 +68,13 @@ class PaypalEngine implements PaypalEngineBlueprint
      * @param OrderPaymentsRepository $orderPaymentsRepository - Order Payment Repository
      * @param OrderPaymentsEngine     $orderPaymentsEngine     - Order Payment Engine
      *-----------------------------------------------------------------------*/
-    public function __construct(OrderRepository $orderRepository,
-                            OrderEngine  $orderEngine,
-                            OrderPaymentsRepository $orderPaymentsRepository,
-                            OrderPaymentsEngine $orderPaymentsEngine)
-    {
+    public function __construct(
+        OrderRepository $orderRepository,
+        OrderEngine  $orderEngine,
+        OrderPaymentsRepository $orderPaymentsRepository,
+        OrderPaymentsEngine $orderPaymentsEngine
+    ) {
+    
         // CONFIG: Enable debug mode. This means we'll log requests into 'ipn.log' in the same directory.
         // Especially useful if you encounter network errors or other intermittent problems with IPN (validation).
         define('IPN_LOG_FILE', './storage/logs/paypal-ipn.log');
@@ -114,7 +116,6 @@ class PaypalEngine implements PaypalEngineBlueprint
         }
 
         if (is_array($validatedIpnRequest) and in_array('ERR_IPN_NOT_COMPLETED', $validatedIpnRequest)) {
-
             // mark order payment as pending
             $this->orderRepository->updateOrderPaymentStatus($this->orderObj, 4);
         }
@@ -204,10 +205,10 @@ class PaypalEngine implements PaypalEngineBlueprint
             exit;
         } else {
             // Log the entire HTTP response if debug is switched on.
-                if (env('APP_DEBUG') == true) {
-                    error_log(date('[Y-m-d H:i e] ').'HTTP request of validation request:'.curl_getinfo($ch, CURLINFO_HEADER_OUT)." for IPN payload: $req".PHP_EOL, 3, IPN_LOG_FILE);
-                    error_log(date('[Y-m-d H:i e] ')."HTTP response of validation request: $res".PHP_EOL, 3, IPN_LOG_FILE);
-                }
+            if (env('APP_DEBUG') == true) {
+                error_log(date('[Y-m-d H:i e] ').'HTTP request of validation request:'.curl_getinfo($ch, CURLINFO_HEADER_OUT)." for IPN payload: $req".PHP_EOL, 3, IPN_LOG_FILE);
+                error_log(date('[Y-m-d H:i e] ')."HTTP response of validation request: $res".PHP_EOL, 3, IPN_LOG_FILE);
+            }
             curl_close($ch);
         }
         // Inspect IPN validation result and act accordingly

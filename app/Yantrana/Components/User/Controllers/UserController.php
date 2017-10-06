@@ -84,8 +84,11 @@ class UserController extends BaseController
     {
         $processReaction = $this->userEngine->prepareLoginAttempts();
 
-        return __processResponse($processReaction, [],
-            $processReaction['data']);
+        return __processResponse(
+            $processReaction,
+            [],
+            $processReaction['data']
+        );
     }
 
     /**
@@ -197,9 +200,11 @@ class UserController extends BaseController
      *
      * @return json object
      *---------------------------------------------------------------- */
-    public function restPasswordProcess(UserResetPasswordRequest $request,
-        $reminderToken)
-    {
+    public function restPasswordProcess(
+        UserResetPasswordRequest $request,
+        $reminderToken
+    ) {
+    
         $processReaction = $this->userEngine
                                 ->processResetPassword(
                                     $request->all(),
@@ -609,7 +614,8 @@ class UserController extends BaseController
      * @return json object
      *---------------------------------------------------------------- */
     public function userContactProcess(UserContactRequest $request)
-    {// __dd($request->all());
+    {
+// __dd($request->all());
         $processReaction = $this->userEngine->userContactProcess($request->all());
 
         return __processResponse($processReaction, [

@@ -173,10 +173,10 @@ class BaseController extends Controller
             );
 
             return preg_replace(
-                    array_keys($filters),
-                    array_values($filters),
-                    $output
-                );
+                array_keys($filters),
+                array_values($filters),
+                $output
+            );
         } else { // for clog
 
                 $clogSessItemName = '__clog';

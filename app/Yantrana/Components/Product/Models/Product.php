@@ -114,12 +114,17 @@ class Product extends BaseModel
      *---------------------------------------------------------------- */
     public function categories()
     {
-        return $this->belongsToMany(Category::class,
+        return $this->belongsToMany(
+            Category::class,
             'product_categories',
             'products_id',
             'categories_id'
-        )->select('categories.id', 'categories.name',
-        'categories.status', 'categories.parent_id');
+        )->select(
+            'categories.id',
+            'categories.name',
+            'categories.status',
+            'categories.parent_id'
+        );
     }
 
     /**

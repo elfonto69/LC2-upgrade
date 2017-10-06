@@ -13,7 +13,7 @@ class ComposerServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot(MenuEngine $menuEngine)
-    {	
+    {
     }
 
     /**

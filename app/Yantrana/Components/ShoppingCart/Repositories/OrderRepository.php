@@ -37,11 +37,13 @@ class OrderRepository extends BaseRepository implements OrderRepositoryBlueprint
      *
      * @param OrderModel $orderModel - Order Model
      *-----------------------------------------------------------------------*/
-    public function __construct(OrderModel $orderModel,
+    public function __construct(
+        OrderModel $orderModel,
         OrderProductModel $orderProduct,
         OrderProductOptionsModel $orderProductOption,
-        OrderTaxModel $orderTax)
-    {
+        OrderTaxModel $orderTax
+    ) {
+    
         $this->orderModel = $orderModel;
         $this->orderProduct = $orderProduct;
         $this->orderProductOption = $orderProductOption;
@@ -225,22 +227,22 @@ class OrderRepository extends BaseRepository implements OrderRepositoryBlueprint
         return $query->where('orders.users_id', getUserID())
                      ->join('users', 'orders.users_id', '=', 'users.id')
                      ->select(
-                        'orders._id',
-                        'orders.created_at',
-                        'orders.updated_at',
-                        'orders.status as status',
-                        'orders.type',
-                        'orders.payment_method',
-                        'orders.addresses_id',
-                        'orders.addresses_id1',
-                        'orders.currency_code',
-                        'orders.users_id as users_id',
-                        'orders.order_uid',
-                        'orders.payment_status',
-                        'users.id as user_id',
-                        'users.fname as fname',
-                        'users.lname as lname'
-                    )->dataTables($dataTableConfig)->toArray();
+                         'orders._id',
+                         'orders.created_at',
+                         'orders.updated_at',
+                         'orders.status as status',
+                         'orders.type',
+                         'orders.payment_method',
+                         'orders.addresses_id',
+                         'orders.addresses_id1',
+                         'orders.currency_code',
+                         'orders.users_id as users_id',
+                         'orders.order_uid',
+                         'orders.payment_status',
+                         'users.id as user_id',
+                         'users.fname as fname',
+                         'users.lname as lname'
+                     )->dataTables($dataTableConfig)->toArray();
     }
 
     /**
@@ -253,12 +255,13 @@ class OrderRepository extends BaseRepository implements OrderRepositoryBlueprint
     public function fetchOrderDetails($id)
     {
         $query = $this->orderModel
-                      ->with('user',
-                        'address',
-                        'address1',
-                        'orderProduct',
-                        'coupon',
-                        'orderTaxes'
+                      ->with(
+                          'user',
+                          'address',
+                          'address1',
+                          'orderProduct',
+                          'coupon',
+                          'orderTaxes'
                       );
 
         if (is_int($id)) { // if the integer treat as db id

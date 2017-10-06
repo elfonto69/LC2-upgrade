@@ -38,7 +38,7 @@ class ManageProductAddRequest extends BaseRequest
             'image' => 'required',
             'categories' => 'required',
             'description' => 'required|min:6',
-       ];
+        ];
     }
 
     /**

@@ -48,11 +48,10 @@ $app->singleton(
 |
 */
 // load .env.php if available
-if(file_exists('.env.php')) {
+if (file_exists('.env.php')) {
     $app->loadEnvironmentFrom('.env.php');
-} 
-// or load .env if available
-elseif(file_exists('.env')) {
+} // or load .env if available
+elseif (file_exists('.env')) {
     $app->loadEnvironmentFrom('.env');
 }
 

@@ -55,7 +55,7 @@ class AdminMiddleware
                              ->with([
                                 'error' => true,
                                 'message' => __('Please login to complete request.'),
-                            ]);
+                             ]);
         }
 
         // if user not admin
@@ -71,7 +71,7 @@ class AdminMiddleware
                              ->with([
                                 'error' => true,
                                 'message' => __('Unauthorized.'),
-                            ]);
+                             ]);
         }
 
          // set the new order placed count

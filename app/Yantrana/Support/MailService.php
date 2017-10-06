@@ -65,7 +65,9 @@ class MailService
 
         $mailFrom = isset($from) ? $from : config('__tech.mail_from');
 
-        $emailSent = Mail::send($view, $messageData,
+        $emailSent = Mail::send(
+            $view,
+            $messageData,
             function ($message) use ($recipients, $subject, $mailFrom) {
 
                 // Check for if direct recipients exist
@@ -95,7 +97,8 @@ class MailService
                 }
 
                 $message->subject($subject);
-            });
+            }
+        );
 
         if (empty($emailSent->failedRecipients)) {
             return true;
@@ -119,30 +122,29 @@ class MailService
         $mailRecipents['bcc'] = [];
 
         if (!is_array($getRecipients['recipients'])) {
-
             // get commas separated recipients using getRecipentsArray
             $mailRecipents['to'] = $this->getRecipents($getRecipients['recipients']);
         } else {
             // check direct recipients
             if (isset($getRecipients['recipients'])) {
                 $mailRecipents['to'] = $this->getRecipents(
-                                            $getRecipients['recipients']
-                                        );
+                    $getRecipients['recipients']
+                );
             }
         }
 
         // check carbon copy recipients
         if (isset($getRecipients['cc'])) {
             $mailRecipents['cc'] = $this->getRecipents(
-                                        $getRecipients['cc']
-                                    );
+                $getRecipients['cc']
+            );
         }
 
         // check blind carbon copy recipients
         if (isset($getRecipients['bcc'])) {
             $mailRecipents['bcc'] = $this->getRecipents(
-                                            $getRecipients['bcc']
-                                        );
+                $getRecipients['bcc']
+            );
         }
 
         return $mailRecipents;

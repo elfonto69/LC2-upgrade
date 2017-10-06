@@ -102,8 +102,10 @@ class ShoppingCartEngine implements ShoppingCartEngineBlueprint
         ShippingRepository $shippingRepository,
         TaxRepository $taxRepository,
         SupportRepository $supportRepository,
-        ManageCategoryEngine $manageCategoryEngine, BrandRepository $brandRepository)
-    {
+        ManageCategoryEngine $manageCategoryEngine,
+        BrandRepository $brandRepository
+    ) {
+    
         $this->shoppingCartRepository = $shoppingCartRepository;
         $this->manageProductRepository = $manageProductRepository;
         $this->addressRepository = $addressRepository;
@@ -180,18 +182,18 @@ class ShoppingCartEngine implements ShoppingCartEngineBlueprint
 
            // if the product is inactive and out of stock or his categories is inactive
            // show this block
-           if ($isValid !== 1) {
-               return __engineReaction($isValid);
-           }
+        if ($isValid !== 1) {
+            return __engineReaction($isValid);
+        }
 
         // verify product to check if the product is already present in cart then
         // increase qty of product & price  and
         // return created or updated row id
         $rowID = ShoppingCart::processAddOrUpdate(
-                        $productID,
-                        $inputData,
-                        $product
-                    );
+            $productID,
+            $inputData,
+            $product
+        );
 
         // find row id & return qty of this cart item
            $cartProduct = ShoppingCart::findRow($rowID);
@@ -237,7 +239,6 @@ class ShoppingCartEngine implements ShoppingCartEngineBlueprint
         $itemsIds = $getCartItems = $cartOpValueId = [];
 
         foreach ($cartItems as $rowId => $item) {
-
             // this section run when cart product contain options
             if (!empty($item['options'])) {
                 foreach ($item['options'] as $options) {
@@ -311,9 +312,9 @@ class ShoppingCartEngine implements ShoppingCartEngineBlueprint
 
         // return valid & invlid data of cart
         $cartData = getRefinedCart(
-                            $productsDataForComapre['cartItems'],
-                            $productsDataForComapre['products']
-                        );
+            $productsDataForComapre['cartItems'],
+            $productsDataForComapre['products']
+        );
 
         $quantity = [];
         foreach ($cartData['productData'] as $productData) {
@@ -478,9 +479,9 @@ class ShoppingCartEngine implements ShoppingCartEngineBlueprint
         // this function match the value of database & cart data.
         // and return in to set key isValidItem or not
         $verifiedCartItems = getRefinedCart(
-                                    $getCartItems,
-                                    $productsDataForComapre['products']
-                                );
+            $getCartItems,
+            $productsDataForComapre['products']
+        );
 
         $cartReady = $verifiedCartItems['cartReady'];
 
@@ -565,7 +566,6 @@ class ShoppingCartEngine implements ShoppingCartEngineBlueprint
 
         // fetch cart data it not empty
         if (!__isEmpty($cartData = $this->fetchCartData())) {
-
             // fetch cart data from to the session $this->fetchCartData();
             // check this cart item available in database
             $productsDataForComapre = $this->getProductForCart($cartData);
@@ -573,9 +573,9 @@ class ShoppingCartEngine implements ShoppingCartEngineBlueprint
             // this function match the value of database & cart data.
             // and return in to set key isValidItem or not
             $afterMatchCartItemsData = getRefinedCart(
-                                            $cartData,
-                                            $productsDataForComapre['products']
-                                        );
+                $cartData,
+                $productsDataForComapre['products']
+            );
 
             // return total of cart data prices
             $totalItems = ShoppingCart::total($afterMatchCartItemsData['totalPriceItems']);

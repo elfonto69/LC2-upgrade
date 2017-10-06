@@ -85,7 +85,8 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
      * @param ProductSpecification $productSpecification - ProductSpecification Model
      * @param BrandModel           $brand                - Brand Model
      *-----------------------------------------------------------------------*/
-    public function __construct(ProductModel $product,
+    public function __construct(
+        ProductModel $product,
         ProductCategory $productCategory,
         RelatedProduct $relatedProduct,
         ProductImage $productImage,
@@ -94,8 +95,9 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
         CategoryModel $category,
         Setting $setting,
         ProductSpecification $productSpecification,
-        Brand $brand)
-    {
+        Brand $brand
+    ) {
+    
         $this->product = $product;
         $this->productCategory = $productCategory;
         $this->relatedProduct = $relatedProduct;
@@ -317,18 +319,18 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
         // Check if select only exist
         if ($selectOnly) {
             $product->select(
-                    'name',
-                    'thumbnail',
-                    'product_id',
-                    'description',
-                    'price',
-                    'old_price',
-                    'status',
-                    'featured',
-                    'out_of_stock',
-                    'brands__id',
-                    'youtube_video'
-                );
+                'name',
+                'thumbnail',
+                'product_id',
+                'description',
+                'price',
+                'old_price',
+                'status',
+                'featured',
+                'out_of_stock',
+                'brands__id',
+                'youtube_video'
+            );
         }
 
         return $product->first();
@@ -373,22 +375,22 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
         }
 
         return $query->select(
-                        'id',
-                        'name',
-                        'thumbnail',
-                        'product_id',
-                        'description',
-                        'status',
-                        'out_of_stock',
-                        'old_price',
-                        'price',
-                        'youtube_video',
-                        'featured',
-                        'status',
-                        'brands__id',
-                        'created_at',
-                        'updated_at'
-                    )->first();
+            'id',
+            'name',
+            'thumbnail',
+            'product_id',
+            'description',
+            'status',
+            'out_of_stock',
+            'old_price',
+            'price',
+            'youtube_video',
+            'featured',
+            'status',
+            'brands__id',
+            'created_at',
+            'updated_at'
+        )->first();
     }
 
     /**
@@ -639,41 +641,46 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
 
         // Check if related products exist
         if (!empty($input['related_products'])
-            and $this->storeRelatedProducts($productID,
-                                         $input['related_products']
-                                        )) {
+            and $this->storeRelatedProducts(
+                $productID,
+                $input['related_products']
+            )) {
             $isSomethingUpdated = true;
         }
 
         // Check if delete related products exist
         if (!empty($input['delete_related_products'])
-            and $this->deleteRelatedProducts($productID,
-                 $input['delete_related_products']
-                )) {
+            and $this->deleteRelatedProducts(
+                $productID,
+                $input['delete_related_products']
+            )) {
             $isSomethingUpdated = true;
         }
 
         // Check if categories exist
         if (!empty($input['categories'])
-            and $this->storeProductCategories($productID,
-                                         $input['categories']
-                                        )) {
+            and $this->storeProductCategories(
+                $productID,
+                $input['categories']
+            )) {
             $isSomethingUpdated = true;
         }
 
         // Check if categories exist
         if (!empty($input['delete_categories'])
-            and $this->deleteProductCategories($productID,
-                                         $input['delete_categories']
-                                        )) {
+            and $this->deleteProductCategories(
+                $productID,
+                $input['delete_categories']
+            )) {
             $isSomethingUpdated = true;
         }
 
         // Check if delete related products exist
         if (!empty($input['delete_related_products'])
-            and $this->deleteRelatedProducts($productID,
-                 $input['delete_related_products']
-                )) {
+            and $this->deleteRelatedProducts(
+                $productID,
+                $input['delete_related_products']
+            )) {
             $isSomethingUpdated = true;
         }
 
@@ -976,9 +983,12 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
      *
      * @return number
      *---------------------------------------------------------------- */
-    public function fetchProductOptionCount($productID, $optionName,
-     $optionID = null)
-    {
+    public function fetchProductOptionCount(
+        $productID,
+        $optionName,
+        $optionID = null
+    ) {
+    
         $productOption = $this->productOptionLabel
                               ->where([
                                     'products_id' => $productID,
@@ -1205,12 +1215,12 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
                     ->with('brand')
                     ->select(
                         'id',
-                         'name',
-                         'thumbnail',
-                         'product_id',
-                         'price',
-                         'status',
-                         'out_of_stock',
+                        'name',
+                        'thumbnail',
+                        'product_id',
+                        'price',
+                        'status',
+                        'out_of_stock',
                         'brands__id'
                     )->get();
     }

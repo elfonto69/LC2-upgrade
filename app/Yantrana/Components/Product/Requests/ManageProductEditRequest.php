@@ -42,7 +42,7 @@ class ManageProductEditRequest extends BaseRequest
             'categories' => 'required',
             'description' => 'required|min:10',
             'active' => 'required',
-       ];
+        ];
     }
 
     /**

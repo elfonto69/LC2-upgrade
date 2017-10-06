@@ -131,9 +131,13 @@ class MediaEngine implements MediaEngineBlueprint
      *
      * @return bool
      *---------------------------------------------------------------- */
-    public function storeProductMedia($fileName, $productID,
-     $removeExistingFileName = null, $generateThumbnail = false)
-    {
+    public function storeProductMedia(
+        $fileName,
+        $productID,
+        $removeExistingFileName = null,
+        $generateThumbnail = false
+    ) {
+    
         $productMediaPath = getProductMediaPath($productID);
         $sourcePath = getLoggedInUserTempMediaPath().$fileName;
         $destinationPath = $productMediaPath.'/'.$fileName;
@@ -340,9 +344,13 @@ class MediaEngine implements MediaEngineBlueprint
      *
      * @return array
      *---------------------------------------------------------------- */
-    public function storeBrandLogoMedia($fileName, $brandID,
-     $removeExistingFileName = null, $generateThumbnail = false)
-    {
+    public function storeBrandLogoMedia(
+        $fileName,
+        $brandID,
+        $removeExistingFileName = null,
+        $generateThumbnail = false
+    ) {
+    
         $brandMediaPath = getBrandMediaUrl($brandID);
         $sourcePath = getLoggedInUserTempMediaPath().$fileName;
         $destinationPath = $brandMediaPath.'/'.$fileName;

@@ -30,6 +30,6 @@ class PaymentRefundRequest extends BaseRequest
     {
         return [
                'paymentMethod' => 'required',
-       ];
+        ];
     }
 }

@@ -6,7 +6,8 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 
 class Authenticate
-{	
+{
+   
 
     /**
      * Handle an incoming request.

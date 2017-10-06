@@ -57,13 +57,14 @@ class ManageOrderRepository extends BaseRepository implements ManageOrderReposit
      *
      * @param ManageOrderModel $manageOrderModel - ManageOrder Model
      *-----------------------------------------------------------------------*/
-    public function __construct(OrderModel $order,
-                        OrderLogModel $orderLog,
-                        OrderProductModel $orderProduct,
-                        OrderProductOptionsModel $orderProductOptions,
-                        OrderTaxModel $orderTax,
-                        OrderPaymentsModel $orderPayments
-                        ) {
+    public function __construct(
+        OrderModel $order,
+        OrderLogModel $orderLog,
+        OrderProductModel $orderProduct,
+        OrderProductOptionsModel $orderProductOptions,
+        OrderTaxModel $orderTax,
+        OrderPaymentsModel $orderPayments
+    ) {
         $this->order = $order;
         $this->orderLog = $orderLog;
         $this->orderProduct = $orderProduct;
@@ -100,16 +101,16 @@ class ManageOrderRepository extends BaseRepository implements ManageOrderReposit
         // Check if status is active
         // then show only New, Processing, In transits, On Hold, Confirmed and
         // Cancellation Request Received
-           if ($status == 1) {
-               $query = $this->order
-                    ->whereNotIn('orders.status', [3, 6, 9]);
-           } elseif ($status == 3) {
-               $query = $this->order
-                        ->whereIn('orders.status', [3, 9]);
-           } else {
-               $query = $this->order
-                        ->where('orders.status', $status);
-           }
+        if ($status == 1) {
+            $query = $this->order
+              ->whereNotIn('orders.status', [3, 6, 9]);
+        } elseif ($status == 3) {
+            $query = $this->order
+                  ->whereIn('orders.status', [3, 9]);
+        } else {
+            $query = $this->order
+                  ->where('orders.status', $status);
+        }
 
         // if user id exist then get data by user id
         if ((int) $userID != 0) {
@@ -119,23 +120,23 @@ class ManageOrderRepository extends BaseRepository implements ManageOrderReposit
         return $query->join('users', 'orders.users_id', '=', 'users.id')
                      ->with('orderPayment')
                      ->select(
-                        'orders._id',
-                        'orders.created_at',
-                        'orders.updated_at',
-                        'orders.status as status',
-                        'orders.type',
-                        'orders.payment_method',
-                        'orders.addresses_id',
-                        'orders.addresses_id1',
-                        'orders.currency_code',
-                        'orders.users_id as users_id',
-                        'orders.order_uid',
-                        'orders.total_amount',
-                        'orders.payment_status',
-                        'users.id as user_id',
-                        'users.fname as fname',
-                        'users.lname as lname'
-                    )->dataTables($dataTableConfig)->toArray();
+                         'orders._id',
+                         'orders.created_at',
+                         'orders.updated_at',
+                         'orders.status as status',
+                         'orders.type',
+                         'orders.payment_method',
+                         'orders.addresses_id',
+                         'orders.addresses_id1',
+                         'orders.currency_code',
+                         'orders.users_id as users_id',
+                         'orders.order_uid',
+                         'orders.total_amount',
+                         'orders.payment_status',
+                         'users.id as user_id',
+                         'users.fname as fname',
+                         'users.lname as lname'
+                     )->dataTables($dataTableConfig)->toArray();
     }
 
     /**

@@ -33,11 +33,11 @@ class MenuComposer
      * @return void
      */
     public function compose(View $view)
-    { 	
+    {
 
-		$data['sideBarCategoriesMenuData']   	=  $this->menuEngine->getSideBarCategoriesMenu();
-		$data['navMenuData']    				=  $this->menuEngine->nevigationTree();
-		$data['sibeBarBrandMenuData']   		=  $this->menuEngine->getSideBarBrandsData();
+        $data['sideBarCategoriesMenuData']      =  $this->menuEngine->getSideBarCategoriesMenu();
+        $data['navMenuData']                    =  $this->menuEngine->nevigationTree();
+        $data['sibeBarBrandMenuData']           =  $this->menuEngine->getSideBarBrandsData();
 
 //		__dd($data['sibeBarBrandMenuData'] );
 

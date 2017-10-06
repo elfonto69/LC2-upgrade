@@ -19,19 +19,19 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('__') and config('__tech.gettext_fallback')) {
-        function __($string, $replaceValues = [])
-        {
-            $string = T_gettext($string);
+if (!function_exists('__') and config('__tech.gettext_fallback')) {
+    function __($string, $replaceValues = [])
+    {
+        $string = T_gettext($string);
 
-            // Check if replaceValues exist
-            if (!empty($replaceValues) and is_array($replaceValues)) {
-                $string = strtr($string, $replaceValues);
-            }
-
-            return $string;
+        // Check if replaceValues exist
+        if (!empty($replaceValues) and is_array($replaceValues)) {
+            $string = strtr($string, $replaceValues);
         }
+
+        return $string;
     }
+}
 
     /*
     * Get Locale settings
@@ -40,61 +40,61 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('localeConfig')) {
-        function localeConfig($item = null)
-        {
-            if ($item) {
-                return config('__tech.locale.'.$item);
-            }
-
-            return config('__tech.locale');
+if (!function_exists('localeConfig')) {
+    function localeConfig($item = null)
+    {
+        if ($item) {
+            return config('__tech.locale.'.$item);
         }
+
+        return config('__tech.locale');
     }
+}
 
-    if (!function_exists('sortOrderURL')) {
-        function sortOrderURL($sortBy = null, $options = [])
-        {
-            $getSbid = (!empty($options['sbid'])) ? $options['sbid'] : '';
+if (!function_exists('sortOrderURL')) {
+    function sortOrderURL($sortBy = null, $options = [])
+    {
+        $getSbid = (!empty($options['sbid'])) ? $options['sbid'] : '';
 
-            $sortRequest = \Request::only(['sort_by', 'sort_order', 'search_term', 'sbid', 'min_price', 'max_price']);
+        $sortRequest = \Request::only(['sort_by', 'sort_order', 'search_term', 'sbid', 'min_price', 'max_price']);
 
-            $sortOrder = $sortRequest['sort_order'] == 'asc' ? 'desc' : 'asc';
+        $sortOrder = $sortRequest['sort_order'] == 'asc' ? 'desc' : 'asc';
 
-            if (isset($options['orderChange']) and $options['orderChange'] === false) {
-                $sortOrder = $sortRequest['sort_order'];
-            }
+        if (isset($options['orderChange']) and $options['orderChange'] === false) {
+            $sortOrder = $sortRequest['sort_order'];
+        }
 
-            $sortBy = empty($sortBy) ? $sortRequest['sort_by'] : $sortBy;
+        $sortBy = empty($sortBy) ? $sortRequest['sort_by'] : $sortBy;
 
-            $sortUrlPrefix = \Request::url().'?';
+        $sortUrlPrefix = \Request::url().'?';
 
-            if (!empty($sortRequest['search_term'])) {
-                $sortUrlPrefix .= 'search_term='.$sortRequest['search_term'].'&';
-            }
+        if (!empty($sortRequest['search_term'])) {
+            $sortUrlPrefix .= 'search_term='.$sortRequest['search_term'].'&';
+        }
 
-            if (!empty($sortRequest['sbid'])) {
-                foreach ($sortRequest['sbid'] as $sbid) {
-                    if ($sbid != $getSbid) {
-                        $sortUrlPrefix .= 'sbid%5B%5D='.$sbid.'&';
-                    }
+        if (!empty($sortRequest['sbid'])) {
+            foreach ($sortRequest['sbid'] as $sbid) {
+                if ($sbid != $getSbid) {
+                    $sortUrlPrefix .= 'sbid%5B%5D='.$sbid.'&';
                 }
             }
-
-            if (!empty($sortRequest['min_price'])) {
-                $sortUrlPrefix .= 'min_price='.$sortRequest['min_price'].'&';
-            }
-
-            if (!empty($sortRequest['max_price'])) {
-                $sortUrlPrefix .= 'max_price='.$sortRequest['max_price'].'&';
-            }
-
-            if (!empty($sortBy)) {
-                $sortUrlPrefix .= "sort_by=$sortBy&sort_order=$sortOrder&";
-            }
-
-            return $sortUrlPrefix;
         }
+
+        if (!empty($sortRequest['min_price'])) {
+            $sortUrlPrefix .= 'min_price='.$sortRequest['min_price'].'&';
+        }
+
+        if (!empty($sortRequest['max_price'])) {
+            $sortUrlPrefix .= 'max_price='.$sortRequest['max_price'].'&';
+        }
+
+        if (!empty($sortBy)) {
+            $sortUrlPrefix .= "sort_by=$sortBy&sort_order=$sortOrder&";
+        }
+
+        return $sortUrlPrefix;
     }
+}
 
     /*
     * Removed Price filter
@@ -103,28 +103,28 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('removePriceFilter')) {
-        function removePriceFilter()
-        {
-            $filterURL = sortOrderURL();
+if (!function_exists('removePriceFilter')) {
+    function removePriceFilter()
+    {
+        $filterURL = sortOrderURL();
 
-            $string = strchr($filterURL, 'min_price');
+        $string = strchr($filterURL, 'min_price');
 
-            return str_replace($string, ' ', $filterURL);
-        }
+        return str_replace($string, ' ', $filterURL);
     }
+}
 
-    if (!function_exists('createBreadcrumb')) {
-        function createBreadcrumb($parentArray = [], $title = null)
-        {
-            $collectionBreadcrumb = [
-                'parents' => $parentArray,
-                'title' => $title,
-            ];
+if (!function_exists('createBreadcrumb')) {
+    function createBreadcrumb($parentArray = [], $title = null)
+    {
+        $collectionBreadcrumb = [
+            'parents' => $parentArray,
+            'title' => $title,
+        ];
 
-            return $collectionBreadcrumb;
-        }
+        return $collectionBreadcrumb;
     }
+}
 
     /*
       * Get user ID
@@ -132,12 +132,12 @@ use Carbon\Carbon;
       * @return number.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getUserID')) {
-        function getUserID()
-        {
-            return Auth::id();
-        }
+if (!function_exists('getUserID')) {
+    function getUserID()
+    {
+        return Auth::id();
     }
+}
 
     /*
       * Get user ID
@@ -145,23 +145,25 @@ use Carbon\Carbon;
       * @return number.
       *-------------------------------------------------------- */
 
-    if (!function_exists('isActiveUser')) {
-        function isActiveUser()
-        {
-            if (!empty(Auth::user())) {
-                if (Auth::user()->status != 1) {
-                    Session::flash('invalidUserMessage',
-                        __('Invalid request please contact administrator.'));
+if (!function_exists('isActiveUser')) {
+    function isActiveUser()
+    {
+        if (!empty(Auth::user())) {
+            if (Auth::user()->status != 1) {
+                Session::flash(
+                    'invalidUserMessage',
+                    __('Invalid request please contact administrator.')
+                );
 
-                    Auth::logout();
+                Auth::logout();
 
-                    return true;
-                }
+                return true;
             }
-
-            return false;
         }
+
+        return false;
     }
+}
 
     /*
       * check userID
@@ -169,18 +171,18 @@ use Carbon\Carbon;
       * @return number.
       *-------------------------------------------------------- */
 
-    if (!function_exists('isLoggedInUserID')) {
-        function isLoggedInUserID($fetchUserID)
-        {
-            $userID = Auth::user()->id;
+if (!function_exists('isLoggedInUserID')) {
+    function isLoggedInUserID($fetchUserID)
+    {
+        $userID = Auth::user()->id;
 
-            if ($fetchUserID == $userID) {
-                return true;
-            }
-
-            return false;
+        if ($fetchUserID == $userID) {
+            return true;
         }
+
+        return false;
     }
+}
 
     /*
       * Check if user logged in application
@@ -188,14 +190,14 @@ use Carbon\Carbon;
       * @return boolean
       *-------------------------------------------------------- */
 
-    if (!function_exists('isLoggedIn')) {
-        function isLoggedIn()
-        {
-            isActiveUser();
+if (!function_exists('isLoggedIn')) {
+    function isLoggedIn()
+    {
+        isActiveUser();
 
-            return Auth::check();
-        }
+        return Auth::check();
     }
+}
 
     /*
       * Check if logged in user is admin
@@ -203,19 +205,19 @@ use Carbon\Carbon;
       * @return boolean
       *-------------------------------------------------------- */
 
-    if (!function_exists('isAdmin')) {
-        function isAdmin()
-        {
-            // Check if user looged in
-            if (isLoggedIn()) {
-                if (Auth::user()->role === 1) {
-                    return true;
-                }
+if (!function_exists('isAdmin')) {
+    function isAdmin()
+    {
+        // Check if user looged in
+        if (isLoggedIn()) {
+            if (Auth::user()->role === 1) {
+                return true;
             }
-
-            return false;
         }
+
+        return false;
     }
+}
 
     /*
       * Get user authentication
@@ -223,37 +225,37 @@ use Carbon\Carbon;
       * @return array
       *---------------------------------------------------------------- */
 
-    if (!function_exists('getUserAuthInfo')) {
-        function getUserAuthInfo($statusCode = null)
-        {
+if (!function_exists('getUserAuthInfo')) {
+    function getUserAuthInfo($statusCode = null)
+    {
+        $userAuthInfo = [
+            'authorized' => false,
+            'reaction_code' => 9,
+        ];
+
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            $role = (int) $user->role;
+
+            $authenticationToken = md5(uniqid(true));
+
             $userAuthInfo = [
-                'authorized' => false,
-                'reaction_code' => 9,
+                'authorization_token' => $authenticationToken,
+                'authorized' => true,
+                'reaction_code' => !empty($statusCode) ? $statusCode : 10,
+                'profile' => [
+                    'full_name' => $user->fname.' '.$user->lname,
+                    'email' => $user->email,
+                ],
+                'personnel' => $user->id,
+                'designation' => $role,
             ];
-
-            if (Auth::check()) {
-                $user = Auth::user();
-
-                $role = (int) $user->role;
-
-                $authenticationToken = md5(uniqid(true));
-
-                $userAuthInfo = [
-                    'authorization_token' => $authenticationToken,
-                    'authorized' => true,
-                    'reaction_code' => !empty($statusCode) ? $statusCode : 10,
-                    'profile' => [
-                        'full_name' => $user->fname.' '.$user->lname,
-                        'email' => $user->email,
-                    ],
-                    'personnel' => $user->id,
-                    'designation' => $role,
-                ];
-            }
-
-            return $userAuthInfo;
         }
+
+        return $userAuthInfo;
     }
+}
 
     /*
     * Add activaity log entry
@@ -263,15 +265,15 @@ use Carbon\Carbon;
     * @return void.
     *-------------------------------------------------------- */
 
-    if (!function_exists('activityLog')) {
-        function activityLog($activity)
-        {
-            App\Yantrana\Components\User\Models\ActivityLog::create([
-                    'activity' => $activity,
-                    'users_id' => getUserID(),
-                ]);
-        }
+if (!function_exists('activityLog')) {
+    function activityLog($activity)
+    {
+        App\Yantrana\Components\User\Models\ActivityLog::create([
+                'activity' => $activity,
+                'users_id' => getUserID(),
+            ]);
     }
+}
 
      /*
     * Add order log entry
@@ -281,36 +283,37 @@ use Carbon\Carbon;
     * @return void.
     *-------------------------------------------------------- */
 
-    if (!function_exists('orderLog')) {
-        function orderLog($order, $message = null)
-        {
-            $user = Auth::user();
+if (!function_exists('orderLog')) {
+    function orderLog($order, $message = null)
+    {
+        $user = Auth::user();
 
-            $orderUpdateBy = '';
+        $orderUpdateBy = '';
 
-            if ($user) {
-                $orderUpdateBy = ' by '.$user->fname.' '.$user->lname;
-            }
-
-            if (is_int($order)) {
-                $orderId = $order;
-            } else {
-                $orderId = $order['orders__id'];
-                $message = $order['description'];
-            }
-
-            App\Yantrana\Components\ShoppingCart\Models\OrderLog::create([
-                    'orders__id' => $orderId,
-                    'description' => json_encode([
-                                            'createdAt' => 'On '.formatDateTime(
-                                                            Carbon::now()).$orderUpdateBy,
-                                            'message' => $message,
-                                        ]),
-                    'users_id' => getUserID(),
-                    'ip_address' => Request::ip(),
-                ]);
+        if ($user) {
+            $orderUpdateBy = ' by '.$user->fname.' '.$user->lname;
         }
+
+        if (is_int($order)) {
+            $orderId = $order;
+        } else {
+            $orderId = $order['orders__id'];
+            $message = $order['description'];
+        }
+
+        App\Yantrana\Components\ShoppingCart\Models\OrderLog::create([
+                'orders__id' => $orderId,
+                'description' => json_encode([
+                                        'createdAt' => 'On '.formatDateTime(
+                                            Carbon::now()
+                                        ).$orderUpdateBy,
+                                        'message' => $message,
+                                    ]),
+                'users_id' => getUserID(),
+                'ip_address' => Request::ip(),
+            ]);
     }
+}
 
     /*
     * Get formatted log data
@@ -320,31 +323,30 @@ use Carbon\Carbon;
     * @return array.
     *-------------------------------------------------------- */
 
-     if (!function_exists('getOrderLogFormattedData')) {
-         function getOrderLogFormattedData($orderID)
-         {
-             $orderLogData = App\Yantrana\Components\ShoppingCart\Models\OrderLog::where('orders__id', $orderID)
-                                ->orderBy('created_at', 'DESC')
-                                ->select('description')
-                                  ->get();
+if (!function_exists('getOrderLogFormattedData')) {
+    function getOrderLogFormattedData($orderID)
+    {
+        $orderLogData = App\Yantrana\Components\ShoppingCart\Models\OrderLog::where('orders__id', $orderID)
+                           ->orderBy('created_at', 'DESC')
+                           ->select('description')
+                             ->get();
 
-             $logDiscription = [];
+        $logDiscription = [];
 
-             foreach ($orderLogData as $log) {
+        foreach ($orderLogData as $log) {
+           // JSON decode of discription
+            $logData = json_decode($log['description']);
 
-                // JSON decode of discription
-                $logData = json_decode($log['description']);
+           // push data into array
+            $logDiscription [] = [
+               'created_at' => $logData->createdAt,
+               'description' => isset($logData->message) ? $logData->message : '',
+            ];
+        }
 
-                // push data into array
-                $logDiscription [] = [
-                    'created_at' => $logData->createdAt,
-                    'description' => isset($logData->message) ? $logData->message : '',
-                ];
-             }
-
-             return $logDiscription;
-         }
-     }
+        return $logDiscription;
+    }
+}
 
     /*
       * Generate angular app url based on route name & its segment name
@@ -357,26 +359,26 @@ use Carbon\Carbon;
       * @return string.
       *-------------------------------------------------------- */
 
-    if (!function_exists('ngLink')) {
-        function ngLink($routeID, $ngRouteID, $params = [], $ngParams = [])
-        {
-            if (!empty($params)) {
-                $url = route($routeID, $params);
-            } else {
-                $url = route($routeID);
-            }
-
-            $url = $url.'#'.config('__ng-routes.'.$ngRouteID.'.url');
-
-            if (!empty($ngParams)) {
-                foreach ($ngParams as $ngParam => $ngParamValue) {
-                    $url = str_replace($ngParam, $ngParamValue, $url);
-                }
-            }
-
-            return $url;
+if (!function_exists('ngLink')) {
+    function ngLink($routeID, $ngRouteID, $params = [], $ngParams = [])
+    {
+        if (!empty($params)) {
+            $url = route($routeID, $params);
+        } else {
+            $url = route($routeID);
         }
+
+        $url = $url.'#'.config('__ng-routes.'.$ngRouteID.'.url');
+
+        if (!empty($ngParams)) {
+            foreach ($ngParams as $ngParam => $ngParamValue) {
+                $url = str_replace($ngParam, $ngParamValue, $url);
+            }
+        }
+
+        return $url;
     }
+}
 
     /*
       * Get Date Time Format from config file
@@ -384,12 +386,12 @@ use Carbon\Carbon;
       * @return string.
       *-------------------------------------------------------- */
 
-    if (!function_exists('formatDateTime')) {
-        function formatDateTime($date)
-        {
-            return formatDate($date, config('__tech.day_date_time_format'));
-        }
+if (!function_exists('formatDateTime')) {
+    function formatDateTime($date)
+    {
+        return formatDate($date, config('__tech.day_date_time_format'));
     }
+}
 
     /*
       * Get formatted date.
@@ -400,14 +402,14 @@ use Carbon\Carbon;
       * @return date.
       *-------------------------------------------------------- */
 
-    if (!function_exists('formatDate')) {
-        function formatDate($date, $formate = 'jS F Y')
-        {
-            $date = accountTimezone($date);
+if (!function_exists('formatDate')) {
+    function formatDate($date, $formate = 'jS F Y')
+    {
+        $date = accountTimezone($date);
 
-            return $date->format($formate);
-        }
+        return $date->format($formate);
     }
+}
 
     /*
       * Convert date with setting time zone
@@ -417,19 +419,19 @@ use Carbon\Carbon;
       * @return date
       *-------------------------------------------------------- */
 
-    if (!function_exists('accountTimezone')) {
-        function accountTimezone($rawDate)
-        {
-            $carbonDate = Carbon::parse($rawDate);
+if (!function_exists('accountTimezone')) {
+    function accountTimezone($rawDate)
+    {
+        $carbonDate = Carbon::parse($rawDate);
 
-            $accountTimezone = getStoreSettings('timezone');
-            if (!__isEmpty($accountTimezone)) {
-                $carbonDate->timezone = $accountTimezone;
-            }
-
-            return $carbonDate;
+        $accountTimezone = getStoreSettings('timezone');
+        if (!__isEmpty($accountTimezone)) {
+            $carbonDate->timezone = $accountTimezone;
         }
+
+        return $carbonDate;
     }
+}
 
     /*
     |-------------------------------------------------------------------------
@@ -441,14 +443,14 @@ use Carbon\Carbon;
     |
     **************************************************************************/
 
-    if (!function_exists('isActiveRoute')) {
-        function isActiveRoute($route, $output = 'active')
-        {
-            if (Route::currentRouteName() == $route) {
-                return $output;
-            }
+if (!function_exists('isActiveRoute')) {
+    function isActiveRoute($route, $output = 'active')
+    {
+        if (Route::currentRouteName() == $route) {
+            return $output;
         }
     }
+}
 
     /*
     * Get code title.
@@ -458,18 +460,18 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('getTitle')) {
-        function getTitle($key, $configString)
-        {
-            if ($key == 0) {
-                $key = 3;
-            }
+if (!function_exists('getTitle')) {
+    function getTitle($key, $configString)
+    {
+        if ($key == 0) {
+            $key = 3;
+        }
            
-            $codes = Config::get($configString);
+        $codes = Config::get($configString);
 
-            return $codes[$key];
-        }
+        return $codes[$key];
     }
+}
 
     /*
     * Get code title.
@@ -479,14 +481,14 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('getTypeTitle')) {
-        function getTypeTitle($key)
-        {
-            $codes = Config('__tech.pages_types_with_system_link');
+if (!function_exists('getTypeTitle')) {
+    function getTypeTitle($key)
+    {
+        $codes = Config('__tech.pages_types_with_system_link');
 
-            return $codes[$key];
-        }
+        return $codes[$key];
     }
+}
 
     /*
     * Get code getSysLinkId.
@@ -496,14 +498,14 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('getSysLinkId')) {
-        function getSysLinkId($string)
-        {
-            $codes = Config('__tech.system_links');
+if (!function_exists('getSysLinkId')) {
+    function getSysLinkId($string)
+    {
+        $codes = Config('__tech.system_links');
 
-            return $codes[$string];
-        }
+        return $codes[$string];
     }
+}
 
     /*
     * Get code title.
@@ -513,19 +515,19 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('getTextTitle')) {
-        function getTextTitle($key, $configString)
-        {
-            $newKey = '';
-            if (!empty($key)) {
-                $newKey = $key;
-            }
-
-            $codes = Config($configString);
-
-            return $codes[$newKey];
+if (!function_exists('getTextTitle')) {
+    function getTextTitle($key, $configString)
+    {
+        $newKey = '';
+        if (!empty($key)) {
+            $newKey = $key;
         }
+
+        $codes = Config($configString);
+
+        return $codes[$newKey];
     }
+}
 
     /*
     * Get code title.
@@ -535,14 +537,14 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('getTextMarkup')) {
-        function getTextMarkup($markUpMessage, $data)
-        {
-            $markUpMessage = strtr($markUpMessage, $data);
+if (!function_exists('getTextMarkup')) {
+    function getTextMarkup($markUpMessage, $data)
+    {
+        $markUpMessage = strtr($markUpMessage, $data);
 
-            return $markUpMessage;
-        }
+        return $markUpMessage;
     }
+}
 
     /*
       * Get users media storage path
@@ -550,12 +552,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getUsersMediaPath')) {
-        function getUsersMediaPath()
-        {
-            return public_path('media-storage/users/');
-        }
+if (!function_exists('getUsersMediaPath')) {
+    function getUsersMediaPath()
+    {
+        return public_path('media-storage/users/');
     }
+}
 
     /*
       * Get upload manager path
@@ -563,12 +565,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getUploadManagerPath')) {
-        function getUploadManagerPath()
-        {
-            return public_path('media-storage/upload-manager-assets/');
-        }
+if (!function_exists('getUploadManagerPath')) {
+    function getUploadManagerPath()
+    {
+        return public_path('media-storage/upload-manager-assets/');
     }
+}
 
     /*
       * Get upload manager URL
@@ -576,12 +578,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getUploadManagerURL')) {
-        function getUploadManagerURL()
-        {
-            return URL::to('media-storage/upload-manager-assets').'/';
-        }
+if (!function_exists('getUploadManagerURL')) {
+    function getUploadManagerURL()
+    {
+        return URL::to('media-storage/upload-manager-assets').'/';
     }
+}
 
     /*
       * Get logged in user media storage path
@@ -589,12 +591,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getLoggedInUserMediaPath')) {
-        function getLoggedInUserMediaPath()
-        {
-            return getUsersMediaPath().'user-'.\getUserID();
-        }
+if (!function_exists('getLoggedInUserMediaPath')) {
+    function getLoggedInUserMediaPath()
+    {
+        return getUsersMediaPath().'user-'.\getUserID();
     }
+}
 
     /*
       * Get logged in user temp media storage path
@@ -602,12 +604,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getLoggedInUserTempMediaPath')) {
-        function getLoggedInUserTempMediaPath()
-        {
-            return getLoggedInUserMediaPath().'/temp/';
-        }
+if (!function_exists('getLoggedInUserTempMediaPath')) {
+    function getLoggedInUserTempMediaPath()
+    {
+        return getLoggedInUserMediaPath().'/temp/';
     }
+}
 
     /*
       * Get user temp image url
@@ -615,18 +617,18 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getUserTempImageURL')) {
-        function getUserTempImageURL($tempImage, $userID)
-        {
-            $sourcePath = getUsersMediaPath().'/user-'.$userID.'/temp/'.$tempImage;
+if (!function_exists('getUserTempImageURL')) {
+    function getUserTempImageURL($tempImage, $userID)
+    {
+        $sourcePath = getUsersMediaPath().'/user-'.$userID.'/temp/'.$tempImage;
 
-            if (File::exists($sourcePath)) {
-                return getUsersMediaURL().'/user-'.$userID.'/temp/'.$tempImage;
-            }
-
-            return getNoThumbIconURL();
+        if (File::exists($sourcePath)) {
+            return getUsersMediaURL().'/user-'.$userID.'/temp/'.$tempImage;
         }
+
+        return getNoThumbIconURL();
     }
+}
 
     /*
       * Get products media storage path
@@ -634,12 +636,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getProductsMediaPath')) {
-        function getProductsMediaPath()
-        {
-            return public_path('media-storage/products/');
-        }
+if (!function_exists('getProductsMediaPath')) {
+    function getProductsMediaPath()
+    {
+        return public_path('media-storage/products/');
     }
+}
 
     /*
       * Get users media path
@@ -647,12 +649,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getUsersMediaURL')) {
-        function getUsersMediaURL()
-        {
-            return URL::to('media-storage/users');
-        }
+if (!function_exists('getUsersMediaURL')) {
+    function getUsersMediaURL()
+    {
+        return URL::to('media-storage/users');
     }
+}
 
     /*
       * Get products media storage url
@@ -660,12 +662,12 @@ use Carbon\Carbon;
       * @return string url.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getProductsMediaURL')) {
-        function getProductsMediaURL()
-        {
-            return URL::to('/media-storage/products/');
-        }
+if (!function_exists('getProductsMediaURL')) {
+    function getProductsMediaURL()
+    {
+        return URL::to('/media-storage/products/');
     }
+}
 
     /*
       * Get product media storage path
@@ -675,12 +677,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getProductMediaPath')) {
-        function getProductMediaPath($productID)
-        {
-            return getProductsMediaPath().'product-'.$productID;
-        }
+if (!function_exists('getProductMediaPath')) {
+    function getProductMediaPath($productID)
+    {
+        return getProductsMediaPath().'product-'.$productID;
     }
+}
 
     /*
       * Get brand media storage path
@@ -688,12 +690,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getBrandMediaPath')) {
-        function getBrandMediaPath()
-        {
-            return public_path('media-storage/brands/logo/');
-        }
+if (!function_exists('getBrandMediaPath')) {
+    function getBrandMediaPath()
+    {
+        return public_path('media-storage/brands/logo/');
     }
+}
 
     /*
       * Get brand media storage path
@@ -701,12 +703,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getBrandMediaUrl')) {
-        function getBrandMediaUrl($brandID)
-        {
-            return getBrandMediaPath().'brand-'.$brandID;
-        }
+if (!function_exists('getBrandMediaUrl')) {
+    function getBrandMediaUrl($brandID)
+    {
+        return getBrandMediaPath().'brand-'.$brandID;
     }
+}
 
     /*
       * Get brand logo directory
@@ -714,12 +716,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getBrandLogoDirectory')) {
-        function getBrandLogoDirectory()
-        {
-            return URL::to('/media-storage/brands/logo/');
-        }
+if (!function_exists('getBrandLogoDirectory')) {
+    function getBrandLogoDirectory()
+    {
+        return URL::to('/media-storage/brands/logo/');
     }
+}
 
     /*
       * Get brand logo url
@@ -730,19 +732,19 @@ use Carbon\Carbon;
       * @return string url.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getBrandLogoURL')) {
-        function getBrandLogoURL($brandID, $fileName)
-        {
-            $logoMediaPath = getBrandMediaUrl($brandID).'/'.$fileName;
+if (!function_exists('getBrandLogoURL')) {
+    function getBrandLogoURL($brandID, $fileName)
+    {
+        $logoMediaPath = getBrandMediaUrl($brandID).'/'.$fileName;
 
-            // If logo file exist then return logo image url
-            if (File::exists($logoMediaPath)) {
-                return getBrandLogoDirectory().'/brand-'.$brandID.'/'.$fileName;
-            } else {
-                return noThumbImageURL();
-            }
+        // If logo file exist then return logo image url
+        if (File::exists($logoMediaPath)) {
+            return getBrandLogoDirectory().'/brand-'.$brandID.'/'.$fileName;
+        } else {
+            return noThumbImageURL();
         }
     }
+}
 
     /*
       * Get product media storage url
@@ -753,12 +755,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getProductMediaURL')) {
-        function getProductMediaURL($productID)
-        {
-            return getProductsMediaURL().'/product-'.$productID;
-        }
+if (!function_exists('getProductMediaURL')) {
+    function getProductMediaURL($productID)
+    {
+        return getProductsMediaURL().'/product-'.$productID;
     }
+}
 
     /*
       * Get product image url
@@ -769,19 +771,19 @@ use Carbon\Carbon;
       * @return string url.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getProductImageURL')) {
-        function getProductImageURL($productID, $fileName)
-        {
-            $imageMediaPath = getProductMediaPath($productID).'/'.$fileName;
+if (!function_exists('getProductImageURL')) {
+    function getProductImageURL($productID, $fileName)
+    {
+        $imageMediaPath = getProductMediaPath($productID).'/'.$fileName;
 
-            // If image file exist then return image url
-            if (File::exists($imageMediaPath)) {
-                return getProductMediaURL($productID).'/'.$fileName;
-            } else {
-                return noThumbImageURL();
-            }
+        // If image file exist then return image url
+        if (File::exists($imageMediaPath)) {
+            return getProductMediaURL($productID).'/'.$fileName;
+        } else {
+            return noThumbImageURL();
         }
     }
+}
 
     /*
       * Get current date time
@@ -789,12 +791,12 @@ use Carbon\Carbon;
       * @return void
       *-------------------------------------------------------- */
 
-    if (!function_exists('getCurrentDateTime')) {
-        function getCurrentDateTime()
-        {
-            return new DateTime();
-        }
+if (!function_exists('getCurrentDateTime')) {
+    function getCurrentDateTime()
+    {
+        return new DateTime();
     }
+}
 
     /*
       * Get logo media storage path
@@ -802,12 +804,12 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getLogoMediaPath')) {
-        function getLogoMediaPath()
-        {
-            return 'media-storage/logo/';
-        }
+if (!function_exists('getLogoMediaPath')) {
+    function getLogoMediaPath()
+    {
+        return 'media-storage/logo/';
     }
+}
 
     /*
     * Get status code.
@@ -817,14 +819,14 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('getSelectizeSource')) {
-        function getSelectizeSource()
-        {
-            $statusCodes = Config('__tech');
+if (!function_exists('getSelectizeSource')) {
+    function getSelectizeSource()
+    {
+        $statusCodes = Config('__tech');
 
-            return $statusCodes;
-        }
+        return $statusCodes;
     }
+}
 
     /*
       * Get status codes.
@@ -834,31 +836,31 @@ use Carbon\Carbon;
       * @return array.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getSelectizeOptions')) {
-        function getSelectizeOptions($configArray, $configKey)
-        {
-            if (empty($configKey)) {
-                return [];
-            }
+if (!function_exists('getSelectizeOptions')) {
+    function getSelectizeOptions($configArray, $configKey)
+    {
+        if (empty($configKey)) {
+            return [];
+        }
 
-            $newStatusCodes = [];
-            $statusCodes = Config($configArray);
-            $requestedCodes = Config($configKey);
+        $newStatusCodes = [];
+        $statusCodes = Config($configArray);
+        $requestedCodes = Config($configKey);
 
-            if (!empty($requestedCodes)) {
-                foreach ($requestedCodes as $code) {
-                    if (array_key_exists($code, $statusCodes)) {
-                        $newStatusCodes[] = [
-                            'value' => $code,
-                            'text' => $statusCodes[ $code ],
-                        ];
-                    }
+        if (!empty($requestedCodes)) {
+            foreach ($requestedCodes as $code) {
+                if (array_key_exists($code, $statusCodes)) {
+                    $newStatusCodes[] = [
+                        'value' => $code,
+                        'text' => $statusCodes[ $code ],
+                    ];
                 }
             }
-
-            return $newStatusCodes;
         }
+
+        return $newStatusCodes;
     }
+}
 
     /*
       * Get product option required title.
@@ -868,16 +870,16 @@ use Carbon\Carbon;
       * @return string.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getProductOptionRequiredTitle')) {
-        function getProductOptionRequiredTitle($requiredValue)
-        {
-            $title = ($requiredValue === true)
-                    ? __('Yes')
-                    : __('No');
+if (!function_exists('getProductOptionRequiredTitle')) {
+    function getProductOptionRequiredTitle($requiredValue)
+    {
+        $title = ($requiredValue === true)
+                ? __('Yes')
+                : __('No');
 
-            return $title;
-        }
+        return $title;
     }
+}
 
     /*
     * return formated price
@@ -887,60 +889,60 @@ use Carbon\Carbon;
     * @return float
     *---------------------------------------------------------------- */
 
-    if (!function_exists('priceFormat')) {
-        function priceFormat($amount = null, $currencyCode = false, $currencySymbol = false)
-        {
-            /*$currencySymbol = getCurrencySymbol();
+if (!function_exists('priceFormat')) {
+    function priceFormat($amount = null, $currencyCode = false, $currencySymbol = false)
+    {
+        /*$currencySymbol = getCurrencySymbol();
 
-            $formatedCurrency = html_entity_decode($currencySymbol).number_format((float) $amount, 2).($currency == true ? ' '.getCurrency() : '');
+        $formatedCurrency = html_entity_decode($currencySymbol).number_format((float) $amount, 2).($currency == true ? ' '.getCurrency() : '');
 
-            return $formatedCurrency;*/
+        return $formatedCurrency;*/
 
-            if ($currencyCode === true) {
-                $currencyCode =  getStoreSettings('currency_value');
-            }
-            
-            if (is_string($currencyCode) and is_string($currencySymbol)) {
-                $currencySymbol = configItem('currencies.details.'.$currencyCode)['symbol'];
-            } elseif ($currencySymbol === true) {
-                $currencySymbol = html_entity_decode(getStoreSettings('currency_symbol'));
-            }
-
-            if (is_string($currencyCode)
-                and !__isEmpty($currencyCode)
-                and __isEmpty($currencySymbol)) {
-                $currencySymbol = configItem('currencies.details.'.$currencyCode)['symbol'];
-                $currencyCode = '';
-            } elseif (is_string($currencySymbol)
-                        and !__isEmpty($currencySymbol)) {
-                $currencySymbol = $currencySymbol;
-            }
-
-            // If currency code and symbol have string
-            if (is_string($currencyCode)
-                and !__isEmpty($currencyCode)
-                and is_string($currencySymbol)
-                and !__isEmpty($currencySymbol)) {
-                $currencyCode = $currencyCode;
-                $currencySymbol = $currencySymbol;
-            }
-
-            // Check if currency is zero decimal
-            // If it is zero decimal currency then remove ".00" from amount
-            if (isZeroDecimalCurrency($currencyCode)
-                and (getStoreSettings('round_zero_decimal_currency') === true)) {
-                $price = number_format(handleCurrencyAmount($amount, $currencyCode));
-            } else {
-                $price = number_format(handleCurrencyAmount($amount), getStoreSettings('currency_decimal_round'));
-            }
-
-            return trim(strtr(strip_tags(getStoreSettings('currency_format')), [
-                    '{__currencySymbol__}' => $currencySymbol,
-                    '{__amount__}' => ($amount === '__LABEL__') ? '{__amount__}' : $price,
-                    '{__currencyCode__}' => $currencyCode
-                ]));
+        if ($currencyCode === true) {
+            $currencyCode =  getStoreSettings('currency_value');
         }
+            
+        if (is_string($currencyCode) and is_string($currencySymbol)) {
+            $currencySymbol = configItem('currencies.details.'.$currencyCode)['symbol'];
+        } elseif ($currencySymbol === true) {
+            $currencySymbol = html_entity_decode(getStoreSettings('currency_symbol'));
+        }
+
+        if (is_string($currencyCode)
+            and !__isEmpty($currencyCode)
+            and __isEmpty($currencySymbol)) {
+            $currencySymbol = configItem('currencies.details.'.$currencyCode)['symbol'];
+            $currencyCode = '';
+        } elseif (is_string($currencySymbol)
+                    and !__isEmpty($currencySymbol)) {
+            $currencySymbol = $currencySymbol;
+        }
+
+        // If currency code and symbol have string
+        if (is_string($currencyCode)
+            and !__isEmpty($currencyCode)
+            and is_string($currencySymbol)
+            and !__isEmpty($currencySymbol)) {
+            $currencyCode = $currencyCode;
+            $currencySymbol = $currencySymbol;
+        }
+
+        // Check if currency is zero decimal
+        // If it is zero decimal currency then remove ".00" from amount
+        if (isZeroDecimalCurrency($currencyCode)
+            and (getStoreSettings('round_zero_decimal_currency') === true)) {
+            $price = number_format(handleCurrencyAmount($amount, $currencyCode));
+        } else {
+            $price = number_format(handleCurrencyAmount($amount), getStoreSettings('currency_decimal_round'));
+        }
+
+        return trim(strtr(strip_tags(getStoreSettings('currency_format')), [
+                '{__currencySymbol__}' => $currencySymbol,
+                '{__amount__}' => ($amount === '__LABEL__') ? '{__amount__}' : $price,
+                '{__currencyCode__}' => $currencyCode
+            ]));
     }
+}
 
     /**
     * Handle Currency Amount
@@ -950,25 +952,25 @@ use Carbon\Carbon;
     *
     * @return void
     *-----------------------------------------------------------------------*/
-    if (!function_exists('handleCurrencyAmount')) {
-        function handleCurrencyAmount($amount, $currency = null)
-        {
-            if (!$amount) {
-                return 0;
-            }
-
-            if (!$currency) {
-                $currency = getStoreSettings('currency_value');
-            }
-            // Round Zero Decimal Currency
-            if ((isZeroDecimalCurrency($currency) === true)
-                and (getStoreSettings('round_zero_decimal_currency')) === true) {
-                return round($amount);
-            }
-            
-            return round($amount, getStoreSettings('currency_decimal_round'));
+if (!function_exists('handleCurrencyAmount')) {
+    function handleCurrencyAmount($amount, $currency = null)
+    {
+        if (!$amount) {
+            return 0;
         }
+
+        if (!$currency) {
+            $currency = getStoreSettings('currency_value');
+        }
+        // Round Zero Decimal Currency
+        if ((isZeroDecimalCurrency($currency) === true)
+            and (getStoreSettings('round_zero_decimal_currency')) === true) {
+            return round($amount);
+        }
+            
+        return round($amount, getStoreSettings('currency_decimal_round'));
     }
+}
 
     /**
     * Check if Zero Decimal Currency
@@ -977,16 +979,16 @@ use Carbon\Carbon;
     *
     * @return void
     *-----------------------------------------------------------------------*/
-    if (!function_exists('isZeroDecimalCurrency')) {
-        function isZeroDecimalCurrency($currency = null)
-        {
-            if (!$currency) {
-                $currency = getStoreSettings('currency_value');
-            }
-            
-            return array_key_exists($currency, configItem('currencies.zero_decimal'));
+if (!function_exists('isZeroDecimalCurrency')) {
+    function isZeroDecimalCurrency($currency = null)
+    {
+        if (!$currency) {
+            $currency = getStoreSettings('currency_value');
         }
+            
+        return array_key_exists($currency, configItem('currencies.zero_decimal'));
     }
+}
 
     /*
       * Cast the variable data
@@ -996,32 +998,32 @@ use Carbon\Carbon;
       * @return mixed
       *-------------------------------------------------------- */
 
-    if (!function_exists('getDataType')) {
-        function getDataType($setting)
-        {
-            $configurationNames = configItem('settings.fields');
-            $name  = $setting->name;
-            $value = $setting->value;
+if (!function_exists('getDataType')) {
+    function getDataType($setting)
+    {
+        $configurationNames = configItem('settings.fields');
+        $name  = $setting->name;
+        $value = $setting->value;
 
-            if (!__isEmpty($name) and array_key_exists($name, $configurationNames)) {
-                $datTypeId = $configurationNames[$name]['data_type'];
+        if (!__isEmpty($name) and array_key_exists($name, $configurationNames)) {
+            $datTypeId = $configurationNames[$name]['data_type'];
 
-                switch ($datTypeId) {
+            switch ($datTypeId) {
                 case 1:
                     return (string) $value;
-                    break;
+                break;
                 case 2:
                     return (bool) $value;
-                    break;
+                break;
                 case 3:
                     return (int) $value;
-                    break;
+                break;
                 default:
                     return $value;
             }
-            }
         }
     }
+}
 
     /*
       * Get Re sourse Path
@@ -1032,22 +1034,22 @@ use Carbon\Carbon;
       * @return string path.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getResourcesAssetsPath')) {
-        function getResourcesAssetsPath($fileName = null, $folderName = null)
-        {
-            $staticAssetsUrl = url('resources/assets/imgs/');
+if (!function_exists('getResourcesAssetsPath')) {
+    function getResourcesAssetsPath($fileName = null, $folderName = null)
+    {
+        $staticAssetsUrl = url('resources/assets/imgs/');
 
-            if (__isEmpty($fileName) and __isEmpty($folderName)) {
-                return $staticAssetsUrl;
-            }
-
-            if ($folderName) {
-                return $staticAssetsUrl.'/'.$folderName.'/'.$fileName;
-            }
-
-            return $staticAssetsUrl.'/'.$fileName;
+        if (__isEmpty($fileName) and __isEmpty($folderName)) {
+            return $staticAssetsUrl;
         }
+
+        if ($folderName) {
+            return $staticAssetsUrl.'/'.$folderName.'/'.$fileName;
+        }
+
+        return $staticAssetsUrl.'/'.$fileName;
     }
+}
 
     /*
     * get setting items
@@ -1057,68 +1059,68 @@ use Carbon\Carbon;
     * @return void
     *---------------------------------------------------------------- */
 
-    if (!function_exists('getStoreSettings')) {
-        function getStoreSettings($name, $details = false)
-        {
-            $configurationNames = config('__tech.settings.fields');
+if (!function_exists('getStoreSettings')) {
+    function getStoreSettings($name, $details = false)
+    {
+        $configurationNames = config('__tech.settings.fields');
 
-            $settings = Cache::rememberForever('cache.storeSetting.all', function () {
-                $getSettings = \App\Yantrana\Components\Store\Models\Setting::all();
+        $settings = Cache::rememberForever('cache.storeSetting.all', function () {
+            $getSettings = \App\Yantrana\Components\Store\Models\Setting::all();
 
-                $storeSettings = [];
+            $storeSettings = [];
 
-                $checkoutMethods = [
-                    'use_paypal' => 1,
-                    'payment_check' => 2,
-                    'payment_bank' => 3,
-                    'payment_cod' => 4,
-                    'payment_other' => 5,
-                    'use_stripe' => 6,
-                ];
+            $checkoutMethods = [
+                'use_paypal' => 1,
+                'payment_check' => 2,
+                'payment_bank' => 3,
+                'payment_cod' => 4,
+                'payment_other' => 5,
+                'use_stripe' => 6,
+            ];
 
-                $storeSettings['valid_checkout_methods'] = [];
+            $storeSettings['valid_checkout_methods'] = [];
 
-                foreach ($getSettings as $setting) {
-                    $value = getDataType($setting);
+            foreach ($getSettings as $setting) {
+                $value = getDataType($setting);
 
-                    $storeSettings[$setting->name] = $value;
+                $storeSettings[$setting->name] = $value;
 
-                    if ($setting->name == 'logo_image') {
-                        $storeSettings['logo_image'] = asset('media-storage/logo/'.$value);
-                        $storeSettings['logo_image_url'] = asset('media-storage/logo/'.$value).'?logover='.@filemtime(public_path('media-storage/logo/'.$value));
-                    }
-
-                    // if the item set then make it available
-                    if (array_key_exists($setting->name, $checkoutMethods)) {
-                        if (((int) $setting->value) === 1) {
-                            array_push($storeSettings['valid_checkout_methods'], $checkoutMethods[$setting->name]);
-                        }
-                    }
+                if ($setting->name == 'logo_image') {
+                    $storeSettings['logo_image'] = asset('media-storage/logo/'.$value);
+                    $storeSettings['logo_image_url'] = asset('media-storage/logo/'.$value).'?logover='.@filemtime(public_path('media-storage/logo/'.$value));
                 }
 
-                unset($checkoutMethods, $getSettings);
-
-                return $storeSettings;
-            });
-
-            if (array_key_exists($name, $settings)) {
-                return $settings[$name];
+                // if the item set then make it available
+                if (array_key_exists($setting->name, $checkoutMethods)) {
+                    if (((int) $setting->value) === 1) {
+                        array_push($storeSettings['valid_checkout_methods'], $checkoutMethods[$setting->name]);
+                    }
+                }
             }
 
-            if (($name == 'logo_image') or ($name == 'logo_image_url')) {
-                $logoName = $configurationNames['logo_image']['default'];
+            unset($checkoutMethods, $getSettings);
 
-                $fullLogoPath = getResourcesAssetsPath($logoName);
+            return $storeSettings;
+        });
 
-                $defaultSettings['logo_image']     = $fullLogoPath;
-                $defaultSettings['logo_image_url'] = $fullLogoPath.'?logover='.@filemtime($fullLogoPath);
-
-                return $defaultSettings[$name];
-            }
-
-            return $configurationNames[$name]['default'];
+        if (array_key_exists($name, $settings)) {
+            return $settings[$name];
         }
+
+        if (($name == 'logo_image') or ($name == 'logo_image_url')) {
+            $logoName = $configurationNames['logo_image']['default'];
+
+            $fullLogoPath = getResourcesAssetsPath($logoName);
+
+            $defaultSettings['logo_image']     = $fullLogoPath;
+            $defaultSettings['logo_image_url'] = $fullLogoPath.'?logover='.@filemtime($fullLogoPath);
+
+            return $defaultSettings[$name];
+        }
+
+        return $configurationNames[$name]['default'];
     }
+}
 
     /*
       * Get store auth information
@@ -1126,12 +1128,12 @@ use Carbon\Carbon;
       * @return array
       *-------------------------------------------------------- */
 
-    if (!function_exists('error404')) {
-        function error404()
-        {
-            return abort(404);
-        }
+if (!function_exists('error404')) {
+    function error404()
+    {
+        return abort(404);
     }
+}
 
     /*
     * Get categories product route.
@@ -1143,40 +1145,40 @@ use Carbon\Carbon;
     * @return string.
     *-------------------------------------------------------- */
 
-    if (!function_exists('categoriesProductRoute')) {
-        function categoriesProductRoute($cateID, $categoryName = null)
-        {
-            if (!empty($categoryName)) {
-                $categoryName = slugIt($categoryName);
-            }
-
-            return route('products_by_category', [$cateID, $categoryName]);
+if (!function_exists('categoriesProductRoute')) {
+    function categoriesProductRoute($cateID, $categoryName = null)
+    {
+        if (!empty($categoryName)) {
+            $categoryName = slugIt($categoryName);
         }
+
+        return route('products_by_category', [$cateID, $categoryName]);
     }
+}
 
     /*
     * Get all product route.
     *
     * @return string.
     *-------------------------------------------------------- */
-    if (!function_exists('productsRoute')) {
-        function productsRoute()
-        {
-            return route('products');
-        }
+if (!function_exists('productsRoute')) {
+    function productsRoute()
+    {
+        return route('products');
     }
+}
 
     /*
     * Get featured product route.
     *
     * @return string.
     *-------------------------------------------------------- */
-    if (!function_exists('productsFeatureRoute')) {
-        function productsFeatureRoute()
-        {
-            return route('products.featured');
-        }
+if (!function_exists('productsFeatureRoute')) {
+    function productsFeatureRoute()
+    {
+        return route('products.featured');
     }
+}
 
     /*
     * Get product details route.
@@ -1187,56 +1189,56 @@ use Carbon\Carbon;
     *
     * @return string.
     *-------------------------------------------------------- */
-    if (!function_exists('productsDetailsRoute')) {
-        function productsDetailsRoute($productID, $productName, $categoryID = null)
-        {
-            return route('product.details', [
-                        'productID' => $productID,
-                        'productName?' => $productName,
-                        'categoryID?' => $categoryID,
-                        ]);
-        }
+if (!function_exists('productsDetailsRoute')) {
+    function productsDetailsRoute($productID, $productName, $categoryID = null)
+    {
+        return route('product.details', [
+                    'productID' => $productID,
+                    'productName?' => $productName,
+                    'categoryID?' => $categoryID,
+                    ]);
     }
+}
 
     /*
     * Get product search route.
     *
     * @return string.
     *-------------------------------------------------------- */
-    if (!function_exists('productsSearchRoute')) {
-        function productsSearchRoute()
-        {
-            return route('product.search');
-        }
+if (!function_exists('productsSearchRoute')) {
+    function productsSearchRoute()
+    {
+        return route('product.search');
     }
+}
 
     /*
     * Get page detail route.
     *
     * @return string.
     *-------------------------------------------------------- */
-    if (!function_exists('pageDetailsRoute')) {
-        function pageDetailsRoute($pageID, $pageName = null)
-        {
-            if (!empty($pageName)) {
-                $pageName = slugIt($pageName);
-            }
-
-            return route('display.page.details', [$pageID, $pageName]);
+if (!function_exists('pageDetailsRoute')) {
+    function pageDetailsRoute($pageID, $pageName = null)
+    {
+        if (!empty($pageName)) {
+            $pageName = slugIt($pageName);
         }
+
+        return route('display.page.details', [$pageID, $pageName]);
     }
+}
 
     /*
     * Get page detail route.
     *
     * @return string.
     *-------------------------------------------------------- */
-    if (!function_exists('loginRoute')) {
-        function loginRoute()
-        {
-            return route('user.login');
-        }
+if (!function_exists('loginRoute')) {
+    function loginRoute()
+    {
+        return route('user.login');
     }
+}
 
     /*
     * find all active parents recursively
@@ -1248,63 +1250,63 @@ use Carbon\Carbon;
     *
     * @return integer
     *------------------------------------------------------------------------ */
-    if (!function_exists('findActiveParents')) {
-        function findActiveParents($itemCollection, $itemID = null, $activeItemsContainer = [])
-        {
-            foreach ($itemCollection as $item) {
-                if ($item->id === (int) $itemID) {
-                    if ($item->status === 1) {
-                        $activeItemsContainer[] = $item->id;
-
-                        if ($item->parent_id) {
-                            $activeItemsContainer = findActiveParents(
-                                                            $itemCollection,
-                                                            $item->parent_id,
-                                                            $activeItemsContainer
-                                                        );
-                        }
-                    } else {
-                        $activeItemsContainer = [];
-
-                        break;
-                    }
-                }
-            }
-
-            return array_values(array_unique(array_flatten($activeItemsContainer)));
-        }
-    }
-
-    /*
-    * find all active parents recursively
-    * and also active parents
-    *
-    * @param (object) $itemCollection.
-    * @param (int) $itemID.
-    * @param (array) $activeItemsContainer.
-    *
-    * @return integer
-    *------------------------------------------------------------------------ */
-    if (!function_exists('findParents')) {
-        function findParents($itemCollection, $itemID = null, $activeItemsContainer = [])
-        {
-            foreach ($itemCollection as $item) {
-                if ($item->id === (int) $itemID) {
+if (!function_exists('findActiveParents')) {
+    function findActiveParents($itemCollection, $itemID = null, $activeItemsContainer = [])
+    {
+        foreach ($itemCollection as $item) {
+            if ($item->id === (int) $itemID) {
+                if ($item->status === 1) {
                     $activeItemsContainer[] = $item->id;
 
                     if ($item->parent_id) {
-                        $activeItemsContainer = findParents(
-                                                            $itemCollection,
-                                                            $item->parent_id,
-                                                            $activeItemsContainer
-                                                        );
+                        $activeItemsContainer = findActiveParents(
+                            $itemCollection,
+                            $item->parent_id,
+                            $activeItemsContainer
+                        );
                     }
+                } else {
+                    $activeItemsContainer = [];
+
+                    break;
                 }
             }
-
-            return array_values(array_unique(array_flatten($activeItemsContainer)));
         }
+
+        return array_values(array_unique(array_flatten($activeItemsContainer)));
     }
+}
+
+    /*
+    * find all active parents recursively
+    * and also active parents
+    *
+    * @param (object) $itemCollection.
+    * @param (int) $itemID.
+    * @param (array) $activeItemsContainer.
+    *
+    * @return integer
+    *------------------------------------------------------------------------ */
+if (!function_exists('findParents')) {
+    function findParents($itemCollection, $itemID = null, $activeItemsContainer = [])
+    {
+        foreach ($itemCollection as $item) {
+            if ($item->id === (int) $itemID) {
+                $activeItemsContainer[] = $item->id;
+
+                if ($item->parent_id) {
+                    $activeItemsContainer = findParents(
+                        $itemCollection,
+                        $item->parent_id,
+                        $activeItemsContainer
+                    );
+                }
+            }
+        }
+
+        return array_values(array_unique(array_flatten($activeItemsContainer)));
+    }
+}
 
     /*
     * find all childrens recursively
@@ -1315,26 +1317,26 @@ use Carbon\Carbon;
     *
     * @return integer
     *------------------------------------------------------------------------ */
-    if (!function_exists('findChilds')) {
-        function findChilds($itemCollection, $itemID = null, $activeItemsContainer = [])
-        {
-            $itemID = (int) $itemID;
+if (!function_exists('findChilds')) {
+    function findChilds($itemCollection, $itemID = null, $activeItemsContainer = [])
+    {
+        $itemID = (int) $itemID;
 
-            foreach ($itemCollection as $item) {
-                if (($item->id === $itemID)
-                    and in_array($itemID, $activeItemsContainer) !== true) {
-                    $activeItemsContainer[] = $itemID;
-                }
-
-                if ($item->parent_id == (int) $itemID) {
-                    $activeItemsContainer[] = $item->id;
-                    $activeItemsContainer[] = findChilds($itemCollection, $item->id, $activeItemsContainer);
-                }
+        foreach ($itemCollection as $item) {
+            if (($item->id === $itemID)
+                and in_array($itemID, $activeItemsContainer) !== true) {
+                $activeItemsContainer[] = $itemID;
             }
 
-            return array_values(array_unique(array_flatten($activeItemsContainer)));
+            if ($item->parent_id == (int) $itemID) {
+                $activeItemsContainer[] = $item->id;
+                $activeItemsContainer[] = findChilds($itemCollection, $item->id, $activeItemsContainer);
+            }
         }
+
+        return array_values(array_unique(array_flatten($activeItemsContainer)));
     }
+}
 
     /*
     * find all active childrens recursively
@@ -1345,58 +1347,58 @@ use Carbon\Carbon;
     *
     * @return integer
     *------------------------------------------------------------------------ */
-    if (!function_exists('findActiveChilds')) {
-        function findActiveChilds($itemCollection, $itemID = null, $activeItemsContainer = [])
-        {
-            $itemID = (int) $itemID;
+if (!function_exists('findActiveChilds')) {
+    function findActiveChilds($itemCollection, $itemID = null, $activeItemsContainer = [])
+    {
+        $itemID = (int) $itemID;
 
-            foreach ($itemCollection as $item) {
-                if (($item->id === $itemID)
-                    and $item->status === 1
-                    and in_array($itemID, $activeItemsContainer) !== true) {
-                    $activeItemsContainer[] = $itemID;
-                }
-
-                if ($item->parent_id == (int) $itemID && $item->status == 1) {
-                    $activeItemsContainer[] = $item->id;
-                    $activeItemsContainer[] = findActiveChilds($itemCollection, $item->id, $activeItemsContainer);
-                }
+        foreach ($itemCollection as $item) {
+            if (($item->id === $itemID)
+                and $item->status === 1
+                and in_array($itemID, $activeItemsContainer) !== true) {
+                $activeItemsContainer[] = $itemID;
             }
 
-            return array_values(array_unique(array_flatten($activeItemsContainer)));
+            if ($item->parent_id == (int) $itemID && $item->status == 1) {
+                $activeItemsContainer[] = $item->id;
+                $activeItemsContainer[] = findActiveChilds($itemCollection, $item->id, $activeItemsContainer);
+            }
         }
+
+        return array_values(array_unique(array_flatten($activeItemsContainer)));
     }
+}
 
-    if (!function_exists('getProductCategory')) {
-        function getProductCategory($categories, $carProductID)
-        {
-            $productCategories = \App\Yantrana\Components\Product\
-                                    Models\ProductCategory::where(
-                                        'products_id',
-                                        $carProductID
-                                    )->select(
-                                        'products_id',
-                                        'categories_id'
-                                    )->get();
+if (!function_exists('getProductCategory')) {
+    function getProductCategory($categories, $carProductID)
+    {
+        $productCategories = \App\Yantrana\Components\Product\
+                                Models\ProductCategory::where(
+                                    'products_id',
+                                    $carProductID
+                                )->select(
+                                    'products_id',
+                                    'categories_id'
+                                )->get();
 
-            foreach ($productCategories as $productCategory) {
-                $categoriesID = $productCategory->categories_id;
-                $findActiveParents[] = findActiveParents($categories, $categoriesID);
-            }
+        foreach ($productCategories as $productCategory) {
+            $categoriesID = $productCategory->categories_id;
+            $findActiveParents[] = findActiveParents($categories, $categoriesID);
+        }
 
-            $checkParentStatus = false;  // invalid // deactive
+        $checkParentStatus = false;  // invalid // deactive
 
-            if (!empty($findActiveParents)) {
-                foreach ($findActiveParents as $cateParents) {
-                    if (!empty($cateParents)) {
-                        $checkParentStatus = true; // valid  // active
-                    }
+        if (!empty($findActiveParents)) {
+            foreach ($findActiveParents as $cateParents) {
+                if (!empty($cateParents)) {
+                    $checkParentStatus = true; // valid  // active
                 }
             }
-
-            return $checkParentStatus;
         }
+
+        return $checkParentStatus;
     }
+}
 
     /*
       * find active parents
@@ -1406,20 +1408,20 @@ use Carbon\Carbon;
       *
       * @return array
       *---------------------------------------------------------------- */
-    if (!function_exists('findActiveParentsNChilds')) {
-        function findActiveParentsNChilds($itemCollection, $itemID = null)
-        {
-            $selfItem = $itemCollection->where('id', (int) $itemID)->first();
+if (!function_exists('findActiveParentsNChilds')) {
+    function findActiveParentsNChilds($itemCollection, $itemID = null)
+    {
+        $selfItem = $itemCollection->where('id', (int) $itemID)->first();
 
-            return [
-                'self'      => $itemID,
-                'parent'    => isset($selfItem->parent_id),
-                'status'    => isset($selfItem->status),
-                'parents'   => findActiveParents($itemCollection, (int) $itemID) ?: false,
-                'childrens' => findActiveChilds($itemCollection, (int) $itemID) ?: false,
-            ];
-        }
+        return [
+            'self'      => $itemID,
+            'parent'    => isset($selfItem->parent_id),
+            'status'    => isset($selfItem->status),
+            'parents'   => findActiveParents($itemCollection, (int) $itemID) ?: false,
+            'childrens' => findActiveChilds($itemCollection, (int) $itemID) ?: false,
+        ];
     }
+}
 
      /*
       * find active parents
@@ -1429,20 +1431,20 @@ use Carbon\Carbon;
       *
       * @return array
       *---------------------------------------------------------------- */
-    if (!function_exists('findParentsNChilds')) {
-        function findParentsNChilds($itemCollection, $itemID = null)
-        {
-            $selfItem = $itemCollection->where('id', (int) $itemID)->first();
+if (!function_exists('findParentsNChilds')) {
+    function findParentsNChilds($itemCollection, $itemID = null)
+    {
+        $selfItem = $itemCollection->where('id', (int) $itemID)->first();
 
-            return [
-                'self'      => $itemID,
-                'parent'    => isset($selfItem->parent_id),
-                'status'    => isset($selfItem->status),
-                'parents'   => findParents($itemCollection, (int) $itemID) ?: false,
-                'childrens' => findChilds($itemCollection, (int) $itemID) ?: false,
-            ];
-        }
+        return [
+            'self'      => $itemID,
+            'parent'    => isset($selfItem->parent_id),
+            'status'    => isset($selfItem->status),
+            'parents'   => findParents($itemCollection, (int) $itemID) ?: false,
+            'childrens' => findChilds($itemCollection, (int) $itemID) ?: false,
+        ];
     }
+}
 
     /*
       * formate fancytree source
@@ -1450,73 +1452,73 @@ use Carbon\Carbon;
       *
       * @return array
       *---------------------------------------------------------------- */
-    if (!function_exists('fancytreeSource')) {
-        function fancytreeSource($nodesCollection)
-        {
-            $nodes = [];
+if (!function_exists('fancytreeSource')) {
+    function fancytreeSource($nodesCollection)
+    {
+        $nodes = [];
 
-            foreach ($nodesCollection as $node) {
-                $nodes[] = [
-                    'title' => isset($node->name) ? $node->name : $node->title,
-                    'key' => $node->id,
-                    'parent_id' => $node->parent_id,
-                ];
-            }
-
-            return $nodes;
+        foreach ($nodesCollection as $node) {
+            $nodes[] = [
+                'title' => isset($node->name) ? $node->name : $node->title,
+                'key' => $node->id,
+                'parent_id' => $node->parent_id,
+            ];
         }
+
+        return $nodes;
     }
+}
 
     /*
       * generate order id with date formate
       *
       * @return array
       *---------------------------------------------------------------- */
-    if (!function_exists('generateOrderID')) {
-        function generateOrderID()
-        {
-            $uid = uniqid();
+if (!function_exists('generateOrderID')) {
+    function generateOrderID()
+    {
+        $uid = uniqid();
 
-            if (is_int($uid)) {
-                $uid = generateOrderID();
-            }
-
-            return $uid;
+        if (is_int($uid)) {
+            $uid = generateOrderID();
         }
+
+        return $uid;
     }
+}
 
     /*
       * get config
       * @param string $configPth
       * @return array
       *---------------------------------------------------------------- */
-    if (!function_exists('formatedConfig')) {
-        function formatedConfig($configPath)
-        {
-            $result = [];
+if (!function_exists('formatedConfig')) {
+    function formatedConfig($configPath)
+    {
+        $result = [];
 
-            foreach ($configPath as $key => $status) {
-                $result[] = [
-                    'value' => strtolower($key),
-                    'text' => $status,
-                ];
-            }
-
-            return $result;
+        foreach ($configPath as $key => $status) {
+            $result[] = [
+                'value' => strtolower($key),
+                'text' => $status,
+            ];
         }
+
+        return $result;
     }
+}
 
     /*
       * get config
       * @param string $configPth
       * @return array
       *---------------------------------------------------------------- */
-    if (!function_exists('totalPrice')) {
-        function totalPrice($price)
-        {
-            return array_sum($price);
-        }
+if (!function_exists('totalPrice')) {
+    function totalPrice($price)
+    {
+        return array_sum($price);
     }
+}
 
     /*
       * get Refined cart items
@@ -1526,89 +1528,88 @@ use Carbon\Carbon;
       *
       * @return array
       *---------------------------------------------------------------- */
-    if (!function_exists('getRefinedCart')) {
-        function getRefinedCart($getCartItems, $products)
-        {
-            $cartTotal = 0;
-            $isCartReady = true;
-            $itemIsInvalid = false;// is valid product
-            $cartTotalAmount = [];
-            $unreadyMsg = null;
+if (!function_exists('getRefinedCart')) {
+    function getRefinedCart($getCartItems, $products)
+    {
+        $cartTotal = 0;
+        $isCartReady = true;
+        $itemIsInvalid = false;// is valid product
+        $cartTotalAmount = [];
+        $unreadyMsg = null;
             
-            foreach ($getCartItems as $cartItemKey => $cartItemKeyValue) {
+        foreach ($getCartItems as $cartItemKey => $cartItemKeyValue) {
+            // verify this product with cart item
+            $verifyProduct = ShoppingCart::verifyCartProduct($getCartItems[$cartItemKey], $products);
 
-                // verify this product with cart item
-                $verifyProduct = ShoppingCart::verifyCartProduct($getCartItems[$cartItemKey], $products);
+            $getCartItems[$cartItemKey]['ERROR'] = null;
+            $getCartItems[$cartItemKey]['ERROR_MSG'] = null;
 
-                $getCartItems[$cartItemKey]['ERROR'] = null;
-                $getCartItems[$cartItemKey]['ERROR_MSG'] = null;
+            $productVerificationResult = $verifyProduct['result'];
 
-                $productVerificationResult = $verifyProduct['result'];
+            if ($productVerificationResult !== true) {
+                $errorMsg = null;
 
-                if ($productVerificationResult !== true) {
-                    $errorMsg = null;
-
-                    if (($productVerificationResult === 'ERR_PRODUCT_OUT_OF_STOCK')
-                        and getStoreSettings('show_out_of_stock')) {
-                        $errorMsg = __('Out of Stock');
-                    } else {
-                        $errorMsg = __('Product currently not available');
-                    }
-
-                    $getCartItems[$cartItemKey]['ERROR_MSG'] = $errorMsg;
-                    $getCartItems[$cartItemKey]['ERROR'] = $productVerificationResult;
-
-                    $unreadyMsg = __('Highlighted item in the cart seems currently not available/changed, please remove it.');
-                    $isCartReady = false;
-                    $itemIsInvalid = true;
+                if (($productVerificationResult === 'ERR_PRODUCT_OUT_OF_STOCK')
+                    and getStoreSettings('show_out_of_stock')) {
+                    $errorMsg = __('Out of Stock');
+                } else {
+                    $errorMsg = __('Product currently not available');
                 }
 
-                $addonPrice = [];
+                $getCartItems[$cartItemKey]['ERROR_MSG'] = $errorMsg;
+                $getCartItems[$cartItemKey]['ERROR'] = $productVerificationResult;
 
-                $cartProductPrice = $cartItemKeyValue['price'];
-
-                if (!__isEmpty($getCartItems[$cartItemKey]['options'])) {
-                    foreach ($getCartItems[$cartItemKey]['options'] as $key => $option) {
-                        $getCartItems[$cartItemKey]['options'][$key]['formated_addon_price']
-                                    = priceFormat($option['addonPrice'], false, true);
-
-                        $addonPrice[] = $option['addonPrice'];
-                    }
-                }
-
-                $getCartItems[$cartItemKey]['formated_price'] = priceFormat($cartProductPrice, false, true);
-                $getCartItems[$cartItemKey]['thumbnail_url'] = getProductImageURL($cartItemKeyValue['id'], $cartItemKeyValue['thumbnail']);
-                $getCartItems[$cartItemKey]['productDetailURL'] = route('product.details', ['productID' => $cartItemKeyValue['id'], 'productName' => slugIt($cartItemKeyValue['name'])]);
-
-                $calculatedAddonPrice = 0;
-
-                if (!__isEmpty($addonPrice)) {
-                    $calculatedAddonPrice = totalPrice($addonPrice); // array sum
-                }
-
-                $subtotal = $cartProductPrice + $calculatedAddonPrice;
-
-                $getCartItems[$cartItemKey]['new_price'] = priceFormat($subtotal, false, true);
-                $total = $subtotal * $cartItemKeyValue['qty'];
-                $getCartItems[$cartItemKey]['new_subTotal'] = priceFormat($total, false, true);
-                $cartTotalAmount[] = $total;
-            }
-
-            if (empty($cartTotalAmount)) {
+                $unreadyMsg = __('Highlighted item in the cart seems currently not available/changed, please remove it.');
                 $isCartReady = false;
-                $unreadyMsg = __('Cart is empty');
+                $itemIsInvalid = true;
             }
 
-            return [
-                'productData' => $getCartItems,
-                'cartReady' => $isCartReady,
-                'itemIsInvalid' => $itemIsInvalid,
-                'notReadyReason' => $unreadyMsg,
-                'totalPriceItems' => $cartTotalAmount,
-                'cartPriceTotal' => totalPrice($cartTotalAmount),
-            ];
+            $addonPrice = [];
+
+            $cartProductPrice = $cartItemKeyValue['price'];
+
+            if (!__isEmpty($getCartItems[$cartItemKey]['options'])) {
+                foreach ($getCartItems[$cartItemKey]['options'] as $key => $option) {
+                    $getCartItems[$cartItemKey]['options'][$key]['formated_addon_price']
+                                = priceFormat($option['addonPrice'], false, true);
+
+                    $addonPrice[] = $option['addonPrice'];
+                }
+            }
+
+            $getCartItems[$cartItemKey]['formated_price'] = priceFormat($cartProductPrice, false, true);
+            $getCartItems[$cartItemKey]['thumbnail_url'] = getProductImageURL($cartItemKeyValue['id'], $cartItemKeyValue['thumbnail']);
+            $getCartItems[$cartItemKey]['productDetailURL'] = route('product.details', ['productID' => $cartItemKeyValue['id'], 'productName' => slugIt($cartItemKeyValue['name'])]);
+
+            $calculatedAddonPrice = 0;
+
+            if (!__isEmpty($addonPrice)) {
+                $calculatedAddonPrice = totalPrice($addonPrice); // array sum
+            }
+
+            $subtotal = $cartProductPrice + $calculatedAddonPrice;
+
+            $getCartItems[$cartItemKey]['new_price'] = priceFormat($subtotal, false, true);
+            $total = $subtotal * $cartItemKeyValue['qty'];
+            $getCartItems[$cartItemKey]['new_subTotal'] = priceFormat($total, false, true);
+            $cartTotalAmount[] = $total;
         }
+
+        if (empty($cartTotalAmount)) {
+            $isCartReady = false;
+            $unreadyMsg = __('Cart is empty');
+        }
+
+        return [
+            'productData' => $getCartItems,
+            'cartReady' => $isCartReady,
+            'itemIsInvalid' => $itemIsInvalid,
+            'notReadyReason' => $unreadyMsg,
+            'totalPriceItems' => $cartTotalAmount,
+            'cartPriceTotal' => totalPrice($cartTotalAmount),
+        ];
     }
+}
 
     /*
       * get all categories
@@ -1617,14 +1618,14 @@ use Carbon\Carbon;
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('getAllCategories')) {
-        function getAllCategories()
-        {
-            return Cache::rememberForever('cache.categories.all', function () {
-                return \App\Yantrana\Components\Category\Models\Category::all();
-            });
-        }
+if (!function_exists('getAllCategories')) {
+    function getAllCategories()
+    {
+        return Cache::rememberForever('cache.categories.all', function () {
+            return \App\Yantrana\Components\Category\Models\Category::all();
+        });
     }
+}
 
     /*
       * Format amount
@@ -1633,12 +1634,12 @@ use Carbon\Carbon;
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('numberFormatAmount')) {
-        function numberFormatAmount($amount)
-        {
-            return (double) handleCurrencyAmount($amount);
-        }
+if (!function_exists('numberFormatAmount')) {
+    function numberFormatAmount($amount)
+    {
+        return (double) handleCurrencyAmount($amount);
     }
+}
 
     /*
       * get youtube url
@@ -1647,48 +1648,48 @@ use Carbon\Carbon;
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('getYoutubeUrl')) {
-        function getYoutubeUrl($code)
-        {
-            return 'http://www.youtube.com/embed/'.$code;
-        }
+if (!function_exists('getYoutubeUrl')) {
+    function getYoutubeUrl($code)
+    {
+        return 'http://www.youtube.com/embed/'.$code;
     }
+}
 
     /*
       * get all other code
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('getAocCode')) {
-        function getAocCode()
-        {
-            return Config('__tech.aoc');
-        }
+if (!function_exists('getAocCode')) {
+    function getAocCode()
+    {
+        return Config('__tech.aoc');
     }
+}
 
     /*
       * get set currency
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('getCurrency')) {
-        function getCurrency()
-        {
-            return html_entity_decode(getStoreSettings('currency_value'));
-        }
+if (!function_exists('getCurrency')) {
+    function getCurrency()
+    {
+        return html_entity_decode(getStoreSettings('currency_value'));
     }
+}
 
     /*
       * get set currency Symbol
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('getCurrencySymbol')) {
-        function getCurrencySymbol()
-        {
-            return html_entity_decode(getStoreSettings('currency_symbol'));
-        }
+if (!function_exists('getCurrencySymbol')) {
+    function getCurrencySymbol()
+    {
+        return html_entity_decode(getStoreSettings('currency_symbol'));
     }
+}
 
     /*
       * get countries list
@@ -1697,25 +1698,25 @@ use Carbon\Carbon;
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('getCountries')) {
-        function getCountries()
-        {
-            $countriesCollection = [];
+if (!function_exists('getCountries')) {
+    function getCountries()
+    {
+        $countriesCollection = [];
 
-            foreach (config('__tech.countries') as $key => $country) {
-                $countriesCollection[] = [
-                        'value' => $key,
-                        'text' => $country,
-                    ];
-            }
-
-            return [
-                'countries' => $countriesCollection,
-                'currencySymbol' => getCurrencySymbol(),
-                'currency' => getCurrency(),
-            ];
+        foreach (config('__tech.countries') as $key => $country) {
+            $countriesCollection[] = [
+                    'value' => $key,
+                    'text' => $country,
+                ];
         }
+
+        return [
+            'countries' => $countriesCollection,
+            'currencySymbol' => getCurrencySymbol(),
+            'currency' => getCurrency(),
+        ];
     }
+}
 
     /*
     * Set new orders count in session
@@ -1725,20 +1726,20 @@ use Carbon\Carbon;
     * @return void
     *-------------------------------------------------------- */
 
-    if (!function_exists('setInSessionNewOrderPlacedCount')) {
-        function setInSessionNewOrderPlacedCount($count)
-        {
-            if (isAdmin()) {
-                $order = [
-                    'orderData' => [
-                        'newOrderPlacedCount' => $count,
-                    ],
-                ];
+if (!function_exists('setInSessionNewOrderPlacedCount')) {
+    function setInSessionNewOrderPlacedCount($count)
+    {
+        if (isAdmin()) {
+            $order = [
+                'orderData' => [
+                    'newOrderPlacedCount' => $count,
+                ],
+            ];
 
-                Session::set('additional', $order);
-            }
+            Session::set('additional', $order);
         }
     }
+}
 
     /*
       * get timezone list
@@ -1747,21 +1748,21 @@ use Carbon\Carbon;
       *
       * @return string
       *---------------------------------------------------------------- */
-    if (!function_exists('getTimeZone')) {
-        function getTimeZone()
-        {
-            $timezoneCollection = [];
-            $timezoneList = timezone_identifiers_list();
-            foreach ($timezoneList as $timezone) {
-                $timezoneCollection[] = [
-                        'value' => $timezone,
-                        'text' => $timezone,
-                    ];
-            }
-
-            return $timezoneCollection;
+if (!function_exists('getTimeZone')) {
+    function getTimeZone()
+    {
+        $timezoneCollection = [];
+        $timezoneList = timezone_identifiers_list();
+        foreach ($timezoneList as $timezone) {
+            $timezoneCollection[] = [
+                    'value' => $timezone,
+                    'text' => $timezone,
+                ];
         }
+
+        return $timezoneCollection;
     }
+}
 
     /*
       * Get demo mode for defined admin
@@ -1769,16 +1770,16 @@ use Carbon\Carbon;
       * @return boolean.
       *-------------------------------------------------------- */
 
-    if (!function_exists('isDemoForAdmin')) {
-        function isDemoForAdmin()
-        {
-            if (isDemo()) {
-                return true;
-            }
-
-            return false;
+if (!function_exists('isDemoForAdmin')) {
+    function isDemoForAdmin()
+    {
+        if (isDemo()) {
+            return true;
         }
+
+        return false;
     }
+}
 
     /*
       * Get formatted date time from passed raw date using timezone
@@ -1788,14 +1789,14 @@ use Carbon\Carbon;
       * @return date
       *-------------------------------------------------------- */
 
-    if (!function_exists('formatStoreDateTime')) {
-        function formatStoreDateTime($rawDateTime, $format = 'l jS F Y g:i:s a')
-        {
-            $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s', $rawDateTime);
+if (!function_exists('formatStoreDateTime')) {
+    function formatStoreDateTime($rawDateTime, $format = 'l jS F Y g:i:s a')
+    {
+        $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s', $rawDateTime);
 
-            return $carbonDate->format($format);
-        }
+        return $carbonDate->format($format);
     }
+}
 
     /*
       * Get formatted date from passed raw date using timezone
@@ -1805,14 +1806,14 @@ use Carbon\Carbon;
       * @return date
       *-------------------------------------------------------- */
 
-    if (!function_exists('formatStoreDate')) {
-        function formatStoreDate($rawDate, $format = 'jS F Y')
-        {
-            $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s', $rawDate);
+if (!function_exists('formatStoreDate')) {
+    function formatStoreDate($rawDate, $format = 'jS F Y')
+    {
+        $carbonDate = Carbon::createFromFormat('Y-m-d H:i:s', $rawDate);
 
-            return $carbonDate->format($format);
-        }
+        return $carbonDate->format($format);
     }
+}
 
     /*
       * Get formatted date time from passed current date using timezone
@@ -1822,12 +1823,12 @@ use Carbon\Carbon;
       * @return date
       *-------------------------------------------------------- */
 
-    if (!function_exists('currentDateTime')) {
-        function currentDateTime()
-        {
-            return Carbon::now()->format('Y-m-d H:i:s');
-        }
+if (!function_exists('currentDateTime')) {
+    function currentDateTime()
+    {
+        return Carbon::now()->format('Y-m-d H:i:s');
     }
+}
 
     /*
       * Get demo mode for Demo of site
@@ -1835,12 +1836,12 @@ use Carbon\Carbon;
       * @return boolean.
       *-------------------------------------------------------- */
 
-    if (!function_exists('isDemo')) {
-        function isDemo()
-        {
-            return (env('IS_DEMO_MODE', false)) ? true : false;
-        }
+if (!function_exists('isDemo')) {
+    function isDemo()
+    {
+        return (env('IS_DEMO_MODE', false)) ? true : false;
     }
+}
 
     /*
       * Get currency symbol with price.
@@ -1850,22 +1851,22 @@ use Carbon\Carbon;
       * @return string.
       *-------------------------------------------------------- */
 
-    if (!function_exists('orderPriceFormat')) {
-        function orderPriceFormat($amount = null, $currencyCode)
-        {
-            $currencies = config('__tech.currencies.details');
+if (!function_exists('orderPriceFormat')) {
+    function orderPriceFormat($amount = null, $currencyCode)
+    {
+        $currencies = config('__tech.currencies.details');
 
-            $currencySymbol = '';
+        $currencySymbol = '';
 
-            foreach ($currencies as $key => $currency) {
-                if ($key == $currencyCode) {
-                    $currencySymbol = $currency['symbol'];
-                }
+        foreach ($currencies as $key => $currency) {
+            if ($key == $currencyCode) {
+                $currencySymbol = $currency['symbol'];
             }
-
-            return $currencySymbol.''.number_format((float) $amount, 2);
         }
+
+        return $currencySymbol.''.number_format((float) $amount, 2);
     }
+}
 
     /*
       * return formated keywords for meta data
@@ -1875,20 +1876,20 @@ use Carbon\Carbon;
       * @return string.
       *-------------------------------------------------------- */
 
-    if (!function_exists('getKeywords')) {
-        function getKeywords($array)
-        {
-            if (!__isEmpty($array)) {
-                foreach ($array as $value) {
-                    echo array_key_exists('name', $value) ? $value['name'] : $value['title'];
+if (!function_exists('getKeywords')) {
+    function getKeywords($array)
+    {
+        if (!__isEmpty($array)) {
+            foreach ($array as $value) {
+                echo array_key_exists('name', $value) ? $value['name'] : $value['title'];
 
-                    if (end($array) !== $value) {
-                        echo ', ';
-                    }
+                if (end($array) !== $value) {
+                    echo ', ';
                 }
             }
         }
     }
+}
 
     /*
       * matching current route
@@ -1898,18 +1899,18 @@ use Carbon\Carbon;
       * @return bool.
       *-------------------------------------------------------- */
 
-    if (!function_exists('isCurrentRoute')) {
-        function isCurrentRoute($routeName)
-        {
-            $route = \Request::route()->getName();
+if (!function_exists('isCurrentRoute')) {
+    function isCurrentRoute($routeName)
+    {
+        $route = \Request::route()->getName();
 
-            if ($route === $routeName) {
-                return true;
-            }
-
-            return false;
+        if ($route === $routeName) {
+            return true;
         }
+
+        return false;
     }
+}
 
     /*
       * Format amount in float
@@ -1919,12 +1920,12 @@ use Carbon\Carbon;
       * @return number.
       *-------------------------------------------------------- */
 
-    if (!function_exists('formatAmount')) {
-        function formatAmount($amount)
-        {
-            return round($amount, 2);
-        }
+if (!function_exists('formatAmount')) {
+    function formatAmount($amount)
+    {
+        return round($amount, 2);
     }
+}
 
     /*
       * Get no thumb image URL
@@ -1932,12 +1933,12 @@ use Carbon\Carbon;
       * @return string
       *-------------------------------------------------------- */
 
-    if (!function_exists('noThumbImageURL')) {
-        function noThumbImageURL()
-        {
-            return url('/dist/imgs/no_thumb_image.jpg');
-        }
+if (!function_exists('noThumbImageURL')) {
+    function noThumbImageURL()
+    {
+        return url('/dist/imgs/no_thumb_image.jpg');
     }
+}
 
 
     /**
@@ -1948,47 +1949,27 @@ use Carbon\Carbon;
      * @return bool
      *---------------------------------------------------------------- */
 
-    if (!function_exists('checkisAvailabeSandBoxRecords')) {
-        function checkisAvailabeSandBoxRecords($purchaseCollection)
-        {
-            $result = false;
+if (!function_exists('checkisAvailabeSandBoxRecords')) {
+    function checkisAvailabeSandBoxRecords($purchaseCollection)
+    {
+        $result = false;
 
-            if (__isEmpty($purchaseCollection)) {
-                return $result;
-            }
-
-            foreach ($purchaseCollection as $purchase) {
-                $paymentMethod = $purchase['payment_method'];
-
-                if ($paymentMethod == 7 // Paypal test order
-                        or $paymentMethod == 8) {
-                    $result = true;
-                }
-            }
-
+        if (__isEmpty($purchaseCollection)) {
             return $result;
         }
-    }
 
-    /*
-      * Get the technical items from tech items
-      *
-      * @param string   $key
-      * @param mixed    $requireKeys
-      *
-      * @return mixed
-      *-------------------------------------------------------- */
+        foreach ($purchaseCollection as $purchase) {
+            $paymentMethod = $purchase['payment_method'];
 
-    if (!function_exists('configItem')) {
-        function configItem($key, $requireKeys = null)
-        {
-            if (!__isEmpty($requireKeys) and !is_array($requireKeys)) {
-                return config('__tech.'.$key.'.'.$requireKeys);
+            if ($paymentMethod == 7 // Paypal test order
+                    or $paymentMethod == 8) {
+                $result = true;
             }
-            
-            return $geItem = array_get(config('__tech'), $key);
         }
+
+        return $result;
     }
+}
 
     /*
       * Get the technical items from tech items
@@ -1999,22 +1980,42 @@ use Carbon\Carbon;
       * @return mixed
       *-------------------------------------------------------- */
 
-    if (!function_exists('slugIt')) {
-        function slugIt($title, $separator = '-')
-        {
-            //$title = static::ascii($title); //comment it out to suport farsi
-
-            // Convert all dashes/underscores into separator
-            $flip = $separator == '-' ? '_' : '-';
-
-            $title = preg_replace('!['.preg_quote($flip).']+!u', $separator, $title);
-
-            // Remove all characters that are not the separator, letters, numbers, or whitespace.
-           // $title = preg_replace('![^'.preg_quote($separator).'\pL\pN\s]+!u', '', mb_strtolower($title));
-
-            // Replace all separator characters and whitespace by a single separator
-            $title = preg_replace('!['.preg_quote($separator).'\s]+!u', $separator, $title);
-
-            return trim($title, $separator);
+if (!function_exists('configItem')) {
+    function configItem($key, $requireKeys = null)
+    {
+        if (!__isEmpty($requireKeys) and !is_array($requireKeys)) {
+            return config('__tech.'.$key.'.'.$requireKeys);
         }
+            
+        return $geItem = array_get(config('__tech'), $key);
     }
+}
+
+    /*
+      * Get the technical items from tech items
+      *
+      * @param string   $key
+      * @param mixed    $requireKeys
+      *
+      * @return mixed
+      *-------------------------------------------------------- */
+
+if (!function_exists('slugIt')) {
+    function slugIt($title, $separator = '-')
+    {
+        //$title = static::ascii($title); //comment it out to suport farsi
+
+        // Convert all dashes/underscores into separator
+        $flip = $separator == '-' ? '_' : '-';
+
+        $title = preg_replace('!['.preg_quote($flip).']+!u', $separator, $title);
+
+        // Remove all characters that are not the separator, letters, numbers, or whitespace.
+       // $title = preg_replace('![^'.preg_quote($separator).'\pL\pN\s]+!u', '', mb_strtolower($title));
+
+        // Replace all separator characters and whitespace by a single separator
+        $title = preg_replace('!['.preg_quote($separator).'\s]+!u', $separator, $title);
+
+        return trim($title, $separator);
+    }
+}

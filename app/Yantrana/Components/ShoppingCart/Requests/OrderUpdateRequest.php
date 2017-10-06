@@ -30,6 +30,6 @@ class OrderUpdateRequest extends BaseRequest
     {
         return [
             'status' => 'required',
-       ];
+        ];
     }
 }

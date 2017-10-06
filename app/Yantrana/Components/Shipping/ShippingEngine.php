@@ -30,9 +30,11 @@ class ShippingEngine implements ShippingEngineBlueprint
      * @param ShippingRepository $shippingRepository - Shipping Repository
      * @param SupportRepository  $supportRepository  - Support Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(ShippingRepository $shippingRepository,
-                         SupportRepository $supportRepository)
-    {
+    public function __construct(
+        ShippingRepository $shippingRepository,
+        SupportRepository $supportRepository
+    ) {
+    
         $this->shippingRepository = $shippingRepository;
         $this->supportRepository = $supportRepository;
     }
@@ -114,7 +116,6 @@ class ShippingEngine implements ShippingEngineBlueprint
 
         // Create key value pair of countries and remove exist country
         foreach ($countries as $country) {
-
             // Check in array country code exist or not
             // if exist then not include that country in countries list
             if (!in_array($country['iso_code'], $allCountriesCode) == true) {
@@ -172,8 +173,8 @@ class ShippingEngine implements ShippingEngineBlueprint
         // Get shipping data
         $shipping = $this->shippingRepository
                          ->fetchByID(
-                            $shippingID,
-                            [
+                             $shippingID,
+                             [
                                 'country',
                                 'type',
                                 'charges',
@@ -182,8 +183,8 @@ class ShippingEngine implements ShippingEngineBlueprint
                                 'status',
                                 'notes',
                                 'countries__id',
-                            ]
-                        );
+                             ]
+                         );
 
         // If Shipping Rule Empty then return 404 reaction code
         if (__isEmpty($shipping)) {
@@ -384,7 +385,6 @@ class ShippingEngine implements ShippingEngineBlueprint
         // Check if aoc is empty
         // if aoc not exist in database then store new aoc data
         if (__isEmpty($aocCollection)) {
-
             // Check id aoc saved
             if ($this->shippingRepository->store($inputData)) {
                 return __engineReaction(1);

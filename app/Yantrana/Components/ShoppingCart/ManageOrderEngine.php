@@ -78,17 +78,17 @@ class ManageOrderEngine implements ManageOrderEngineBlueprint
      * @param AddressEngine         $addressEngine         - Address Engine
      *-----------------------------------------------------------------------*/
     public function __construct(
-                ManageOrderRepository $manageOrderRepository,
-                AddressRepository $addressRepository,
-                MailService $mailService,
-                UserRepository $userRepository,
-                ShippingRepository $shippingRepository,
-                TaxRepository $taxRepository,
-                CouponRepository $couponRepository,
-                SupportRepository $supportRepository,
-                AddressEngine $addressEngine,
-                OrderEngine  $orderEngine
-            ) {
+        ManageOrderRepository $manageOrderRepository,
+        AddressRepository $addressRepository,
+        MailService $mailService,
+        UserRepository $userRepository,
+        ShippingRepository $shippingRepository,
+        TaxRepository $taxRepository,
+        CouponRepository $couponRepository,
+        SupportRepository $supportRepository,
+        AddressEngine $addressEngine,
+        OrderEngine  $orderEngine
+    ) {
         $this->manageOrderRepository = $manageOrderRepository;
         $this->addressRepository = $addressRepository;
         $this->mailService = $mailService;
@@ -204,7 +204,6 @@ class ManageOrderEngine implements ManageOrderEngineBlueprint
 
         // if order updated successfully
         if ($response) {
-
             // Check if check mail exist and neglect
             // 1 (New),
             // 8 (Cancellation Request Received) and
@@ -213,7 +212,6 @@ class ManageOrderEngine implements ManageOrderEngineBlueprint
                 if (($input['status'] != 1)
                 or ($input['status'] != 8)
                 or ($input['status'] != 9)) {
-
                     // Check description exist
                     $description = '';
                     if (!empty($input['description'])) {
@@ -225,9 +223,9 @@ class ManageOrderEngine implements ManageOrderEngineBlueprint
 
                     // Get email subject
                     $mailMessages = $this->createMailSubjectAndMessage(
-                                                            $orderUID,
-                                                            $input['status']
-                                                            );
+                        $orderUID,
+                        $input['status']
+                    );
                     // get order description message
                     $order['descriptionMessage'] = $mailMessages['descriptionMessage'];
 
@@ -243,11 +241,12 @@ class ManageOrderEngine implements ManageOrderEngineBlueprint
                     ];
 
                     // send notification mail to user and admin
-                    $this->notifyByMail($mailMessages['orderSubjectMessage'],
-                                        $mailView,
-                                        $mailData,
-                                        $order['email']
-                                        );
+                    $this->notifyByMail(
+                        $mailMessages['orderSubjectMessage'],
+                        $mailView,
+                        $mailData,
+                        $order['email']
+                    );
                 }
             }
 
@@ -471,11 +470,12 @@ class ManageOrderEngine implements ManageOrderEngineBlueprint
         ];
 
         // send notification mail to user
-        $this->notifyByMail($subject,
-                                    'order.customer-email',
-                                    $mailData,
-                                    $email
-                                    );
+        $this->notifyByMail(
+            $subject,
+            'order.customer-email',
+            $mailData,
+            $email
+        );
 
         return __engineReaction(1);
     }

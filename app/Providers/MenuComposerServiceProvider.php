@@ -13,10 +13,11 @@ class MenuComposerServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot(MenuEngine $menuEngine)
-    {	
+    {
         // Using class based composers...
         view()->composer(
-            ['public-master', 'top-menu', 'dynamic-nevigation-menu'], \App\Http\ViewComposers\MenuComposer::class
+            ['public-master', 'top-menu', 'dynamic-nevigation-menu'],
+            \App\Http\ViewComposers\MenuComposer::class
         );
     }
 

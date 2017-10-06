@@ -21,12 +21,12 @@ abstract class BaseRequest extends CoreRequest
 
     //return \Response::json($errors);
 
-    if (Request::ajax()) {
-        return __apiResponse([
+        if (Request::ajax()) {
+            return __apiResponse([
                     'validation' => $errors,
             'message' => __('Ooops..., looks like something went wrong!'),
-        ], 3);
-    }
+            ], 3);
+        }
 
         return $this->redirector->to($this->getRedirectUrl())
                             ->withInput($this->except($this->dontFlash))

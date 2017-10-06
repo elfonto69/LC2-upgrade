@@ -49,8 +49,9 @@ class MenuEngine
     public function __construct(
         ManageCategoryRepository $categoryRepository,
         BrandRepository $brandRepository,
-        ManagePagesRepository $pagesRepository)
-    {
+        ManagePagesRepository $pagesRepository
+    ) {
+    
         $this->categoryRepository = $categoryRepository;
         $this->brandRepository = $brandRepository;
         $this->pagesRepository = $pagesRepository;
@@ -74,17 +75,19 @@ class MenuEngine
 
         // if conditionally the categories show in menu is true the categories object Marge in continue pass object
         // if not the object pass to next process
-        $object = __ifIsset($categoryPlacement,
-                    collect($object->toArray())->merge($this->getCategories()),
-                    collect($object->toArray())
-                );
+        $object = __ifIsset(
+            $categoryPlacement,
+            collect($object->toArray())->merge($this->getCategories()),
+            collect($object->toArray())
+        );
 
         // if conditionally the brand show in menu is true the brand object marge in continue pass object
         // if not the object pass to next process
-        $object = __ifIsset($brandsPlacement,
-                    collect($object->toArray())->merge($this->getBrands()),
-                    collect($object->toArray())
-                );
+        $object = __ifIsset(
+            $brandsPlacement,
+            collect($object->toArray())->merge($this->getBrands()),
+            collect($object->toArray())
+        );
 
         return $this->buildTree($object, null);
     }
