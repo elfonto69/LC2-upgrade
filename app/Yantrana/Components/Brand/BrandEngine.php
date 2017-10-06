@@ -38,10 +38,12 @@ class BrandEngine implements BrandEngineBlueprint
      * @param BrandRepository         $brandRepository         - Brand Repository
      * @param ManageProductRepository $manageProductRepository - ManageProduct Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(BrandRepository $brandRepository,
+    public function __construct(
+        BrandRepository $brandRepository,
         MediaEngine $mediaEngine,
-        ManageProductRepository $manageProductRepository)
-    {
+        ManageProductRepository $manageProductRepository
+    ) {
+    
         $this->brandRepository = $brandRepository;
         $this->mediaEngine = $mediaEngine;
         $this->manageProductRepository = $manageProductRepository;
@@ -105,7 +107,6 @@ class BrandEngine implements BrandEngineBlueprint
 
         // Check if brand added then store brand image
         if (__ifIsset($brand)) {
-
             // Check if brand logo added
             if ($this->mediaEngine->storeBrandLogoMedia($logo, $brand->_id, null, true)) {
                 return __engineReaction(1, ['brand' => $brand]);
@@ -176,56 +177,55 @@ class BrandEngine implements BrandEngineBlueprint
         $transactionResponse = $this->brandRepository
                                      ->processTransaction(function () use ($brandID, $inputData, $confirmProductDelete) {
                                          // only brand delete
-            if ($confirmProductDelete === 0) {
-                if (!$this->brandRepository->delete($brandID)) {
-                    return $this->brandRepository
-                            ->transactionResponse(2, null, __('Brand not deleted.'));
-                }
+                                        if ($confirmProductDelete === 0) {
+                                            if (!$this->brandRepository->delete($brandID)) {
+                                                return $this->brandRepository
+                                                        ->transactionResponse(2, null, __('Brand not deleted.'));
+                                            }
 
-                $this->mediaEngine->processDeleteBrandMedias($brandID);
+                                            $this->mediaEngine->processDeleteBrandMedias($brandID);
 
-                return $this->brandRepository
-                        ->transactionResponse(1, null, __('Brand deleted successfully.'));
-            }
+                                            return $this->brandRepository
+                                                    ->transactionResponse(1, null, __('Brand deleted successfully.'));
+                                        }
 
             // delete brand with his products
-            if ($confirmProductDelete === 2) {
-                $brand = $this->brandRepository->fetchByID($brandID);
+                                        if ($confirmProductDelete === 2) {
+                                            $brand = $this->brandRepository->fetchByID($brandID);
 
-                $brandId = $brand->_id;
+                                            $brandId = $brand->_id;
 
-                $productIds = $this->manageProductRepository->fetchIdsByBrandId($brandId);
+                                            $productIds = $this->manageProductRepository->fetchIdsByBrandId($brandId);
 
-                //__dd($productIds);
-                if (!__isEmpty($productIds)) {
+                                            //__dd($productIds);
+                                            if (!__isEmpty($productIds)) {
+                                                // If products not deleted then return false
+                                                if (!$this->manageProductRepository->deleteByIds($productIds)) {
+                                                    return $this->brandRepository
+                                                                ->transactionResponse(2, null, __('Brand not deleted.'));
+                                                }
 
-                    // If products not deleted then return false
-                    if (!$this->manageProductRepository->deleteByIds($productIds)) {
-                        return $this->brandRepository
-                                    ->transactionResponse(2, null, __('Brand not deleted.'));
-                    }
+                                                foreach ($productIds as $productId) {
+                                                    $this->mediaEngine->processDeleteProductMedias($productId);
+                                                }
+                                            }
 
-                    foreach ($productIds as $productId) {
-                        $this->mediaEngine->processDeleteProductMedias($productId);
-                    }
-                }
+                                            if (!__isEmpty($productIds)) {
+                                                $deletedProductIds = implode($productIds, '|');
 
-                if (!__isEmpty($productIds)) {
-                    $deletedProductIds = implode($productIds, '|');
+                                                activityLog('ID of '.$brandId.' brand deleted of his products.'.$deletedProductIds);
+                                            }
 
-                    activityLog('ID of '.$brandId.' brand deleted of his products.'.$deletedProductIds);
-                }
+                                            if (!$this->brandRepository->delete($brandId)) {
+                                                return $this->brandRepository
+                                                        ->transactionResponse(2, null, __('Brand not deleted.'));
+                                            }
 
-                if (!$this->brandRepository->delete($brandId)) {
-                    return $this->brandRepository
-                            ->transactionResponse(2, null, __('Brand not deleted.'));
-                }
+                                            $this->mediaEngine->processDeleteBrandMedias($brandId);
 
-                $this->mediaEngine->processDeleteBrandMedias($brandId);
-
-                return $this->brandRepository
-                            ->transactionResponse(1, null, __('Brand deleted successfully.'));
-            }
+                                            return $this->brandRepository
+                                                        ->transactionResponse(1, null, __('Brand deleted successfully.'));
+                                        }
                                      });
 
         return __engineReaction($transactionResponse);
@@ -260,11 +260,11 @@ class BrandEngine implements BrandEngineBlueprint
 
             $newImageThumbnail = $this->mediaEngine
                                       ->storeBrandLogoMedia(
-                                            $logo,
-                                            $brandID,
-                                            $brand->logo,
-                                            true
-                                        );
+                                          $logo,
+                                          $brandID,
+                                          $brand->logo,
+                                          true
+                                      );
 
             // Check if logo file moved to product media
             if (!$newImageThumbnail) {

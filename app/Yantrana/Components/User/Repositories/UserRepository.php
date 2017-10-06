@@ -111,9 +111,10 @@ class UserRepository extends BaseRepository implements UserRepositoryBlueprint
      *---------------------------------------------------------------- */
     public function fetchLoginAttemptsCount()
     {
-        $loginAttempt = LoginAttempt::where('ip_address',
-                                        Request::getClientIp()
-                                    )
+        $loginAttempt = LoginAttempt::where(
+            'ip_address',
+            Request::getClientIp()
+        )
                                     ->select('attempts')
                                     ->first();
 
@@ -143,8 +144,10 @@ class UserRepository extends BaseRepository implements UserRepositoryBlueprint
         ];
 
         // Get logged in if credentials valid
-        if (Auth::attempt($credentials,
-            isset($input['remember_me']) ? $input['remember_me'] : false)) {
+        if (Auth::attempt(
+            $credentials,
+            isset($input['remember_me']) ? $input['remember_me'] : false
+        )) {
             $this->clearLoginAttempts(); // make login log entry
 
                 $user = Auth::user();
@@ -265,10 +268,10 @@ class UserRepository extends BaseRepository implements UserRepositoryBlueprint
 
         if ($selectRecord) {
             $activeUser->select(
-                            'id',
-                            'fname',
-                            'lname'
-                        );
+                'id',
+                'fname',
+                'lname'
+            );
         }
 
         return $activeUser->first();
@@ -306,8 +309,10 @@ class UserRepository extends BaseRepository implements UserRepositoryBlueprint
                                 * 60 * 60;
 
         return PasswordReset::where('email', $email)
-                            ->orWhere(DB::raw('UNIX_TIMESTAMP(created_at)'),
-                             '<', $expiryTime
+                            ->orWhere(
+                                DB::raw('UNIX_TIMESTAMP(created_at)'),
+                                '<',
+                                $expiryTime
                             )
                             ->delete();
     }
@@ -329,7 +334,6 @@ class UserRepository extends BaseRepository implements UserRepositoryBlueprint
             if (!__isEmpty($email)) {
                 $query->where('email', $email);
             }
-
         })->count();
     }
 
@@ -418,8 +422,7 @@ class UserRepository extends BaseRepository implements UserRepositoryBlueprint
                                 'new_email' => $newEmail,
                                 'users_id' => $userID,
                             ])
-                            ->orWhere(DB::raw('UNIX_TIMESTAMP(created_at)'), '<', $expiryTime
-                            )
+                            ->orWhere(DB::raw('UNIX_TIMESTAMP(created_at)'), '<', $expiryTime)
                             ->orWhere(['users_id' => $userID])
                             ->delete();
     }
@@ -496,7 +499,8 @@ class UserRepository extends BaseRepository implements UserRepositoryBlueprint
     }*/
 
     public function storeNewUser($input, $isSocialUser = false)
-    {   //__dd($isSocialUser);
+    {
+   //__dd($isSocialUser);
         $newUser = new $this->user();
 
         //$status = 1;

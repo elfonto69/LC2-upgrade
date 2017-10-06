@@ -33,6 +33,6 @@ class ProductImageEditRequest extends BaseRequest
         return [
             'title' => 'required',
             //'description'   => 'required|min:6'
-       ];
+        ];
     }
 }

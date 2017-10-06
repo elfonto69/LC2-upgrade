@@ -12,13 +12,13 @@ class CreateQordersTable extends Migration
      */
     public function up()
     {
-       Schema::create('qorders', function (Blueprint $table) {
+        Schema::create('qorders', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('name');
-			$table->string('phone');
-			$table->integer('product_id');
-			$table->integer('status');
-			$table->string('address');
+            $table->string('name');
+            $table->string('phone');
+            $table->integer('product_id');
+            $table->integer('status');
+            $table->string('address');
             $table->timestamps();
         });
     }

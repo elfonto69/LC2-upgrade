@@ -28,9 +28,11 @@ class CouponEngine implements CouponEngineBlueprint
      *
      * @param CouponRepository $couponRepository - Coupon Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(CouponRepository $couponRepository,
-                        ShoppingCartEngine $shoppingCartEngine)
-    {
+    public function __construct(
+        CouponRepository $couponRepository,
+        ShoppingCartEngine $shoppingCartEngine
+    ) {
+    
         $this->couponRepository = $couponRepository;
         $this->shoppingCartEngine = $shoppingCartEngine;
     }
@@ -328,9 +330,9 @@ class CouponEngine implements CouponEngineBlueprint
                 'code' => $coupon->code,
                 'discount' => $coupon->discount,
                 'formatedCouponDiscount' => priceFormat(
-                                                $coupon->discount,
-                                                $currency
-                                            ),
+                    $coupon->discount,
+                    $currency
+                ),
                 'title' => $coupon->title,
                 'description' => $coupon->description,
             ],

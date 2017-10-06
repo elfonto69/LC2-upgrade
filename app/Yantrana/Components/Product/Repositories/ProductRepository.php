@@ -59,10 +59,14 @@ class ProductRepository extends BaseRepository implements ProductRepositoryBluep
      *
      * @param ProductModel $product - Product Model
      *-----------------------------------------------------------------------*/
-    public function __construct(ProductModel $product, Category $category,
-    ProductCategory $productCategory, ProductOptionLabel $productOptions,
-    ManageCategoryRepository $categoryRepository)
-    {
+    public function __construct(
+        ProductModel $product,
+        Category $category,
+        ProductCategory $productCategory,
+        ProductOptionLabel $productOptions,
+        ManageCategoryRepository $categoryRepository
+    ) {
+    
         $this->categoryRepository = $categoryRepository;
         $this->productCategory = $productCategory;
         $this->allMyChilds = [];
@@ -278,7 +282,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryBluep
         }
 
         return $query->select(
-                        __nestedKeyValues([
+            __nestedKeyValues([
                             'products' => [
                                'id',
                                'name',
@@ -293,7 +297,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryBluep
                                'brands__id',
                             ],
                         ])
-                    )->first();
+        )->first();
     }
 
     /**
@@ -335,13 +339,13 @@ class ProductRepository extends BaseRepository implements ProductRepositoryBluep
                              ->isStatus(1) // active)
                              ->where('id', '!=', $productID)
                              ->select(
-                                'id',
-                                'name',
-                                'thumbnail',
-                                'status',
-                                'out_of_stock',
-                                'price'
-                            )->get();
+                                 'id',
+                                 'name',
+                                 'thumbnail',
+                                 'status',
+                                 'out_of_stock',
+                                 'price'
+                             )->get();
     }
 
     /**
@@ -392,9 +396,9 @@ class ProductRepository extends BaseRepository implements ProductRepositoryBluep
                 $allChild[] = $category['id'];
 
                 $allChild = self::allChildCategories(
-                                                        $category['id'],
-                                                        $allChild
-                                                    );
+                    $category['id'],
+                    $allChild
+                );
             }
         }
 
@@ -425,7 +429,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryBluep
 
         return $query->brandAndPrice($input) // filter product when the max & min price available or brand
                         ->select(
-                        __nestedKeyValues([
+                            __nestedKeyValues([
                             'products' => [
                                'id',
                                'name',
@@ -437,7 +441,8 @@ class ProductRepository extends BaseRepository implements ProductRepositoryBluep
                                'brands__id',
                                'featured',
                             ],
-                        ]))
+                            ])
+                        )
                         ->whereInHasCategories($activeCatIds)
                         ->paginate($this->getPaginationCount());
     }

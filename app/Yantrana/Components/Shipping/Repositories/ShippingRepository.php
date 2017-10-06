@@ -67,7 +67,7 @@ class ShippingRepository extends BaseRepository implements ShippingRepositoryBlu
                         'shipping.updated_at',
                         'shipping.countries__id',
                         'countries.name'
-                        )
+                    )
                     ->dataTables($dataTableConfig)
                     ->toArray();
     }

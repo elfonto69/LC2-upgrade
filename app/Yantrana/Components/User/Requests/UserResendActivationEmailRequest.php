@@ -30,6 +30,6 @@ class UserResendActivationEmailRequest extends BaseRequest
     {
         return [
             'email' => 'required|email',
-       ];
+        ];
     }
 }

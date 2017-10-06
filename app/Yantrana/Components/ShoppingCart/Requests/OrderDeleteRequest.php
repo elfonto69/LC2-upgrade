@@ -35,6 +35,6 @@ class OrderDeleteRequest extends BaseRequest
     {
         return [
             'password' => 'required|min:6',
-       ];
+        ];
     }
 }

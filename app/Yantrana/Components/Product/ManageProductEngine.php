@@ -50,13 +50,15 @@ class ManageProductEngine implements ManageProductEngineBlueprint
      * @param ManageStoreRepository   $manageStoreRepository   - ManageStore Repository
      * @param BrandRepository         $manageBrandRepository   - ManageBrand Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(ManageProductRepository $manageProductRepository,
-                         MediaEngine $mediaEngine,
-                         ManageStoreRepository $manageStoreRepository,
-                         ManageCategoryEngine $manageCategoryEngine,
-                         BrandRepository $manageBrandRepository,
-                         ProductRepository $productRepository)
-    {
+    public function __construct(
+        ManageProductRepository $manageProductRepository,
+        MediaEngine $mediaEngine,
+        ManageStoreRepository $manageStoreRepository,
+        ManageCategoryEngine $manageCategoryEngine,
+        BrandRepository $manageBrandRepository,
+        ProductRepository $productRepository
+    ) {
+    
         $this->manageProductRepository = $manageProductRepository;
         $this->mediaEngine = $mediaEngine;
         $this->manageStoreRepository = $manageStoreRepository;
@@ -144,28 +146,28 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                                  $image = $input['image'];
 
             // Check if selected product image thumbnail exist
-            if (!$this->mediaEngine->isUserTempMedia($image)) {
-                return 18;
-            }
+                                if (!$this->mediaEngine->isUserTempMedia($image)) {
+                                    return 18;
+                                }
 
             // Check if categories exist
-            if (empty($input['categories']) or !is_array($input['categories'])) {
-                return 4;
-            }
+                                if (empty($input['categories']) or !is_array($input['categories'])) {
+                                    return 4;
+                                }
 
             // Check if product added then store image of product
-            if ($productID = $this->manageProductRepository->store($input)) {
-                if (!empty($productID)) {
-                    $this->productId = $productID;
-                }
+                                if ($productID = $this->manageProductRepository->store($input)) {
+                                    if (!empty($productID)) {
+                                        $this->productId = $productID;
+                                    }
 
-                 // Check if product image added
-                if ($this->mediaEngine->storeProductMedia($image, $productID, null, true)) {
-                    return 1;
-                }
+                                     // Check if product image added
+                                    if ($this->mediaEngine->storeProductMedia($image, $productID, null, true)) {
+                                        return 1;
+                                    }
 
-                return 2;
-            }
+                                    return 2;
+                                }
 
                                  return 2;
                              });
@@ -232,7 +234,6 @@ class ManageProductEngine implements ManageProductEngineBlueprint
         
         // Check if parent category id exist
         if (!__isEmpty($parentCategoryId)) {
-
             // Get parent category data
             $parentData = $this->manageCategoryEngine
                                ->getRelatedCategoryData($parentCategoryId);
@@ -415,11 +416,11 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                              ->processTransaction(function () use ($product) {
 
             // Check if product deleted & its directory deleted successfully
-            if ($this->manageProductRepository->delete($product)) {
-                $this->mediaEngine->processDeleteProductMedias($product->id);
+                                if ($this->manageProductRepository->delete($product)) {
+                                    $this->mediaEngine->processDeleteProductMedias($product->id);
 
-                return 1; // success reaction
-            }
+                                    return 1; // success reaction
+                                }
 
                                  return 2; // error reaction
                              });
@@ -470,7 +471,7 @@ class ManageProductEngine implements ManageProductEngineBlueprint
         // Get product categories
         $product['categories'] = $this->manageProductRepository
                                          ->fetchProductCategoriesByProductID(
-                                            $productID
+                                             $productID
                                          );
 
         // add dash(-) in the place of space
@@ -532,71 +533,71 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                              ->processTransaction(function () use ($productID, $input) {
 
             // Get product detail
-            $product = $this->manageProductRepository->fetchByID($productID);
+                                $product = $this->manageProductRepository->fetchByID($productID);
 
             // Check if product exist
-            if (empty($product)) {
-                return 18;
-            }
+                                if (empty($product)) {
+                                    return 18;
+                                }
 
             // Check if categories exist
-            if (empty($input['categories']) or !is_array($input['categories'])) {
-                return 4;
-            }
+                                if (empty($input['categories']) or !is_array($input['categories'])) {
+                                    return 4;
+                                }
 
             // Check if product image selected
-            if (isset($input['image'])) {
-                $image = $input['image'];
+                                if (isset($input['image'])) {
+                                    $image = $input['image'];
 
-                // Check if selected product image thumbnail exist
-                if (!$this->mediaEngine->isUserTempMedia($image)) {
-                    return 3;
-                }
+                                    // Check if selected product image thumbnail exist
+                                    if (!$this->mediaEngine->isUserTempMedia($image)) {
+                                        return 3;
+                                    }
 
-                $newImageThumbnail = $this->mediaEngine
+                                    $newImageThumbnail = $this->mediaEngine
                                           ->storeProductMedia(
-                                                $image,
-                                                $productID,
-                                                $product->thumbnail,
-                                                true // generate thumb
-                                            );
+                                              $image,
+                                              $productID,
+                                              $product->thumbnail,
+                                              true // generate thumb
+                                          );
 
-                // Check if image file moved to product media
-                if (!$newImageThumbnail) {
-                    return 2; // error reaction
-                }
+                                                        // Check if image file moved to product media
+                                    if (!$newImageThumbnail) {
+                                        return 2; // error reaction
+                                    }
 
-                $input['image'] = $newImageThumbnail;
-            }
+                                                        $input['image'] = $newImageThumbnail;
+                                }
 
                                  $inputRelatedProducts = $input['related_products'];
                                  $deleteRelatedProducts = [];
                                  $newRelatedProducts = [];
                                  $existingRelatedProducts = $this->manageProductRepository
                                                ->fetchRelatedProductsByProductID(
-                                                $productID
-                                            );
+                                                   $productID
+                                               );
 
-                                 if (empty($inputRelatedProducts)
-                and !empty($existingRelatedProducts)) {
-                                     $deleteRelatedProducts = $existingRelatedProducts;
-                                 } elseif (!empty($inputRelatedProducts)
-                and empty($existingRelatedProducts)) {
-                                     $newRelatedProducts = $inputRelatedProducts;
-                                 } elseif (!empty($inputRelatedProducts)
-                and !empty($existingRelatedProducts)) {
-                                     foreach ($inputRelatedProducts as $inputRelatedProduct) {
-                                         if (!in_array($inputRelatedProduct, $existingRelatedProducts)) {
-                                             array_push($newRelatedProducts, $inputRelatedProduct);
-                                         }
-                                     }
+                                if (empty($inputRelatedProducts)
+                                and !empty($existingRelatedProducts)) {
+                                    $deleteRelatedProducts = $existingRelatedProducts;
+                                } elseif (!empty($inputRelatedProducts)
+                                and empty($existingRelatedProducts)) {
+                                    $newRelatedProducts = $inputRelatedProducts;
+                                } elseif (!empty($inputRelatedProducts)
+                                and !empty($existingRelatedProducts)) {
+                                    foreach ($inputRelatedProducts as $inputRelatedProduct) {
+                                        if (!in_array($inputRelatedProduct, $existingRelatedProducts)) {
+                                            array_push($newRelatedProducts, $inputRelatedProduct);
+                                        }
+                                    }
 
-                                     foreach ($existingRelatedProducts as $existingRelatedProduct) {
-                                         if (!in_array($existingRelatedProduct, $inputRelatedProducts)) {
-                                             array_push($deleteRelatedProducts, $existingRelatedProduct);
-                                         }
-                                     }
-                                 }
+                                    foreach ($existingRelatedProducts as $existingRelatedProduct) {
+                                        if (!in_array($existingRelatedProduct, $inputRelatedProducts)) {
+                                            array_push($deleteRelatedProducts, $existingRelatedProduct);
+                                        }
+                                    }
+                                }
 
                                  $input['related_products'] = $newRelatedProducts;
                                  $input['delete_related_products'] = $deleteRelatedProducts;
@@ -606,45 +607,44 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                                  $newCategories = [];
                                  $existingCategories = $this->manageProductRepository
                                           ->fetchProductCategoriesByProductID(
-                                                $productID
-                                            );
+                                              $productID
+                                          );
 
             // Check existance and input category
-            if (empty($inputCategories)
-                and !empty($existingCategories)) {
-                $deleteCategories = $existingCategories;
+                                if (empty($inputCategories)
+                                and !empty($existingCategories)) {
+                                    $deleteCategories = $existingCategories;
 
-            // Check if existingCategories are empty
-            } elseif (!empty($inputCategories)
-                and empty($existingCategories)) {
-                $newCategories = $inputCategories;
+                                                    // Check if existingCategories are empty
+                                } elseif (!empty($inputCategories)
+                                and empty($existingCategories)) {
+                                    $newCategories = $inputCategories;
 
-            // Check if both are not empty
-            } elseif (!empty($inputCategories)
-                and !empty($existingCategories)) {
+                                                    // Check if both are not empty
+                                } elseif (!empty($inputCategories)
+                                and !empty($existingCategories)) {
+                                    // Check input category exist in existingCategories array or not
+                                    foreach ($inputCategories as $inputCategory) {
+                                        if (!in_array($inputCategory, $existingCategories)) {
+                                            array_push($newCategories, $inputCategory);
+                                        }
+                                    }
 
-                // Check input category exist in existingCategories array or not
-                foreach ($inputCategories as $inputCategory) {
-                    if (!in_array($inputCategory, $existingCategories)) {
-                        array_push($newCategories, $inputCategory);
-                    }
-                }
-
-                // Check existing category is in inputCategories array or not
-                foreach ($existingCategories as $existingCategory) {
-                    if (!in_array($existingCategory, $inputCategories)) {
-                        array_push($deleteCategories, $existingCategory);
-                    }
-                }
-            }
+                                    // Check existing category is in inputCategories array or not
+                                    foreach ($existingCategories as $existingCategory) {
+                                        if (!in_array($existingCategory, $inputCategories)) {
+                                            array_push($deleteCategories, $existingCategory);
+                                        }
+                                    }
+                                }
 
                                  $input['categories'] = $newCategories;
                                  $input['delete_categories'] = $deleteCategories;
 
             // Check if product updated
-            if ($this->manageProductRepository->update($product, $input)) {
-                return 1;
-            }
+                                if ($this->manageProductRepository->update($product, $input)) {
+                                    return 1;
+                                }
 
                                  return 2;
                              });
@@ -667,35 +667,35 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                              ->processTransaction(function () use ($productID, $input) {
 
             // fetch product
-            $product = $this->manageProductRepository->fetchByID($productID);
+                                $product = $this->manageProductRepository->fetchByID($productID);
 
             // Check if product exist
-            if (empty($product)) {
-                return 18;
-            }
+                                if (empty($product)) {
+                                    return 18;
+                                }
 
                                  $image = $input['image'];
 
             // Check if selected product image thumbnail exist
-            if (!$this->mediaEngine->isUserTempMedia($image)) {
-                return 3;
-            }
+                                if (!$this->mediaEngine->isUserTempMedia($image)) {
+                                    return 3;
+                                }
 
                                  $newImageThumbnail = $this->mediaEngine
                                       ->storeProductMedia($image, $productID, null, 'productSliderImage');
 
             // Check if image file moved to product media
-            if (!$newImageThumbnail) {
-                return 2; // error reaction
-            }
+                                if (!$newImageThumbnail) {
+                                    return 2; // error reaction
+                                }
 
                                  $input['file_name'] = $newImageThumbnail;
 
             // Check if prdouct image added
-            if ($this->manageProductRepository
-                     ->storeImage($productID, $input)) {
-                return 1;
-            }
+                                if ($this->manageProductRepository
+                                ->storeImage($productID, $input)) {
+                                    return 1;
+                                }
 
                                  return 2;
                              });
@@ -741,18 +741,19 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                                  ->fetchImage($productID, $imageID);
 
             // Check if product image exist
-            if (empty($productImage)) {
-                return 18;
-            }
+                                if (empty($productImage)) {
+                                    return 18;
+                                }
 
             // Check if prdouct image deleted
-            if ($this->manageProductRepository->deleteImage($productImage)) {
-                $this->mediaEngine->processDeleteProductMediaImage($productID,
+                                if ($this->manageProductRepository->deleteImage($productImage)) {
+                                    $this->mediaEngine->processDeleteProductMediaImage(
+                                        $productID,
                                         $productImage->file_name
                                     );
 
-                return 1;
-            }
+                                                        return 1;
+                                }
 
                                  return 2;
                              });
@@ -843,27 +844,27 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                              ->processTransaction(function () use ($productID, $input) {
 
             // Check if product exist
-            if ($this->manageProductRepository
-                     ->fetchCountByID($productID) == 0) {
-                return 18;
-            }
+                                if ($this->manageProductRepository
+                                ->fetchCountByID($productID) == 0) {
+                                    return 18;
+                                }
 
             // Check if values empty
-            if (empty($input['values'])) {
-                return 4;
-            }
+                                if (empty($input['values'])) {
+                                    return 4;
+                                }
 
             // Check if product option name already taken by any option
-            if ($this->manageProductRepository
-                     ->fetchProductOptionCount($productID, $input['name']) > 0) {
-                return 3;
-            }
+                                if ($this->manageProductRepository
+                                ->fetchProductOptionCount($productID, $input['name']) > 0) {
+                                    return 3;
+                                }
 
             // Check if prdouct option added
-            if ($this->manageProductRepository
-                     ->storeOption($productID, $input)) {
-                return 1;
-            }
+                                if ($this->manageProductRepository
+                                ->storeOption($productID, $input)) {
+                                    return 1;
+                                }
 
                                  return 2;
                              });
@@ -885,18 +886,18 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                              ->processTransaction(function () use ($productID, $optionID) {
 
             // Get product option
-            $productOption = $this->manageProductRepository
+                                $productOption = $this->manageProductRepository
                                   ->fetchOption($productID, $optionID);
 
             // Check if product option exist
-            if (empty($productOption)) {
-                return 18;
-            }
+                                if (empty($productOption)) {
+                                    return 18;
+                                }
 
             // Check if product option deleted
-            if ($this->manageProductRepository->deleteOption($productOption)) {
-                return 1;
-            }
+                                if ($this->manageProductRepository->deleteOption($productOption)) {
+                                    return 1;
+                                }
 
                                  return 2;
                              });
@@ -991,9 +992,12 @@ class ManageProductEngine implements ManageProductEngineBlueprint
      *
      * @return array
      *---------------------------------------------------------------- */
-    public function processDeleteProductOptionValue($productID,
-        $optionID, $optionValueID)
-    {
+    public function processDeleteProductOptionValue(
+        $productID,
+        $optionID,
+        $optionValueID
+    ) {
+    
         $optionValue = $this->manageProductRepository
                             ->fetchOptionValue($optionID, $optionValueID);
 
@@ -1027,22 +1031,22 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                                   ->fetchOption($productID, $optionID);
 
             // Check if product option exist
-            if (empty($productOption)) {
-                return 18;
-            }
+                                if (empty($productOption)) {
+                                    return 18;
+                                }
 
                                  $optionValues = $input['values'];
 
             // Check if option values empty
-            if (empty($optionValues)) {
-                return 3;
-            }
+                                if (empty($optionValues)) {
+                                    return 3;
+                                }
 
             // Check if product option values added
-            if ($this->manageProductRepository
-                     ->storeOptionValues($optionID, $optionValues)) {
-                return 1;
-            }
+                                if ($this->manageProductRepository
+                                ->storeOptionValues($optionID, $optionValues)) {
+                                    return 1;
+                                }
 
                                  return 2;
                              });
@@ -1067,50 +1071,49 @@ class ManageProductEngine implements ManageProductEngineBlueprint
                                   ->fetchOption($productID, $optionID);
 
             // Check if product option exist
-            if (empty($productOption)) {
-                return 18;
-            }
+                                if (empty($productOption)) {
+                                    return 18;
+                                }
 
             // Assign input data to optionValues variable
-            $optionValues = $input['values'];
+                                $optionValues = $input['values'];
 
                                  $newInputValues = [];
 
             // Check if option values exist
             // then assign a detail and push in array
-            foreach ($optionValues as $optionValue) {
+                                foreach ($optionValues as $optionValue) {
+                                    // Check option value is empty
+                                    if (empty($optionValue['id'])) {
+                                        $addonPrice = 0;
+                                        if (!empty($optionValue['addon_price'])) {
+                                            $addonPrice = $optionValue['addon_price'];
+                                        }
 
-                // Check option value is empty
-                if (empty($optionValue['id'])) {
-                    $addonPrice = 0;
-                    if (!empty($optionValue['addon_price'])) {
-                        $addonPrice = $optionValue['addon_price'];
-                    }
+                                        $optionId = '';
+                                        if (!empty($optionValue['id'])) {
+                                            $optionId = $optionValue['id'];
+                                        }
 
-                    $optionId = '';
-                    if (!empty($optionValue['id'])) {
-                        $optionId = $optionValue['id'];
-                    }
-
-                    $newInputValues[] = [
-                        'id' => $optionId,
-                        'name' => $optionValue['name'],
-                        'addon_price' => $addonPrice,
-                    ];
-                }
-            }
+                                        $newInputValues[] = [
+                                            'id' => $optionId,
+                                            'name' => $optionValue['name'],
+                                            'addon_price' => $addonPrice,
+                                        ];
+                                    }
+                                }
 
                                  $productOptionValue = $this->manageProductRepository
                                          ->fetchOptionValues($optionID)->toArray();
 
             // Check Product option and option values and update data
-            if ((!empty($productOption)) and (empty($productOptionValue))) {
-                $inputValues = $this->manageProductRepository
+                                if ((!empty($productOption)) and (empty($productOptionValue))) {
+                                    $inputValues = $this->manageProductRepository
                                     ->updateNewOptionValues($productID, $optionID, $newInputValues);
-                if ($inputValues) {
-                    return 1; //success
-                }
-            }
+                                    if ($inputValues) {
+                                        return 1; //success
+                                    }
+                                }
 
                                  $inputValues = $this->manageProductRepository
                                 ->updateNewOptionValues($productID, $optionID, $newInputValues);
@@ -1119,32 +1122,32 @@ class ManageProductEngine implements ManageProductEngineBlueprint
 
             // Check if option values exist
             // then assign a detail and push in array
-            foreach ($optionValues as $optionValue) {
-                if (!empty($optionValue['id'])) {
-                    $addonPrice = 0;
-                    if (!empty($optionValue['addon_price'])) {
-                        $addonPrice = $optionValue['addon_price'];
-                    }
+                                foreach ($optionValues as $optionValue) {
+                                    if (!empty($optionValue['id'])) {
+                                        $addonPrice = 0;
+                                        if (!empty($optionValue['addon_price'])) {
+                                            $addonPrice = $optionValue['addon_price'];
+                                        }
 
-                    $valueInputs[] = [
-                        'id' => $optionValue['id'],
-                        'name' => $optionValue['name'],
-                        'addon_price' => $addonPrice,
-                    ];
-                }
-            }
+                                        $valueInputs[] = [
+                                            'id' => $optionValue['id'],
+                                            'name' => $optionValue['name'],
+                                            'addon_price' => $addonPrice,
+                                        ];
+                                    }
+                                }
 
             // Check if product option values updated
-            $updateValues = $this->manageProductRepository
+                                $updateValues = $this->manageProductRepository
                                  ->updateOptionValues($productID, $optionID, $valueInputs);
 
-                                 if ($inputValues and $updateValues) {
-                                     return 1; //success
-                                 } elseif ($inputValues or $updateValues) {
-                                     return 1; // success
-                                 } else {
-                                     return 2; // failed
-                                 }
+                                if ($inputValues and $updateValues) {
+                                    return 1; //success
+                                } elseif ($inputValues or $updateValues) {
+                                    return 1; // success
+                                } else {
+                                    return 2; // failed
+                                }
                              });
 
         return __engineReaction($reactionCode);
@@ -1182,10 +1185,10 @@ class ManageProductEngine implements ManageProductEngineBlueprint
     public function processAddProductSpecificationValues($productID, $input)
     {
         // Check if product option values added
-            if ($this->manageProductRepository
+        if ($this->manageProductRepository
                      ->storeSpecificationValues($productID, $input)) {
-                return __engineReaction(1);
-            }
+            return __engineReaction(1);
+        }
 
         return __engineReaction(2);
     }

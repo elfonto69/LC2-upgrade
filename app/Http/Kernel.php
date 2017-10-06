@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \App\Yantrana\Middleware\VerifyCsrfToken::class
     ];
 
@@ -34,6 +35,7 @@ class Kernel extends HttpKernel
 
         'api' => [
             'throttle:60,1',
+            'bindings',
         ],
     ];
 
@@ -50,9 +52,9 @@ class Kernel extends HttpKernel
         'auth.admin'    => \App\Yantrana\Middleware\AdminMiddleware::class,
         
        // originals from laravel
-        // 'auth' => \App\Http\Middleware\Authenticate::class,
-        // 'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        // 'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
+        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
         // 'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         // 'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];

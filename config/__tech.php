@@ -38,7 +38,7 @@ $techAppConfig = [
     ------------------------------------------------------------------------- */
 
     'aoc'  => 'AOC', // treated as Country Code
-    'aoc_id'  => 999, // id in countries table 
+    'aoc_id'  => 999, // id in countries table
 
     /* shop logo name
     ------------------------------------------------------------------------- */
@@ -48,12 +48,12 @@ $techAppConfig = [
     /* Email Config
     ------------------------------------------------------------------------- */
 
-    'mail_from'         =>  [ 
+    'mail_from'         =>  [
         env('MAIL_FROM_ADD', 'your@domain.com'),
         env('MAIL_FROM_NAME', 'E-Mail Service')
     ],
 
-    /* Account related 
+    /* Account related
     ------------------------------------------------------------------------- */
 
     'account' => [
@@ -92,7 +92,7 @@ $techAppConfig = [
     ------------------------------------------------------------------------- */
 
     'user' => [
-        'status_codes' => [ 
+        'status_codes' => [
             1, // active
             2, // deactive
             3, // banned
@@ -105,39 +105,39 @@ $techAppConfig = [
     ------------------------------------------------------------------------- */
 
     'orders' => [
-        'type' => [ 
+        'type' => [
             1 => ('Order by Email'),
             2 => ('PayPal/Stripe')
         ],
-        'payment_methods' => [ 
+        'payment_methods' => [
             1 => ('PayPal'), // PayPal IPN Payments
             2 => ('Check'),
             3 => ('Bank Transfer'),
-            4 => ('COD'),    
+            4 => ('COD'),
             5 => ('Other'),
             6 => ('Stripe'),
-            7 => ('PayPal Sandbox'), 
-            8 => ('Stripe Test Mode') 
+            7 => ('PayPal Sandbox'),
+            8 => ('Stripe Test Mode')
         ],
-        'payment_status' => [ 
+        'payment_status' => [
             1 => ('Awaiting Payment'), // PayPal IPN Payments
             2 => ('Completed'),
             3 => ('Payment Failed'),
             4 => ('Pending'),
             5 => ('Refunded')
         ],
-        'payment_type' => [ 
+        'payment_type' => [
             1 => ('Deposit'),
             2 => ('Refund')
         ],
-        'products' => [ 
+        'products' => [
             1 => ('Ordered'),
             2 => ('Confirmed & Available'),
             3 => ('Cancelled'),
             4 => ('Not Available'),
             5 => ('Not Shippable')
         ],
-        'status_codes' => [ 
+        'status_codes' => [
             1 => ('New'),
             2 => ('Processing'),
             3 => ('Cancelled'),
@@ -150,7 +150,7 @@ $techAppConfig = [
             //10 => ('Invalid'),
             11 => ('Delivered')
         ],
-        'date_filter_code' => [ 
+        'date_filter_code' => [
             1 => ('Placed'),
             2 => ('Updated')
         ],
@@ -236,7 +236,7 @@ $techAppConfig = [
             // Paypal zero-decimal currencies
             'HUF' =>  'Hungarian Forint',
             'TWD' =>  'New Taiwan Dollar',
-        ], 
+        ],
         
         'options'   => [
             'AUD' => ('Australian Dollar'),
@@ -267,128 +267,128 @@ $techAppConfig = [
         'details'    => [
 
             'AUD' => [
-                'name'   => ("Australian Dollar"), 
-                'symbol' => "A$", 
+                'name'   => ("Australian Dollar"),
+                'symbol' => "A$",
                 'ASCII'  => "A&#36;"
             ],
                  
             'CAD' => [
-                'name'   => ("Canadian Dollar"), 
-                'symbol' => "$", 
+                'name'   => ("Canadian Dollar"),
+                'symbol' => "$",
                 'ASCII'  => "&#36;"
             ],
 
             'CZK' => [
-                'name'   => ("Czech Koruna"), 
-                'symbol' => "Kč", 
+                'name'   => ("Czech Koruna"),
+                'symbol' => "Kč",
                 'ASCII'  => "K&#x10d;"
             ],
 
             'DKK' => [
-                'name'   => ("Danish Krone"), 
-                'symbol' => "Kr", 
+                'name'   => ("Danish Krone"),
+                'symbol' => "Kr",
                 'ASCII'  => "K&#x72;"
             ],
 
             'EUR' => [
-                'name'   => ("Euro"), 
-                'symbol' => "€", 
+                'name'   => ("Euro"),
+                'symbol' => "€",
                 'ASCII'  => "&euro;"
              ],
 
             'HKD' => [
-                'name'   => ("Hong Kong Dollar"), 
-                'symbol' => "$", 
+                'name'   => ("Hong Kong Dollar"),
+                'symbol' => "$",
                 'ASCII'  => "&#36;"
             ],
 
             'HUF' => [
-                'name'   => ("Hungarian Forint"), 
-                'symbol' => "Ft", 
+                'name'   => ("Hungarian Forint"),
+                'symbol' => "Ft",
                 'ASCII'  => "F&#x74;"
             ],
 
             'ILS' => [
-                'name'   => ("Israeli New Sheqel"), 
-                'symbol' => "₪", 
+                'name'   => ("Israeli New Sheqel"),
+                'symbol' => "₪",
                 'ASCII'  => "&#8361;"
             ],
 
             'JPY' => [
-                'name'   => ("Japanese Yen"), 
-                'symbol' => "¥", 
+                'name'   => ("Japanese Yen"),
+                'symbol' => "¥",
                 'ASCII'  => "&#165;"
             ],
 
             'MXN' => [
-                'name'   => ("Mexican Peso"), 
-                'symbol' => "$", 
+                'name'   => ("Mexican Peso"),
+                'symbol' => "$",
                 'ASCII'  => "&#36;"
             ],
 
             'NOK' => [
-                'name'   => ("Norwegian Krone"), 
-                'symbol' => "Kr", 
+                'name'   => ("Norwegian Krone"),
+                'symbol' => "Kr",
                 'ASCII'  => "K&#x72;"
             ],
 
             'NZD' => [
-                'name'   => ("New Zealand Dollar"), 
-                'symbol' => "$", 
+                'name'   => ("New Zealand Dollar"),
+                'symbol' => "$",
                 'ASCII'  => "&#36;"
             ],
 
             'PHP' => [
-                'name'   => ("Philippine Peso"), 
-                'symbol' => "₱", 
+                'name'   => ("Philippine Peso"),
+                'symbol' => "₱",
                 'ASCII'  => "&#8369;"
             ],
 
             'PLN' => [
-                'name'   => ("Polish Zloty"), 
-                'symbol' => "zł", 
+                'name'   => ("Polish Zloty"),
+                'symbol' => "zł",
                 'ASCII'  => "z&#x142;"
             ],
 
             'GBP' => [
-                'name'   => ("Pound Sterling"), 
-                'symbol' => "£", 
+                'name'   => ("Pound Sterling"),
+                'symbol' => "£",
                 'ASCII'  => "&#163;"
             ],
 
             'SGD' => [
-                'name'   => ("Singapore Dollar"), 
-                'symbol' => "$", 
+                'name'   => ("Singapore Dollar"),
+                'symbol' => "$",
                 'ASCII'  => "&#36;"
             ],
 
             'SEK' => [
-                'name'   => ("Swedish Krona"), 
-                'symbol' => "kr", 
+                'name'   => ("Swedish Krona"),
+                'symbol' => "kr",
                 'ASCII'  => "K&#x72;"
             ],
 
             'CHF' => [
-                'name'   => ("Swiss Franc"), 
-                'symbol' => "CHF", 
+                'name'   => ("Swiss Franc"),
+                'symbol' => "CHF",
                 'ASCII'  => "&#x43;&#x48;&#x46;"
             ],
 
             'TWD' => [
-                'name'   => ("Taiwan New Dollar"), 
-                'symbol' => "NT$", 
+                'name'   => ("Taiwan New Dollar"),
+                'symbol' => "NT$",
                 'ASCII'  => "NT&#36;"
             ],
 
             'THB' => [
-                'name'   => ("Thai Baht"), 
-                'symbol' => "฿", 
+                'name'   => ("Thai Baht"),
+                'symbol' => "฿",
                 'ASCII'  => "&#3647;"
             ],
 
             'USD' => [
-                'name'   => ("U.S. Dollar"), 
-                'symbol' => "$", 
+                'name'   => ("U.S. Dollar"),
+                'symbol' => "$",
                 'ASCII'  => "&#36;"
             ]
         ],
@@ -656,7 +656,7 @@ $techAppConfig = [
                 'default'       => 'Add terms & conditions'
             ],
             'facebook_client_id'    => [
-                'key'           => 'facebook_client_id',              
+                'key'           => 'facebook_client_id',
                 'data_type'     => 1,    // string
                 'default'       => ''
             ],
@@ -820,7 +820,7 @@ $techAppConfig = [
         ]
     ],
 
-    /* Shipping 
+    /* Shipping
     ------------------------------------------------------------------------- */
     'shipping' => [
         'type' => [
@@ -854,7 +854,7 @@ $techAppConfig = [
         ]
     ],
 
-    /* Tax 
+    /* Tax
     ------------------------------------------------------------------------- */
     'tax' => [
         'type' => [
@@ -868,7 +868,7 @@ $techAppConfig = [
         ]
     ],
 
-    /* Report duration 
+    /* Report duration
     ------------------------------------------------------------------------- */
     'report_duration' => [
             1 => ('Current Month'),
@@ -877,9 +877,9 @@ $techAppConfig = [
             4 => ('Last Week'),
             5 => ('Today'),
             6 => ('Yesterday'),
-            7 => ('Last Year'), 
-            8 => ('Current Year'), 
-            9 => ('Last 30 Days'), 
+            7 => ('Last Year'),
+            8 => ('Current Year'),
+            9 => ('Last 30 Days'),
             10 => ('Custom')
     ],
 
@@ -898,4 +898,4 @@ $techAppConfig = [
     ],
 ];
 
-return array_merge( $techConfig, $techAppConfig );
+return array_merge($techConfig, $techAppConfig);

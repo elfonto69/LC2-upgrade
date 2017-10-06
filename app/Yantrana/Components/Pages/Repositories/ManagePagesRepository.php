@@ -185,7 +185,6 @@ class ManagePagesRepository extends BaseRepository implements ManagePagesReposit
     {
         // Check if pages list order updated
         if ($this->page->batchUpdate($pagesData, 'id')) {
-
             //activityLog('ID of '.$page->id.' pages list order updated.');
 
             return true;

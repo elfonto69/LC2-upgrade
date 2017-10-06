@@ -133,24 +133,26 @@ class ManagePagesController extends BaseController
     public function getPagesType()
     {
         $pageType = getSelectizeOptions(
-                    '__tech.pages_types',
-                    '__tech.pages_type_codes'
-                );
+            '__tech.pages_types',
+            '__tech.pages_type_codes'
+        );
 
         $pageLinks = getSelectizeOptions(
-                    '__tech.link_target',
-                    '__tech.link_target_array'
-                );
+            '__tech.link_target',
+            '__tech.link_target_array'
+        );
 
         // get engine reaction
-        return __processResponse(1,
-                    [],
-                    [
+        return __processResponse(
+            1,
+            [],
+            [
                         'type' => $pageType,
                         'link' => $pageLinks,
                         'fancytree_data' => $this->managePagesEngine
                                                         ->getPagesData(),
-                 ]);
+                    ]
+        );
     }
 
     /**

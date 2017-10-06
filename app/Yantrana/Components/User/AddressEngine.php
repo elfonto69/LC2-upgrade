@@ -54,12 +54,14 @@ class AddressEngine implements AddressEngineBlueprint
      *
      * @param AddressRepository $addressRepository - Address Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(AddressRepository $addressRepository,
+    public function __construct(
+        AddressRepository $addressRepository,
         ShippingRepository $shippingRepository,
         ManageProductRepository $manageProductRepository,
         TaxRepository $taxRepository,
-        SupportRepository $supportRepository)
-    {
+        SupportRepository $supportRepository
+    ) {
+    
         $this->addressRepository = $addressRepository;
         $this->shippingRepository = $shippingRepository;
         $this->manageProductRepository = $manageProductRepository;
@@ -139,7 +141,6 @@ class AddressEngine implements AddressEngineBlueprint
 
         // all address push in addresses array
         foreach ($getAddress as $address) {
-
             // get country name
             $country = $this->supportRepository
                               ->fetchCountry($address->countries__id);
@@ -222,9 +223,9 @@ class AddressEngine implements AddressEngineBlueprint
         $address = $this->addressRepository->store($request);
 
         // if address store successfully
-           if ($address) {
-               return  __engineReaction(1);
-           }
+        if ($address) {
+            return  __engineReaction(1);
+        }
 
         return  __engineReaction(2);
     }
@@ -351,7 +352,6 @@ class AddressEngine implements AddressEngineBlueprint
 
         // all address push in addresses array
         foreach ($getAddresses as $address) {
-
             // get country name
             $country = $this->supportRepository
                               ->fetchCountry($address->countries__id);
@@ -426,7 +426,6 @@ class AddressEngine implements AddressEngineBlueprint
         $getPrimaryAddress = [];
 
         if (!empty($primaryAddress)) {
-
             // fetch primary address of user
             $countryName = $this->supportRepository
                                 ->fetchCountry($primaryAddress->countries__id);
@@ -464,7 +463,6 @@ class AddressEngine implements AddressEngineBlueprint
         $getAddress = [];
 
         if (!empty($address)) {
-
             // fetch primary address of user
             $countryName = $this->supportRepository
                                 ->fetchCountry($address->countries__id);
@@ -502,7 +500,6 @@ class AddressEngine implements AddressEngineBlueprint
         $getAddress = [];
 
         if (!empty($address)) {
-
             // fetch primary address of user
             $countryName = $this->supportRepository
                                 ->fetchCountry($address->countries__id);
@@ -584,7 +581,6 @@ class AddressEngine implements AddressEngineBlueprint
 
         // check if address is available
         if (!__isEmpty($address)) {
-
            // fetch primary address of user
             $countryName = $this->supportRepository
                                 ->fetchCountry($address->countries__id);

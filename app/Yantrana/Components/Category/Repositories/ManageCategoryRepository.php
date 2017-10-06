@@ -32,9 +32,12 @@ class ManageCategoryRepository extends BaseRepository
      *
      * @param Category $category - Category Model
      *-----------------------------------------------------------------------*/
-    public function __construct(Category $category, Product $product,
-     ProductCategory $productCategory)
-    {
+    public function __construct(
+        Category $category,
+        Product $product,
+        ProductCategory $productCategory
+    ) {
+    
         $this->category = $category;
         $this->product = $product;
         $this->productCategory = $productCategory;
@@ -287,7 +290,6 @@ class ManageCategoryRepository extends BaseRepository
         $password = Auth::user()->password;
 
         if (Hash::check($input['password'], $password) and isAdmin()) {
-
             // Take category related product & his childrens for delete it.!
             if ($this->categoryDelete($category->id)) {
                 return 1;
@@ -332,7 +334,7 @@ class ManageCategoryRepository extends BaseRepository
                     $productExistInCat[] = $category->pivot->categories_id;
                 }
                 //Take count of existing product.
-               $productExistInCatCount = count($productExistInCat);
+                $productExistInCatCount = count($productExistInCat);
 
                 if ($productExistInCatCount > 1) {
                     $diffCats = array_diff($productExistInCat, $catArray);
@@ -353,7 +355,7 @@ class ManageCategoryRepository extends BaseRepository
                     }
                 } else {
                     //All delete parent of childrens.
-                $deleteProducts[] = $catProduct->id;
+                    $deleteProducts[] = $catProduct->id;
                 }
             }
 
@@ -385,7 +387,7 @@ class ManageCategoryRepository extends BaseRepository
             if (!empty($deleteProductsRelationship)) {
                 $relatedCats = $deleteProductsRelationship['product'];
               //delete parent category & childrens & related products in ProductCategory tables
-              $deletedSuccess = $this->productCategory->whereIn('products_id', $relatedCats)
+                $deletedSuccess = $this->productCategory->whereIn('products_id', $relatedCats)
                                     ->whereIn('categories_id', $deleteProductsRelationship['cat'])
                                     ->delete();
 

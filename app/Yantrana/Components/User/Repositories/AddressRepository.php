@@ -45,19 +45,19 @@ class AddressRepository extends BaseRepository implements AddressRepositoryBluep
         return $this->addressModel
                     ->where($addressWhere)
                     ->select(
-                             'id',
-                             'type',
-                             'users_id',
-                             'address_line_1',
-                             'address_line_2',
-                             'primary',
-                             'city',
-                             'state',
-                             'country',
-                             'pin_code',
-                             'created_at',
-                             'countries__id'
-                            )->get();
+                        'id',
+                        'type',
+                        'users_id',
+                        'address_line_1',
+                        'address_line_2',
+                        'primary',
+                        'city',
+                        'state',
+                        'country',
+                        'pin_code',
+                        'created_at',
+                        'countries__id'
+                    )->get();
     }
 
     /**
@@ -147,7 +147,6 @@ class AddressRepository extends BaseRepository implements AddressRepositoryBluep
     {
         //check if checkbox true or false
         if ($address['primary'] == 0) {
-
             //fetch address data
             $addressWhere = [
                 'primary' => 1,
@@ -185,16 +184,16 @@ class AddressRepository extends BaseRepository implements AddressRepositoryBluep
         return $this->addressModel
                     ->where($addressWhere)
                     ->select(
-                             'id',
-                             'type',
-                             'address_line_1',
-                             'address_line_2',
-                             'city',
-                             'state',
-                             'country',
-                             'pin_code',
-                             'countries__id'
-                            )->get();
+                        'id',
+                        'type',
+                        'address_line_1',
+                        'address_line_2',
+                        'city',
+                        'state',
+                        'country',
+                        'pin_code',
+                        'countries__id'
+                    )->get();
     }
 
     /**
@@ -207,7 +206,6 @@ class AddressRepository extends BaseRepository implements AddressRepositoryBluep
     {
         //check if checkbox true or false
         if ($updateData['primary']) {
-
             //fetch address data
             $addressWhere = [
                 'primary' => 1,

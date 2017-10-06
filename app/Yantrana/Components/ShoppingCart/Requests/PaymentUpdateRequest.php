@@ -33,6 +33,6 @@ class PaymentUpdateRequest extends BaseRequest
                'paymentMethod' => 'required',
                'fee' => 'numeric',
                'comment' => 'required|min:6',
-       ];
+        ];
     }
 }

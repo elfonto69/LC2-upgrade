@@ -24,62 +24,61 @@ class Breadcrumb
         $breadCrumb = [];
 
         switch (true) {
-
             case $dataType == 'products':
                 $breadCrumb = $this->products($dataType);
-            break;
+                break;
 
             case $dataType == 'home':
                 $breadCrumb = $this->home($dataType);
-            break;
+                break;
 
             case $dataType == 'categories':
                 $breadCrumb = $this->categoryProduct($dataType, $id);
-            break;
+                break;
 
             case $dataType == 'featured':
                 $breadCrumb = $this->featuredProducts($dataType);
-            break;
+                break;
 
             case $dataType == 'productSearch':
                 $breadCrumb = $this->productSearch($dataType, $options['searchTerm']);
-            break;
+                break;
 
             case $dataType == 'brandProduct':
                 $breadCrumb = $this->brandRelatedProduct($dataType, $id);
-            break;
+                break;
 
             case $dataType == 'brand':
                 $breadCrumb = $this->brand($dataType);
-            break;
+                break;
 
             case $dataType == 'productDetails':
                 $breadCrumb = $this->productDetails($dataType, $id, $options);
-            break;
+                break;
 
             case $dataType == 'pages':
                 $breadCrumb = $this->pages($dataType, $id);
-            break;
+                break;
 
             case $dataType == 'address':
                 $breadCrumb = $this->addresses($dataType);
-            break;
+                break;
 
             case $dataType == 'order':
                 $breadCrumb = $this->orders($dataType);
-            break;
+                break;
 
             case $dataType == 'orderDetail':
                 $breadCrumb = $this->orderDetail($dataType);
-            break;
+                break;
 
             case $dataType == 'cart-order':
                 $breadCrumb = $this->cartOrders($dataType);
-            break;
+                break;
 
             case $dataType == 'shopping-cart':
                 $breadCrumb = $this->shoppingCart($dataType);
-            break;
+                break;
 
             default:
                 $breadCrumb = $this->users($dataType);
@@ -236,76 +235,71 @@ class Breadcrumb
 
         if (!empty($product)) {
             switch (true) {
-
-            case $pageType == 'featured':
-
-                $pageTypeData[] =
-                [
+                case $pageType == 'featured':
+                    $pageTypeData[] =
+                    [
                     'name' => __('Featured Products'),
                     'url' => productsFeatureRoute(),
-                ];
-
-                $pageTypeData = array_merge(
-                                    $this->getProductBreadcrumb(),
-                                    $pageTypeData
-                                );
-            break;
-
-            case $pageType == 'products':
-
-                $pageTypeData = $this->getProductBreadcrumb();
-
-            break;
-
-            case $pageType == 'r-product':
-
-                $category = $this->getProductWithCategories($product['id']);
-
-                $pageTypeData = [];
-                if (!empty($category)) {
-                    $pageTypeData[] = [
-                        'name' => $category['name'],
-                        'url' => categoriesProductRoute(
-                                        $category['id'],
-                                        $category['slugName']
-                                    ),
                     ];
+
                     $pageTypeData = array_merge(
-                                    $this->getProductBreadcrumb(),
-                                    $pageTypeData
-                                );
-                }
+                        $this->getProductBreadcrumb(),
+                        $pageTypeData
+                    );
+                    break;
 
-            break;
+                case $pageType == 'products':
+                    $pageTypeData = $this->getProductBreadcrumb();
 
-            case $pageType == 'categories':
+                    break;
 
-                $pageTypeData = [];
-                
-                if (!__isEmpty($options['categoryID'])) {
-                    $pageTypeData = $this->getCategoryByID($options['categoryID']);
-                } else {
+                case $pageType == 'r-product':
                     $category = $this->getProductWithCategories($product['id']);
 
+                    $pageTypeData = [];
                     if (!empty($category)) {
                         $pageTypeData[] = [
+                        'name' => $category['name'],
+                        'url' => categoriesProductRoute(
+                            $category['id'],
+                            $category['slugName']
+                        ),
+                        ];
+                        $pageTypeData = array_merge(
+                            $this->getProductBreadcrumb(),
+                            $pageTypeData
+                        );
+                    }
+
+                    break;
+
+                case $pageType == 'categories':
+                    $pageTypeData = [];
+                
+                    if (!__isEmpty($options['categoryID'])) {
+                        $pageTypeData = $this->getCategoryByID($options['categoryID']);
+                    } else {
+                        $category = $this->getProductWithCategories($product['id']);
+
+                        if (!empty($category)) {
+                            $pageTypeData[] = [
                             'name' => $category['name'],
                             'url' => categoriesProductRoute(
-                                            $category['id'],
-                                            $category['slugName']
-                                        ),
-                        ];
+                                $category['id'],
+                                $category['slugName']
+                            ),
+                            ];
+                        }
                     }
-                }
 
-                $pageTypeData = array_merge(
-                                    $this->getProductBreadcrumb(),
-                                    $pageTypeData
-                                );
-            break;
+                        $pageTypeData = array_merge(
+                            $this->getProductBreadcrumb(),
+                            $pageTypeData
+                        );
+                    break;
 
-            default:
-                $pageTypeData = [];
+                default:
+                    $pageTypeData = [];
             }
 
             $collectionBreadcrumb = [
@@ -360,9 +354,9 @@ class Breadcrumb
                     'slugName'  => slugIt($category->name),
                     'name'      => $category->name,
                     'url'       => categoriesProductRoute(
-                                        $category->id,
-                                        slugIt($category->name)
-                                    )
+                        $category->id,
+                        slugIt($category->name)
+                    )
                 ];
             }
         }
@@ -470,8 +464,10 @@ class Breadcrumb
             if ($relatedItem['id'] != $currentItemID) {
                 $categoryData[] = [
                     'name' => $relatedItem['name'],
-                    'url' => categoriesProductRoute($relatedItem['id'],
-                                        $relatedItem['name']),
+                    'url' => categoriesProductRoute(
+                        $relatedItem['id'],
+                        $relatedItem['name']
+                    ),
                 ];
             }
         }
@@ -564,9 +560,9 @@ class Breadcrumb
                     $target    = $linkArray['type'];
                 } else {
                     $url =  pageDetailsRoute(
-                                $relatedItem['id'],
-                                slugIt($relatedItem['title'])
-                            );
+                        $relatedItem['id'],
+                        slugIt($relatedItem['title'])
+                    );
                 }
 
                 $pagesData[] = [
@@ -720,7 +716,7 @@ class Breadcrumb
             switch (true) {
                 case $userType == 'profile':
                     $title = __('Profile');
-                break;
+                    break;
 
                 case $userType == 'profileEdit':
                     $title = __('Edit');
@@ -729,51 +725,51 @@ class Breadcrumb
                         'url' => route('user.profile'),
                     ];
 
-                break;
+                    break;
 
                 case $userType == 'change-password':
                     $title = __('Change Password');
-                break;
+                    break;
 
                 case $userType == 'change-email':
                     $title = __('Change Email');
-                break;
+                    break;
 
                 case $userType == 'login':
                     $title = __('Login');
-                break;
+                    break;
 
                 case $userType == 'register':
                     $title = __('Register');
-                break;
+                    break;
 
                 case $userType == 'forgot-password':
                     $title = __('Forgot Password');
-                break;
+                    break;
 
                 case $userType == 'contact':
                     $title = __('Contact');
-                break;
+                    break;
 
                 case $userType == 'privacyPolicy':
                     $title = __('Privacy Policy');
-                break;
+                    break;
 
                 case $userType == 'termsAndCondition':
                     $title = __('Terms & Condition');
-                break;
+                    break;
 
                 case $userType == 'resend-activation-email':
                     $title = __('Resend Activation Email');
-                break;
+                    break;
 
                 case $userType == 'reset-password':
                     $title = __('Reset Password');
-                break;
+                    break;
 
                 case $userType == 'orders':
                     $title = __('Orders');
-                break;
+                    break;
 
                 case $userType == 'order-details':
                     $title = __('Details');
@@ -782,11 +778,11 @@ class Breadcrumb
                         'url' => route('cart.order.list'),
                     ];
 
-                break;
+                    break;
 
                 case $userType == 'shopping-cart':
                     $title = __('Shopping-Cart');
-                break;
+                    break;
             }
 
             return $collectionBreadcrumb = [

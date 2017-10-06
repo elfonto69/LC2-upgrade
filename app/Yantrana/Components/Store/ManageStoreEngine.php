@@ -29,9 +29,11 @@ class ManageStoreEngine implements ManageStoreEngineBlueprint
      * @param ManageStoreRepository $manageStoreRepository - ManageStore Repository
      * @param MediaEngine           $mediaEngine           - Media Engine
      *-----------------------------------------------------------------------*/
-    public function __construct(ManageStoreRepository $manageStoreRepository,
-     MediaEngine $mediaEngine)
-    {
+    public function __construct(
+        ManageStoreRepository $manageStoreRepository,
+        MediaEngine $mediaEngine
+    ) {
+    
         $this->manageStoreRepository = $manageStoreRepository;
         $this->mediaEngine = $mediaEngine;
     }
@@ -188,7 +190,6 @@ class ManageStoreEngine implements ManageStoreEngineBlueprint
                 if (__isEmpty($selectedData)) {
                     $configurationArray[$name] = $value;
                 } else {
-
                     // when $selectedData is not empty get selected configuration
                     if (in_array($name, $selectedData)) {
                         $configurationArray[$name] = $value;
@@ -217,9 +218,9 @@ class ManageStoreEngine implements ManageStoreEngineBlueprint
         }
 
         $configurationArray = $this->prepareConfigurationData(
-                                                        $selectedData,
-                                                        $configurationArray
-                                                    );
+            $selectedData,
+            $configurationArray
+        );
 
         // Check page type and get data as per request type
         if ($requestType == 1) { // general
@@ -353,7 +354,7 @@ class ManageStoreEngine implements ManageStoreEngineBlueprint
                             ];
         } elseif ($requestType == 9) { // css style
 
-          $selectedData = [
+            $selectedData = [
                     'custom_css'
                   ];
         } elseif ($requestType == 10) { // payment
@@ -385,10 +386,13 @@ class ManageStoreEngine implements ManageStoreEngineBlueprint
                              ->processTransaction(function () use ($inputs, $requestType) {
 
             // fetch all configuration array
-            $configurations = $this->manageStoreRepository->fetch();
+                                $configurations = $this->manageStoreRepository->fetch();
 
-                                 $logoImage = __ifIsset($inputs['logo_image'],
-                            $inputs['logo_image'], '');
+                                 $logoImage = __ifIsset(
+                                     $inputs['logo_image'],
+                                     $inputs['logo_image'],
+                                     ''
+                                 );
 
                                  $landingPageImage = __ifIsset($inputs['landing_page_image'])
                                 ? $inputs['landing_page_image']
@@ -397,54 +401,53 @@ class ManageStoreEngine implements ManageStoreEngineBlueprint
                                  $logoUpdated = false;
             
             // Check if logo exist Then Process This Logo Image
-            if (!__isEmpty($logoImage)) {
+                                if (!__isEmpty($logoImage)) {
+                                    // Store Logo image
+                                    $newLogoImage = $this->mediaEngine->processStoreSettingLogoMedia($logoImage);
 
-                // Store Logo image
-                $newLogoImage = $this->mediaEngine->processStoreSettingLogoMedia($logoImage);
+                                    if (!__isEmpty($newLogoImage)) {
+                                        $inputs['logo_image'] = $newLogoImage;
 
-                if (!__isEmpty($newLogoImage)) {
-                    $inputs['logo_image'] = $newLogoImage;
-
-                    $logoUpdated = true;
-                }
-            }
+                                        $logoUpdated = true;
+                                    }
+                                }
 
             // If logo not exist then remove logo image from input data
-            if ($logoUpdated == false) {
-                $inputs = array_except($inputs, 'logo_image');
-            }
+                                if ($logoUpdated == false) {
+                                    $inputs = array_except($inputs, 'logo_image');
+                                }
 
-                                 if ($requestType == 6) { // Contact
-                $inputs['contact_email'] = strtolower($inputs['contact_email']);
-                                 }
+                                if ($requestType == 6) { // Contact
+                                    $inputs['contact_email'] = strtolower($inputs['contact_email']);
+                                }
 
-                                 if ($requestType == 1) { // General
-                $inputs['business_email'] = strtolower($inputs['business_email']);
-                                 }
+                                if ($requestType == 1) { // General
+                                    $inputs['business_email'] = strtolower($inputs['business_email']);
+                                }
 
             // Check if store configuration is empty
-            if (__isEmpty($configurations)) {
-                if ($this->manageStoreRepository->addSettings($inputs)) {
-                    return $this->manageStoreRepository->transactionResponse(1, [
-                            'message' => __('Settings updated successfully.'),
-                            'textMessage' => __('To take a effect updated settings, please reload page.')
-                    ]);
-                }
+                                if (__isEmpty($configurations)) {
+                                    if ($this->manageStoreRepository->addSettings($inputs)) {
+                                        return $this->manageStoreRepository->transactionResponse(1, [
+                                                'message' => __('Settings updated successfully.'),
+                                                'textMessage' => __('To take a effect updated settings, please reload page.')
+                                        ]);
+                                    }
 
-                return $this->manageStoreRepository->transactionResponse(14, null, __('Nothing updated.'));
-            }
+                                    return $this->manageStoreRepository->transactionResponse(14, null, __('Nothing updated.'));
+                                }
           
             // if the item already available in database
-            $configurationUpdated = $this->manageStoreRepository
+                                $configurationUpdated = $this->manageStoreRepository
                                          ->updateSettings($configurations, $inputs);
 
             // check if the configuration object updated
-            if ($configurationUpdated or $logoUpdated) {
-                return $this->manageStoreRepository->transactionResponse(1, [
-                            'message' => __('Settings updated successfully.'),
-                            'textMessage' => __('To take a effect updated settings, please reload page.')
-                    ]);
-            }
+                                if ($configurationUpdated or $logoUpdated) {
+                                    return $this->manageStoreRepository->transactionResponse(1, [
+                                                'message' => __('Settings updated successfully.'),
+                                                'textMessage' => __('To take a effect updated settings, please reload page.')
+                                        ]);
+                                }
 
                                  return $this->manageStoreRepository->transactionResponse(14, null, __('Nothing updated.'));
                              });

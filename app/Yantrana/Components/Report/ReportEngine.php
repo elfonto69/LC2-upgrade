@@ -51,12 +51,12 @@ class ReportEngine implements ReportEngineBlueprint
      * @param ReportRepository $reportRepository - Report Repository
      *-----------------------------------------------------------------------*/
     public function __construct(
-                    ReportRepository $reportRepository,
-                    ShippingRepository $shippingRepository,
-                    TaxRepository $taxRepository,
-                    SupportRepository $supportRepository,
-                    OrderEngine $orderEngine
-                ) {
+        ReportRepository $reportRepository,
+        ShippingRepository $shippingRepository,
+        TaxRepository $taxRepository,
+        SupportRepository $supportRepository,
+        OrderEngine $orderEngine
+    ) {
         $this->reportRepository = $reportRepository;
         $this->shippingRepository = $shippingRepository;
         $this->taxRepository = $taxRepository;
@@ -195,13 +195,13 @@ class ReportEngine implements ReportEngineBlueprint
         foreach ($orderProducts as $optionKey => $orderProduct) {
             $addonPrice = [];
                 // check product option
-                if (!empty($orderProduct['productOption'])) {
-                    foreach ($orderProduct['productOption'] as $key => $productOption) {
-                        $productOption['addonPrice'] = orderPriceFormat($productOption['addon_price'], $currencyCode);
+            if (!empty($orderProduct['productOption'])) {
+                foreach ($orderProduct['productOption'] as $key => $productOption) {
+                    $productOption['addonPrice'] = orderPriceFormat($productOption['addon_price'], $currencyCode);
 
-                        $addonPrice[] = $productOption['addon_price'];
-                    }
+                    $addonPrice[] = $productOption['addon_price'];
                 }
+            }
                 // get add price total
                 $totalAddonPrice = array_sum($addonPrice);
 
@@ -262,13 +262,13 @@ class ReportEngine implements ReportEngineBlueprint
         }
 
             // check coupon detail exist
-            if (!empty($orderDetails->coupon)) {
-                $couponData = [
-                    'code' => $orderDetails->coupon->code,
-                    'title' => $orderDetails->coupon->title,
-                    'description' => $orderDetails->coupon->description,
-                ];
-            }
+        if (!empty($orderDetails->coupon)) {
+            $couponData = [
+            'code' => $orderDetails->coupon->code,
+            'title' => $orderDetails->coupon->title,
+            'description' => $orderDetails->coupon->description,
+            ];
+        }
 
             // calculation of discount (coupon)
             $discountAmount = $orderDetails->discount_amount;
@@ -277,17 +277,16 @@ class ReportEngine implements ReportEngineBlueprint
         $total = 0;
 
             // if Base total exist
-            if (!empty($baseTotal)) {
-
-                // if discount amount exist then subtract from base total
-                if (!empty($discountAmount)) {
-                    $basePrice = $baseTotal - $discountAmount;
-                    $total = $basePrice + $shipping + $totalTax;
-                } else {
-                    $basePrice = $baseTotal;
-                    $total = $baseTotal + $shipping + $totalTax;
-                }
+        if (!empty($baseTotal)) {
+            // if discount amount exist then subtract from base total
+            if (!empty($discountAmount)) {
+                $basePrice = $baseTotal - $discountAmount;
+                $total = $basePrice + $shipping + $totalTax;
+            } else {
+                $basePrice = $baseTotal;
+                $total = $baseTotal + $shipping + $totalTax;
             }
+        }
 
         $shippingAddress = [];
         $billingAddress = [];
@@ -295,47 +294,45 @@ class ReportEngine implements ReportEngineBlueprint
         $addressSameAs = false;
 
             //order shipping address
-            foreach ($orderDetails->address as $address) {
+        foreach ($orderDetails->address as $address) {
+            // Get country name
+            $countryName = $this->supportRepository
+                               ->fetchCountry($address['countries__id']);
 
-                // Get country name
-                $countryName = $this->supportRepository
-                                       ->fetchCountry($address['countries__id']);
-
-                $shippingAddress = [
-                    'addressID' => $address['id'],
-                    'type' => $addressType[$address['type']],
-                    'address_line_1' => $address['address_line_1'],
-                    'address_line_2' => $address['address_line_2'],
-                    'city' => $address['city'],
-                    'state' => $address['state'],
-                    'country' => $countryName['name'],
-                    'pincode' => $address['pin_code'],
-                ];
-            }
+            $shippingAddress = [
+            'addressID' => $address['id'],
+            'type' => $addressType[$address['type']],
+            'address_line_1' => $address['address_line_1'],
+            'address_line_2' => $address['address_line_2'],
+            'city' => $address['city'],
+            'state' => $address['state'],
+            'country' => $countryName['name'],
+            'pincode' => $address['pin_code'],
+            ];
+        }
 
             //order billing address
-            foreach ($orderDetails->address1 as $address1) {
+        foreach ($orderDetails->address1 as $address1) {
+            // Get country name
+            $countryName = $this->supportRepository
+                               ->fetchCountry($address1['countries__id']);
 
-                // Get country name
-                $countryName = $this->supportRepository
-                                       ->fetchCountry($address1['countries__id']);
-
-                $billingAddress = [
-                    'address1ID' => $address1['id'],
-                    'type' => $addressType[$address1['type']],
-                    'address_line_1' => $address1['address_line_1'],
-                    'address_line_2' => $address1['address_line_2'],
-                    'city' => $address1['city'],
-                    'state' => $address1['state'],
-                    'country' => $countryName['name'],
-                    'pincode' => $address1['pin_code'],
-                ];
-            }
+            $billingAddress = [
+            'address1ID' => $address1['id'],
+            'type' => $addressType[$address1['type']],
+            'address_line_1' => $address1['address_line_1'],
+            'address_line_2' => $address1['address_line_2'],
+            'city' => $address1['city'],
+            'state' => $address1['state'],
+            'country' => $countryName['name'],
+            'pincode' => $address1['pin_code'],
+            ];
+        }
 
             //check address same as or not
-            if ($shippingAddress['addressID'] == $billingAddress['address1ID']) {
-                $addressSameAs = true;
-            }
+        if ($shippingAddress['addressID'] == $billingAddress['address1ID']) {
+            $addressSameAs = true;
+        }
 
             // get order status
             $orderStatus = config('__tech.orders.status_codes');
@@ -450,7 +447,6 @@ class ReportEngine implements ReportEngineBlueprint
         $totalTax = 0;
 
         foreach ($orderCollection as $key => $order) {
-
             // get all total amount of order
             $totalOrderAmountCollection[$key] = $order['total_amount'];
 
@@ -516,8 +512,13 @@ class ReportEngine implements ReportEngineBlueprint
         $currentDate = formatStoreDateTime(currentDateTime());
         $orderTitle = 'Orders as on '.''.$currentDate;
 
-        return Excel::create($ExcelFileName, function ($excel) use ($orderData, $startAndEndDate,
-            $totalOrderAmount, $orderTitle, $currencyTotalAmountData) {
+        return Excel::create($ExcelFileName, function ($excel) use (
+            $orderData,
+            $startAndEndDate,
+            $totalOrderAmount,
+            $orderTitle,
+            $currencyTotalAmountData
+) {
             $excel->sheet('orders', function ($sheet) use ($orderData, $startAndEndDate, $totalOrderAmount, $orderTitle, $currencyTotalAmountData) {
 
                 //merge cells
@@ -556,7 +557,7 @@ class ReportEngine implements ReportEngineBlueprint
                 $sheet->row(3, [$startAndEndDate]);
 
                 // Heading column for excel sheet
-                $sheet->row(4, array(
+                $sheet->row(4, [
                     'OrderUID',
                     'Full Name',
                     'Order Placed on',
@@ -568,7 +569,7 @@ class ReportEngine implements ReportEngineBlueprint
                     'Discount Amount',
                     'Shipping Amount',
                     'Total Tax',
-                ));
+                ]);
 
                 $sheet->fromArray($orderData, null, 'A5', true, false);
 

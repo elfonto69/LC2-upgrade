@@ -61,7 +61,7 @@ class ManagePagesAddRequest extends BaseRequest
                 $rules['link'] = 'required';
             } else {
                 //$rules['link']      = 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
-            $rules['link'] = 'url';
+                $rules['link'] = 'url';
             }
         }
 

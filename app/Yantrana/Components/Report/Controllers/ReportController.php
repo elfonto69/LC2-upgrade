@@ -155,52 +155,47 @@ class ReportController extends BaseController
                 'orderConfigDateItems' => $config['date_filter_code'],
             ]);
     }
-	
-	public function getQuickOrder()
-	{
-		
-	
-	      // $quickOrders['orders'] = DB::table('qorders')->select("*")->get();	
-		  	$quickOrders['orders'] = DB::table('qorders')->select('qorders.*','products.name as p_name')->join('products','qorders.product_id','=','products.product_id')->orderBy('created_at', 'desc')->get();
-		   return view('quick_order.list', $quickOrders);
+    
+    public function getQuickOrder()
+    {
+        
+    
+          // $quickOrders['orders'] = DB::table('qorders')->select("*")->get();
+            $quickOrders['orders'] = DB::table('qorders')->select('qorders.*', 'products.name as p_name')->join('products', 'qorders.product_id', '=', 'products.product_id')->orderBy('created_at', 'desc')->get();
+           return view('quick_order.list', $quickOrders);
 
-		   //return $this->loadPublicView('quick_order.list',  $quickOrders);
-			
-	
-	}
-	
-		public function getSingleQuickOrder($id)
-	{
-		
-	
-		
-	             $order = DB::table('qorders')
-                     ->select("id","name","phone","address")
-                     ->where('id', '=', $id)->get();
-					echo  json_encode($order);
-
-			
-	
-	}
-	
-	public function updateQuickOrder(Request $request)
-	{ 
-	DB::table('qorders')
+           //return $this->loadPublicView('quick_order.list',  $quickOrders);
+    }
+    
+    public function getSingleQuickOrder($id)
+    {
+        
+    
+        
+         $order = DB::table('qorders')
+             ->select("id", "name", "phone", "address")
+             ->where('id', '=', $id)->get();
+            echo  json_encode($order);
+    }
+    
+    public function updateQuickOrder(Request $request)
+    {
+        DB::table('qorders')
             ->where('id', $request->input('order_id'))
             ->update(
-   ['name' => $request->input('fullName'), 'phone' => $request->input('phone'),'address' => $request->input('address') ]);
-			 
-	 $resp['status'] = true;
-	 $resp['msg'] = "Order updated successfully";
-	 echo json_encode($resp);
-
-	}
-	
-	public function deleteQuickOrder($id)
-	{
-	   DB::table('qorders')->where('id', '=', $id)->delete();
-	  $resp['status'] = true;
-	  $resp['msg'] = "Order deleted successfully";
-	  echo json_encode($resp);	
-	}
+                ['name' => $request->input('fullName'), 'phone' => $request->input('phone'),'address' => $request->input('address') ]
+            );
+             
+        $resp['status'] = true;
+        $resp['msg'] = "Order updated successfully";
+        echo json_encode($resp);
+    }
+    
+    public function deleteQuickOrder($id)
+    {
+        DB::table('qorders')->where('id', '=', $id)->delete();
+        $resp['status'] = true;
+        $resp['msg'] = "Order deleted successfully";
+        echo json_encode($resp);
+    }
 }

@@ -276,9 +276,12 @@ class ManageProductController extends BaseController
      *
      * @return json object
      *---------------------------------------------------------------- */
-    public function editImage(ProductImageEditRequest $request, $productID,
-     $imageID)
-    {
+    public function editImage(
+        ProductImageEditRequest $request,
+        $productID,
+        $imageID
+    ) {
+    
         $processReaction = $this->manageProductEngine
                                 ->processEditProductImage(
                                     $productID,
@@ -381,9 +384,12 @@ class ManageProductController extends BaseController
      *
      * @return json object
      *---------------------------------------------------------------- */
-    public function editOption(ProductOptionEditRequest $request, $productID,
-     $optionID)
-    {
+    public function editOption(
+        ProductOptionEditRequest $request,
+        $productID,
+        $optionID
+    ) {
+    
         $processReaction = $this->manageProductEngine
                                 ->processEditProductOption(
                                     $productID,
@@ -411,9 +417,12 @@ class ManageProductController extends BaseController
      *
      * @return json object
      *---------------------------------------------------------------- */
-    public function addOptionValues(ProductOptionValuesAddRequest $request,
-     $productID, $optionID)
-    {
+    public function addOptionValues(
+        ProductOptionValuesAddRequest $request,
+        $productID,
+        $optionID
+    ) {
+    
         $processReaction = $this->manageProductEngine
                                 ->processAddProductOptionValues(
                                     $productID,
@@ -483,9 +492,12 @@ class ManageProductController extends BaseController
      *
      * @return json object
      *---------------------------------------------------------------- */
-    public function editOptionValues(ProductOptionValuesEditRequest $request,
-     $productID, $optionID)
-    {
+    public function editOptionValues(
+        ProductOptionValuesEditRequest $request,
+        $productID,
+        $optionID
+    ) {
+    
         $processReaction = $this->manageProductEngine
                                 ->processEditProductOptionValues(
                                     $productID,

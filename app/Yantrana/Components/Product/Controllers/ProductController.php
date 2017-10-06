@@ -65,7 +65,7 @@ class ProductController extends BaseController
                              ->with([
                                 'error' => true,
                                 'message' => __('Requested category does not exist.'),
-                            ]);
+                             ]);
         }
 
         $products = $processReaction['data'];
@@ -148,7 +148,7 @@ class ProductController extends BaseController
      *---------------------------------------------------------------- */
     public function details(Request $request, $productID, $productName, $categoryID = null)
     {
-		//echo phpinfo();
+        //echo phpinfo();
         $pageType = $request['page_type'];
 
         $processReaction = $this->productEngine
@@ -344,14 +344,14 @@ class ProductController extends BaseController
                 18 => __('Product does not exist.'),
             ], $filter['data']);
     }
-	
-	public function addQuickOrder(Request $request)
-	{ 
-	$time = time(); 
-	   DB::table('qorders')->insert([
-   ['name' => $request->input('fullName'),'product_id' => $request->input('productID'),'status' => 0,  'phone' => $request->input('phone'),'address' => $request->input('address'),'created_at'=> $time ]]);
+    
+    public function addQuickOrder(Request $request)
+    {
+        $time = time();
+        DB::table('qorders')->insert([
+        ['name' => $request->input('fullName'),'product_id' => $request->input('productID'),'status' => 0,  'phone' => $request->input('phone'),'address' => $request->input('address'),'created_at'=> $time ]]);
    
 
-	  // DB::insert("insert into qorders(name,phone,address)values('".$_POST['fullName']."','".$_POST['phone']."','".$_POST['address']."') ");
-	}
+      // DB::insert("insert into qorders(name,phone,address)values('".$_POST['fullName']."','".$_POST['phone']."','".$_POST['address']."') ");
+    }
 }

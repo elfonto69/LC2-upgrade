@@ -34,6 +34,6 @@ class ProductImageAddRequest extends BaseRequest
             'title' => 'required',
             'image' => 'required',
             //'description'   => 'required|min:6'
-       ];
+        ];
     }
 }

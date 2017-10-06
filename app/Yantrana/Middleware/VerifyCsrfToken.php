@@ -29,8 +29,7 @@ class VerifyCsrfToken extends BaseVerifier
      */
     public function handle($request, Closure $next)
     {
-        if (
-            $this->isReading($request) ||
+        if ($this->isReading($request) ||
             $this->runningUnitTests() ||
             $this->shouldPassThrough($request) ||
             $this->tokensMatch($request)

@@ -171,12 +171,15 @@ class OrderController extends BaseController
         }
 
         if ($this->orderEngine->processThanksPayPalOrder(
-                $paypalRequest->get('invoice')) == false) {
+            $paypalRequest->get('invoice')
+        ) == false) {
             return 'invalid request';
         }
 
-        return $this->loadPublicView('order.user.thank-you',
-                $paypalRequest->all());
+        return $this->loadPublicView(
+            'order.user.thank-you',
+            $paypalRequest->all()
+        );
     }
 
     /**
@@ -193,8 +196,10 @@ class OrderController extends BaseController
             $this->orderEngine->updatePaymentFailed($orderUid);
         }
 
-        return $this->loadPublicView('order.user.payment-cancel',
-                                        compact('orderUid'));
+        return $this->loadPublicView(
+            'order.user.payment-cancel',
+            compact('orderUid')
+        );
     }
 
     /**
@@ -451,12 +456,11 @@ class OrderController extends BaseController
     }
 
 
-	/**
-	 * Заказ в один клик
-	 * @param CommonPostRequest $request
-	 */
+    /**
+     * Заказ в один клик
+     * @param CommonPostRequest $request
+     */
     public function quickOrderMake(CommonPostRequest $request)
     {
-
     }
 }

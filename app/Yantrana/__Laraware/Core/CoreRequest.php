@@ -161,7 +161,6 @@ abstract class CoreRequest extends FormRequest
             if (is_array($value)) {
                 $this->sanitizeInputs($value);
             } elseif (is_string($value)) {
-
                 // check if some tags are allowed
                 // if yes concat with defaults
                 if (array_key_exists($key, $this->looseSanitizationFields)) {
@@ -173,7 +172,6 @@ abstract class CoreRequest extends FormRequest
                         $inputs[$key] = $value;
                     }
                 } else {
-
                     // strip all tags
                     $inputs[$key] = strip_tags($value);
                 }

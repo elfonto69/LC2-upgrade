@@ -99,10 +99,10 @@ class Categories
      * @return Json
      *----------------------------------------------------------------------- */
     public function categoryData(
-      $listingFor = null,
-      $requestType = null,
-      $categoryID = null,
-      $productID = null
+        $listingFor = null,
+        $requestType = null,
+        $categoryID = null,
+        $productID = null
     ) {
         $this->selectedCategory = $categoryID;
         $this->listingFor = $listingFor;
@@ -110,33 +110,31 @@ class Categories
 
         if ($listingFor == 'categories') {
             //Listitng  for categories.
-          if (!empty($this->categories)) {
-              foreach ($this->categories as $key => $category) {
-                  if (!empty($categoryID)) {
-                      if ($category['id'] == $categoryID) {
+            if (!empty($this->categories)) {
+                foreach ($this->categories as $key => $category) {
+                    if (!empty($categoryID)) {
+                        if ($category['id'] == $categoryID) {
+                          // for category edit
+                            if ($requestType == 'catEdit') {
+                                $this->expandSelectedCatgeory = $category['parent_id'];
 
-                        // for category edit
-                        if ($requestType == 'catEdit') {
-                            $this->expandSelectedCatgeory = $category['parent_id'];
+                                // current category hide
+                                unset($this->categories[$key]);
+                            } else {
+                                $this->expandSelectedCatgeory = $category['id'];
 
-                            // current category hide
-                            unset($this->categories[$key]);
-                        } else {
-                            $this->expandSelectedCatgeory = $category['id'];
-
-                            $this->categories[$key];
+                                $this->categories[$key];
+                            }
                         }
-                      }
-                  }
-              }
+                    }
+                }
 
-            // find all parents function
-            $this->findAllParents($this->expandSelectedCatgeory);
-          }
+                // find all parents function
+                $this->findAllParents($this->expandSelectedCatgeory);
+            }
         } else {
             // Listitng  for products.
             if (!empty($this->categories)) {
-
                 //for product edit selected categories
                 $this->productCategories = $this->getProductCategories($productID);
 
@@ -149,13 +147,11 @@ class Categories
                 }
 
                 if ($requestType == 'productAdd') {
-
                   // find all parents function
-                  $this->findAllParents($this->expandSelectedCatgeory);
+                    $this->findAllParents($this->expandSelectedCatgeory);
                 } else {
-
                   // find all parents function
-                  $this->findAllParents($this->productCategories);
+                    $this->findAllParents($this->productCategories);
                 }
             }
         }
@@ -173,14 +169,13 @@ class Categories
         ];
 
         $expandCategoriesArray = $this->buildTree(
-                                              $this->categories,
-                                              null,
-                                              $this->expandSelectedCatgeory
-                                            );
+            $this->categories,
+            null,
+            $this->expandSelectedCatgeory
+        );
 
         // request type for edit category
         if ($requestType == 'catEdit') {
-
             // add index in categories list name as make a parent
             if (empty($expandCategoriesArray)) {
                 return __apiResponse([
@@ -205,7 +200,6 @@ class Categories
                                 'categories' => $emptyArray,
                             ]);
             } else {
-
                 // request type for add new category
                 if ($requestType == 'catAdd') {
                     $catArray = array_merge($noParent, $expandCategoriesArray);
@@ -262,15 +256,14 @@ class Categories
                     }
                 }
             } else {
-
             // category edit take only one parent id single ID
-            if ($category['id'] == $parentID) {
-                $this->allMyParents[] = $parentID;
+                if ($category['id'] == $parentID) {
+                    $this->allMyParents[] = $parentID;
 
-                if (!empty($category['parent_id'])) {
-                    $this->findAllParents($category['parent_id']);
+                    if (!empty($category['parent_id'])) {
+                        $this->findAllParents($category['parent_id']);
+                    }
                 }
-            }
             }
         }
     }
@@ -396,7 +389,6 @@ class Categories
                 ];
 
                 if ($this->listingFor == 'categories') {
-
                     // expand active category
                     if (!empty($this->allMyParents)
                             and
@@ -409,7 +401,6 @@ class Categories
                         $op[$count]['active'] = true;
                     }
                 } elseif ($this->listingFor == 'products') {
-
                     // product selected caegories expanded
                     if (!empty($this->allMyParents)
                             and
@@ -432,10 +423,10 @@ class Categories
 
                  // using recursion
                 $children = $this->buildTree(
-                                                $ar,
-                                                $item['id'],
-                                                $expandSelectedCatgeory
-                                            );
+                    $ar,
+                    $item['id'],
+                    $expandSelectedCatgeory
+                );
 
                 // All subItems
                 if (!empty($children)) {
@@ -491,17 +482,15 @@ class Categories
                 $categoryTitle = $category['title'];
 
                 if (!empty($category['children'])) {
-
                 // this section contain childrens
-                $this->categoriesMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a><ul>';
+                    $this->categoriesMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a><ul>';
 
                     $this->createMenuItems($category['children']);
 
                     $this->categoriesMarkup .= '</ul></li>';
                 } else {
-
                 // this section for parent categories null values
-                $this->categoriesMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a></li>';
+                    $this->categoriesMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a></li>';
                 }
             }
         }
@@ -521,17 +510,15 @@ class Categories
                 $categoryTitle = $category['title'];
 
                 if (!empty($category['children'])) {
-
                 // this section contain childrens
-                $this->categoriesNevMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a><ul>';
+                    $this->categoriesNevMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a><ul>';
 
                     $this->nevigationTree($category['children']);
 
                     $this->categoriesNevMarkup .= '</ul></li>';
                 } else {
-
                 // this section for parent categories null values
-                $this->categoriesNevMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a></li>';
+                    $this->categoriesNevMarkup .= '<li><a href="'.route('master').'/#/products/'.$category['key'].'/'.Str::slug($categoryTitle).'">'.$categoryTitle.'</a></li>';
                 }
             }
         }

@@ -54,13 +54,15 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
      *
      * @param OrderPaymentsRepository $orderPaymentsRepository - OrderPayments Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(OrderEngine  $orderEngine,
+    public function __construct(
+        OrderEngine  $orderEngine,
         MailService $mailService,
         OrderPaymentsRepository $orderPaymentsRepository,
         ManageOrderRepository $manageOrderRepository,
         OrderRepository $orderRepository,
-        StripePaymentEngine $stripePaymentEngine)
-    {
+        StripePaymentEngine $stripePaymentEngine
+    ) {
+    
         $this->mailService     = $mailService;
         $this->orderEngine     = $orderEngine;
         $this->orderRepository = $orderRepository;
@@ -157,8 +159,12 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
                 $updatedPaymentSubject = 'Payment Confirmed';
 
                 // notify customer
-                $this->mailService->notifyCustomer($updatedPaymentSubject, 'order.customer-order',
-                    $messageData, $customerId);
+                $this->mailService->notifyCustomer(
+                    $updatedPaymentSubject,
+                    'order.customer-order',
+                    $messageData,
+                    $customerId
+                );
                 // notify store admin
                 return $this->mailService->notifyAdmin($updatedPaymentSubject, 'order.customer-order', $messageData);
             }
@@ -174,8 +180,12 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
         ];
 
         // notify customer
-        $this->mailService->notifyCustomer('Your Order has been Submitted & Payment Confirmed',
-                'order.customer-order', $messageData, $getOrderDetailsForMail['userId']);
+        $this->mailService->notifyCustomer(
+            'Your Order has been Submitted & Payment Confirmed',
+            'order.customer-order',
+            $messageData,
+            $getOrderDetailsForMail['userId']
+        );
         // notify store admin
         return $this->mailService->notifyAdmin('New Order Received & Payment Confirmed', 'order.customer-order', $messageData);
     }
@@ -218,11 +228,18 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
         ];
 
         // notify customer
-        $this->mailService->notifyCustomer('Order Submitted but PayPal Payment not Completed', 'order.paypal-ipn-payment-failed',
-            $messageData, $customerId);
+        $this->mailService->notifyCustomer(
+            'Order Submitted but PayPal Payment not Completed',
+            'order.paypal-ipn-payment-failed',
+            $messageData,
+            $customerId
+        );
         // notify admin
-        return $this->mailService->notifyAdmin('New Order Received but PayPal Payment not Completed',
-                    'order.paypal-ipn-payment-failed', $messageData);
+        return $this->mailService->notifyAdmin(
+            'New Order Received but PayPal Payment not Completed',
+            'order.paypal-ipn-payment-failed',
+            $messageData
+        );
     }
 
     /**
@@ -247,12 +264,16 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
 
         $paymentData = [
             'currencyCode' => $orderPaymentDetails['paymentDetails']['currency_code'],
-            'fee' => orderPriceFormat($orderPaymentDetails['paymentDetails']
+            'fee' => orderPriceFormat(
+                $orderPaymentDetails['paymentDetails']
                                     ['fee'],
-                                    $orderPaymentDetails['paymentDetails']['currency_code']),
-            'grossAmount' => orderPriceFormat($orderPaymentDetails['paymentDetails']
+                $orderPaymentDetails['paymentDetails']['currency_code']
+            ),
+            'grossAmount' => orderPriceFormat(
+                $orderPaymentDetails['paymentDetails']
                                     ['gross_amount'],
-                                    $orderPaymentDetails['paymentDetails']['currency_code']),
+                $orderPaymentDetails['paymentDetails']['currency_code']
+            ),
             'paymentMethod' => $paymentMethod[$orderPaymentDetails['paymentDetails']
                                     ['payment_method']],
             'txn' => $orderPaymentDetails['paymentDetails']['txn'],
@@ -305,20 +326,20 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
                               ->processTransaction(function () use ($inputs) {
 
             // update order status
-            $response = $this->orderPaymentsRepository
-                             ->updateOrder(2, $inputs['orderID']);
+                                $response = $this->orderPaymentsRepository
+                                ->updateOrder(2, $inputs['orderID']);
 
                                   $inputs['orderPaymentFee'] = null;
 
             // Check if order payment fee exist
-            if (isset($inputs['fee']) and !__isEmpty($inputs['fee'])) {
-                $inputs['orderPaymentFee'] = $inputs['fee'];
-            }
+                                if (isset($inputs['fee']) and !__isEmpty($inputs['fee'])) {
+                                    $inputs['orderPaymentFee'] = $inputs['fee'];
+                                }
 
             // Check if order payment store in DB
-            if ($this->orderPaymentsRepository->storeOrderPayment($inputs)) {
-                return $this->orderPaymentsRepository->transactionResponse(1, null, __('Order payment stored successfully.'));
-            }
+                                if ($this->orderPaymentsRepository->storeOrderPayment($inputs)) {
+                                    return $this->orderPaymentsRepository->transactionResponse(1, null, __('Order payment stored successfully.'));
+                                }
 
                                   return $this->orderPaymentsRepository->transactionResponse(2, null, __('Order payment not stored.'));
                               });
@@ -351,10 +372,14 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
             'orderID' => $orderPaymentDetails['orders__id'],
             'txn' => $orderPaymentDetails['txn'],
             'currencyCode' => $orderPaymentDetails['currency_code'],
-            'grossAmount' => orderPriceFormat($orderPaymentDetails['gross_amount'],
-                                $orderPaymentDetails['currency_code']),
-            'fee' => orderPriceFormat($orderPaymentDetails['fee'],
-                                $orderPaymentDetails['currency_code']),
+            'grossAmount' => orderPriceFormat(
+                $orderPaymentDetails['gross_amount'],
+                $orderPaymentDetails['currency_code']
+            ),
+            'fee' => orderPriceFormat(
+                $orderPaymentDetails['fee'],
+                $orderPaymentDetails['currency_code']
+            ),
             'paymentOn' => formatStoreDateTime($orderPaymentDetails['created_at']),
         ];
 
@@ -378,70 +403,68 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
                               ->processTransaction(function () use ($inputs, $orderID) {
 
             // Get order payment details
-            $paymentDetails = $this->orderPaymentsRepository
+                                $paymentDetails = $this->orderPaymentsRepository
                                    ->fetchOrderPayments($orderID);
 
             // update order status
             // 5 (Refunded) payment Status
-            $response = $this->orderPaymentsRepository
-                             ->updateOrder(5, $orderID);
+                                $response = $this->orderPaymentsRepository
+                                ->updateOrder(5, $orderID);
 
                                   $inputData = [
-                'txn' => $paymentDetails['txn'],
-                'paymentMethod' => $inputs['paymentMethod'],
-                'currencyCode' => $paymentDetails['currency_code'],
-                'grossAmount' => $paymentDetails['gross_amount'],
-                'orderPaymentFee' => $paymentDetails['fee'],
-                'orderID' => $paymentDetails['orders__id'],
-                'comment' => __ifIsset($inputs['description'], $inputs['description'], ''),
-            ];
+                                'txn' => $paymentDetails['txn'],
+                                'paymentMethod' => $inputs['paymentMethod'],
+                                'currencyCode' => $paymentDetails['currency_code'],
+                                'grossAmount' => $paymentDetails['gross_amount'],
+                                'orderPaymentFee' => $paymentDetails['fee'],
+                                'orderID' => $paymentDetails['orders__id'],
+                                'comment' => __ifIsset($inputs['description'], $inputs['description'], ''),
+                                  ];
 
             // update order payment details
-            $responseData = $this->orderPaymentsRepository
-                                 ->updateOrderRefundPayment($inputData);
+                                  $responseData = $this->orderPaymentsRepository
+                                  ->updateOrderRefundPayment($inputData);
 
             // if order payment refunded successfully
-            if ($responseData) {
+                                  if ($responseData) {
+                                      // Check if notify customer check box true or false
+                                      if (__ifIsset($inputs['checkMail'])) {
+                                          // Check description exist
+                                          $additionalNotes = '';
+                                          if (!empty($inputs['description'])) {
+                                              $additionalNotes = $inputs['description'];
+                                            }
 
-                // Check if notify customer check box true or false
-                if (__ifIsset($inputs['checkMail'])) {
+                                            $order = $this->orderPaymentsRepository
+                                                         ->fetchUserID($orderID);
 
-                    // Check description exist
-                    $additionalNotes = '';
-                    if (!empty($inputs['description'])) {
-                        $additionalNotes = $inputs['description'];
-                    }
+                                          // order UID array for markup text
+                                            $orderUID = [
+                                              '__orderUID__' => $inputs['orderUID'],
+                                            ];
 
-                    $order = $this->orderPaymentsRepository
-                                   ->fetchUserID($orderID);
+                                          // make a subject text for refund order mail
+                                            $subjectText = __('Payment Refund Process for __orderUID__ order.');
 
-                    // order UID array for markup text
-                    $orderUID = [
-                        '__orderUID__' => $inputs['orderUID'],
-                    ];
+                                          // get a markup string
+                                            $subject = getTextMarkup($subjectText, $orderUID);
 
-                    // make a subject text for refund order mail
-                    $subjectText = __('Payment Refund Process for __orderUID__ order.');
+                                          // description message for refund mail
+                                            $discriptionMarkup = __('Payment refund has been process for __orderUID__ order');
 
-                    // get a markup string
-                    $subject = getTextMarkup($subjectText, $orderUID);
+                                            $messageData = [
+                                              'discription' => getTextMarkup($discriptionMarkup, $orderUID),
+                                              'additionalNotes' => $additionalNotes,
+                                            ];
 
-                    // description message for refund mail
-                    $discriptionMarkup = __('Payment refund has been process for __orderUID__ order');
+                                          // Notify customer about refund by email
+                                            $this->mailService->notifyCustomer($subject, 'order.order-refund', $messageData, $order['users_id']);
+                                      }
 
-                    $messageData = [
-                        'discription' => getTextMarkup($discriptionMarkup, $orderUID),
-                        'additionalNotes' => $additionalNotes,
-                    ];
+                                                            return $this->orderPaymentsRepository->transactionResponse(1, null, __('Order Refund Successfully.'));
+                                    }
 
-                    // Notify customer about refund by email
-                    $this->mailService->notifyCustomer($subject, 'order.order-refund', $messageData, $order['users_id']);
-                }
-
-                return $this->orderPaymentsRepository->transactionResponse(1, null, __('Order Refund Successfully.'));
-            }
-
-                                  return $this->orderPaymentsRepository->transactionResponse(14, null, __('Nothing Update'));
+                                    return $this->orderPaymentsRepository->transactionResponse(14, null, __('Nothing Update'));
                               });
 
         return __engineReaction($reactionCode);
@@ -483,8 +506,10 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
                 'orderUID' => $paymentDetail['order']['order_uid'],
                 'txn' => $paymentDetail['txn'],
                 'fee' => $paymentDetail['fee'],
-                'paymentMethod' => getTitle($paymentDetail['payment_method'],
-                                    '__tech.orders.payment_methods'),
+                'paymentMethod' => getTitle(
+                    $paymentDetail['payment_method'],
+                    '__tech.orders.payment_methods'
+                ),
                 'totalAmt' => $paymentDetail['order']['total_amount'],
                 'currencyCode' => $paymentDetail['currency_code'],
             ];
@@ -498,8 +523,10 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
             'total' => array_sum($totalOrderAmount),
         ];
 
-        return Excel::create($excelData['excelFileName'], function ($excel) use ($excelData,
-            $paymentData) {
+        return Excel::create($excelData['excelFileName'], function ($excel) use (
+            $excelData,
+            $paymentData
+) {
             $excel->sheet('payments', function ($sheet) use ($excelData, $paymentData) {
 
                 //merge cells
@@ -593,21 +620,21 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
                               ->processTransaction(function () use ($inputData, $paymentId) {
                                   $payment = $this->orderPaymentsRepository->fetchById($paymentId);
            
-                                  if (__isEmpty($payment)) {
-                                      return $this->orderPaymentsRepository
-                            ->transactionResponse(18, null, __('Order payment not found.'));
-                                  }
+                                if (__isEmpty($payment)) {
+                                    return $this->orderPaymentsRepository
+                                    ->transactionResponse(18, null, __('Order payment not found.'));
+                                }
 
-                                  if (!$this->orderPaymentsRepository->deleteOrderPayment($inputData, $payment)) {
-                                      return $this->orderPaymentsRepository
-                            ->transactionResponse(2, null, __('Please enter correct password.'));
-                                  }
+                                if (!$this->orderPaymentsRepository->deleteOrderPayment($inputData, $payment)) {
+                                    return $this->orderPaymentsRepository
+                                    ->transactionResponse(2, null, __('Please enter correct password.'));
+                                }
 
             // delete related orders
-            $this->manageOrderRepository->delete($payment->orders__id);
+                                $this->manageOrderRepository->delete($payment->orders__id);
             
                                   return $this->orderPaymentsRepository
-                        ->transactionResponse(1, null, __('Order payment deleted Successfully.'));
+                                ->transactionResponse(1, null, __('Order payment deleted Successfully.'));
                               });
 
         return  __engineReaction($reactionCode);
@@ -627,30 +654,29 @@ class OrderPaymentsEngine implements OrderPaymentsEngineBlueprint
                               ->processTransaction(function () use ($paymentId) {
                                   $payment = $this->orderPaymentsRepository->fetchById($paymentId);
            
-                                  if (__isEmpty($payment)) {
-                                      return $this->orderPaymentsRepository
-                        ->transactionResponse(18, null, __('Sandbox payment not found.'));
-                                  }
+                                if (__isEmpty($payment)) {
+                                    return $this->orderPaymentsRepository
+                                    ->transactionResponse(18, null, __('Sandbox payment not found.'));
+                                }
 
                                   $paymentMethod = [7,8];
 
             // check the request for delete order is sandbox order or not
-            if (in_array($payment->payment_method, $paymentMethod) !== true) {
-                return $this->orderPaymentsRepository
-                        ->transactionResponse(18, null, __('This is not a sandbox payment.'));
-            }
+                                if (in_array($payment->payment_method, $paymentMethod) !== true) {
+                                    return $this->orderPaymentsRepository
+                                            ->transactionResponse(18, null, __('This is not a sandbox payment.'));
+                                }
 
-                                  if ($this->orderPaymentsRepository->deleteSandboxPayment($payment)) {
-
+                                if ($this->orderPaymentsRepository->deleteSandboxPayment($payment)) {
                 // delete related orders
-                $this->manageOrderRepository->delete($payment->orders__id);
+                                    $this->manageOrderRepository->delete($payment->orders__id);
                 
-                                      return $this->orderPaymentsRepository
-                        ->transactionResponse(1, null, __('Sandbox payment deleted Successfully.'));
-                                  }
+                                    return $this->orderPaymentsRepository
+                                    ->transactionResponse(1, null, __('Sandbox payment deleted Successfully.'));
+                                }
 
                                   return $this->orderPaymentsRepository
-                        ->transactionResponse(2, null, __('Sandbox payment not deleted.'));
+                                ->transactionResponse(2, null, __('Sandbox payment not deleted.'));
                               });
 
         return  __engineReaction($reactionCode);

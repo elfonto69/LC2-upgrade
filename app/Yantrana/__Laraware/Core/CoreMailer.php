@@ -54,7 +54,9 @@ abstract class CoreMailer
 
         $mailReplyTo = __ifIsset($replyTo) ? $replyTo : [];
 
-        $emailSent = Mail::send($view, $messageData,
+        $emailSent = Mail::send(
+            $view,
+            $messageData,
             function ($message) use ($recipients, $subject, $mailFrom, $mailReplyTo) {
 
                 // Check for if direct recipients exist
@@ -93,7 +95,8 @@ abstract class CoreMailer
                 }
 
                 $message->subject($subject);
-            });
+            }
+        );
 
         if (empty($emailSent->failedRecipients)) {
             return true;
@@ -117,30 +120,29 @@ abstract class CoreMailer
         $mailRecipents['bcc'] = [];
 
         if (!is_array($getRecipients['recipients'])) {
-
             // get commas separated recipients using getRecipentsArray
             $mailRecipents['to'] = $this->getRecipents($getRecipients['recipients']);
         } else {
             // check direct recipients
             if (isset($getRecipients['recipients'])) {
                 $mailRecipents['to'] = $this->getRecipents(
-                                            $getRecipients['recipients']
-                                        );
+                    $getRecipients['recipients']
+                );
             }
         }
 
         // check carbon copy recipients
         if (isset($getRecipients['cc'])) {
             $mailRecipents['cc'] = $this->getRecipents(
-                                        $getRecipients['cc']
-                                    );
+                $getRecipients['cc']
+            );
         }
 
         // check blind carbon copy recipients
         if (isset($getRecipients['bcc'])) {
             $mailRecipents['bcc'] = $this->getRecipents(
-                                            $getRecipients['bcc']
-                                        );
+                $getRecipients['bcc']
+            );
         }
 
         return $mailRecipents;

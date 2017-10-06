@@ -13,8 +13,8 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class User extends BaseModel implements
     AuthenticatableContract,
-                                    AuthorizableContract,
-                                    CanResetPasswordContract
+    AuthorizableContract,
+    CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
 

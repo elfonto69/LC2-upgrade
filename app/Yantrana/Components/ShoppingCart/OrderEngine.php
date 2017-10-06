@@ -103,16 +103,22 @@ class OrderEngine implements OrderEngineBlueprint
      * @param ShippingEngine     $shippingEngine     - Shipping Engine
      * @param TaxEngine          $taxEngine          - Tax Engine
      *-----------------------------------------------------------------------*/
-    public function __construct(OrderRepository $orderRepository,
+    public function __construct(
+        OrderRepository $orderRepository,
         CouponRepository $couponRepository,
-        ShippingRepository $shippingRepository, TaxRepository $taxRepository,
+        ShippingRepository $shippingRepository,
+        TaxRepository $taxRepository,
         ShoppingCartEngine $shoppingCartEngine,
         AddressEngine $addressEngine,
-        AddressRepository $addressRepository, CouponEngine $couponEngine,
-        ShippingEngine $shippingEngine, TaxEngine $taxEngine,
-        MailService $mailService, OrderPaymentsRepository $orderPaymentsRepository,
-        StripePaymentEngine $stripePaymentEngine)
-    {
+        AddressRepository $addressRepository,
+        CouponEngine $couponEngine,
+        ShippingEngine $shippingEngine,
+        TaxEngine $taxEngine,
+        MailService $mailService,
+        OrderPaymentsRepository $orderPaymentsRepository,
+        StripePaymentEngine $stripePaymentEngine
+    ) {
+    
         $this->orderRepository = $orderRepository;
         $this->couponRepository = $couponRepository;
         $this->shippingRepository = $shippingRepository;
@@ -287,7 +293,8 @@ class OrderEngine implements OrderEngineBlueprint
         $orderDetails['data']['totalPayableAmount']          = $totalPayableAmountFormated;
         $orderDetails['data']['totalPayableAmountForStripe'] = isZeroDecimalCurrency($orderDetails['data']['total']['currency']) ? $totalPayableAmountFormated : $this->stripePaymentEngine->getAmount($totalPayableAmountFormated);
         $orderDetails['data']['discountAddedPrice'] = isset(
-                                                                $shipping['discountAddedPrice'])
+            $shipping['discountAddedPrice']
+        )
                                                                 and !__isEmpty($shipping['discountAddedPrice'])
                                                                 ? $shipping['discountAddedPrice']
                                                                 : null;
@@ -360,59 +367,62 @@ class OrderEngine implements OrderEngineBlueprint
                                   $getCartItems = $this->fetchCartData();
 
                // Check if cart content empty
-            if (__isEmpty($getCartItems)) {
-                return $this->orderRepository->transactionResponse(2, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                            'isUpdateIt'         => true
-                        ], __('Your cart is empty.'));
-            }
+                                if (__isEmpty($getCartItems)) {
+                                    return $this->orderRepository->transactionResponse(2, [
+                                                'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                                'isUpdateIt'         => true
+                                            ], __('Your cart is empty.'));
+                                }
 
             // fetch cart data from to the session $this->fetchCartData();
             // check this cart item available in database
-            $productsDataForComapre = $this->shoppingCartEngine->getProductForCart($getCartItems);
+                                $productsDataForComapre = $this->shoppingCartEngine->getProductForCart($getCartItems);
 
             // this function match the value of database & cart data.
             // and return in to set key isValidItem or not
-            $afterMatchCartItemsData = getRefinedCart(
-                                            $getCartItems,
-                                            $productsDataForComapre['products']
-                                        );
+                                $afterMatchCartItemsData = getRefinedCart(
+                                    $getCartItems,
+                                    $productsDataForComapre['products']
+                                );
 
             // if any item of cart is invlid then return error
-            if ($afterMatchCartItemsData['cartReady'] === false) {
-                return $this->orderRepository->transactionResponse(2, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                            'isUpdateIt'       => true
-                        ],
-                    __("We're sorry. The highlighted item(s) in your Shopping Cart are currently unavailable. Please remove the item(s) to proceed."));
-            }
+                                if ($afterMatchCartItemsData['cartReady'] === false) {
+                                    return $this->orderRepository->transactionResponse(
+                                        2,
+                                        [
+                                                'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                                'isUpdateIt'       => true
+                                            ],
+                                        __("We're sorry. The highlighted item(s) in your Shopping Cart are currently unavailable. Please remove the item(s) to proceed.")
+                                    );
+                                }
 
                                   $cartTotalAmount = $afterMatchCartItemsData['cartPriceTotal'];
 
                                   $orderSessionData = [];
 
             // Check if order summary data ids exist
-            if (NativeSession::has('orderSummaryDataIds')) {
-                $orderSessionData = NativeSession::get('orderSummaryDataIds');
-            }
+                                if (NativeSession::has('orderSummaryDataIds')) {
+                                    $orderSessionData = NativeSession::get('orderSummaryDataIds');
+                                }
 
             // check address is selected or not
-            $isValidAddress = $this->addressEngine->checkIsValidAddress($orderSessionData, $inputs);
+                                $isValidAddress = $this->addressEngine->checkIsValidAddress($orderSessionData, $inputs);
 
             // this address is empty
-            if ($isValidAddress === 3) {
-                return $this->orderRepository->transactionResponse(2, [
-                    'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                ], __('Please select your shipping address.')); // address not selected
-            }
+                                if ($isValidAddress === 3) {
+                                    return $this->orderRepository->transactionResponse(2, [
+                                        'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                    ], __('Please select your shipping address.')); // address not selected
+                                }
 
             // this address1 is empty
-            if ($isValidAddress === 4) {
-                return $this->orderRepository->transactionResponse(2, [
-                    'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                ], __('Please select your billing address'));
-                // billing address not selected
-            }
+                                if ($isValidAddress === 4) {
+                                    return $this->orderRepository->transactionResponse(2, [
+                                        'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                    ], __('Please select your billing address'));
+                                                        // billing address not selected
+                                }
 
                                   $prepareOrderData['addresses_id'] = $isValidAddress['addresses_id'];
                                   $prepareOrderData['addresses_id1'] = $isValidAddress['addresses_id1'];
@@ -424,82 +434,82 @@ class OrderEngine implements OrderEngineBlueprint
                                   $appliedDiscountThenTotalAmount = handleCurrencyAmount($cartTotalAmount);
 
             // check if the coupon is applied then check this coupon is valid
-            if (!__isEmpty($orderSessionData['couponCode'])) {
-                $couponData = $this->couponEngine->applyCouponProcess($orderSessionData['couponCode']);
+                                if (!__isEmpty($orderSessionData['couponCode'])) {
+                                    $couponData = $this->couponEngine->applyCouponProcess($orderSessionData['couponCode']);
 
-                // check applied coupon
-                if ($couponData['reaction_code'] == 2) {
-                    return $this->orderRepository->transactionResponse(2, null, __('Your coupon may be inactive / expire / invalid, please remove this coupon and try another code.')); //coupon is expired
-                }
+                                    // check applied coupon
+                                    if ($couponData['reaction_code'] == 2) {
+                                        return $this->orderRepository->transactionResponse(2, null, __('Your coupon may be inactive / expire / invalid, please remove this coupon and try another code.')); //coupon is expired
+                                    }
                 
-                // set coupon data for order storing
-                $coupon   = $couponData['data']['couponData'];
-                $discount = $coupon['discount'];
+                                    // set coupon data for order storing
+                                    $coupon   = $couponData['data']['couponData'];
+                                    $discount = $coupon['discount'];
 
-                // check applied amount of shipping
-                if (handleCurrencyAmount($discount)
-                    !== handleCurrencyAmount($inputs['totalDiscountAmount'])) {
-                    return $this->orderRepository->transactionResponse(3, [
-                                'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                            ], __('The applied discount amount changed.'));
-                }
+                                    // check applied amount of shipping
+                                    if (handleCurrencyAmount($discount)
+                                        !== handleCurrencyAmount($inputs['totalDiscountAmount'])) {
+                                                            return $this->orderRepository->transactionResponse(3, [
+                                                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                                            ], __('The applied discount amount changed.'));
+                                    }
 
-                $discountType = $coupon['discountType'];
-                $prepareOrderData['coupons__id'] = $coupon['couponID'];
-                $prepareOrderData['discount_amount'] = $discount;
+                                    $discountType = $coupon['discountType'];
+                                    $prepareOrderData['coupons__id'] = $coupon['couponID'];
+                                    $prepareOrderData['discount_amount'] = $discount;
 
-                // applied tax after discount amount
-                /*if (getStoreSettings('apply_tax_after_before_discount') == 2) {
-                    $appliedDiscountThenTotalAmount = $couponData['data']['totalPrice'];
-                }*/
-            }
+                                    // applied tax after discount amount
+                                    /*if (getStoreSettings('apply_tax_after_before_discount') == 2) {
+                                        $appliedDiscountThenTotalAmount = $couponData['data']['totalPrice'];
+                                    }*/
+                                }
             
             // if the discount coupon available then check the type of coupon if not same it fire error
             // amount, percent
-            if ((__ifIsset($orderSessionData['discountType']) and __ifIsset($discountType))
-                and ($orderSessionData['discountType'] !== $discountType)) {
-                return $this->orderRepository->transactionResponse(2, null, __('Your coupon may be inactive / expire / invalid, please remove this coupon and try another code.')); //coupon is expired
-            }
+                                if ((__ifIsset($orderSessionData['discountType']) and __ifIsset($discountType))
+                                and ($orderSessionData['discountType'] !== $discountType)) {
+                                    return $this->orderRepository->transactionResponse(2, null, __('Your coupon may be inactive / expire / invalid, please remove this coupon and try another code.')); //coupon is expired
+                                }
 
             // check if shipping is valid take calculated data
-            $shipping = $this->shippingEngine
-                             ->getShipping($country);
+                                $shipping = $this->shippingEngine
+                                ->getShipping($country);
 
             // Check if shipping is exist
-            if (__isEmpty($shipping)) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('Shipping Rule not available, Please contact administrator.'));
-            }
+                                if (__isEmpty($shipping)) {
+                                    return $this->orderRepository->transactionResponse(3, [
+                                                'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                            ], __('Shipping Rule not available, Please contact administrator.'));
+                                }
 
             // if shipping is empty or type 4 means [ not shipable ]
-            if ($shipping->type == 4) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('We are sorry currently shipping not available for your country.'));
-            }
+                                if ($shipping->type == 4) {
+                                    return $this->orderRepository->transactionResponse(3, [
+                                                'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                            ], __('We are sorry currently shipping not available for your country.'));
+                                }
           
             // Get calculation of shipping
-            $calculatedShipping = $this->shippingEngine
+                                $calculatedShipping = $this->shippingEngine
                                        ->addShipping(
-                                            $shippingCountry,
-                                            $cartTotalAmount,
-                                            $discount
-                                        );
+                                           $shippingCountry,
+                                           $cartTotalAmount,
+                                           $discount
+                                       );
                                     
             // check applied amount of shipping
-            if (handleCurrencyAmount($calculatedShipping['totalShippingAmount'])
-                !== handleCurrencyAmount($inputs['totalShippingAmount'])) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('The applied shipping amount is changed.'));
-            }
+                                if (handleCurrencyAmount($calculatedShipping['totalShippingAmount'])
+                                !== handleCurrencyAmount($inputs['totalShippingAmount'])) {
+                                    return $this->orderRepository->transactionResponse(3, [
+                                                'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                            ], __('The applied shipping amount is changed.'));
+                                }
 
                                   $prepareOrderData['shipping_amount'] =  $calculatedShipping['info']['shippingAmt'];
 
             // add taxses base on country with cart amount
-            $taxData = $this->taxEngine
-                            ->additionOfTaxses(
+                                $taxData = $this->taxEngine
+                                ->additionOfTaxses(
                                     $country,
                                     $appliedDiscountThenTotalAmount,
                                     $calculatedShipping['totalPrice'],
@@ -507,119 +517,119 @@ class OrderEngine implements OrderEngineBlueprint
                                 );
                 
             // check applied amount of shipping
-            if (handleCurrencyAmount($taxData['totalTaxAmount'])
-                !== handleCurrencyAmount($inputs['totalTaxAmount'])) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('The applied tax amount is changed.'));
-            }
+                                if (handleCurrencyAmount($taxData['totalTaxAmount'])
+                                !== handleCurrencyAmount($inputs['totalTaxAmount'])) {
+                                    return $this->orderRepository->transactionResponse(3, [
+                                                'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                            ], __('The applied tax amount is changed.'));
+                                }
 
 
                                   $totalPayableAmount = $taxData['totalPrice'];
 
                                   $onlinePaymentMethods = [
-                1, // PayPal
-                6, // Stripe
-                7, // PayPal Sandbox
-                8 // Stripe Test
-             ];
+                                1, // PayPal
+                                6, // Stripe
+                                7, // PayPal Sandbox
+                                8 // Stripe Test
+                                  ];
 
             // for check out perticular method for order payment
-            if (!__ifIsset($inputs['checkout_method']) or !$this->isValidOrderMethod($inputs['checkout_method'])) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('Invalid Checkout Method'));
-            }
+                                  if (!__ifIsset($inputs['checkout_method']) or !$this->isValidOrderMethod($inputs['checkout_method'])) {
+                                      return $this->orderRepository->transactionResponse(3, [
+                                                  'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                              ], __('Invalid Checkout Method'));
+                                    }
 
-                                  $currency = getCurrency();
+                                    $currency = getCurrency();
 
             // if the currency is not set then
-            if (!__ifIsset($currency)) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('No currency available, Please contact store administrator.'));
-            }
+                                    if (!__ifIsset($currency)) {
+                                        return $this->orderRepository->transactionResponse(3, [
+                                                    'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                                ], __('No currency available, Please contact store administrator.'));
+                                    }
 
             // if the currency is change the show this msg
-            if (!__ifIsset($inputs['currency']) or (__ifIsset($inputs['currency']) and $inputs['currency'] != $currency)) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('Some information may be updated from server, Please review your order again carefully.'));
-            }
+                                    if (!__ifIsset($inputs['currency']) or (__ifIsset($inputs['currency']) and $inputs['currency'] != $currency)) {
+                                        return $this->orderRepository->transactionResponse(3, [
+                                                    'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                                ], __('Some information may be updated from server, Please review your order again carefully.'));
+                                    }
 
-                                  $checkoutMethod = $inputs['checkout_method'];
+                                    $checkoutMethod = $inputs['checkout_method'];
 
-                                  if ($checkoutMethod == 6 and configItem('env_settings.stripe_test_mode') == true) {
-                                      $checkoutMethod = 8;
-                                  } elseif ($checkoutMethod == 1 and configItem('env_settings.paypal_test_mode') == true) {
-                                      $checkoutMethod = 7;
-                                  }
+                                    if ($checkoutMethod == 6 and configItem('env_settings.stripe_test_mode') == true) {
+                                        $checkoutMethod = 8;
+                                    } elseif ($checkoutMethod == 1 and configItem('env_settings.paypal_test_mode') == true) {
+                                        $checkoutMethod = 7;
+                                    }
 
             // if check the order price & total order price
-            if (handleCurrencyAmount($totalPayableAmount) != handleCurrencyAmount($inputs['totalPayableAmount'])) {
-                return $this->orderRepository->transactionResponse(3, [
-                            'orderSummaryData' => $this->updateOrderSummaryData($inputs),
-                        ], __('Some information may be updated from server, Please review your order again carefully.'));
-            }
+                                    if (handleCurrencyAmount($totalPayableAmount) != handleCurrencyAmount($inputs['totalPayableAmount'])) {
+                                        return $this->orderRepository->transactionResponse(3, [
+                                                    'orderSummaryData' => $this->updateOrderSummaryData($inputs),
+                                                ], __('Some information may be updated from server, Please review your order again carefully.'));
+                                    }
 
             // if set payment method 1 for paypal,
-            $prepareOrderData['payment_method'] = $checkoutMethod;
-                                  $prepareOrderData['total_amount'] = $totalPayableAmount;    // total amount of order
-            $prepareOrderData['taxses'] = $taxData['info'];
-                                  $prepareOrderData['type'] = (in_array($checkoutMethod, $onlinePaymentMethods)) ? 2 : 1; // offline
-            $prepareOrderData['name'] = $inputs['fullName'];
-                                  $prepareOrderData['status'] = 1;
-                                  $prepareOrderData['payment_status'] = 1; // Avaiting Payment
-            $prepareOrderData['order_uid'] = $orderUID;
-                                  $prepareOrderData['currency_code'] = $currency;
-                                  $prepareOrderData['cartItems'] = $afterMatchCartItemsData['productData'];
+                                    $prepareOrderData['payment_method'] = $checkoutMethod;
+                                    $prepareOrderData['total_amount'] = $totalPayableAmount;    // total amount of order
+                                    $prepareOrderData['taxses'] = $taxData['info'];
+                                    $prepareOrderData['type'] = (in_array($checkoutMethod, $onlinePaymentMethods)) ? 2 : 1; // offline
+                                    $prepareOrderData['name'] = $inputs['fullName'];
+                                    $prepareOrderData['status'] = 1;
+                                    $prepareOrderData['payment_status'] = 1; // Avaiting Payment
+                                    $prepareOrderData['order_uid'] = $orderUID;
+                                    $prepareOrderData['currency_code'] = $currency;
+                                    $prepareOrderData['cartItems'] = $afterMatchCartItemsData['productData'];
             
                // save order request in database & return created order id
-               if (!$storedOrder = $this->orderRepository->orderProcess(
-                                                $prepareOrderData
+                                    if (!$storedOrder = $this->orderRepository->orderProcess(
+                                        $prepareOrderData
                                     )) {
-                   return $this->orderRepository->transactionResponse(2, null, __('oh..no. error..'));
-               }
+                                        return $this->orderRepository->transactionResponse(2, null, __('oh..no. error..'));
+                                    }
 
              // Get order details from database for latest placed order
-             $order = $this->prepareOrderDataForSendMail($orderUID);
+                                    $order = $this->prepareOrderDataForSendMail($orderUID);
 
              // send mail of this order which is successfully placed order.
-            if (in_array($checkoutMethod, $onlinePaymentMethods) === false) {
-                $paymentDetails = [];
+                                    if (in_array($checkoutMethod, $onlinePaymentMethods) === false) {
+                                        $paymentDetails = [];
 
-                if ($checkoutMethod == 2) { // order by Check
+                                        if ($checkoutMethod == 2) { // order by Check
 
-                    $paymentDetails = getStoreSettings('payment_check_text');
-                } elseif ($checkoutMethod == 3) { // order by bank
+                                            $paymentDetails = getStoreSettings('payment_check_text');
+                                        } elseif ($checkoutMethod == 3) { // order by bank
 
-                    $paymentDetails = getStoreSettings('payment_bank_text');
-                } elseif ($checkoutMethod == 4) { // order by COD
+                                            $paymentDetails = getStoreSettings('payment_bank_text');
+                                        } elseif ($checkoutMethod == 4) { // order by COD
 
-                    $paymentDetails = getStoreSettings('payment_cod_text');
-                }
+                                            $paymentDetails = getStoreSettings('payment_cod_text');
+                                        }
 
-                $messageData = [
-                    'orderData' => $order,
-                    'paymentDetails' => $paymentDetails,
-                    'orderConfig' => config('__tech.address_type'),
-                    'orderDetailsUrl' => route('my_order.details', $orderUID),
-                ];
-				//To-do отрубаем пока все почтовое, так как все равно не работает
-                //$this->mailService->notifyCustomer('Your Order has been Submitted', 'order.customer-order', $messageData);
-                //$this->mailService->notifyAdmin('New Order Received', 'order.customer-order', $messageData);
-            }
+                                                                $messageData = [
+                                                                    'orderData' => $order,
+                                                                    'paymentDetails' => $paymentDetails,
+                                                                    'orderConfig' => config('__tech.address_type'),
+                                                                    'orderDetailsUrl' => route('my_order.details', $orderUID),
+                                                                ];
+                                                                //To-do отрубаем пока все почтовое, так как все равно не работает
+                                                                //$this->mailService->notifyCustomer('Your Order has been Submitted', 'order.customer-order', $messageData);
+                                                                //$this->mailService->notifyAdmin('New Order Received', 'order.customer-order', $messageData);
+                                    }
 
             // to display the msg of successfully order placed & provide facility ot user
             // track this order.
-            NativeSession::set('orderSuccessMessage', ['successStatus' => true]);
+                                    NativeSession::set('orderSuccessMessage', ['successStatus' => true]);
 
-                                  if (in_array($checkoutMethod, $onlinePaymentMethods) === false) { // remove items if Payment method is other than paypal
-                // after send this mail the cart is empty
-               $this->shoppingCartEngine->processRemoveAlItems();
-                                  }
+                                    if (in_array($checkoutMethod, $onlinePaymentMethods) === false) { // remove items if Payment method is other than paypal
+                    // after send this mail the cart is empty
+                                        $this->shoppingCartEngine->processRemoveAlItems();
+                                    }
 
-                                  return 1;
+                                    return 1;
                               });
 
         // Stripe
@@ -674,21 +684,21 @@ class OrderEngine implements OrderEngineBlueprint
     *
     * @return array
     *---------------------------------------------------------------- */
-   protected function prepareOrderProducts($products, $currency)
-   {
-       // calculate product prices
+    protected function prepareOrderProducts($products, $currency)
+    {
+        // calculate product prices
         $subtotal = $orderProducts = [];
 
-       foreach ($products as $pKey => $product) {
-           $orderProducts['orderProducts'][$pKey] = [
+        foreach ($products as $pKey => $product) {
+            $orderProducts['orderProducts'][$pKey] = [
                 'productName' => str_limit($product['name'], $limit = 30, $end = '...'),
                 '_id' => $product['_id'],
                 'customProductId' => $product['custom_product_id'],
                 'quantity' => $product['quantity'],
                 'formatedPrice' => priceFormat(
-                                        $product['price'],
-                                        $currency
-                                    ),
+                    $product['price'],
+                    $currency
+                ),
                 'detailsURL' => route('product.details', [
                                         'productID' => $product['products_id'],
                                         'productName' => slugIt($product['name']),
@@ -696,7 +706,7 @@ class OrderEngine implements OrderEngineBlueprint
                 'imagePath' => getProductImageURL($product['products_id'], $product['product']['thumbnail']),
             ];
 
-           $addonPrice = [];
+            $addonPrice = [];
 
             // Check if product option is exist
             if (!__isEmpty($product['product_option'])) {
@@ -724,36 +734,36 @@ class OrderEngine implements OrderEngineBlueprint
 
             //add price formate
             $orderProducts['orderProducts'][$pKey]['formatedProductPrice'] = priceFormat(
-                                                                                $priceAddInAddonPrice,
-                                                                                $currency
-                                                                            );
-           $orderProducts['orderProducts'][$pKey]['productWithAddonPrice'] = $priceAddInAddonPrice;
-            // add quantity and price
-            $multQtyWithPrice = $priceAddInAddonPrice * $product['quantity'];
+                $priceAddInAddonPrice,
+                $currency
+            );
+            $orderProducts['orderProducts'][$pKey]['productWithAddonPrice'] = $priceAddInAddonPrice;
+             // add quantity and price
+             $multQtyWithPrice = $priceAddInAddonPrice * $product['quantity'];
 
-            // add sub total price
-            $orderProducts['orderProducts'][$pKey]['formatedTotal'] = priceFormat($multQtyWithPrice, $currency);
-           $orderProducts['orderProducts'][$pKey]['total'] = $multQtyWithPrice;
+             // add sub total price
+             $orderProducts['orderProducts'][$pKey]['formatedTotal'] = priceFormat($multQtyWithPrice, $currency);
+            $orderProducts['orderProducts'][$pKey]['total'] = $multQtyWithPrice;
 
-           $subtotal[] = $multQtyWithPrice;
-       }
+            $subtotal[] = $multQtyWithPrice;
+        }
 
-       $sumTotal = array_sum($subtotal);
+        $sumTotal = array_sum($subtotal);
 
-       $orderProducts['subtotal'] = $sumTotal;
-       $orderProducts['formatedSubtotal'] = priceFormat($sumTotal, $currency);
+        $orderProducts['subtotal'] = $sumTotal;
+        $orderProducts['formatedSubtotal'] = priceFormat($sumTotal, $currency);
 
-       return $orderProducts;
-   }
+        return $orderProducts;
+    }
 
    /**
     * prepare data for order details.
     *
     * @param string / int $orderUidOrId
     *---------------------------------------------------------------- */
-   public function prepareOrderDetails($orderUidOrId)
-   {
-       $order = $this->orderRepository->fetchOrderDetails($orderUidOrId);
+    public function prepareOrderDetails($orderUidOrId)
+    {
+        $order = $this->orderRepository->fetchOrderDetails($orderUidOrId);
 
         // If order does not exist then return not found reaction code
         if (__isEmpty($order)) {
@@ -762,10 +772,10 @@ class OrderEngine implements OrderEngineBlueprint
 
         // match key and get value
         $orderConfigItems = config('__tech.orders');
-       $orderStatus = $orderConfigItems['status_codes'][$order['status']];
-       $orderType = $orderConfigItems['type'][$order['type']];
-       $paymentStatus = $orderConfigItems['payment_status'][$order['payment_status']];
-       $paymentMethod = $orderConfigItems['payment_methods'][$order['payment_method']];
+        $orderStatus = $orderConfigItems['status_codes'][$order['status']];
+        $orderType = $orderConfigItems['type'][$order['type']];
+        $paymentStatus = $orderConfigItems['payment_status'][$order['payment_status']];
+        $paymentMethod = $orderConfigItems['payment_methods'][$order['payment_method']];
 
         // get currency code
         $currency = $order['currency_code'];
@@ -792,13 +802,13 @@ class OrderEngine implements OrderEngineBlueprint
         // get order payments
         $payment = $this->orderPaymentsRepository->fetchOrderPayments($order['_id']);
 
-       $orderPayment = __ifIsset($payment, function ($payment) {
-           return formatStoreDateTime($payment->created_at);
-       }, null);
+        $orderPayment = __ifIsset($payment, function ($payment) {
+            return formatStoreDateTime($payment->created_at);
+        }, null);
 
-       $orderDiscount = __ifIsset($order['discount_amount']) ? $order['discount_amount'] : 0;
+        $orderDiscount = __ifIsset($order['discount_amount']) ? $order['discount_amount'] : 0;
        
-       return [
+        return [
             'orderPlacedOn' => formatStoreDateTime($order['created_at']), // formatted placed on time
             'orderStatus' => $orderStatus,
             'status' => $order['status'],
@@ -831,7 +841,7 @@ class OrderEngine implements OrderEngineBlueprint
             'taxes' => $taxesData['info'],
             'coupon' => $couponData,
         ];
-   }
+    }
 
    /**
     * prepare order data for send mail.
@@ -840,15 +850,15 @@ class OrderEngine implements OrderEngineBlueprint
     *
     * @return array
     *---------------------------------------------------------------- */
-   public function prepareOrderDataForSendMail($orderUID)
-   {
-       $prepareForSendData = $this->prepareOrderDetails($orderUID);
+    public function prepareOrderDataForSendMail($orderUID)
+    {
+        $prepareForSendData = $this->prepareOrderDetails($orderUID);
 
-       $currencyCode = $prepareForSendData['currencyCode'];
+        $currencyCode = $prepareForSendData['currencyCode'];
 
-       $subtotal = ($prepareForSendData['orderProducts']['subtotal'] - $prepareForSendData['orderDiscount']);
+        $subtotal = ($prepareForSendData['orderProducts']['subtotal'] - $prepareForSendData['orderDiscount']);
 
-       return [
+        return [
             'orderPlacedOn' => $prepareForSendData['orderPlacedOn'],
             'orderUID' => $prepareForSendData['orderUID'],
             'userId' => $prepareForSendData['userId'],
@@ -857,19 +867,20 @@ class OrderEngine implements OrderEngineBlueprint
             'formatedSubTotal' => priceFormat($subtotal, $currencyCode),
             'orderDiscount'    => $prepareForSendData['orderDiscount'],
             'formatedOrderDiscount' => priceFormat(
-                                            $prepareForSendData['orderDiscount'],
-                                            $currencyCode
-                                        ),
+                $prepareForSendData['orderDiscount'],
+                $currencyCode
+            ),
             'currencyCode' => $currencyCode,
             'shippingAmount' => $prepareForSendData['orderShippingAmount'],
             'formatedShippingAmount' => priceFormat(
-                                            $prepareForSendData['orderShippingAmount'],
-                                            $currencyCode
-                                        ),
+                $prepareForSendData['orderShippingAmount'],
+                $currencyCode
+            ),
             'formatedTotalOrderAmount' => priceFormat(
-                                            $prepareForSendData['totalOrderAmount'],
-                                            $currencyCode, 'true'
-                                        ),
+                $prepareForSendData['totalOrderAmount'],
+                $currencyCode,
+                'true'
+            ),
             'formatedPaymentStatus' => $prepareForSendData['formatedPaymentStatus'],
             'formatedPaymentMethod' => $prepareForSendData['formatedPaymentMethod'],
             'paymentStatus' => $prepareForSendData['paymentStatus'],
@@ -880,7 +891,7 @@ class OrderEngine implements OrderEngineBlueprint
             'email' => $prepareForSendData['user']['email'],
             'taxes' => $prepareForSendData['taxes'],
         ];
-   }
+    }
 
     /**
      * Send PayPal for Payment.
@@ -1052,19 +1063,20 @@ class OrderEngine implements OrderEngineBlueprint
                 'orderDiscount' => $prepareOrderData['orderDiscount'],
                 'formatedSubTotal' => priceFormat($subtotal, $currencyCode),
                 'formatedOrderDiscount' => priceFormat(
-                                                    $prepareOrderData['orderDiscount'],
-                                                    $currencyCode
-                                            ),
+                    $prepareOrderData['orderDiscount'],
+                    $currencyCode
+                ),
                 'currencyCode'  => $currencyCode,
                 'shippingAmount' => $prepareOrderData['orderShippingAmount'],
                 'formatedShippingAmount' => priceFormat(
-                                                    $prepareOrderData['orderShippingAmount'],
-                                                    $currencyCode
-                                            ),
+                    $prepareOrderData['orderShippingAmount'],
+                    $currencyCode
+                ),
                 'formatedTotalOrderAmount' => priceFormat(
-                                                $prepareOrderData['totalOrderAmount'],
-                                                $currencyCode, 'true'
-                                            ),
+                    $prepareOrderData['totalOrderAmount'],
+                    $currencyCode,
+                    'true'
+                ),
                 'formatedPaymentStatus' => $prepareOrderData['formatedPaymentStatus'],
                 'formatedPaymentMethod' => $prepareOrderData['formatedPaymentMethod'],
                 'newOrderStatus' => $newOrderStatus,

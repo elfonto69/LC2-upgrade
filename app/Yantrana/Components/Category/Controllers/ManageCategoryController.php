@@ -60,10 +60,10 @@ class ManageCategoryController extends BaseController
                 ];
 
                 $activeItemsContainer = $this->findChildrens(
-                                            $itemCollection,
-                                            $item->id,
-                                            $activeItemsContainer
-                                        );
+                    $itemCollection,
+                    $item->id,
+                    $activeItemsContainer
+                );
             }
         }
 
@@ -95,9 +95,9 @@ class ManageCategoryController extends BaseController
     {
         $allCategories = $this->manageCategoryEngine->getAll();
         $childCategories = $this->findChildrens(
-                                    $allCategories,
-                                    $ID
-                                );
+            $allCategories,
+            $ID
+        );
 
         $activeCatcount = $inActiveCatcount = [];
 
@@ -138,7 +138,7 @@ class ManageCategoryController extends BaseController
                 // Get all category related products count.
                 $products = $this->manageCategoryEngine
                                     ->getCurrentCategoryProducts(
-                                      $key['id']
+                                        $key['id']
                                     );
 
                 return count($products);
@@ -149,7 +149,7 @@ class ManageCategoryController extends BaseController
                 // Get all category related products count.
                 $categoriesProductCount = $this->manageCategoryEngine
                                                  ->getCategoriesProducts(
-                                                   array_unique(array_flatten($getChildrens))
+                                                     array_unique(array_flatten($getChildrens))
                                                  );
 
                 return count($categoriesProductCount);

@@ -127,7 +127,6 @@ class EditStoreSettingsRequest extends BaseRequest
 
             if (Request::input('use_stripe')) {
                 if (!$isLiveStripeKeysExist) {
-
                     // check if stripe live publish key exist
                     if (!__isEmpty($stripeLivePublishableKey)) {
                         $rules['stripe_live_secret_key']         = 'required';
@@ -140,7 +139,6 @@ class EditStoreSettingsRequest extends BaseRequest
                 }
 
                 if (!$isTestingStripeKeysExist) {
-
                     // Check if stripe testing publishable key exist
                     if (!__isEmpty($stripeTestingPublishableKey)) {
                         $rules['stripe_testing_secret_key']      = 'required';

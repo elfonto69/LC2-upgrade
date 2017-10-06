@@ -36,10 +36,12 @@ class HomeController extends BaseController
      *
      * @param PagesEngine $pagesEngine - Pages Engine
      *-----------------------------------------------------------------------*/
-    public function __construct(PagesEngine $pagesEngine,
+    public function __construct(
+        PagesEngine $pagesEngine,
         ProductEngine $productEngine,
-        BrandEngine $brandEngine)
-    {
+        BrandEngine $brandEngine
+    ) {
+    
         $this->pagesEngine = $pagesEngine;
         $this->productEngine = $productEngine;
         $this->brandEngine = $brandEngine;

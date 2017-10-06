@@ -29,9 +29,11 @@ class TaxEngine implements TaxEngineBlueprint
      *
      * @param TaxRepository $taxRepository - Tax Repository
      *-----------------------------------------------------------------------*/
-    public function __construct(TaxRepository $taxRepository,
-                         SupportRepository $supportRepository)
-    {
+    public function __construct(
+        TaxRepository $taxRepository,
+        SupportRepository $supportRepository
+    ) {
+    
         $this->taxRepository = $taxRepository;
         $this->supportRepository = $supportRepository;
     }

@@ -30,7 +30,7 @@ define('DEFAULT_LOCALE', 'en_US');
 
 require_once '../gettext.inc';
 
-$supported_locales = array('en_US', 'sr_CS', 'de_CH');
+$supported_locales = ['en_US', 'sr_CS', 'de_CH'];
 $encoding = 'UTF-8';
 
 $locale = (isset($_GET['lang'])) ? $_GET['lang'] : DEFAULT_LOCALE;
@@ -74,9 +74,14 @@ if (!locale_emulation()) {
 echo '<pre>';
 echo T_("This is how the story goes.\n\n");
 for ($number = 6; $number >= 0; --$number) {
-    echo sprintf(T_ngettext("%d pig went to the market\n",
-              "%d pigs went to the market\n", $number),
-         $number);
+    echo sprintf(
+        T_ngettext(
+            "%d pig went to the market\n",
+            "%d pigs went to the market\n",
+            $number
+        ),
+        $number
+    );
 }
 echo "</pre>\n";
 ?>

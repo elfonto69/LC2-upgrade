@@ -165,18 +165,18 @@ class BaseController extends Controller
         $output = view('public-master', $data)->nest('pageRequested', $viewName, $data)->render();
 
         if (!env('APP_DEBUG', false)) {
-            $filters = array(
+            $filters = [
                 '/<!--([^\[|(<!)].*)/' => '',  // Remove HTML Comments (breaks with HTML5 Boilerplate)
                 '/(?<!\S)\/\/\s*[^\r\n]*/' => '',  // Remove comments in the form /* */
                 '/\s{2,}/' => ' ', // Shorten multiple white spaces
                 '/(\r?\n)/' => '',  // Collapse new lines
-            );
+            ];
 
             return preg_replace(
-                    array_keys($filters),
-                    array_values($filters),
-                    $output
-                );
+                array_keys($filters),
+                array_values($filters),
+                $output
+            );
         } else { // for clog
 
                 $clogSessItemName = '__clog';
