@@ -384,7 +384,7 @@ abstract class CoreModel extends Eloquent
             }
 
             // if not use earlier lists method
-            return __ifIsset($result, $result->lists([$itemToPluck]))->toArray();
+            return __ifIsset($result, $result->pluck([$itemToPluck]))->toArray();
         }
 
         return $insertResult;

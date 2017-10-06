@@ -146,7 +146,7 @@ class ShoppingCart
         if ($this->has()) {
             $cartItemCollection = $this->cartCollectionObject();
 
-            $existingCartItem = $cartItemCollection->whereLoose('id', $productID);
+            $existingCartItem = $cartItemCollection->where('id', $productID);
 
             if (!__isEmpty($existingCartItem)) {
                 $isAvailableOption = $this->checkProductOptions(
@@ -365,7 +365,7 @@ class ShoppingCart
         }
 
         $cartItemCollection = $this->cartCollectionObject();
-        $existingCartItem = $cartItemCollection->whereLoose('id', $productID);
+        $existingCartItem = $cartItemCollection->where('id', $productID);
 
         if (!__isEmpty($existingCartItem)) {
             $isAvailableOption = $this->checkProductOptions(
@@ -386,7 +386,7 @@ class ShoppingCart
     public function where($productID)
     {
         $cartItemCollection = $this->cartCollectionObject();
-        $existingCartItem = $cartItemCollection->whereLoose('id', $productID);
+        $existingCartItem = $cartItemCollection->where('id', $productID);
 
         return __isEmpty($existingCartItem) ? false : true;
     }

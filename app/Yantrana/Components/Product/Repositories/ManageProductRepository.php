@@ -699,7 +699,7 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
         return $this->relatedProduct
                     ->where('products_id', $productID)
                     ->get()
-                    ->lists('related_product_id')
+                    ->pluck('related_product_id')
                     ->all();
     }
 
@@ -715,7 +715,7 @@ class ManageProductRepository extends BaseRepository implements ManageProductRep
         return $this->productCategory
                     ->where('products_id', $productID)
                     ->get()
-                    ->lists('categories_id')
+                    ->pluck('categories_id')
                     ->all();
     }
 
